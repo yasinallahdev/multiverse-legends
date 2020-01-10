@@ -10,6 +10,8 @@
   "license": "SEE LICENSE IN LICENSE",
   "dependencies": {
     "mongodb": "^3.4.0",
-    "mongoose": "^5.8.1"
+    "mongoose": "^5.8.1",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0"
   }
 }
