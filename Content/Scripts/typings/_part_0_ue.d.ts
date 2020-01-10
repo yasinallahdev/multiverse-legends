@@ -1926,7 +1926,7 @@ declare class TextureFormatSettings {
 	CompressionSettings: TextureCompressionSettings;
 	CompressionNoAlpha: boolean;
 	CompressionNone: boolean;
-	SRGB: boolean;
+	sRGB: boolean;
 	clone() : TextureFormatSettings;
 	static C(Other: UObject | any): TextureFormatSettings;
 }
@@ -1988,7 +1988,7 @@ declare class Texture extends StreamableRenderAsset {
 	Filter: TextureFilter;
 	MipLoadOptions: ETextureMipLoadOptions;
 	LODGroup: TextureGroup;
-	SRGB: boolean;
+	sRGB: boolean;
 	bUseLegacyGamma: boolean;
 	bNoTiling: boolean;
 	VirtualTextureStreaming: boolean;
@@ -2034,7 +2034,7 @@ declare class Material extends MaterialInterface {
 	WorldDisplacement: VectorMaterialInput;
 	TessellationMultiplier: ScalarMaterialInput;
 	SubsurfaceColor: ColorMaterialInput;
-	Clearcoat: ScalarMaterialInput;
+	ClearCoat: ScalarMaterialInput;
 	ClearCoatRoughness: ScalarMaterialInput;
 	AmbientOcclusion: ScalarMaterialInput;
 	Refraction: ScalarMaterialInput;
@@ -17777,7 +17777,7 @@ declare class ClothCollisionPrim_SphereConnection {
 }
 
 declare class ClothCollisionPrim_Convex { 
-	planes: Plane[];
+	Planes: Plane[];
 	BoneIndex: number;
 	clone() : ClothCollisionPrim_Convex;
 	static C(Other: UObject | any): ClothCollisionPrim_Convex;
