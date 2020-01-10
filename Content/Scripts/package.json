@@ -1,0 +1,15 @@
+{
+  "name": "multiverse-legends-scripts",
+  "version": "1.0.0",
+  "description": "\"Scripts for Multiverse Legends\"",
+  "main": "aliases.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ya Sin Supreme Allah",
+  "license": "SEE LICENSE IN LICENSE",
+  "dependencies": {
+    "mongodb": "^3.4.0",
+    "mongoose": "^5.8.1"
+  }
+}

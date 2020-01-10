@@ -1,0 +1,4 @@
+﻿,Tag,DevComment
+StatusTag_0001,Status.Combat,Units with this tag are considered in-combat.
+StatusTag_0002,Status.Dead,Units with this tag are dead.
+StatusTag_0003,Status.Disconnected,Champions with this tag are owned by a disconnected player.

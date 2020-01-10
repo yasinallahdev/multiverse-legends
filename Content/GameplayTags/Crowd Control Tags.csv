@@ -1,0 +1,11 @@
+﻿,Tag,DevComment
+CrowdControlTag_00001,Debuffs.CrowdControl,Base Tag for Crowd Control.
+CrowdControlTag_00002,Debuffs.CrowdControl.Ground,"Units with this tag are grounded, preventing them from using dash or teleport abilities and item actives."
+CrowdControlTag_00003,Debuffs.CrowdControl.Root,"Units with this tag are rooted, grounding them and preventing normal movement."
+CrowdControlTag_00004,Debuffs.CrowdControl.Disarm,"Units with this tag are disarmed, preventing use of basic attacks."
+CrowdControlTag_00005,Debuffs.CrowdControl.Silence,"Units with this tag are silenced, preventing use of champion abilities and immediately ending channels from them."
+CrowdControlTag_00006,Debuffs.CrowdControl.Mute,"Units with this tag are muted, preventing the use of item actives and immediately ending channels from them."
+CrowdControlTag_00007,Debuffs.CrowdControl.Castlock,"Units with this tag are castlocked, combining the effects of Silence and Mute."
+CrowdControlTag_00008,Debuffs.CrowdControl.Stun,"Units with this tag are stunned, combining the effects of Root, Disarm, and Castlock."
+CrowdControlTag_00009,Debuffs.CrowdControl.Airborne,"Units with this tag are airborne, stunning them and preventing them from cleansing the status. Some champion abilities have special effects when used by or used against airborne units."
+CrowdControlTag_00010,Debuffs.CrowdControl.Suppression,"Units with this tag are suppressed, stunning them and preventing them from cleansing the status. A suppression will end if the source is killed or have their champion abilities disabled."
