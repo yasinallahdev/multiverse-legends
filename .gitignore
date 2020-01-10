@@ -51,6 +51,12 @@ SourceArt/**/*.tga
 Binaries/*
 Plugins/*/Binaries/*
 
+# Resources (these use .uasset files)
+*.png
+*.jpg
+*.gif
+*.mov
+
 # Builds
 Build/*
 
