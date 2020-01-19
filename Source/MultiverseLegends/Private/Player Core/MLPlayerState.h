@@ -101,7 +101,7 @@ public:
 
 /**
  * In Multiverse Legends, the ML Master State is the heart of each player's interaction with the world.
- * This is due to the fact that it's where all ability-related information lives
+ * This is due to the fact that it's where all ability-related information lives.
  */
 UCLASS()
 class AMLPlayerState : public APlayerState, public IMLAbilitySystemInterface {
@@ -143,9 +143,11 @@ protected:
 	virtual void BeginPlay() override;
 
 private:
-
+	
+	// This delegate is used to notify the Player State and its Registered Champion & AI Controller that a link has changed.
 	FOnUpdateRegisteredChampion OnUpdateRegisteredChampion;
 
+	// This delegate is used to notify the Player State and its Registered Champion & AI Controller that a link has changed.
 	FOnUpdateChampionController OnUpdateChampionController;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Score", meta = (AllowPrivateAccess = "true"))
