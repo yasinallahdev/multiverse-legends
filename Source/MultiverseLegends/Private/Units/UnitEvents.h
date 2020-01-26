@@ -18,10 +18,10 @@ enum class ECauseOfDeath : uint8 {
 UENUM(BlueprintType)
 enum class EDamageType : uint8 {
 
-	PhysicalDamage,
-	MagicalDamage,
-	TrueDamage,
-	PureDamage
+	PhysicalDamage UMETA(DisplayName = "Physical"),
+	MagicalDamage UMETA(DisplayName = "Magical"),
+	TrueDamage UMETA(DisplayName = "True"),
+	PureDamage UMETA(DisplayName = "Pure")
 
 };
 
