@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "Ability Core/MLAbilitySystemInterface.h"
+#include "UnitEvents.h"
 #include "Unit.generated.h"
 
 UENUM(BlueprintType)
@@ -66,6 +67,10 @@ protected:
 	// Called when something stops crossing the Unit Component.
 	UFUNCTION()
 	virtual void OnEndOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
+
+	UPROPERTY(BlueprintAssignable, Category = "Unit Events")
+	FOnDeath EventOnDeath; 
+
 
 private:
 

@@ -212,7 +212,7 @@ declare class MaterialExpressionMakeMaterialAttributes extends MaterialExpressio
 	WorldDisplacement: ExpressionInput;
 	TessellationMultiplier: ExpressionInput;
 	SubsurfaceColor: ExpressionInput;
-	ClearCoat: ExpressionInput;
+	Clearcoat: ExpressionInput;
 	ClearCoatRoughness: ExpressionInput;
 	AmbientOcclusion: ExpressionInput;
 	Refraction: ExpressionInput;
@@ -10949,7 +10949,7 @@ declare class PixelInspectorView extends UObject {
 	SubsurfaceColor: LinearColor;
 	SubsurfaceProfile: Vector;
 	Opacity: number;
-	ClearCoat: number;
+	Clearcoat: number;
 	ClearCoatRoughness: number;
 	WorldNormal: Vector;
 	BackLit: number;
@@ -17568,7 +17568,7 @@ declare class EditableMesh extends UObject {
 	SetAllowCompact(bInAllowCompact: boolean): void;
 	SearchSpatialDatabaseForPolygonsPotentiallyIntersectingPlane(InPlane: Plane,OutPolygons?: PolygonID[]): {OutPolygons: PolygonID[]};
 	SearchSpatialDatabaseForPolygonsPotentiallyIntersectingLineSegment(LineSegmentStart: Vector,LineSegmentEnd: Vector,OutPolygons?: PolygonID[]): {OutPolygons: PolygonID[]};
-	SearchSpatialDatabaseForPolygonsInVolume(Planes: Plane[],OutPolygons?: PolygonID[]): {OutPolygons: PolygonID[]};
+	SearchSpatialDatabaseForPolygonsInVolume(planes: Plane[],OutPolygons?: PolygonID[]): {OutPolygons: PolygonID[]};
 	RevertInstance(): EditableMesh;
 	Revert(): void;
 	RemovePolygonPerimeterVertices(PolygonID: PolygonID,FirstVertexNumberToRemove: number,NumVerticesToRemove: number,bDeleteOrphanedVertexInstances: boolean): void;
