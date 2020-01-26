@@ -71,6 +71,12 @@ protected:
 	UPROPERTY(BlueprintAssignable, Category = "Unit Events")
 	FOnDeath EventOnDeath; 
 
+	UPROPERTY(BlueprintAssignable, Category = "Unit Events")
+	FOnTakeDamage EventOnTakeDamage;
+
+	UPROPERTY(BlueprintAssignable, Category = "Unit Events")
+	FOnDealDamage EventOnDealtDamage;
+
 
 private:
 
