@@ -31,7 +31,7 @@ public:
 
 protected:
 
-	// UPROPERTY(BlueprintAssignable, Category = "Events")
+	UPROPERTY(BlueprintAssignable, Category = "Events")
 	FOnMasterPlayerStateUpdated OnMasterPlayerStateUpdated;
 
 	// The Master Player State for this Champion. This is shared by Champion Subtypes to figure out the primary PlayerState in control.

@@ -35,6 +35,8 @@ enum class EDamageEffects : uint8 {
 
 };
 
+ENUM_CLASS_FLAGS(EDamageEffects);
+
 
 /*
 
