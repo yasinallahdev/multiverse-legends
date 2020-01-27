@@ -51,7 +51,7 @@ void APlayerChampion::Unregistered() {
 
 }
 
-void APlayerChampion::SetMasterPlayerState(AMLPlayerState* NewMasterPlayerState) {
+AMLPlayerState* APlayerChampion::SetMasterPlayerState(AMLPlayerState* NewMasterPlayerState, bool updateController) {
 
     APlayerChampionAIController* PCAIController = GetController<APlayerChampionAIController>();
 
@@ -61,9 +61,18 @@ void APlayerChampion::SetMasterPlayerState(AMLPlayerState* NewMasterPlayerState)
 
     Super::SetMasterPlayerState(NewMasterPlayerState);
 
+
     if(MasterPlayerState && PCAIController) {
         PCAIController->HookToPlayerStateDelegates(MasterPlayerState);
     }
+
+    if(updateController && PCAIController) {
+
+        PCAIController->SetOwningPlayerState(MasterPlayerState);
+
+    }
+
+    return MasterPlayerState;
 
 }
 

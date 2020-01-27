@@ -29,7 +29,7 @@ public:
 
 	virtual class UNetConnection* GetNetConnection() const override;
 
-	virtual void SetMasterPlayerState(AMLPlayerState* NewMasterPlayerState) override;
+	virtual AMLPlayerState* SetMasterPlayerState(AMLPlayerState* NewMasterPlayerState, bool updateController = false) override;
 
 private:
 

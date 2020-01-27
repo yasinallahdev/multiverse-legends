@@ -21,6 +21,27 @@ void APlayerChampionAIController::SetPawn(APawn* InPawn) {
 
 }
 
+
+AMLPlayerState* APlayerChampionAIController::SetOwningPlayerState(AMLPlayerState* NewOwningPlayerState, bool updateChampion) {
+
+    if(!bBlockChangingPlayerState) {
+        RecieveMasterPlayerStateUpdate(this->OwningPlayerState, NewOwningPlayerState);
+
+        if(updateChampion) {
+            PlayerChampion->SetMasterPlayerState(NewOwningPlayerState);
+        }
+ 
+    }
+
+    return OwningPlayerState;
+
+}
+
+
+AMLPlayerState* APlayerChampionAIController::GetOwningPlayerState() const { 
+    return OwningPlayerState; 
+}
+
 void APlayerChampionAIController::RecieveMasterPlayerStateUpdate(AMLPlayerState* OldMasterPlayerState, AMLPlayerState* NewMasterPlayerState){
 
     UnhookFromPlayerStateDelegates(OldMasterPlayerState);

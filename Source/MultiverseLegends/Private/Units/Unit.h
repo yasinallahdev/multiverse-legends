@@ -99,6 +99,4 @@ private:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Hitbox", meta = (AllowPrivateAccess = "true"))
 	class UUnitCapsuleComponent* UnitCapsuleComponent;
 
-protected:
-
 };

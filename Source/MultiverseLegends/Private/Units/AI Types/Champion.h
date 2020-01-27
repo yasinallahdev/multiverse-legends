@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Units/Unit.h"
-#include "Player Core/Core Delegates.h"
+#include "Player Core/CorePlayerDelegates.h"
 #include "Champion.generated.h"
 
 /**
@@ -23,7 +23,7 @@ public:
 
 	AChampion(const FObjectInitializer& ObjectInitializer);
 
-	virtual void SetMasterPlayerState(AMLPlayerState* NewMasterPlayerState);
+	virtual AMLPlayerState* SetMasterPlayerState(AMLPlayerState* NewMasterPlayerState, bool updateController = false);
 
 	AMLPlayerState* GetMasterPlayerState() { return MasterPlayerState; }
 
@@ -31,6 +31,7 @@ public:
 
 protected:
 
+	// UPROPERTY(BlueprintAssignable, Category = "Events")
 	FOnMasterPlayerStateUpdated OnMasterPlayerStateUpdated;
 
 	// The Master Player State for this Champion. This is shared by Champion Subtypes to figure out the primary PlayerState in control.

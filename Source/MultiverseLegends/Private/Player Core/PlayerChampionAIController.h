@@ -36,8 +36,8 @@ public:
 	void UnhookFromPlayerControllerDelegates(AMLMasterPlayerController* PlayerControllerLink);
 	void UnhookFromPlayerStateDelegates(AMLPlayerState* PlayerControllerLink);
 
-	void SetOwningPlayerState(AMLPlayerState* NewOwningPlayerState);
-	AMLPlayerState* GetOwningPlayerState() { return OwningPlayerState; }
+	AMLPlayerState* SetOwningPlayerState(AMLPlayerState* NewOwningPlayerState, bool updateChampion = false);
+	AMLPlayerState* GetOwningPlayerState() const;
 
 private:
 
@@ -65,6 +65,13 @@ private:
 	 * If this variable is set to true, then this AI controller will ignore input from the Master PC.
 	 * This will usually happen if the player is in a menu, or if the champion is dead.
 	 */
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AI Settings", meta = (  AllowPrivateAccess = "true"))
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AI Settings", meta = (AllowPrivateAccess = "true"))
 	uint8 bShouldIgnoreInput : 1;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AI Settings", meta = (AllowPrivateAccess = "true"))
+	uint8 bBlockChangingController : 1;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AI Settings", meta = (AllowPrivateAccess = "true"))
+	uint8 bBlockChangingPlayerState;
+
 };

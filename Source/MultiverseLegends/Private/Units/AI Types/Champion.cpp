@@ -21,7 +21,7 @@ void AChampion::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetim
 
 }
 
-void AChampion::SetMasterPlayerState(AMLPlayerState* NewMasterPlayerState) {
+AMLPlayerState* AChampion::SetMasterPlayerState(AMLPlayerState* NewMasterPlayerState, bool updateController)  {
 
     if(MasterPlayerState && (MasterPlayerState->GetRegisteredChampion() == this)) {
         FMLRegisterPlayerStateChampion(MasterPlayerState, nullptr);
@@ -32,5 +32,7 @@ void AChampion::SetMasterPlayerState(AMLPlayerState* NewMasterPlayerState) {
     if(MasterPlayerState) {
         FMLRegisterPlayerStateChampion(MasterPlayerState, this);
     }
+
+    return MasterPlayerState;
 
 }
