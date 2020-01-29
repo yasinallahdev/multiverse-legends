@@ -12,6 +12,8 @@ void UOffensiveAttributeSet::GetLifetimeReplicatedProps(TArray<FLifetimeProperty
     DOREPLIFETIME_CONDITION_NOTIFY(UOffensiveAttributeSet, BonusFlatPhysicalArmorPenetration, COND_None, REPNOTIFY_Always);
     DOREPLIFETIME_CONDITION_NOTIFY(UOffensiveAttributeSet, BaseFlatMagicalArmorPenetration, COND_None, REPNOTIFY_Always);
     DOREPLIFETIME_CONDITION_NOTIFY(UOffensiveAttributeSet, BonusFlatMagicalArmorPenetration, COND_None, REPNOTIFY_Always);
+    DOREPLIFETIME_CONDITION_NOTIFY(UOffensiveAttributeSet, BaseAttackSpeed, COND_None, REPNOTIFY_Always);
+    DOREPLIFETIME_CONDITION_NOTIFY(UOffensiveAttributeSet, BonusAttackSpeed, COND_None, REPNOTIFY_Always);
 
 }
 
@@ -26,3 +28,7 @@ DEFINE_ATTRIBUTE_FUNCTION(UOffensiveAttributeSet, BonusFlatPhysicalArmorPenetrat
 DEFINE_ATTRIBUTE_FUNCTION(UOffensiveAttributeSet, BaseFlatMagicalArmorPenetration);
 
 DEFINE_ATTRIBUTE_FUNCTION(UOffensiveAttributeSet, BonusFlatMagicalArmorPenetration);
+
+DEFINE_ATTRIBUTE_FUNCTION(UOffensiveAttributeSet, BaseAttackSpeed);
+
+DEFINE_ATTRIBUTE_FUNCTION(UOffensiveAttributeSet, BonusAttackSpeed);

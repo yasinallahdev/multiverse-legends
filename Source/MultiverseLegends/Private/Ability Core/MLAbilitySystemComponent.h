@@ -11,6 +11,7 @@ enum class EMLStatType : uint8 {
 	CurrentHealth,
 	MaximumHealth,
 	AttackDamage,
+	AttackSpeed,
 	FlatPhysicalArmorPen,
 	FlatMagicalArmorPen,
 	PhysicalArmor,
@@ -49,6 +50,8 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	float SetLevel(float NewLevel) { return FMath::RoundToZero(NewLevel); }
+
+	bool SetGameplayEffectDurationHandle(FActiveGameplayEffectHandle Handle, float NewDuration);
 
 protected:
 

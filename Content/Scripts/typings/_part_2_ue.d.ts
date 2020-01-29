@@ -212,7 +212,7 @@ declare class MaterialExpressionMakeMaterialAttributes extends MaterialExpressio
 	WorldDisplacement: ExpressionInput;
 	TessellationMultiplier: ExpressionInput;
 	SubsurfaceColor: ExpressionInput;
-	Clearcoat: ExpressionInput;
+	ClearCoat: ExpressionInput;
 	ClearCoatRoughness: ExpressionInput;
 	AmbientOcclusion: ExpressionInput;
 	Refraction: ExpressionInput;
@@ -10949,7 +10949,7 @@ declare class PixelInspectorView extends UObject {
 	SubsurfaceColor: LinearColor;
 	SubsurfaceProfile: Vector;
 	Opacity: number;
-	Clearcoat: number;
+	ClearCoat: number;
 	ClearCoatRoughness: number;
 	WorldNormal: Vector;
 	BackLit: number;
@@ -14526,6 +14526,22 @@ declare class AnimGraphNode_WheelHandler extends AnimGraphNode_SkeletalControlBa
 	static C(Other: UObject | any): AnimGraphNode_WheelHandler;
 }
 
+declare class AbilityCostMMC extends GameplayModMagnitudeCalculation { 
+	static Load(ResourceName: string): AbilityCostMMC;
+	static Find(Outer: UObject, ResourceName: string): AbilityCostMMC;
+	static GetDefaultObject(): AbilityCostMMC;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): AbilityCostMMC;
+	static C(Other: UObject | any): AbilityCostMMC;
+}
+
+declare class BasicAttackCooldownEffect extends GameplayEffect { 
+	static Load(ResourceName: string): BasicAttackCooldownEffect;
+	static Find(Outer: UObject, ResourceName: string): BasicAttackCooldownEffect;
+	static GetDefaultObject(): BasicAttackCooldownEffect;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): BasicAttackCooldownEffect;
+	static C(Other: UObject | any): BasicAttackCooldownEffect;
+}
+
 declare class MLCameraComponent extends CameraComponent { 
 	CameraSpeed: number;
 	static Load(ResourceName: string): MLCameraComponent;
@@ -14535,10 +14551,24 @@ declare class MLCameraComponent extends CameraComponent {
 	static C(Other: UObject | any): MLCameraComponent;
 }
 
+declare class MLBasicAttackAbilityBase extends GameplayAbility { 
+	static Load(ResourceName: string): MLBasicAttackAbilityBase;
+	static Find(Outer: UObject, ResourceName: string): MLBasicAttackAbilityBase;
+	static GetDefaultObject(): MLBasicAttackAbilityBase;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MLBasicAttackAbilityBase;
+	static C(Other: UObject | any): MLBasicAttackAbilityBase;
+}
+
+declare type ECauseOfDeath = 'UnitDamage' | 'Execution' | 'SelfInflictedDamage' | 'ECauseOfDeath_MAX';
+declare var ECauseOfDeath : { UnitDamage:'UnitDamage',Execution:'Execution',SelfInflictedDamage:'SelfInflictedDamage',ECauseOfDeath_MAX:'ECauseOfDeath_MAX', };
+declare type EDamageType = 'PhysicalDamage' | 'MagicalDamage' | 'TrueDamage' | 'PureDamage' | 'EDamageType_MAX';
+declare var EDamageType : { PhysicalDamage:'PhysicalDamage',MagicalDamage:'MagicalDamage',TrueDamage:'TrueDamage',PureDamage:'PureDamage',EDamageType_MAX:'EDamageType_MAX', };
+declare type EDamageEffects = 'None' | 'OnHit' | 'OnAttack' | 'Spell' | 'EDamageEffects_MAX';
+declare var EDamageEffects : { None:'None',OnHit:'OnHit',OnAttack:'OnAttack',Spell:'Spell',EDamageEffects_MAX:'EDamageEffects_MAX', };
 declare type ETeam = 'Neutral' | 'Green' | 'Purple' | 'ETeam_MAX';
 declare var ETeam : { Neutral:'Neutral',Green:'Green',Purple:'Purple',ETeam_MAX:'ETeam_MAX', };
-declare type EMLStatType = 'CurrentHealth' | 'MaximumHealth' | 'AttackDamage' | 'FlatPhysicalArmorPen' | 'FlatMagicalArmorPen' | 'PhysicalArmor' | 'MagicalArmor' | 'MovementSpeed' | 'AbilityPower' | 'CurrentResource' | 'MaximumResource' | 'CooldownReduction' | 'EMLStatType_MAX';
-declare var EMLStatType : { CurrentHealth:'CurrentHealth',MaximumHealth:'MaximumHealth',AttackDamage:'AttackDamage',FlatPhysicalArmorPen:'FlatPhysicalArmorPen',FlatMagicalArmorPen:'FlatMagicalArmorPen',PhysicalArmor:'PhysicalArmor',MagicalArmor:'MagicalArmor',MovementSpeed:'MovementSpeed',AbilityPower:'AbilityPower',CurrentResource:'CurrentResource',MaximumResource:'MaximumResource',CooldownReduction:'CooldownReduction',EMLStatType_MAX:'EMLStatType_MAX', };
+declare type EMLStatType = 'CurrentHealth' | 'MaximumHealth' | 'AttackDamage' | 'AttackSpeed' | 'FlatPhysicalArmorPen' | 'FlatMagicalArmorPen' | 'PhysicalArmor' | 'MagicalArmor' | 'MovementSpeed' | 'AbilityPower' | 'CurrentResource' | 'MaximumResource' | 'CooldownReduction' | 'EMLStatType_MAX';
+declare var EMLStatType : { CurrentHealth:'CurrentHealth',MaximumHealth:'MaximumHealth',AttackDamage:'AttackDamage',AttackSpeed:'AttackSpeed',FlatPhysicalArmorPen:'FlatPhysicalArmorPen',FlatMagicalArmorPen:'FlatMagicalArmorPen',PhysicalArmor:'PhysicalArmor',MagicalArmor:'MagicalArmor',MovementSpeed:'MovementSpeed',AbilityPower:'AbilityPower',CurrentResource:'CurrentResource',MaximumResource:'MaximumResource',CooldownReduction:'CooldownReduction',EMLStatType_MAX:'EMLStatType_MAX', };
 declare type EStatGroup = 'Base' | 'Bonus' | 'Total' | 'EStatGroup_MAX';
 declare var EStatGroup : { Base:'Base',Bonus:'Bonus',Total:'Total',EStatGroup_MAX:'EStatGroup_MAX', };
 declare class MLAbilitySystemComponent extends AbilitySystemComponent { 
@@ -14595,7 +14625,11 @@ declare class MLProjectileBase extends Actor {
 }
 
 declare class Unit extends Character { 
+	UnitBasicAttack: UnrealEngineClass;
 	bSpawnOwnedASCInBeginPlay: boolean;
+	EventOnDeath: UnrealEngineMulticastDelegate<(KilledUnit: Unit, AttackingUnit: Unit, CauseOfDeath: ECauseOfDeath) => void>;
+	EventOnTakeDamage: UnrealEngineMulticastDelegate<(DefendingUnit: Unit, Attacker: Unit, DamageDealt: number, DamageType: EDamageType, DamageSource: EDamageEffects) => void>;
+	EventOnDealtDamage: UnrealEngineMulticastDelegate<(Attacker: Unit, Target: Unit, DamageDealt: number, DamageType: EDamageType, DamageSource: EDamageEffects) => void>;
 	UnitTeam: ETeam;
 	AbilitySystem: MLAbilitySystemComponent;
 	PlayerStateAbilitySystem: any;
@@ -14609,6 +14643,17 @@ declare class Unit extends Character {
 	OnEndOverlap(OverlappedComp: PrimitiveComponent,OtherActor: Actor,OtherComp: PrimitiveComponent,OtherBodyIndex: number): void;
 	OnBeginOverlap(OverlappedComp: PrimitiveComponent,OtherActor: Actor,OtherComp: PrimitiveComponent,OtherBodyIndex: number,bFromSweep: boolean,SweepResult: HitResult): void;
 	static C(Other: UObject | any): Unit;
+}
+
+declare class MLGameplayAbility extends GameplayAbility { 
+	Cost: ScalableFloat;
+	CooldownDuration: ScalableFloat;
+	CooldownTags: GameplayTagContainer;
+	static Load(ResourceName: string): MLGameplayAbility;
+	static Find(Outer: UObject, ResourceName: string): MLGameplayAbility;
+	static GetDefaultObject(): MLGameplayAbility;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MLGameplayAbility;
+	static C(Other: UObject | any): MLGameplayAbility;
 }
 
 declare class ScoreStruct { 
@@ -14655,6 +14700,8 @@ declare class PlayerChampionAIController extends AIController {
 	MasterPlayerController: MLMasterPlayerController;
 	PlayerChampion: PlayerChampion;
 	bShouldIgnoreInput: boolean;
+	bBlockChangingController: boolean;
+	bBlockChangingPlayerState: number;
 	static GetDefaultObject(): PlayerChampionAIController;
 	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): PlayerChampionAIController;
 	static C(Other: UObject | any): PlayerChampionAIController;
@@ -14675,6 +14722,11 @@ declare class MLPlayerState extends PlayerState {
 }
 
 declare class Champion extends Unit { 
+	Ability1: UnrealEngineClass;
+	Ability2: UnrealEngineClass;
+	Ability3: UnrealEngineClass;
+	Ability4: UnrealEngineClass;
+	OnMasterPlayerStateUpdated: UnrealEngineMulticastDelegate<(OldMasterPlayerState: MLPlayerState, NewMasterPlayerState: MLPlayerState) => void>;
 	MasterPlayerState: MLPlayerState;
 	static GetDefaultObject(): Champion;
 	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): Champion;
@@ -14734,12 +14786,58 @@ declare class CasterAttributeSet extends AttributeSet {
 	static C(Other: UObject | any): CasterAttributeSet;
 }
 
+declare class CooldownGameplayEffect extends GameplayEffect { 
+	static Load(ResourceName: string): CooldownGameplayEffect;
+	static Find(Outer: UObject, ResourceName: string): CooldownGameplayEffect;
+	static GetDefaultObject(): CooldownGameplayEffect;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): CooldownGameplayEffect;
+	static C(Other: UObject | any): CooldownGameplayEffect;
+}
+
+declare class CostGameplayEffect extends GameplayEffect { 
+	static Load(ResourceName: string): CostGameplayEffect;
+	static Find(Outer: UObject, ResourceName: string): CostGameplayEffect;
+	static GetDefaultObject(): CostGameplayEffect;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): CostGameplayEffect;
+	static C(Other: UObject | any): CostGameplayEffect;
+}
+
+declare class DefenseAttributeSet extends AttributeSet { 
+	CurrentHealth: GameplayAttributeData;
+	BaseHealth: GameplayAttributeData;
+	BonusHealth: GameplayAttributeData;
+	BasePhysicalArmor: GameplayAttributeData;
+	BonusPhysicalArmor: GameplayAttributeData;
+	BaseMagicalArmor: GameplayAttributeData;
+	BonusMagicalArmor: GameplayAttributeData;
+	static Load(ResourceName: string): DefenseAttributeSet;
+	static Find(Outer: UObject, ResourceName: string): DefenseAttributeSet;
+	static GetDefaultObject(): DefenseAttributeSet;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): DefenseAttributeSet;
+	OnRep_CurrentHealth(): void;
+	OnRep_BonusPhysicalArmor(): void;
+	OnRep_BonusMagicalArmor(): void;
+	OnRep_BonusHealth(): void;
+	OnRep_BasePhysicalArmor(): void;
+	OnRep_BaseMagicalArmor(): void;
+	OnRep_BaseHealth(): void;
+	static C(Other: UObject | any): DefenseAttributeSet;
+}
+
 declare class MLAbilitySystemInterface extends AbilitySystemInterface { 
 	static Load(ResourceName: string): MLAbilitySystemInterface;
 	static Find(Outer: UObject, ResourceName: string): MLAbilitySystemInterface;
 	static GetDefaultObject(): MLAbilitySystemInterface;
 	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MLAbilitySystemInterface;
 	static C(Other: UObject | any): MLAbilitySystemInterface;
+}
+
+declare class MLBasicAttackCooldownCalculator extends GameplayModMagnitudeCalculation { 
+	static Load(ResourceName: string): MLBasicAttackCooldownCalculator;
+	static Find(Outer: UObject, ResourceName: string): MLBasicAttackCooldownCalculator;
+	static GetDefaultObject(): MLBasicAttackCooldownCalculator;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MLBasicAttackCooldownCalculator;
+	static C(Other: UObject | any): MLBasicAttackCooldownCalculator;
 }
 
 declare class MLGameInstance extends GameInstance { 
@@ -14773,6 +14871,18 @@ declare class MLGameStateBase extends GameState {
 	static C(Other: UObject | any): MLGameStateBase;
 }
 
+declare class MovementAttributeSet extends AttributeSet { 
+	BaseMovementSpeed: GameplayAttributeData;
+	BonusMovementSpeed: GameplayAttributeData;
+	static Load(ResourceName: string): MovementAttributeSet;
+	static Find(Outer: UObject, ResourceName: string): MovementAttributeSet;
+	static GetDefaultObject(): MovementAttributeSet;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MovementAttributeSet;
+	OnRep_BonusMovementSpeed(): void;
+	OnRep_BaseMovementSpeed(): void;
+	static C(Other: UObject | any): MovementAttributeSet;
+}
+
 declare class MultiverseLegendsCharacter extends Character { 
 	TopDownCameraComponent: CameraComponent;
 	CameraBoom: SpringArmComponent;
@@ -14794,40 +14904,6 @@ declare class MultiverseLegendsPlayerController extends PlayerController {
 	static C(Other: UObject | any): MultiverseLegendsPlayerController;
 }
 
-declare class DefenseAttributeSet extends AttributeSet { 
-	CurrentHealth: GameplayAttributeData;
-	BaseHealth: GameplayAttributeData;
-	BonusHealth: GameplayAttributeData;
-	BasePhysicalArmor: GameplayAttributeData;
-	BonusPhysicalArmor: GameplayAttributeData;
-	BaseMagicalArmor: GameplayAttributeData;
-	BonusMagicalArmor: GameplayAttributeData;
-	static Load(ResourceName: string): DefenseAttributeSet;
-	static Find(Outer: UObject, ResourceName: string): DefenseAttributeSet;
-	static GetDefaultObject(): DefenseAttributeSet;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): DefenseAttributeSet;
-	OnRep_CurrentHealth(): void;
-	OnRep_BonusPhysicalArmor(): void;
-	OnRep_BonusMagicalArmor(): void;
-	OnRep_BonusHealth(): void;
-	OnRep_BasePhysicalArmor(): void;
-	OnRep_BaseMagicalArmor(): void;
-	OnRep_BaseHealth(): void;
-	static C(Other: UObject | any): DefenseAttributeSet;
-}
-
-declare class MovementAttributeSet extends AttributeSet { 
-	BaseMovementSpeed: GameplayAttributeData;
-	BonusMovementSpeed: GameplayAttributeData;
-	static Load(ResourceName: string): MovementAttributeSet;
-	static Find(Outer: UObject, ResourceName: string): MovementAttributeSet;
-	static GetDefaultObject(): MovementAttributeSet;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MovementAttributeSet;
-	OnRep_BonusMovementSpeed(): void;
-	OnRep_BaseMovementSpeed(): void;
-	static C(Other: UObject | any): MovementAttributeSet;
-}
-
 declare class OffensiveAttributeSet extends AttributeSet { 
 	BaseAttackDamage: GameplayAttributeData;
 	BonusAttackDamage: GameplayAttributeData;
@@ -14835,15 +14911,19 @@ declare class OffensiveAttributeSet extends AttributeSet {
 	BonusFlatPhysicalArmorPenetration: GameplayAttributeData;
 	BaseFlatMagicalArmorPenetration: GameplayAttributeData;
 	BonusFlatMagicalArmorPenetration: GameplayAttributeData;
+	BaseAttackSpeed: GameplayAttributeData;
+	BonusAttackSpeed: GameplayAttributeData;
 	static Load(ResourceName: string): OffensiveAttributeSet;
 	static Find(Outer: UObject, ResourceName: string): OffensiveAttributeSet;
 	static GetDefaultObject(): OffensiveAttributeSet;
 	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OffensiveAttributeSet;
 	OnRep_BonusFlatPhysicalArmorPenetration(): void;
 	OnRep_BonusFlatMagicalArmorPenetration(): void;
+	OnRep_BonusAttackSpeed(): void;
 	OnRep_BonusAttackDamage(): void;
 	OnRep_BaseFlatPhysicalArmorPenetration(): void;
 	OnRep_BaseFlatMagicalArmorPenetration(): void;
+	OnRep_BaseAttackSpeed(): void;
 	OnRep_BaseAttackDamage(): void;
 	static C(Other: UObject | any): OffensiveAttributeSet;
 }
@@ -17568,7 +17648,7 @@ declare class EditableMesh extends UObject {
 	SetAllowCompact(bInAllowCompact: boolean): void;
 	SearchSpatialDatabaseForPolygonsPotentiallyIntersectingPlane(InPlane: Plane,OutPolygons?: PolygonID[]): {OutPolygons: PolygonID[]};
 	SearchSpatialDatabaseForPolygonsPotentiallyIntersectingLineSegment(LineSegmentStart: Vector,LineSegmentEnd: Vector,OutPolygons?: PolygonID[]): {OutPolygons: PolygonID[]};
-	SearchSpatialDatabaseForPolygonsInVolume(planes: Plane[],OutPolygons?: PolygonID[]): {OutPolygons: PolygonID[]};
+	SearchSpatialDatabaseForPolygonsInVolume(Planes: Plane[],OutPolygons?: PolygonID[]): {OutPolygons: PolygonID[]};
 	RevertInstance(): EditableMesh;
 	Revert(): void;
 	RemovePolygonPerimeterVertices(PolygonID: PolygonID,FirstVertexNumberToRemove: number,NumVerticesToRemove: number,bDeleteOrphanedVertexInstances: boolean): void;
@@ -18876,104 +18956,5 @@ declare class JavascriptInputEventState {
 	static IsShiftButtonEvent(InputEvent: JavascriptInputEventState): boolean;
 	static IsShiftButtonPressed(InputEvent: JavascriptInputEventState): boolean;
 	static IsSpaceBarPressed(InputEvent: JavascriptInputEventState): boolean;
-}
-
-declare type EJavascriptWidgetMode = 'WM_Translate' | 'WM_TranslateRotateZ' | 'WM_2D' | 'WM_Rotate' | 'WM_Scale' | 'WM_Max' | 'WM_None';
-declare var EJavascriptWidgetMode : { WM_Translate:'WM_Translate',WM_TranslateRotateZ:'WM_TranslateRotateZ',WM_2D:'WM_2D',WM_Rotate:'WM_Rotate',WM_Scale:'WM_Scale',WM_Max:'WM_Max',WM_None:'WM_None', };
-declare class JavascriptEditorViewport extends PanelWidget { 
-	OnClick: UnrealEngineDelegate<(ViewportClick: JavascriptViewportClick, HitProxy: JavascriptHitProxy, Instance: JavascriptEditorViewport) => void>;
-	OnTrackingStarted: UnrealEngineDelegate<(InputState: JavascriptInputEventState, bIsDraggingWidget: boolean, bNudge: boolean, Instance: JavascriptEditorViewport) => void>;
-	OnTrackingStopped: UnrealEngineDelegate<(Instance: JavascriptEditorViewport) => void>;
-	OnInputWidgetDelta: UnrealEngineDelegate<(Drag: Vector, Rot: Rotator, Scale: Vector, Instance: JavascriptEditorViewport) => boolean>;
-	OnInputKey: UnrealEngineDelegate<(ControllerId: number, Key: Key, Event: EInputEvent, Instance: JavascriptEditorViewport) => boolean>;
-	OnInputAxis: UnrealEngineDelegate<(ControllerId: number, Key: Key, Delta: number, DeltaTime: number, Instance: JavascriptEditorViewport) => boolean>;
-	OnMouseEnter: UnrealEngineDelegate<(X: number, Y: number, Instance: JavascriptEditorViewport) => boolean>;
-	OnMouseMove: UnrealEngineDelegate<(X: number, Y: number, Instance: JavascriptEditorViewport) => boolean>;
-	OnMouseLeave: UnrealEngineDelegate<(Instance: JavascriptEditorViewport) => boolean>;
-	OnDraw: UnrealEngineDelegate<(PDI: JavascriptPDI, Instance: JavascriptEditorViewport) => void>;
-	OnDrawCanvas: UnrealEngineDelegate<(Canvas: Canvas, Instance: JavascriptEditorViewport) => void>;
-	OnGetWidgetLocation: UnrealEngineDelegate<(Instance: JavascriptEditorViewport) => Vector>;
-	OnGetWidgetRotation: UnrealEngineDelegate<(Instance: JavascriptEditorViewport) => Rotator>;
-	OnGetWidgetMode: UnrealEngineDelegate<(Instance: JavascriptEditorViewport) => EJavascriptWidgetMode>;
-	static Load(ResourceName: string): JavascriptEditorViewport;
-	static Find(Outer: UObject, ResourceName: string): JavascriptEditorViewport;
-	static GetDefaultObject(): JavascriptEditorViewport;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): JavascriptEditorViewport;
-	SetWidgetMode(WidgetMode: EJavascriptWidgetMode): void;
-	SetViewRotation(ViewRotation: Rotator): void;
-	SetViewportType(InViewportType: ELevelViewportType): void;
-	SetViewMode(InViewModeIndex: EViewModeIndex): void;
-	SetViewLocation(ViewLocation: Vector): void;
-	SetViewFOV(InViewFOV: number): void;
-	SetSkyBrightness(SkyBrightness: number): void;
-	SetSimulatePhysics(bShouldSimulatePhysics: boolean): void;
-	SetRealtime(bInRealtime: boolean,bStoreCurrentValue: boolean): void;
-	SetProfileIndex(InProfileIndex: number): void;
-	SetLightDirection(InLightDir: Rotator): void;
-	SetLightColor(LightColor: Color): void;
-	SetLightBrightness(LightBrightness: number): void;
-	SetFloorOffset(InFloorOffset: number): void;
-	SetEngineShowFlags(In: string): boolean;
-	SetCameraSpeedSetting(SpeedSetting: number): void;
-	SetBackgroundColor(BackgroundColor: LinearColor): void;
-	RestoreRealtime(bAllowDisable: boolean): void;
-	Redraw(): void;
-	ProjectWorldToScreen(WorldPosition: Vector,OutScreenPosition?: Vector2D): {OutScreenPosition: Vector2D};
-	OverridePostProcessSettings(PostProcessSettings: PostProcessSettings,Weight: number): void;
-	GetWidgetMode(): EJavascriptWidgetMode;
-	GetViewRotation(): Rotator;
-	GetViewportWorld(): World;
-	GetViewLocation(): Vector;
-	GetViewFOV(): number;
-	GetSkyComponent(): StaticMeshComponent;
-	GetFloorMeshComponent(): StaticMeshComponent;
-	GetEngineShowFlags(): string;
-	GetDefaultSphereReflectionComponent(): SphereReflectionCaptureComponent;
-	GetDefaultSkySphereComponent(): StaticMeshComponent;
-	GetDefaultSkyLightComponent(): SkyLightComponent;
-	GetDefaultPostProcessComponent(): PostProcessComponent;
-	GetDefaultInstancedSkyMaterial(): MaterialInstanceConstant;
-	GetDefaultDirectionalLightComponent(): DirectionalLightComponent;
-	GetDefaultAssetViewerSettings(): AssetViewerSettings;
-	GetCurrentProfileIndex(): number;
-	GetCameraSpeedSetting(): number;
-	DeprojectScreenToWorld(ScreenPosition: Vector2D,OutRayOrigin?: Vector,OutRayDirection?: Vector): {OutRayOrigin: Vector, OutRayDirection: Vector};
-	static C(Other: UObject | any): JavascriptEditorViewport;
-}
-
-declare class JavascriptEdViewport { 
-	clone() : JavascriptEdViewport;
-	static C(Other: UObject | any): JavascriptEdViewport;
-	GetHitProxy(): JavascriptHitProxy;
-	static GetHitProxy(Viewport: JavascriptEdViewport): JavascriptHitProxy;
-}
-
-declare class JavascriptEditorModeTools { 
-	clone() : JavascriptEditorModeTools;
-	static C(Other: UObject | any): JavascriptEditorModeTools;
-	ActivateDefaultMode(): {Tools: JavascriptEditorModeTools};
-	ActivateMode(InID?: string,bToggle?: boolean): {Tools: JavascriptEditorModeTools};
-	DeactivateAllModes(): {Tools: JavascriptEditorModeTools};
-	DeactivateMode(InID?: string): {Tools: JavascriptEditorModeTools};
-	DestroyMode(InID?: string): {Tools: JavascriptEditorModeTools};
-	EndTracking(Viewport: JavascriptEdViewport): boolean;
-	EnsureNotInMode(ModeId?: string,ErrorMsg?: string,bNotifyUser?: boolean): {Tools: JavascriptEditorModeTools, $: boolean};
-	IsDefaultModeActive(): {Tools: JavascriptEditorModeTools, $: boolean};
-	IsModeActive(InID?: string): {Tools: JavascriptEditorModeTools, $: boolean};
-	IsTracking(): boolean;
-	SetDefaultMode(DefaultID?: string): {Tools: JavascriptEditorModeTools};
-	StartTracking(Viewport: JavascriptEdViewport): boolean;
-	static ActivateDefaultMode(Tools?: JavascriptEditorModeTools): {Tools: JavascriptEditorModeTools};
-	static ActivateMode(Tools?: JavascriptEditorModeTools,InID?: string,bToggle?: boolean): {Tools: JavascriptEditorModeTools};
-	static DeactivateAllModes(Tools?: JavascriptEditorModeTools): {Tools: JavascriptEditorModeTools};
-	static DeactivateMode(Tools?: JavascriptEditorModeTools,InID?: string): {Tools: JavascriptEditorModeTools};
-	static DestroyMode(Tools?: JavascriptEditorModeTools,InID?: string): {Tools: JavascriptEditorModeTools};
-	static EndTracking(Tools: JavascriptEditorModeTools,Viewport: JavascriptEdViewport): boolean;
-	static EnsureNotInMode(Tools?: JavascriptEditorModeTools,ModeId?: string,ErrorMsg?: string,bNotifyUser?: boolean): {Tools: JavascriptEditorModeTools, $: boolean};
-	static IsDefaultModeActive(Tools?: JavascriptEditorModeTools): {Tools: JavascriptEditorModeTools, $: boolean};
-	static IsModeActive(Tools?: JavascriptEditorModeTools,InID?: string): {Tools: JavascriptEditorModeTools, $: boolean};
-	static IsTracking(Tools: JavascriptEditorModeTools): boolean;
-	static SetDefaultMode(Tools?: JavascriptEditorModeTools,DefaultID?: string): {Tools: JavascriptEditorModeTools};
-	static StartTracking(Tools: JavascriptEditorModeTools,Viewport: JavascriptEdViewport): boolean;
 }
 

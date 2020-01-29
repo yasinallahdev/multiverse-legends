@@ -7,6 +7,8 @@
 #include "Player Core/CorePlayerDelegates.h"
 #include "Champion.generated.h"
 
+class UMLGameplayAbility;
+
 /**
  * 
  */
@@ -30,6 +32,18 @@ public:
 	
 
 protected:
+
+	UPROPERTY()
+	TSubclassOf<UMLGameplayAbility> Ability1;
+
+	UPROPERTY()
+	TSubclassOf<UMLGameplayAbility> Ability2;
+
+	UPROPERTY()
+	TSubclassOf<UMLGameplayAbility> Ability3;
+
+	UPROPERTY()
+	TSubclassOf<UMLGameplayAbility> Ability4;
 
 	UPROPERTY(BlueprintAssignable, Category = "Events")
 	FOnMasterPlayerStateUpdated OnMasterPlayerStateUpdated;

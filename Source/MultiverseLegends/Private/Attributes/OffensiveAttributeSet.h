@@ -75,5 +75,23 @@ public:
 	}
 
 	DECLARE_ATTRIBUTE_FUNCTION(BonusFlatMagicalArmorPenetration);
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Offense Attributes", ReplicatedUsing = OnRep_BaseAttackSpeed)
+	FGameplayAttributeData BaseAttackSpeed;
+	UFUNCTION()
+	void OnRep_BaseAttackSpeed() {
+		GAMEPLAYATTRIBUTE_REPNOTIFY(UOffensiveAttributeSet, BaseAttackSpeed);
+	}
+
+	DECLARE_ATTRIBUTE_FUNCTION(BaseAttackSpeed);
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Offense Attributes", ReplicatedUsing = OnRep_BonusAttackSpeed)
+	FGameplayAttributeData BonusAttackSpeed;
+	UFUNCTION()
+	void OnRep_BonusAttackSpeed() {
+		GAMEPLAYATTRIBUTE_REPNOTIFY(UOffensiveAttributeSet, BonusAttackSpeed);
+	}
+
+	DECLARE_ATTRIBUTE_FUNCTION(BonusAttackSpeed);
 	
 };

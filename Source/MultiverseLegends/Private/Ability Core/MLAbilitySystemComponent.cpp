@@ -7,6 +7,36 @@
 #include "Attributes/MovementAttributeSet.h"
 #include "Attributes/CasterAttributeSet.h"
 
+bool UMLAbilitySystemComponent::SetGameplayEffectDurationHandle(FActiveGameplayEffectHandle Handle, float NewDuration) {
+
+	if (!Handle.IsValid()) {
+		return false;
+	}
+
+	const FActiveGameplayEffect* ActiveGameplayEffect = GetActiveGameplayEffect(Handle);
+	if (!ActiveGameplayEffect) {
+		return false;
+	}
+
+	FActiveGameplayEffect* AGE = const_cast<FActiveGameplayEffect*>(ActiveGameplayEffect);
+	if (NewDuration > 0) {
+		AGE->Spec.Duration = NewDuration;
+	} else {
+		AGE->Spec.Duration = 0.01f;
+	}
+
+	AGE->StartServerWorldTime = ActiveGameplayEffects.GetServerWorldTime();
+	AGE->CachedStartServerWorldTime = AGE->StartServerWorldTime;
+	AGE->StartWorldTime = ActiveGameplayEffects.GetWorldTime();
+	ActiveGameplayEffects.MarkItemDirty(*AGE);
+	ActiveGameplayEffects.CheckDuration(Handle);
+
+	AGE->EventSet.OnTimeChanged.Broadcast(AGE->Handle, AGE->StartWorldTime, AGE->GetDuration());
+	OnGameplayEffectDurationChange(*AGE);
+
+	return true;
+}
+
 float UMLAbilitySystemComponent::GetStat(EMLStatType StatType, EStatGroup StatGroup) const {
 
     // If there is no stat split, just return the stat without checking for StatGroup.
@@ -47,6 +77,9 @@ float UMLAbilitySystemComponent::GetStat(EMLStatType StatType, EStatGroup StatGr
             case EMLStatType::FlatMagicalArmorPen:
                 BaseStat = GetNumericAttribute(UOffensiveAttributeSet::BaseFlatMagicalArmorPenetrationAttribute());
                 break;
+            case EMLStatType::AttackSpeed:
+                BaseStat = GetNumericAttribute(UOffensiveAttributeSet::BaseAttackSpeedAttribute());
+                break;
             case EMLStatType::MaximumHealth:
                 BaseStat = GetNumericAttribute(UDefenseAttributeSet::BaseHealthAttribute());
                 break;
@@ -81,6 +114,9 @@ float UMLAbilitySystemComponent::GetStat(EMLStatType StatType, EStatGroup StatGr
             case EMLStatType::FlatMagicalArmorPen:
                 BonusStat = GetNumericAttribute(UOffensiveAttributeSet::BonusFlatMagicalArmorPenetrationAttribute());
                 break;
+            case EMLStatType::AttackSpeed:
+                BonusStat = GetNumericAttribute(UOffensiveAttributeSet::BonusAttackSpeedAttribute());
+                break;
             case EMLStatType::MaximumHealth:
                 BonusStat = GetNumericAttribute(UDefenseAttributeSet::BonusHealthAttribute());
                 break;
@@ -105,7 +141,18 @@ float UMLAbilitySystemComponent::GetStat(EMLStatType StatType, EStatGroup StatGr
         }
     }
 
-    return BaseStat + BonusStat;
+
+    if((StatType != EMLStatType::AttackSpeed) || (StatGroup != EStatGroup::Total)) {
+
+        return BaseStat + BonusStat;
+
+    } else {
+
+        double BaseStatDouble = BaseStat;
+        double BonusStatDouble = BonusStat;
+
+        return FMath::Clamp(BaseStatDouble * (1 + BonusStatDouble), 0.2, 3.0);
+    }
 
 }
 

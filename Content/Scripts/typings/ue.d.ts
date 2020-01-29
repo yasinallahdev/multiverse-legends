@@ -1,6 +1,105 @@
 /// <reference path="_part_0_ue.d.ts">/>
 /// <reference path="_part_1_ue.d.ts">/>
 /// <reference path="_part_2_ue.d.ts">/>
+declare type EJavascriptWidgetMode = 'WM_Translate' | 'WM_TranslateRotateZ' | 'WM_2D' | 'WM_Rotate' | 'WM_Scale' | 'WM_Max' | 'WM_None';
+declare var EJavascriptWidgetMode : { WM_Translate:'WM_Translate',WM_TranslateRotateZ:'WM_TranslateRotateZ',WM_2D:'WM_2D',WM_Rotate:'WM_Rotate',WM_Scale:'WM_Scale',WM_Max:'WM_Max',WM_None:'WM_None', };
+declare class JavascriptEditorViewport extends PanelWidget { 
+	OnClick: UnrealEngineDelegate<(ViewportClick: JavascriptViewportClick, HitProxy: JavascriptHitProxy, Instance: JavascriptEditorViewport) => void>;
+	OnTrackingStarted: UnrealEngineDelegate<(InputState: JavascriptInputEventState, bIsDraggingWidget: boolean, bNudge: boolean, Instance: JavascriptEditorViewport) => void>;
+	OnTrackingStopped: UnrealEngineDelegate<(Instance: JavascriptEditorViewport) => void>;
+	OnInputWidgetDelta: UnrealEngineDelegate<(Drag: Vector, Rot: Rotator, Scale: Vector, Instance: JavascriptEditorViewport) => boolean>;
+	OnInputKey: UnrealEngineDelegate<(ControllerId: number, Key: Key, Event: EInputEvent, Instance: JavascriptEditorViewport) => boolean>;
+	OnInputAxis: UnrealEngineDelegate<(ControllerId: number, Key: Key, Delta: number, DeltaTime: number, Instance: JavascriptEditorViewport) => boolean>;
+	OnMouseEnter: UnrealEngineDelegate<(X: number, Y: number, Instance: JavascriptEditorViewport) => boolean>;
+	OnMouseMove: UnrealEngineDelegate<(X: number, Y: number, Instance: JavascriptEditorViewport) => boolean>;
+	OnMouseLeave: UnrealEngineDelegate<(Instance: JavascriptEditorViewport) => boolean>;
+	OnDraw: UnrealEngineDelegate<(PDI: JavascriptPDI, Instance: JavascriptEditorViewport) => void>;
+	OnDrawCanvas: UnrealEngineDelegate<(Canvas: Canvas, Instance: JavascriptEditorViewport) => void>;
+	OnGetWidgetLocation: UnrealEngineDelegate<(Instance: JavascriptEditorViewport) => Vector>;
+	OnGetWidgetRotation: UnrealEngineDelegate<(Instance: JavascriptEditorViewport) => Rotator>;
+	OnGetWidgetMode: UnrealEngineDelegate<(Instance: JavascriptEditorViewport) => EJavascriptWidgetMode>;
+	static Load(ResourceName: string): JavascriptEditorViewport;
+	static Find(Outer: UObject, ResourceName: string): JavascriptEditorViewport;
+	static GetDefaultObject(): JavascriptEditorViewport;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): JavascriptEditorViewport;
+	SetWidgetMode(WidgetMode: EJavascriptWidgetMode): void;
+	SetViewRotation(ViewRotation: Rotator): void;
+	SetViewportType(InViewportType: ELevelViewportType): void;
+	SetViewMode(InViewModeIndex: EViewModeIndex): void;
+	SetViewLocation(ViewLocation: Vector): void;
+	SetViewFOV(InViewFOV: number): void;
+	SetSkyBrightness(SkyBrightness: number): void;
+	SetSimulatePhysics(bShouldSimulatePhysics: boolean): void;
+	SetRealtime(bInRealtime: boolean,bStoreCurrentValue: boolean): void;
+	SetProfileIndex(InProfileIndex: number): void;
+	SetLightDirection(InLightDir: Rotator): void;
+	SetLightColor(LightColor: Color): void;
+	SetLightBrightness(LightBrightness: number): void;
+	SetFloorOffset(InFloorOffset: number): void;
+	SetEngineShowFlags(In: string): boolean;
+	SetCameraSpeedSetting(SpeedSetting: number): void;
+	SetBackgroundColor(BackgroundColor: LinearColor): void;
+	RestoreRealtime(bAllowDisable: boolean): void;
+	Redraw(): void;
+	ProjectWorldToScreen(WorldPosition: Vector,OutScreenPosition?: Vector2D): {OutScreenPosition: Vector2D};
+	OverridePostProcessSettings(PostProcessSettings: PostProcessSettings,Weight: number): void;
+	GetWidgetMode(): EJavascriptWidgetMode;
+	GetViewRotation(): Rotator;
+	GetViewportWorld(): World;
+	GetViewLocation(): Vector;
+	GetViewFOV(): number;
+	GetSkyComponent(): StaticMeshComponent;
+	GetFloorMeshComponent(): StaticMeshComponent;
+	GetEngineShowFlags(): string;
+	GetDefaultSphereReflectionComponent(): SphereReflectionCaptureComponent;
+	GetDefaultSkySphereComponent(): StaticMeshComponent;
+	GetDefaultSkyLightComponent(): SkyLightComponent;
+	GetDefaultPostProcessComponent(): PostProcessComponent;
+	GetDefaultInstancedSkyMaterial(): MaterialInstanceConstant;
+	GetDefaultDirectionalLightComponent(): DirectionalLightComponent;
+	GetDefaultAssetViewerSettings(): AssetViewerSettings;
+	GetCurrentProfileIndex(): number;
+	GetCameraSpeedSetting(): number;
+	DeprojectScreenToWorld(ScreenPosition: Vector2D,OutRayOrigin?: Vector,OutRayDirection?: Vector): {OutRayOrigin: Vector, OutRayDirection: Vector};
+	static C(Other: UObject | any): JavascriptEditorViewport;
+}
+
+declare class JavascriptEdViewport { 
+	clone() : JavascriptEdViewport;
+	static C(Other: UObject | any): JavascriptEdViewport;
+	GetHitProxy(): JavascriptHitProxy;
+	static GetHitProxy(Viewport: JavascriptEdViewport): JavascriptHitProxy;
+}
+
+declare class JavascriptEditorModeTools { 
+	clone() : JavascriptEditorModeTools;
+	static C(Other: UObject | any): JavascriptEditorModeTools;
+	ActivateDefaultMode(): {Tools: JavascriptEditorModeTools};
+	ActivateMode(InID?: string,bToggle?: boolean): {Tools: JavascriptEditorModeTools};
+	DeactivateAllModes(): {Tools: JavascriptEditorModeTools};
+	DeactivateMode(InID?: string): {Tools: JavascriptEditorModeTools};
+	DestroyMode(InID?: string): {Tools: JavascriptEditorModeTools};
+	EndTracking(Viewport: JavascriptEdViewport): boolean;
+	EnsureNotInMode(ModeId?: string,ErrorMsg?: string,bNotifyUser?: boolean): {Tools: JavascriptEditorModeTools, $: boolean};
+	IsDefaultModeActive(): {Tools: JavascriptEditorModeTools, $: boolean};
+	IsModeActive(InID?: string): {Tools: JavascriptEditorModeTools, $: boolean};
+	IsTracking(): boolean;
+	SetDefaultMode(DefaultID?: string): {Tools: JavascriptEditorModeTools};
+	StartTracking(Viewport: JavascriptEdViewport): boolean;
+	static ActivateDefaultMode(Tools?: JavascriptEditorModeTools): {Tools: JavascriptEditorModeTools};
+	static ActivateMode(Tools?: JavascriptEditorModeTools,InID?: string,bToggle?: boolean): {Tools: JavascriptEditorModeTools};
+	static DeactivateAllModes(Tools?: JavascriptEditorModeTools): {Tools: JavascriptEditorModeTools};
+	static DeactivateMode(Tools?: JavascriptEditorModeTools,InID?: string): {Tools: JavascriptEditorModeTools};
+	static DestroyMode(Tools?: JavascriptEditorModeTools,InID?: string): {Tools: JavascriptEditorModeTools};
+	static EndTracking(Tools: JavascriptEditorModeTools,Viewport: JavascriptEdViewport): boolean;
+	static EnsureNotInMode(Tools?: JavascriptEditorModeTools,ModeId?: string,ErrorMsg?: string,bNotifyUser?: boolean): {Tools: JavascriptEditorModeTools, $: boolean};
+	static IsDefaultModeActive(Tools?: JavascriptEditorModeTools): {Tools: JavascriptEditorModeTools, $: boolean};
+	static IsModeActive(Tools?: JavascriptEditorModeTools,InID?: string): {Tools: JavascriptEditorModeTools, $: boolean};
+	static IsTracking(Tools: JavascriptEditorModeTools): boolean;
+	static SetDefaultMode(Tools?: JavascriptEditorModeTools,DefaultID?: string): {Tools: JavascriptEditorModeTools};
+	static StartTracking(Tools: JavascriptEditorModeTools,Viewport: JavascriptEdViewport): boolean;
+}
+
 declare class JavascriptEditorMode { 
 	clone() : JavascriptEditorMode;
 	static C(Other: UObject | any): JavascriptEditorMode;

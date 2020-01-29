@@ -2143,8 +2143,8 @@ try { GameplayAbility.prototype.ApplyGameplayEffectToOwner = GameplayAbility.pro
 try { GameplayCueNotify_Actor.prototype.HandleGameplayCue = GameplayCueNotify_Actor.prototype.K2_HandleGameplayCue; } catch (e) {};
 try { GameplayCueNotify_Actor.prototype.End = GameplayCueNotify_Actor.prototype.K2_EndGameplayCue; } catch (e) {};
 try { GameplayCueNotify_Static.prototype.HandleGameplayCue = GameplayCueNotify_Static.prototype.K2_HandleGameplayCue; } catch (e) {};
-try { MLMasterPlayerController.prototype.OnChampionRegistered = MLMasterPlayerController.prototype.ReceiveChampionRegistered; } catch (e) {};
 try { let fnprepatch_687 = MLAbilitySystemComponent.prototype.GetStat;MLAbilitySystemComponent.prototype.GetStat = function (StatType, StatGroup = "Base") { return fnprepatch_687.call(this, StatType, StatGroup) }; } catch (e) {};
+try { MLMasterPlayerController.prototype.OnChampionRegistered = MLMasterPlayerController.prototype.ReceiveChampionRegistered; } catch (e) {};
 try { let fnprepatch_688 = LevelVariantSetsActor.prototype.GetLevelVariantSets;LevelVariantSetsActor.prototype.GetLevelVariantSets = function (bLoad = false) { return fnprepatch_688.call(this, bLoad) }; } catch (e) {};
 try { let fnprepatch_689 = AutomationUtilsBlueprintLibrary.prototype.TakeGameplayAutomationScreenshot;AutomationUtilsBlueprintLibrary.prototype.TakeGameplayAutomationScreenshot = function (ScreenshotName, MaxGlobalError = 0.019999999552965164, MaxLocalError = 0.11999999731779099, MapNameOverride) { return fnprepatch_689.call(this, ScreenshotName, MaxGlobalError, MaxLocalError, MapNameOverride) }; } catch (e) {};
 try { let fnprepatch_690 = NUTActor.prototype.UnitTravel;NUTActor.prototype.UnitTravel = function (Dest = " ") { return fnprepatch_690.call(this, Dest) }; } catch (e) {};

@@ -51,6 +51,9 @@ public:
 
 protected:
 
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Unit Attack")
+	TSubclassOf<class UMLBasicAttackAbilityBase> UnitBasicAttack;
+
 	virtual void GenerateAbilitySystem();
 
 	bool LinkOutsideActorAbilitySystem(IMLAbilitySystemInterface* LinkActor);
