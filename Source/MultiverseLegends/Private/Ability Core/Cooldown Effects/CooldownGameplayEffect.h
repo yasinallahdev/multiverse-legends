@@ -10,8 +10,12 @@
  * 
  */
 UCLASS()
-class UCooldownGameplayEffect : public UGameplayEffect
-{
+class UCooldownGameplayEffect : public UGameplayEffect {
+
 	GENERATED_BODY()
+
+public:
+
+	UCooldownGameplayEffect(const FObjectInitializer& ObjectInitializer);
 	
 };

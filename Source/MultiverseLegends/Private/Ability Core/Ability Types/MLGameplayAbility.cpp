@@ -5,19 +5,18 @@
 #include "Ability Core/Cooldown Effects/CooldownGameplayEffect.h"
 
 UMLGameplayAbility::UMLGameplayAbility() {
-    
+    CooldownGameplayEffectClass = UCooldownGameplayEffect::StaticClass();
 }
 
 const FGameplayTagContainer* UMLGameplayAbility::GetCooldownTags() const {
 
-    // Need to find a better way to do this; I assume this can lead to a memory leak
-    FGameplayTagContainer* Tags = new FGameplayTagContainer();
+	FGameplayTagContainer* MutableTags = const_cast<FGameplayTagContainer*>(&TempCooldownTags);
 	const FGameplayTagContainer* ParentTags = Super::GetCooldownTags();
 	if (ParentTags) {
-		Tags->AppendTags(*ParentTags);
+		MutableTags->AppendTags(*ParentTags);
 	}
-	Tags->AppendTags(CooldownTags);
-	return Tags;
+	MutableTags->AppendTags(CooldownTags);
+	return MutableTags;
 
 }
 

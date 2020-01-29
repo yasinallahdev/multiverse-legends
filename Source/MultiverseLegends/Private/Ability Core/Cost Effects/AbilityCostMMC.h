@@ -10,8 +10,12 @@
  * 
  */
 UCLASS()
-class UAbilityCostMMC : public UGameplayModMagnitudeCalculation
-{
+class UAbilityCostMMC : public UGameplayModMagnitudeCalculation {
+
 	GENERATED_BODY()
+
+public:
+
+	float CalculateBaseMagnitude_Implementation(const FGameplayEffectSpec & Spec) const;
 	
 };

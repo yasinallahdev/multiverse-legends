@@ -2,4 +2,13 @@
 
 
 #include "CooldownGameplayEffect.h"
+#include "AbilityCooldownMMC.h"
 
+UCooldownGameplayEffect::UCooldownGameplayEffect(const FObjectInitializer& ObjectInitializer) {
+
+    FCustomCalculationBasedFloat AbilityCooldownCalculator;
+
+    AbilityCooldownCalculator.CalculationClassMagnitude = UAbilityCooldownMMC::StaticClass();
+
+    DurationMagnitude = FGameplayEffectModifierMagnitude(AbilityCooldownCalculator);
+}

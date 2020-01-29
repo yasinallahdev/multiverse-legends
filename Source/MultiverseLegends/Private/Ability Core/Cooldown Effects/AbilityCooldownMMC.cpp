@@ -26,12 +26,12 @@ float UAbilityCooldownMMC::CalculateBaseMagnitude_Implementation(const FGameplay
     float CooldownReduction = 0.f;
     GetCapturedAttributeMagnitude(CooldownReductionDef, Spec, EvaluationParameters, CooldownReduction);
 
-    const UMLGameplayAbility* Cast<UMLGameplayAbility>(Spec.GetContext().GetAbilityInstance_NotReplicated());
+    const UMLGameplayAbility* Ability = Cast<UMLGameplayAbility>(Spec.GetContext().GetAbilityInstance_NotReplicated());
 
     if(!Ability) {
         return 0.0f;
     }
 
-    return Ability->CooldownDuration.GetValueAtLevel(Ability->GetAbilityLevel()) * (1 - CooldownReduction);
+    return Ability->GetAbilityCooldownDuration().GetValueAtLevel(Ability->GetAbilityLevel()) * (1 - CooldownReduction);
 
 }
