@@ -4,6 +4,7 @@
 #include "Unit.h"
 #include "Projectiles/MLProjectileBase.h"
 #include "Components/UnitCapsuleComponent.h"
+#include "Components/WidgetComponent.h"
 #include "Component Core/UnitMovementComponent.h"
 
 // Sets default values
@@ -14,6 +15,8 @@ AUnit::AUnit(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitiali
 
 	UnitCapsuleComponent = CreateDefaultSubobject<UUnitCapsuleComponent>(TEXT("UnitCapsule"));
 	RootComponent = UnitCapsuleComponent;
+
+	HealthBarComponent = CreateDefaultSubobject<UWidgetComponent>(TEXT("HealthBar"));
 
 	UnitCapsuleComponent->OnComponentBeginOverlap.AddDynamic(this, &AUnit::OnBeginOverlap);
 	UnitCapsuleComponent->OnComponentEndOverlap.AddDynamic(this, &AUnit::OnEndOverlap);

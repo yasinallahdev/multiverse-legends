@@ -24,6 +24,16 @@
 			"Name": "UnrealJS",
 			"Enabled": true,
 			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/be751eedc4a14cc09e39945bc5a531c4"
+		},
+		{
+			"Name": "SteamVRInput",
+			"Enabled": true,
+			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/401605a650e64a8fa3c0f45838a6357d"
+		},
+		{
+			"Name": "AutoSettings",
+			"Enabled": true,
+			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/7f6a777da2724d4a9a3dd551f03a3ad1"
 		}
 	]
 }

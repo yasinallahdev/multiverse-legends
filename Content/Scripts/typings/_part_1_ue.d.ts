@@ -1,3 +1,44 @@
+declare type EInteractorHand = 'Right' | 'Left' | 'EInteractorHand_MAX';
+declare var EInteractorHand : { Right:'Right',Left:'Left',EInteractorHand_MAX:'EInteractorHand_MAX', };
+declare class VRModeSettings extends VISettings { 
+	bEnableAutoVREditMode: boolean;
+	bAutokeySequences: boolean;
+	InteractorHand: EInteractorHand;
+	bShowWorldMovementGrid: boolean;
+	bShowWorldMovementPostProcess: boolean;
+	bShowWorldScaleProgressBar: boolean;
+	UIBrightness: number;
+	GizmoScale: number;
+	DoubleClickTime: number;
+	TriggerPressedThreshold_Vive: number;
+	TriggerPressedThreshold_Rift: number;
+	InteractorClass: Class;
+	TeleporterClass: UnrealEngineClass;
+	static Load(ResourceName: string): VRModeSettings;
+	static Find(Outer: UObject, ResourceName: string): VRModeSettings;
+	static GetDefaultObject(): VRModeSettings;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): VRModeSettings;
+	static C(Other: UObject | any): VRModeSettings;
+}
+
+declare class VRScoutingInteractor extends VREditorInteractor { 
+	FlyingIndicatorComponent: StaticMeshComponent;
+	static Load(ResourceName: string): VRScoutingInteractor;
+	static Find(Outer: UObject, ResourceName: string): VRScoutingInteractor;
+	static GetDefaultObject(): VRScoutingInteractor;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): VRScoutingInteractor;
+	static GetSelectedActors(): Actor[];
+	static C(Other: UObject | any): VRScoutingInteractor;
+}
+
+declare class ActorTransformer extends ViewportTransformer { 
+	static Load(ResourceName: string): ActorTransformer;
+	static Find(Outer: UObject, ResourceName: string): ActorTransformer;
+	static GetDefaultObject(): ActorTransformer;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): ActorTransformer;
+	static C(Other: UObject | any): ActorTransformer;
+}
+
 declare class ViewportInteractableInterface extends Interface { 
 	static Load(ResourceName: string): ViewportInteractableInterface;
 	static Find(Outer: UObject, ResourceName: string): ViewportInteractableInterface;
@@ -20087,34 +20128,5 @@ declare class MaterialExpressionDivide extends MaterialExpression {
 	static GetDefaultObject(): MaterialExpressionDivide;
 	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MaterialExpressionDivide;
 	static C(Other: UObject | any): MaterialExpressionDivide;
-}
-
-declare class MaterialExpressionDotProduct extends MaterialExpression { 
-	A: ExpressionInput;
-	B: ExpressionInput;
-	static Load(ResourceName: string): MaterialExpressionDotProduct;
-	static Find(Outer: UObject, ResourceName: string): MaterialExpressionDotProduct;
-	static GetDefaultObject(): MaterialExpressionDotProduct;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MaterialExpressionDotProduct;
-	static C(Other: UObject | any): MaterialExpressionDotProduct;
-}
-
-declare class MaterialExpressionDynamicParameter extends MaterialExpression { 
-	ParamNames: string[];
-	DefaultValue: LinearColor;
-	ParameterIndex: any;
-	static Load(ResourceName: string): MaterialExpressionDynamicParameter;
-	static Find(Outer: UObject, ResourceName: string): MaterialExpressionDynamicParameter;
-	static GetDefaultObject(): MaterialExpressionDynamicParameter;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MaterialExpressionDynamicParameter;
-	static C(Other: UObject | any): MaterialExpressionDynamicParameter;
-}
-
-declare class MaterialExpressionEyeAdaptation extends MaterialExpression { 
-	static Load(ResourceName: string): MaterialExpressionEyeAdaptation;
-	static Find(Outer: UObject, ResourceName: string): MaterialExpressionEyeAdaptation;
-	static GetDefaultObject(): MaterialExpressionEyeAdaptation;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MaterialExpressionEyeAdaptation;
-	static C(Other: UObject | any): MaterialExpressionEyeAdaptation;
 }
 

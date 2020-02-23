@@ -3,9 +3,11 @@
 
 #include "MLGameplayAbility.h"
 #include "Ability Core/Cooldown Effects/CooldownGameplayEffect.h"
+#include "Ability Core/Cost Effects/CostGameplayEffect.h"
 
 UMLGameplayAbility::UMLGameplayAbility() {
     CooldownGameplayEffectClass = UCooldownGameplayEffect::StaticClass();
+	CostGameplayEffectClass = UCostGameplayEffect::StaticClass();
 }
 
 const FGameplayTagContainer* UMLGameplayAbility::GetCooldownTags() const {

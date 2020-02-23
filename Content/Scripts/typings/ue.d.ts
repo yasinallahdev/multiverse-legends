@@ -1,6 +1,302 @@
 /// <reference path="_part_0_ue.d.ts">/>
 /// <reference path="_part_1_ue.d.ts">/>
 /// <reference path="_part_2_ue.d.ts">/>
+declare class JavascriptPDI { 
+	clone() : JavascriptPDI;
+	static C(Other: UObject | any): JavascriptPDI;
+	DrawArc(Base: Vector,X: Vector,Y: Vector,MinAngle: number,MaxAngle: number,Radius: number,Sections: number,Color: LinearColor,DepthPriority: ESceneDepthPriorityGroup): void;
+	DrawCircle(Base: Vector,X: Vector,Y: Vector,Color: LinearColor,Radius: number,NumSides: number,DepthPriority: ESceneDepthPriorityGroup,Thickness: number,DepthBias: number,bScreenSpace: boolean): void;
+	DrawConnectedArrow(ArrowToWorld: Transform,Color: LinearColor,ArrowHeight: number,ArrowWidth: number,DepthPriority: ESceneDepthPriorityGroup,Thickness: number,NumSpokes: number): void;
+	DrawDashedLine(Start: Vector,End: Vector,Color: LinearColor,DashSize: number,DepthPriority: ESceneDepthPriorityGroup,DepthBias: number): void;
+	DrawDirectionalArrow(ArrowToWorld: Transform,InColor: LinearColor,Length: number,ArrowSize: number,DepthPriority: ESceneDepthPriorityGroup,Thickness: number): void;
+	DrawOrientedWireBox(Base: Vector,X: Vector,Y: Vector,Z: Vector,Extent: Vector,Color: LinearColor,DepthPriority: ESceneDepthPriorityGroup,Thickness: number,DepthBias: number,bScreenSpace: boolean): void;
+	DrawPolygon(Verts: Vector[],InColor: LinearColor,DepthPriority: ESceneDepthPriorityGroup,RHIFeatureLevel: EJavascriptRHIFeatureLevel): void;
+	DrawWireBox(Box: Box,Color: LinearColor,DepthPriority: ESceneDepthPriorityGroup,Thickness: number,DepthBias: number,bScreenSpace: boolean): void;
+	DrawWireBox2(Matrix: Transform,Box: Box,Color: LinearColor,DepthPriority: ESceneDepthPriorityGroup,Thickness: number,DepthBias: number,bScreenSpace: boolean): void;
+	DrawWireCapsule(Base: Vector,X: Vector,Y: Vector,Z: Vector,Color: LinearColor,Radius: number,HalfHeight: number,NumSides: number,DepthPriority: ESceneDepthPriorityGroup,Thickness: number,DepthBias: number,bScreenSpace: boolean): void;
+	DrawWireChoppedCone(Base: Vector,X: Vector,Y: Vector,Z: Vector,Color: LinearColor,Radius: number,TopRadius: number,HalfHeight: number,NumSides: number,DepthPriority: ESceneDepthPriorityGroup): void;
+	DrawWireCone(Verts?: Vector[],Transform?: Transform,ConeRadius?: number,ConeAngle?: number,ConeSides?: number,Color?: LinearColor,DepthPriority?: ESceneDepthPriorityGroup,Thickness?: number,DepthBias?: number,bScreenSpace?: boolean): {Verts: Vector[]};
+	DrawWireCylinder(Base: Vector,X: Vector,Y: Vector,Z: Vector,Color: LinearColor,Radius: number,HalfHeight: number,NumSides: number,DepthPriority: ESceneDepthPriorityGroup,Thickness: number,DepthBias: number,bScreenSpace: boolean): void;
+	DrawWireDiamond(Transform: Transform,Size: number,InColor: LinearColor,DepthPriority: ESceneDepthPriorityGroup): void;
+	DrawWireSphere(Base: Vector,Color: LinearColor,Radius: number,NumSides: number,DepthPriority: ESceneDepthPriorityGroup,Thickness: number,DepthBias: number,bScreenSpace: boolean): void;
+	DrawWireSphere2(Transform: Transform,Color: LinearColor,Radius: number,NumSides: number,DepthPriority: ESceneDepthPriorityGroup,Thickness: number,DepthBias: number,bScreenSpace: boolean): void;
+	DrawWireSphereAutoSides(Base: Vector,Color: LinearColor,Radius: number,DepthPriority: ESceneDepthPriorityGroup,Thickness: number,DepthBias: number,bScreenSpace: boolean): void;
+	DrawWireSphereAutoSides2(Transform: Transform,Color: LinearColor,Radius: number,DepthPriority: ESceneDepthPriorityGroup,Thickness: number,DepthBias: number,bScreenSpace: boolean): void;
+	DrawWireSphereCappedCone(Transform: Transform,ConeRadius: number,ConeAngle: number,ConeSides: number,ArcFrequency: number,CapSegments: number,Color: LinearColor,DepthPriority: ESceneDepthPriorityGroup): void;
+	DrawWireStar(Position: Vector,Size: number,Color: LinearColor,DepthPriority: ESceneDepthPriorityGroup): void;
+	SetHitProxy(Name: string): void;
+	static DrawArc(PDI: JavascriptPDI,Base: Vector,X: Vector,Y: Vector,MinAngle: number,MaxAngle: number,Radius: number,Sections: number,Color: LinearColor,DepthPriority: ESceneDepthPriorityGroup): void;
+	static DrawCircle(PDI: JavascriptPDI,Base: Vector,X: Vector,Y: Vector,Color: LinearColor,Radius: number,NumSides: number,DepthPriority: ESceneDepthPriorityGroup,Thickness: number,DepthBias: number,bScreenSpace: boolean): void;
+	static DrawConnectedArrow(PDI: JavascriptPDI,ArrowToWorld: Transform,Color: LinearColor,ArrowHeight: number,ArrowWidth: number,DepthPriority: ESceneDepthPriorityGroup,Thickness: number,NumSpokes: number): void;
+	static DrawDashedLine(PDI: JavascriptPDI,Start: Vector,End: Vector,Color: LinearColor,DashSize: number,DepthPriority: ESceneDepthPriorityGroup,DepthBias: number): void;
+	static DrawDirectionalArrow(PDI: JavascriptPDI,ArrowToWorld: Transform,InColor: LinearColor,Length: number,ArrowSize: number,DepthPriority: ESceneDepthPriorityGroup,Thickness: number): void;
+	static DrawOrientedWireBox(PDI: JavascriptPDI,Base: Vector,X: Vector,Y: Vector,Z: Vector,Extent: Vector,Color: LinearColor,DepthPriority: ESceneDepthPriorityGroup,Thickness: number,DepthBias: number,bScreenSpace: boolean): void;
+	static DrawPolygon(PDI: JavascriptPDI,Verts: Vector[],InColor: LinearColor,DepthPriority: ESceneDepthPriorityGroup,RHIFeatureLevel: EJavascriptRHIFeatureLevel): void;
+	static DrawWireBox(PDI: JavascriptPDI,Box: Box,Color: LinearColor,DepthPriority: ESceneDepthPriorityGroup,Thickness: number,DepthBias: number,bScreenSpace: boolean): void;
+	static DrawWireBox2(PDI: JavascriptPDI,Matrix: Transform,Box: Box,Color: LinearColor,DepthPriority: ESceneDepthPriorityGroup,Thickness: number,DepthBias: number,bScreenSpace: boolean): void;
+	static DrawWireCapsule(PDI: JavascriptPDI,Base: Vector,X: Vector,Y: Vector,Z: Vector,Color: LinearColor,Radius: number,HalfHeight: number,NumSides: number,DepthPriority: ESceneDepthPriorityGroup,Thickness: number,DepthBias: number,bScreenSpace: boolean): void;
+	static DrawWireChoppedCone(PDI: JavascriptPDI,Base: Vector,X: Vector,Y: Vector,Z: Vector,Color: LinearColor,Radius: number,TopRadius: number,HalfHeight: number,NumSides: number,DepthPriority: ESceneDepthPriorityGroup): void;
+	static DrawWireCone(PDI: JavascriptPDI,Verts?: Vector[],Transform?: Transform,ConeRadius?: number,ConeAngle?: number,ConeSides?: number,Color?: LinearColor,DepthPriority?: ESceneDepthPriorityGroup,Thickness?: number,DepthBias?: number,bScreenSpace?: boolean): {Verts: Vector[]};
+	static DrawWireCylinder(PDI: JavascriptPDI,Base: Vector,X: Vector,Y: Vector,Z: Vector,Color: LinearColor,Radius: number,HalfHeight: number,NumSides: number,DepthPriority: ESceneDepthPriorityGroup,Thickness: number,DepthBias: number,bScreenSpace: boolean): void;
+	static DrawWireDiamond(PDI: JavascriptPDI,Transform: Transform,Size: number,InColor: LinearColor,DepthPriority: ESceneDepthPriorityGroup): void;
+	static DrawWireSphere(PDI: JavascriptPDI,Base: Vector,Color: LinearColor,Radius: number,NumSides: number,DepthPriority: ESceneDepthPriorityGroup,Thickness: number,DepthBias: number,bScreenSpace: boolean): void;
+	static DrawWireSphere2(PDI: JavascriptPDI,Transform: Transform,Color: LinearColor,Radius: number,NumSides: number,DepthPriority: ESceneDepthPriorityGroup,Thickness: number,DepthBias: number,bScreenSpace: boolean): void;
+	static DrawWireSphereAutoSides(PDI: JavascriptPDI,Base: Vector,Color: LinearColor,Radius: number,DepthPriority: ESceneDepthPriorityGroup,Thickness: number,DepthBias: number,bScreenSpace: boolean): void;
+	static DrawWireSphereAutoSides2(PDI: JavascriptPDI,Transform: Transform,Color: LinearColor,Radius: number,DepthPriority: ESceneDepthPriorityGroup,Thickness: number,DepthBias: number,bScreenSpace: boolean): void;
+	static DrawWireSphereCappedCone(PDI: JavascriptPDI,Transform: Transform,ConeRadius: number,ConeAngle: number,ConeSides: number,ArcFrequency: number,CapSegments: number,Color: LinearColor,DepthPriority: ESceneDepthPriorityGroup): void;
+	static DrawWireStar(PDI: JavascriptPDI,Position: Vector,Size: number,Color: LinearColor,DepthPriority: ESceneDepthPriorityGroup): void;
+	static SetHitProxy(PDI: JavascriptPDI,Name: string): void;
+}
+
+declare class JavascriptExtensibilityManager { 
+	clone() : JavascriptExtensibilityManager;
+	static C(Other: UObject | any): JavascriptExtensibilityManager;
+	AddExtender(Extender: JavascriptExtender): void;
+	AddLazyExtender(Delegates: JavascriptLazyExtenderDelegates): void;
+	RemoveAllLazyExtender(): void;
+	RemoveExtender(Extender: JavascriptExtender): void;
+	static AddExtender(Manager: JavascriptExtensibilityManager,Extender: JavascriptExtender): void;
+	static AddLazyExtender(Manager: JavascriptExtensibilityManager,Delegates: JavascriptLazyExtenderDelegates): void;
+	static RemoveAllLazyExtender(Manager: JavascriptExtensibilityManager): void;
+	static RemoveExtender(Manager: JavascriptExtensibilityManager,Extender: JavascriptExtender): void;
+	static GetMenuExtensibilityManager(What: string): JavascriptExtensibilityManager;
+	static GetToolBarExtensibilityManager(What: string): JavascriptExtensibilityManager;
+}
+
+declare class JavascriptViewportClick { 
+	clone() : JavascriptViewportClick;
+	static C(Other: UObject | any): JavascriptViewportClick;
+	GetClickPos(): IntPoint;
+	GetDirection(): Vector;
+	GetEvent(): EInputEvent;
+	GetKey(): Key;
+	GetOrigin(): Vector;
+	IsAltDown(): boolean;
+	IsControlDown(): boolean;
+	IsShiftDown(): boolean;
+	static GetClickPos(Click: JavascriptViewportClick): IntPoint;
+	static GetDirection(Click: JavascriptViewportClick): Vector;
+	static GetEvent(Click: JavascriptViewportClick): EInputEvent;
+	static GetKey(Click: JavascriptViewportClick): Key;
+	static GetOrigin(Click: JavascriptViewportClick): Vector;
+	static IsAltDown(Click: JavascriptViewportClick): boolean;
+	static IsControlDown(Click: JavascriptViewportClick): boolean;
+	static IsShiftDown(Click: JavascriptViewportClick): boolean;
+}
+
+declare class JavascriptHitProxy { 
+	clone() : JavascriptHitProxy;
+	static C(Other: UObject | any): JavascriptHitProxy;
+	GetActor(): Actor;
+	GetName(): string;
+	static GetActor(Proxy: JavascriptHitProxy): Actor;
+	static GetName(Proxy: JavascriptHitProxy): string;
+}
+
+declare type EJavascriptMessageSeverity = 'CriticalError' | 'Error' | 'PerformanceWarning' | 'Warning' | 'Info' | 'EJavascriptMessageSeverity_MAX';
+declare var EJavascriptMessageSeverity : { CriticalError:'CriticalError',Error:'Error',PerformanceWarning:'PerformanceWarning',Warning:'Warning',Info:'Info',EJavascriptMessageSeverity_MAX:'EJavascriptMessageSeverity_MAX', };
+declare class JavascriptEditorLibrary extends BlueprintFunctionLibrary { 
+	static Load(ResourceName: string): JavascriptEditorLibrary;
+	static Find(Outer: UObject, ResourceName: string): JavascriptEditorLibrary;
+	static GetDefaultObject(): JavascriptEditorLibrary;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): JavascriptEditorLibrary;
+	static UpdateModelComponents(Level: Level): void;
+	static ToggleSelect(USelection: USelection,InObject: UObject): void;
+	static SetIsTemporarilyHiddenInEditor(Actor: Actor,bIsHidden: boolean): void;
+	static SetHitProxy(PDI: JavascriptPDI,Name: string): void;
+	static SetHeightmapDataFromMemory(LandscapeInfo: LandscapeInfo,MinX: number,MinY: number,MaxX: number,MaxY: number): void;
+	static SetFolderPath_Recursively(Actor: Actor,NewFolderPath: string): void;
+	static SetFolderPath(Actor: Actor,NewFolderPath: string): void;
+	static SetAlphamapDataFromMemory(LandscapeInfo: LandscapeInfo,LayerInfo: LandscapeLayerInfoObject,MinX: number,MinY: number,MaxX: number,MaxY: number,PaintingRestriction: ELandscapeLayerPaintingRestriction): void;
+	static SetActorLocation(Actor: Actor,NewLocation: Vector,bSweep: boolean,SweepHitResult?: HitResult,bTeleport?: boolean): {SweepHitResult: HitResult, $: boolean};
+	static SetActorLabel(Actor: Actor,NewActorLabel: string,bMarkDirty: boolean): void;
+	static Select(USelection: USelection,InObject: UObject): void;
+	static SavePackage(Package: Package,Filename: string): boolean;
+	static RequestEndPlayMapInPIE(): void;
+	static ReplaceAnimNotifyClass(Sequence: AnimSequenceBase,NotifyName: string,NewNotifyName: string,NewNotifyClass: UObject): number;
+	static RemoveLevelInstance(World: World): void;
+	static RemoveExtender(Manager: JavascriptExtensibilityManager,Extender: JavascriptExtender): void;
+	static RemoveComponentFromBlueprint(Blueprint: Blueprint,RemoveComponent: ActorComponent,bPromoteChildren: boolean): void;
+	static RemoveAllLazyExtender(Manager: JavascriptExtensibilityManager): void;
+	static PostEditChange(InObject: UObject): void;
+	static OpenPopupWindow(Widget: Widget,PopupDesiredSize: Vector2D,HeadingText: string): void;
+	static OpenFileDialog(WindowHandle: JavascriptWindow,DialogTitle: string,DefaultPath: string,DefaultFile: string,FileTypes: string,Flags: number,OutFilenames?: string[]): {OutFilenames: string[], $: boolean};
+	static OpenEditorForAssetByPath(AssetPathName: string,ObjectName: string): void;
+	static OpenEditorForAsset(Asset: UObject): boolean;
+	static NotifyUpdateCurveTable(InCurveTable: CurveTable): void;
+	static ModifyObject(UObject: UObject,bAlwaysMarkDirty: boolean): void;
+	static MarkPackageDirty(InObject: UObject): boolean;
+	static LoadImageFromDiskAsync(ImagePath: string,Callback: AsyncTaskDownloadImage): boolean;
+	static LoadFileToString(Path: string,Data?: string): {Data: string, $: boolean};
+	static LoadFileToIntArray(Path: string,FileData?: number[]): {FileData: number[], $: boolean};
+	static IsShiftDown(Click: JavascriptViewportClick): boolean;
+	static IsControlDown(Click: JavascriptViewportClick): boolean;
+	static IsAssetLoaded(AssetData: JavascriptAssetData): boolean;
+	static IsAltDown(Click: JavascriptViewportClick): boolean;
+	static IsActorLabelEditable(Actor: Actor): boolean;
+	static IsActive(Transactor: Transactor): boolean;
+	static InvalidateModelGeometry(World: World,InLevel: Level): void;
+	static HasMetaData(Field: Field,Key: string): boolean;
+	static GetTransaction(Transactor: Transactor,QueueIndex: number): JavascriptTransaction;
+	static GetToolBarExtensibilityManager(What: string): JavascriptExtensibilityManager;
+	static GetTitle(Transaction: JavascriptTransaction): string;
+	static GetTagValue(AssetData: JavascriptAssetData,Name: string,OutValue?: string): {OutValue: string, $: boolean};
+	static GetSelectedObjects(USelection: USelection,Out?: UObject[]): {Out: UObject[], $: number};
+	static GetRootWindow(): JavascriptSlateWidget;
+	static GetQueueLength(Transactor: Transactor): number;
+	static GetPrimaryObject(Transaction: JavascriptTransaction): UObject;
+	static GetParentClassOfBlueprint(Blueprint: Blueprint): UnrealEngineClass;
+	static GetPackage(AssetData: JavascriptAssetData): Package;
+	static GetOrigin(Click: JavascriptViewportClick): Vector;
+	static GetName(Proxy: JavascriptHitProxy): string;
+	static GetMenuExtensibilityManager(What: string): JavascriptExtensibilityManager;
+	static GetLevelEditorActions(): JavascriptUICommandList;
+	static GetLayerInfoByName(LandscapeInfo: LandscapeInfo,LayerName: string,Owner: LandscapeProxy): LandscapeLayerInfoObject;
+	static GetLandscapeInfo(Landscape: Landscape,bSpawnNewActor: boolean): LandscapeInfo;
+	static GetLandscapeExtent(LandscapeInfo: LandscapeInfo,MinX?: number,MinY?: number,MaxX?: number,MaxY?: number): {MinX: number, MinY: number, MaxX: number, MaxY: number, $: boolean};
+	static GetKeyNameByKeyEvent(Event: KeyEvent): string;
+	static GetKey(Click: JavascriptViewportClick): Key;
+	static GetHeightmapDataToMemory(LandscapeInfo: LandscapeInfo,MinX: number,MinY: number,MaxX: number,MaxY: number): void;
+	static GetGroup(Name: string): JavascriptWorkspaceItem;
+	static GetFolderPath(Actor: Actor): string;
+	static GetEvent(Click: JavascriptViewportClick): EInputEvent;
+	static GetEngine(): EditorEngine;
+	static GetDirection(Click: JavascriptViewportClick): Vector;
+	static GetDefaultBrush(World: World): Brush;
+	static GetDataTableAsJSON(InDataTable: DataTable,InDTExportFlags: number): string;
+	static GetContext(Transaction: JavascriptTransaction): string;
+	static GetClickPos(Click: JavascriptViewportClick): IntPoint;
+	static GetClass(AssetData: JavascriptAssetData): UnrealEngineClass;
+	static GetAssetsByType(Types: string[],bRecursiveClasses: boolean): AssetData[];
+	static GetAsset(AssetData: JavascriptAssetData): UObject;
+	static GetAlphamapDataToMemory(LandscapeInfo: LandscapeInfo,LayerInfo: LandscapeLayerInfoObject,MinX: number,MinY: number,MaxX: number,MaxY: number): void;
+	static GetAllTags(AssetData: JavascriptAssetData,OutArray?: string[]): {OutArray: string[]};
+	static GetActorLocation(Actor: Actor): Vector;
+	static GetActorLabel(Actor: Actor): string;
+	static GetActor(Proxy: JavascriptHitProxy): Actor;
+	static FindWorldInPackage(Package: Package): World;
+	static ExportNavigation(InWorld: World,Path: string): string;
+	static EditorDestroyActor(World: World,Actor: Actor,bShouldModifyLevel: boolean): boolean;
+	static EditorAddModalWindow(Widget: JavascriptSlateWidget): void;
+	static DrawWireStar(PDI: JavascriptPDI,Position: Vector,Size: number,Color: LinearColor,DepthPriority: ESceneDepthPriorityGroup): void;
+	static DrawWireSphereCappedCone(PDI: JavascriptPDI,Transform: Transform,ConeRadius: number,ConeAngle: number,ConeSides: number,ArcFrequency: number,CapSegments: number,Color: LinearColor,DepthPriority: ESceneDepthPriorityGroup): void;
+	static DrawWireSphereAutoSides2(PDI: JavascriptPDI,Transform: Transform,Color: LinearColor,Radius: number,DepthPriority: ESceneDepthPriorityGroup,Thickness: number,DepthBias: number,bScreenSpace: boolean): void;
+	static DrawWireSphereAutoSides(PDI: JavascriptPDI,Base: Vector,Color: LinearColor,Radius: number,DepthPriority: ESceneDepthPriorityGroup,Thickness: number,DepthBias: number,bScreenSpace: boolean): void;
+	static DrawWireSphere2(PDI: JavascriptPDI,Transform: Transform,Color: LinearColor,Radius: number,NumSides: number,DepthPriority: ESceneDepthPriorityGroup,Thickness: number,DepthBias: number,bScreenSpace: boolean): void;
+	static DrawWireSphere(PDI: JavascriptPDI,Base: Vector,Color: LinearColor,Radius: number,NumSides: number,DepthPriority: ESceneDepthPriorityGroup,Thickness: number,DepthBias: number,bScreenSpace: boolean): void;
+	static DrawWireDiamond(PDI: JavascriptPDI,Transform: Transform,Size: number,InColor: LinearColor,DepthPriority: ESceneDepthPriorityGroup): void;
+	static DrawWireCylinder(PDI: JavascriptPDI,Base: Vector,X: Vector,Y: Vector,Z: Vector,Color: LinearColor,Radius: number,HalfHeight: number,NumSides: number,DepthPriority: ESceneDepthPriorityGroup,Thickness: number,DepthBias: number,bScreenSpace: boolean): void;
+	static DrawWireCone(PDI: JavascriptPDI,Verts?: Vector[],Transform?: Transform,ConeRadius?: number,ConeAngle?: number,ConeSides?: number,Color?: LinearColor,DepthPriority?: ESceneDepthPriorityGroup,Thickness?: number,DepthBias?: number,bScreenSpace?: boolean): {Verts: Vector[]};
+	static DrawWireChoppedCone(PDI: JavascriptPDI,Base: Vector,X: Vector,Y: Vector,Z: Vector,Color: LinearColor,Radius: number,TopRadius: number,HalfHeight: number,NumSides: number,DepthPriority: ESceneDepthPriorityGroup): void;
+	static DrawWireCapsule(PDI: JavascriptPDI,Base: Vector,X: Vector,Y: Vector,Z: Vector,Color: LinearColor,Radius: number,HalfHeight: number,NumSides: number,DepthPriority: ESceneDepthPriorityGroup,Thickness: number,DepthBias: number,bScreenSpace: boolean): void;
+	static DrawWireBox2(PDI: JavascriptPDI,Matrix: Transform,Box: Box,Color: LinearColor,DepthPriority: ESceneDepthPriorityGroup,Thickness: number,DepthBias: number,bScreenSpace: boolean): void;
+	static DrawWireBox(PDI: JavascriptPDI,Box: Box,Color: LinearColor,DepthPriority: ESceneDepthPriorityGroup,Thickness: number,DepthBias: number,bScreenSpace: boolean): void;
+	static DrawPolygon(PDI: JavascriptPDI,Verts: Vector[],InColor: LinearColor,DepthPriority: ESceneDepthPriorityGroup,RHIFeatureLevel: EJavascriptRHIFeatureLevel): void;
+	static DrawOrientedWireBox(PDI: JavascriptPDI,Base: Vector,X: Vector,Y: Vector,Z: Vector,Extent: Vector,Color: LinearColor,DepthPriority: ESceneDepthPriorityGroup,Thickness: number,DepthBias: number,bScreenSpace: boolean): void;
+	static DrawDirectionalArrow(PDI: JavascriptPDI,ArrowToWorld: Transform,InColor: LinearColor,Length: number,ArrowSize: number,DepthPriority: ESceneDepthPriorityGroup,Thickness: number): void;
+	static DrawDashedLine(PDI: JavascriptPDI,Start: Vector,End: Vector,Color: LinearColor,DashSize: number,DepthPriority: ESceneDepthPriorityGroup,DepthBias: number): void;
+	static DrawConnectedArrow(PDI: JavascriptPDI,ArrowToWorld: Transform,Color: LinearColor,ArrowHeight: number,ArrowWidth: number,DepthPriority: ESceneDepthPriorityGroup,Thickness: number,NumSpokes: number): void;
+	static DrawCircle(PDI: JavascriptPDI,Base: Vector,X: Vector,Y: Vector,Color: LinearColor,Radius: number,NumSides: number,DepthPriority: ESceneDepthPriorityGroup,Thickness: number,DepthBias: number,bScreenSpace: boolean): void;
+	static DrawArc(PDI: JavascriptPDI,Base: Vector,X: Vector,Y: Vector,MinAngle: number,MaxAngle: number,Radius: number,Sections: number,Color: LinearColor,DepthPriority: ESceneDepthPriorityGroup): void;
+	static DeselectAll(USelection: USelection,InClass: UnrealEngineClass): void;
+	static Deselect(USelection: USelection,InObject: UObject): void;
+	static DeletePackage(Package: Package): boolean;
+	static csgAdd(DefaultBrush: Brush,PolyFlags: number,BrushType: EBrushType): Brush;
+	static CreatePropertyEditorToolkit(ObjectsForPropertiesMenu: UObject[]): void;
+	static CreateLogListingWidget(InLogName: string): JavascriptSlateWidget;
+	static CreateLogListing(InLogName: string,InLabel: string): void;
+	static CreateBrushForVolumeActor(NewActor: Volume,BrushBuilder: BrushBuilder): void;
+	static CompileBlueprint(Blueprint: Blueprint): void;
+	static ClearActorLabel(Actor: Actor): void;
+	static Build(Builder: BrushBuilder,InWorld: World,InBrush: Brush): boolean;
+	static BroadcastHotReload(): void;
+	static BroadcastAssetCreated(NewAsset: UObject): void;
+	static AddWhitelistedObject(InObject: UObject): void;
+	static AddRichCurve(InCurveTable: CurveTable,Key: string,InCurve: RichCurve): void;
+	static AddLogListingMessage(InLogName: string,InSeverity: EJavascriptMessageSeverity,LogText: string): void;
+	static AddLazyExtender(Manager: JavascriptExtensibilityManager,Delegates: JavascriptLazyExtenderDelegates): void;
+	static AddGroup(Parent: JavascriptWorkspaceItem,DisplayName: string): JavascriptWorkspaceItem;
+	static AddExtender(Manager: JavascriptExtensibilityManager,Extender: JavascriptExtender): void;
+	static AddComponentsToBlueprint(Blueprint: Blueprint,Components: ActorComponent[],bHarvesting: boolean,OptionalNewRootComponent: ActorComponent,bKeepMobility: boolean): void;
+	static C(Other: UObject | any): JavascriptEditorLibrary;
+}
+
+declare class JavascriptEditorPopupWindow extends UObject { 
+	Widget: Widget;
+	static Load(ResourceName: string): JavascriptEditorPopupWindow;
+	static Find(Outer: UObject, ResourceName: string): JavascriptEditorPopupWindow;
+	static GetDefaultObject(): JavascriptEditorPopupWindow;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): JavascriptEditorPopupWindow;
+	Open(Heading: string,DesiredSize: Vector2D): boolean;
+	OnDismissed(): void;
+	static C(Other: UObject | any): JavascriptEditorPopupWindow;
+}
+
+declare class JavascriptEditorTabManager extends Widget { 
+	Layout: string;
+	Tabs: JavascriptEditorTab[];
+	static Load(ResourceName: string): JavascriptEditorTabManager;
+	static Find(Outer: UObject, ResourceName: string): JavascriptEditorTabManager;
+	static GetDefaultObject(): JavascriptEditorTabManager;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): JavascriptEditorTabManager;
+	static C(Other: UObject | any): JavascriptEditorTabManager;
+}
+
+declare class JavascriptEditorTick extends UObject { 
+	OnTick: UnrealEngineDelegate<(DeltaSeconds: number) => void>;
+	static Load(ResourceName: string): JavascriptEditorTick;
+	static Find(Outer: UObject, ResourceName: string): JavascriptEditorTick;
+	static GetDefaultObject(): JavascriptEditorTick;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): JavascriptEditorTick;
+	GetEngine(): EditorEngine;
+	ForceTick(DeltaTime: number): void;
+	static C(Other: UObject | any): JavascriptEditorTick;
+}
+
+declare class JavascriptEditorToolbar extends Widget { 
+	OnHook: UnrealEngineDelegate<() => JavascriptMenuBuilder>;
+	static Load(ResourceName: string): JavascriptEditorToolbar;
+	static Find(Outer: UObject, ResourceName: string): JavascriptEditorToolbar;
+	static GetDefaultObject(): JavascriptEditorToolbar;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): JavascriptEditorToolbar;
+	static C(Other: UObject | any): JavascriptEditorToolbar;
+}
+
+declare class JavascriptInputEventState { 
+	clone() : JavascriptInputEventState;
+	static C(Other: UObject | any): JavascriptInputEventState;
+	GetInputEvent(): EInputEvent;
+	GetKey(): Key;
+	IsAltButtonEvent(): boolean;
+	IsAltButtonPressed(): boolean;
+	IsAnyMouseButtonDown(): boolean;
+	IsButtonPressed(InKey: Key): boolean;
+	IsCtrlButtonEvent(): boolean;
+	IsCtrlButtonPressed(): boolean;
+	IsLeftMouseButtonPressed(): boolean;
+	IsMiddleMouseButtonPressed(): boolean;
+	IsMouseButtonEvent(): boolean;
+	IsRightMouseButtonPressed(): boolean;
+	IsShiftButtonEvent(): boolean;
+	IsShiftButtonPressed(): boolean;
+	IsSpaceBarPressed(): boolean;
+	static GetInputEvent(InputEvent: JavascriptInputEventState): EInputEvent;
+	static GetKey(InputEvent: JavascriptInputEventState): Key;
+	static IsAltButtonEvent(InputEvent: JavascriptInputEventState): boolean;
+	static IsAltButtonPressed(InputEvent: JavascriptInputEventState): boolean;
+	static IsAnyMouseButtonDown(InputEvent: JavascriptInputEventState): boolean;
+	static IsButtonPressed(InputEvent: JavascriptInputEventState,InKey: Key): boolean;
+	static IsCtrlButtonEvent(InputEvent: JavascriptInputEventState): boolean;
+	static IsCtrlButtonPressed(InputEvent: JavascriptInputEventState): boolean;
+	static IsLeftMouseButtonPressed(InputEvent: JavascriptInputEventState): boolean;
+	static IsMiddleMouseButtonPressed(InputEvent: JavascriptInputEventState): boolean;
+	static IsMouseButtonEvent(InputEvent: JavascriptInputEventState): boolean;
+	static IsRightMouseButtonPressed(InputEvent: JavascriptInputEventState): boolean;
+	static IsShiftButtonEvent(InputEvent: JavascriptInputEventState): boolean;
+	static IsShiftButtonPressed(InputEvent: JavascriptInputEventState): boolean;
+	static IsSpaceBarPressed(InputEvent: JavascriptInputEventState): boolean;
+}
+
 declare type EJavascriptWidgetMode = 'WM_Translate' | 'WM_TranslateRotateZ' | 'WM_2D' | 'WM_Rotate' | 'WM_Scale' | 'WM_Max' | 'WM_None';
 declare var EJavascriptWidgetMode : { WM_Translate:'WM_Translate',WM_TranslateRotateZ:'WM_TranslateRotateZ',WM_2D:'WM_2D',WM_Rotate:'WM_Rotate',WM_Scale:'WM_Scale',WM_Max:'WM_Max',WM_None:'WM_None', };
 declare class JavascriptEditorViewport extends PanelWidget { 

@@ -8174,6 +8174,116 @@ declare class AnalogInputEvent extends KeyEvent {
 	static GetKeyEventFromAnalogInputEvent(Event: AnalogInputEvent): KeyEvent;
 }
 
+declare class SettingValueMask extends UObject { 
+	static Load(ResourceName: string): SettingValueMask;
+	static Find(Outer: UObject, ResourceName: string): SettingValueMask;
+	static GetDefaultObject(): SettingValueMask;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): SettingValueMask;
+	RecombineValues(SettingValue: string,ConsoleValue: string): string;
+	MaskValue(ConsoleValue: string): string;
+	static C(Other: UObject | any): SettingValueMask;
+}
+
+declare class GameplayTag { 
+	TagName: string;
+	clone() : GameplayTag;
+	static C(Other: UObject | any): GameplayTag;
+	EqualEqual_GameplayTag(B: GameplayTag): boolean;
+	GetDebugStringFromGameplayTag(): string;
+	GetTagName(): string;
+	IsGameplayTagValid(): boolean;
+	MakeGameplayTagContainerFromTag(): GameplayTagContainer;
+	MakeLiteralGameplayTag(): GameplayTag;
+	MatchesAnyTags(OtherContainer: GameplayTagContainer,bExactMatch: boolean): boolean;
+	MatchesTag(TagTwo: GameplayTag,bExactMatch: boolean): boolean;
+	NotEqual_GameplayTag(B: GameplayTag): boolean;
+	NotEqual_TagTag(B: string): boolean;
+	static EqualEqual_GameplayTag(A: GameplayTag,B: GameplayTag): boolean;
+	static GetDebugStringFromGameplayTag(GameplayTag: GameplayTag): string;
+	static GetTagName(GameplayTag: GameplayTag): string;
+	static IsGameplayTagValid(GameplayTag: GameplayTag): boolean;
+	static MakeGameplayTagContainerFromTag(SingleTag: GameplayTag): GameplayTagContainer;
+	static MakeLiteralGameplayTag(Value: GameplayTag): GameplayTag;
+	static MatchesAnyTags(TagOne: GameplayTag,OtherContainer: GameplayTagContainer,bExactMatch: boolean): boolean;
+	static MatchesTag(TagOne: GameplayTag,TagTwo: GameplayTag,bExactMatch: boolean): boolean;
+	static NotEqual_GameplayTag(A: GameplayTag,B: GameplayTag): boolean;
+	static NotEqual_TagTag(A: GameplayTag,B: string): boolean;
+}
+
+declare class GameplayTagQuery { 
+	TokenStreamVersion: number;
+	TagDictionary: GameplayTag[];
+	QueryTokenStream: number[];
+	UserDescription: string;
+	AutoDescription: string;
+	clone() : GameplayTagQuery;
+	static C(Other: UObject | any): GameplayTagQuery;
+	IsTagQueryEmpty(): boolean;
+	MakeGameplayTagQuery(): GameplayTagQuery;
+	static IsTagQueryEmpty(TagQuery: GameplayTagQuery): boolean;
+	static MakeGameplayTagQuery(TagQuery: GameplayTagQuery): GameplayTagQuery;
+}
+
+declare class GameplayTagContainer { 
+	GameplayTags: GameplayTag[];
+	ParentTags: GameplayTag[];
+	clone() : GameplayTagContainer;
+	static C(Other: UObject | any): GameplayTagContainer;
+	AddGameplayTag(Tag?: GameplayTag): {TagContainer: GameplayTagContainer};
+	AppendGameplayTagContainers(InTagContainer?: GameplayTagContainer): {InOutTagContainer: GameplayTagContainer};
+	BreakGameplayTagContainer(GameplayTags?: GameplayTag[]): {GameplayTags: GameplayTag[]};
+	DoesContainerMatchTagQuery(TagQuery: GameplayTagQuery): boolean;
+	EqualEqual_GameplayTagContainer(B: GameplayTagContainer): boolean;
+	GetDebugStringFromGameplayTagContainer(): string;
+	GetNumGameplayTagsInContainer(): number;
+	HasAllTags(OtherContainer: GameplayTagContainer,bExactMatch: boolean): boolean;
+	HasAnyTags(OtherContainer: GameplayTagContainer,bExactMatch: boolean): boolean;
+	HasTag(Tag: GameplayTag,bExactMatch: boolean): boolean;
+	MakeLiteralGameplayTagContainer(): GameplayTagContainer;
+	NotEqual_GameplayTagContainer(B: GameplayTagContainer): boolean;
+	NotEqual_TagContainerTagContainer(B: string): boolean;
+	RemoveGameplayTag(Tag?: GameplayTag): {TagContainer: GameplayTagContainer, $: boolean};
+	static AddGameplayTag(TagContainer?: GameplayTagContainer,Tag?: GameplayTag): {TagContainer: GameplayTagContainer};
+	static AppendGameplayTagContainers(InOutTagContainer?: GameplayTagContainer,InTagContainer?: GameplayTagContainer): {InOutTagContainer: GameplayTagContainer};
+	static BreakGameplayTagContainer(GameplayTagContainer: GameplayTagContainer,GameplayTags?: GameplayTag[]): {GameplayTags: GameplayTag[]};
+	static DoesContainerMatchTagQuery(TagContainer: GameplayTagContainer,TagQuery: GameplayTagQuery): boolean;
+	static EqualEqual_GameplayTagContainer(A: GameplayTagContainer,B: GameplayTagContainer): boolean;
+	static GetDebugStringFromGameplayTagContainer(TagContainer: GameplayTagContainer): string;
+	static GetNumGameplayTagsInContainer(TagContainer: GameplayTagContainer): number;
+	static HasAllTags(TagContainer: GameplayTagContainer,OtherContainer: GameplayTagContainer,bExactMatch: boolean): boolean;
+	static HasAnyTags(TagContainer: GameplayTagContainer,OtherContainer: GameplayTagContainer,bExactMatch: boolean): boolean;
+	static HasTag(TagContainer: GameplayTagContainer,Tag: GameplayTag,bExactMatch: boolean): boolean;
+	static MakeLiteralGameplayTagContainer(Value: GameplayTagContainer): GameplayTagContainer;
+	static NotEqual_GameplayTagContainer(A: GameplayTagContainer,B: GameplayTagContainer): boolean;
+	static NotEqual_TagContainerTagContainer(A: GameplayTagContainer,B: string): boolean;
+	static RemoveGameplayTag(TagContainer?: GameplayTagContainer,Tag?: GameplayTag): {TagContainer: GameplayTagContainer, $: boolean};
+	static MakeGameplayTagContainerFromArray(GameplayTags: GameplayTag[]): GameplayTagContainer;
+}
+
+declare class AutoSettingWidget extends UserWidget { 
+	CVarName: string;
+	ValueMask: UnrealEngineClass;
+	bAutoSave: boolean;
+	bAutoApply: boolean;
+	SettingTags: GameplayTagContainer;
+	CurrentValue: string;
+	bHasUnappliedChange: boolean;
+	bHasUnsavedChange: boolean;
+	bUpdatingSettingSelection: boolean;
+	static Load(ResourceName: string): AutoSettingWidget;
+	static Find(Outer: UObject, ResourceName: string): AutoSettingWidget;
+	static GetDefaultObject(): AutoSettingWidget;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): AutoSettingWidget;
+	UpdateSelection(Value: string): void;
+	Save(): void;
+	HasUnsavedChange(): boolean;
+	HasUnappliedChange(): boolean;
+	Cancel(): void;
+	ApplySettingValue(Value: string,bSaveIfPossible: boolean): void;
+	Apply(): void;
+	static C(Other: UObject | any): AutoSettingWidget;
+}
+
 declare class UserWidget extends Widget { 
 	ColorAndOpacity: LinearColor;
 	ColorAndOpacityDelegate: UnrealEngineDelegate<() => LinearColor>;
@@ -8285,6 +8395,18 @@ declare class UserWidget extends Widget {
 	AddToViewport(ZOrder: number): void;
 	AddToPlayerScreen(ZOrder: number): boolean;
 	static C(Other: UObject | any): UserWidget;
+	ApplyChildSettings(Parent: Widget): void;
+	CancelChildSettings(Parent: Widget): void;
+	DoesAnyChildSettingHaveUnappliedChange(Parent: Widget): boolean;
+	DoesAnyChildSettingHaveUnsavedChange(Parent: Widget): boolean;
+	GetChildSettings(Parent: Widget): AutoSettingWidget[];
+	SaveChildSettings(Parent: Widget): void;
+	static ApplyChildSettings(UserWidget: UserWidget,Parent: Widget): void;
+	static CancelChildSettings(UserWidget: UserWidget,Parent: Widget): void;
+	static DoesAnyChildSettingHaveUnappliedChange(UserWidget: UserWidget,Parent: Widget): boolean;
+	static DoesAnyChildSettingHaveUnsavedChange(UserWidget: UserWidget,Parent: Widget): boolean;
+	static GetChildSettings(UserWidget: UserWidget,Parent: Widget): AutoSettingWidget[];
+	static SaveChildSettings(UserWidget: UserWidget,Parent: Widget): void;
 }
 
 declare class ViewTargetTransitionParams { 
@@ -11419,82 +11541,6 @@ declare class ChildActorComponent extends SceneComponent {
 	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): ChildActorComponent;
 	SetChildActorClass(InClass: UnrealEngineClass): void;
 	static C(Other: UObject | any): ChildActorComponent;
-}
-
-declare class GameplayTagQuery { 
-	TokenStreamVersion: number;
-	TagDictionary: GameplayTag[];
-	QueryTokenStream: number[];
-	UserDescription: string;
-	AutoDescription: string;
-	clone() : GameplayTagQuery;
-	static C(Other: UObject | any): GameplayTagQuery;
-	IsTagQueryEmpty(): boolean;
-	MakeGameplayTagQuery(): GameplayTagQuery;
-	static IsTagQueryEmpty(TagQuery: GameplayTagQuery): boolean;
-	static MakeGameplayTagQuery(TagQuery: GameplayTagQuery): GameplayTagQuery;
-}
-
-declare class GameplayTagContainer { 
-	GameplayTags: GameplayTag[];
-	ParentTags: GameplayTag[];
-	clone() : GameplayTagContainer;
-	static C(Other: UObject | any): GameplayTagContainer;
-	AddGameplayTag(Tag?: GameplayTag): {TagContainer: GameplayTagContainer};
-	AppendGameplayTagContainers(InTagContainer?: GameplayTagContainer): {InOutTagContainer: GameplayTagContainer};
-	BreakGameplayTagContainer(GameplayTags?: GameplayTag[]): {GameplayTags: GameplayTag[]};
-	DoesContainerMatchTagQuery(TagQuery: GameplayTagQuery): boolean;
-	EqualEqual_GameplayTagContainer(B: GameplayTagContainer): boolean;
-	GetDebugStringFromGameplayTagContainer(): string;
-	GetNumGameplayTagsInContainer(): number;
-	HasAllTags(OtherContainer: GameplayTagContainer,bExactMatch: boolean): boolean;
-	HasAnyTags(OtherContainer: GameplayTagContainer,bExactMatch: boolean): boolean;
-	HasTag(Tag: GameplayTag,bExactMatch: boolean): boolean;
-	MakeLiteralGameplayTagContainer(): GameplayTagContainer;
-	NotEqual_GameplayTagContainer(B: GameplayTagContainer): boolean;
-	NotEqual_TagContainerTagContainer(B: string): boolean;
-	RemoveGameplayTag(Tag?: GameplayTag): {TagContainer: GameplayTagContainer, $: boolean};
-	static AddGameplayTag(TagContainer?: GameplayTagContainer,Tag?: GameplayTag): {TagContainer: GameplayTagContainer};
-	static AppendGameplayTagContainers(InOutTagContainer?: GameplayTagContainer,InTagContainer?: GameplayTagContainer): {InOutTagContainer: GameplayTagContainer};
-	static BreakGameplayTagContainer(GameplayTagContainer: GameplayTagContainer,GameplayTags?: GameplayTag[]): {GameplayTags: GameplayTag[]};
-	static DoesContainerMatchTagQuery(TagContainer: GameplayTagContainer,TagQuery: GameplayTagQuery): boolean;
-	static EqualEqual_GameplayTagContainer(A: GameplayTagContainer,B: GameplayTagContainer): boolean;
-	static GetDebugStringFromGameplayTagContainer(TagContainer: GameplayTagContainer): string;
-	static GetNumGameplayTagsInContainer(TagContainer: GameplayTagContainer): number;
-	static HasAllTags(TagContainer: GameplayTagContainer,OtherContainer: GameplayTagContainer,bExactMatch: boolean): boolean;
-	static HasAnyTags(TagContainer: GameplayTagContainer,OtherContainer: GameplayTagContainer,bExactMatch: boolean): boolean;
-	static HasTag(TagContainer: GameplayTagContainer,Tag: GameplayTag,bExactMatch: boolean): boolean;
-	static MakeLiteralGameplayTagContainer(Value: GameplayTagContainer): GameplayTagContainer;
-	static NotEqual_GameplayTagContainer(A: GameplayTagContainer,B: GameplayTagContainer): boolean;
-	static NotEqual_TagContainerTagContainer(A: GameplayTagContainer,B: string): boolean;
-	static RemoveGameplayTag(TagContainer?: GameplayTagContainer,Tag?: GameplayTag): {TagContainer: GameplayTagContainer, $: boolean};
-	static MakeGameplayTagContainerFromArray(GameplayTags: GameplayTag[]): GameplayTagContainer;
-}
-
-declare class GameplayTag { 
-	TagName: string;
-	clone() : GameplayTag;
-	static C(Other: UObject | any): GameplayTag;
-	EqualEqual_GameplayTag(B: GameplayTag): boolean;
-	GetDebugStringFromGameplayTag(): string;
-	GetTagName(): string;
-	IsGameplayTagValid(): boolean;
-	MakeGameplayTagContainerFromTag(): GameplayTagContainer;
-	MakeLiteralGameplayTag(): GameplayTag;
-	MatchesAnyTags(OtherContainer: GameplayTagContainer,bExactMatch: boolean): boolean;
-	MatchesTag(TagTwo: GameplayTag,bExactMatch: boolean): boolean;
-	NotEqual_GameplayTag(B: GameplayTag): boolean;
-	NotEqual_TagTag(B: string): boolean;
-	static EqualEqual_GameplayTag(A: GameplayTag,B: GameplayTag): boolean;
-	static GetDebugStringFromGameplayTag(GameplayTag: GameplayTag): string;
-	static GetTagName(GameplayTag: GameplayTag): string;
-	static IsGameplayTagValid(GameplayTag: GameplayTag): boolean;
-	static MakeGameplayTagContainerFromTag(SingleTag: GameplayTag): GameplayTagContainer;
-	static MakeLiteralGameplayTag(Value: GameplayTag): GameplayTag;
-	static MatchesAnyTags(TagOne: GameplayTag,OtherContainer: GameplayTagContainer,bExactMatch: boolean): boolean;
-	static MatchesTag(TagOne: GameplayTag,TagTwo: GameplayTag,bExactMatch: boolean): boolean;
-	static NotEqual_GameplayTag(A: GameplayTag,B: GameplayTag): boolean;
-	static NotEqual_TagTag(A: GameplayTag,B: string): boolean;
 }
 
 declare type EGameplayEffectDurationType = 'Instant' | 'Infinite' | 'HasDuration' | 'EGameplayEffectDurationType_MAX';
@@ -19727,46 +19773,5 @@ declare class VISettings extends UObject {
 	static GetDefaultObject(): VISettings;
 	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): VISettings;
 	static C(Other: UObject | any): VISettings;
-}
-
-declare type EInteractorHand = 'Right' | 'Left' | 'EInteractorHand_MAX';
-declare var EInteractorHand : { Right:'Right',Left:'Left',EInteractorHand_MAX:'EInteractorHand_MAX', };
-declare class VRModeSettings extends VISettings { 
-	bEnableAutoVREditMode: boolean;
-	bAutokeySequences: boolean;
-	InteractorHand: EInteractorHand;
-	bShowWorldMovementGrid: boolean;
-	bShowWorldMovementPostProcess: boolean;
-	bShowWorldScaleProgressBar: boolean;
-	UIBrightness: number;
-	GizmoScale: number;
-	DoubleClickTime: number;
-	TriggerPressedThreshold_Vive: number;
-	TriggerPressedThreshold_Rift: number;
-	InteractorClass: Class;
-	TeleporterClass: UnrealEngineClass;
-	static Load(ResourceName: string): VRModeSettings;
-	static Find(Outer: UObject, ResourceName: string): VRModeSettings;
-	static GetDefaultObject(): VRModeSettings;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): VRModeSettings;
-	static C(Other: UObject | any): VRModeSettings;
-}
-
-declare class VRScoutingInteractor extends VREditorInteractor { 
-	FlyingIndicatorComponent: StaticMeshComponent;
-	static Load(ResourceName: string): VRScoutingInteractor;
-	static Find(Outer: UObject, ResourceName: string): VRScoutingInteractor;
-	static GetDefaultObject(): VRScoutingInteractor;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): VRScoutingInteractor;
-	static GetSelectedActors(): Actor[];
-	static C(Other: UObject | any): VRScoutingInteractor;
-}
-
-declare class ActorTransformer extends ViewportTransformer { 
-	static Load(ResourceName: string): ActorTransformer;
-	static Find(Outer: UObject, ResourceName: string): ActorTransformer;
-	static GetDefaultObject(): ActorTransformer;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): ActorTransformer;
-	static C(Other: UObject | any): ActorTransformer;
 }
 

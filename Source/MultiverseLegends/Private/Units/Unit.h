@@ -63,6 +63,9 @@ protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Ability Info")
 	uint8 bSpawnOwnedASCInBeginPlay : 1;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "UI Stuff")
+	class UWidgetComponent* HealthBarComponent;
+
 	// Called when something crosses the Unit Component.
 	UFUNCTION()
 	virtual void OnBeginOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
@@ -79,7 +82,6 @@ protected:
 
 	UPROPERTY(BlueprintAssignable, Category = "Unit Events")
 	FOnDealDamage EventOnDealtDamage;
-
 
 private:
 

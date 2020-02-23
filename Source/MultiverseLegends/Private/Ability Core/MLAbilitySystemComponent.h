@@ -39,21 +39,23 @@ class UMLAbilitySystemComponent final : public UAbilitySystemComponent {
 	GENERATED_BODY()
 
 public:
-
+ 
 	UFUNCTION(BlueprintCallable)
 	float GetStat(EMLStatType StatType, EStatGroup StatGroup = EStatGroup::Total) const;
 
 	AActor* GetOwnerActor() const;
 
+	// Returns Current Ability System Component Level.
 	UFUNCTION(BlueprintCallable)
 	float GetLevel() const { return AbilitySystemLevel; }
 
+	// Sets the level for this ability system component. This is directly used to determine stats.
 	UFUNCTION(BlueprintCallable)
-	float SetLevel(float NewLevel) { return FMath::RoundToZero(NewLevel); }
+	float SetLevel(float NewLevel) { return AbilitySystemLevel = FMath::RoundToZero(NewLevel); }
 
 	bool SetGameplayEffectDurationHandle(FActiveGameplayEffectHandle Handle, float NewDuration);
 
-protected:
+protected: 
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Flags")
 	uint8 bHasMovementAttributes : 1;
@@ -67,5 +69,5 @@ protected:
 private:
 
 	float AbilitySystemLevel;
-	
+	         
 };

@@ -32,6 +32,6 @@ float UAbilityCooldownMMC::CalculateBaseMagnitude_Implementation(const FGameplay
         return 0.0f;
     }
 
-    return Ability->GetAbilityCooldownDuration().GetValueAtLevel(Ability->GetAbilityLevel()) * (1 - CooldownReduction);
+    return Ability->GetAbilityCooldownDurationAtLevel(Ability->GetAbilityLevel()) * (1 - CooldownReduction);
 
 }

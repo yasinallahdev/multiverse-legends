@@ -1,4 +1,4 @@
-﻿,Tag,DevComment
+﻿0,Tag,DevComment
 CrowdControlTag_00001,Debuffs.CrowdControl,Base Tag for Crowd Control.
 CrowdControlTag_00002,Debuffs.CrowdControl.Ground,"Units with this tag are grounded, preventing them from using dash or teleport abilities and item actives."
 CrowdControlTag_00003,Debuffs.CrowdControl.Root,"Units with this tag are rooted, grounding them and preventing normal movement."

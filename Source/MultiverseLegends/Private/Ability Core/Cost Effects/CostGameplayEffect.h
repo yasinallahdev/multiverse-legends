@@ -7,11 +7,15 @@
 #include "CostGameplayEffect.generated.h"
 
 /**
- * 
+ * The reusable Cost Gameplay Effect, designed to prevent duplication of GameplayEffects for Ability Cost.
  */
 UCLASS()
-class UCostGameplayEffect : public UGameplayEffect
-{
+class UCostGameplayEffect : public UGameplayEffect {
+
 	GENERATED_BODY()
+
+public:
+
+	UCostGameplayEffect(const FObjectInitializer& ObjectInitializer);
 	
 };

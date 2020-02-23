@@ -12,6 +12,6 @@ float UAbilityCostMMC::CalculateBaseMagnitude_Implementation(const FGameplayEffe
         return 0.0f;
     }
 
-    return Ability->GetAbilityCost().GetValueAtLevel(Ability->GetAbilityLevel());
+    return Ability->GetAbilityCostAtLevel(Ability->GetAbilityLevel());
 
 }
