@@ -10,5 +10,7 @@ public class MultiverseLegends : ModuleRules
 
         PublicDependencyModuleNames.AddRange(new string[] { "GameplayAbilities", "GameplayTasks", "GameplayTags", "Core", "CoreUObject", "Engine", "InputCore",
 		"HeadMountedDisplay", "NavigationSystem", "AIModule", "V8" });
+
+		PrivateDependencyModuleNames.AddRange(new string[] { "UMG", "Slate", "SlateCore" });
     }
 }

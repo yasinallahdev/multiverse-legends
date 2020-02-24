@@ -15,6 +15,8 @@ enum class ETeam : uint8 {
 	Purple
 };
 
+class UWidgetComponent;
+
 UCLASS()
 class AUnit : public ACharacter, public IMLAbilitySystemInterface {
 
@@ -64,7 +66,7 @@ protected:
 	uint8 bSpawnOwnedASCInBeginPlay : 1;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "UI Stuff")
-	class UWidgetComponent* HealthBarComponent;
+	UWidgetComponent* HealthBarComponent;
 
 	// Called when something crosses the Unit Component.
 	UFUNCTION()
