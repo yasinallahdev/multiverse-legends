@@ -21,9 +21,9 @@ ACameraPawn::ACameraPawn() {
 	SpringArm = CreateDefaultSubobject<USpringArmComponent>(TEXT("SpringArm"));
 	SpringArm->SetupAttachment(RootScene);
 	SpringArm->bDoCollisionTest = false;
-	SpringArm->bAbsoluteRotation = true; // Don't want arm to rotate when character does
+	SpringArm->SetUsingAbsoluteRotation(true); // Don't want arm to rotate when character does
 	SpringArm->TargetArmLength = 800.f;
-	SpringArm->RelativeRotation = FRotator(-60.f, 0.f, 0.f);
+	SpringArm->SetRelativeRotation(FRotator(-60.f, 0.f, 0.f));
 
 	CameraComponent = CreateDefaultSubobject<UMLCameraComponent>(TEXT("CameraComponent"));
 	CameraComponent->SetupAttachment(SpringArm, USpringArmComponent::SocketName);
