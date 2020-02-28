@@ -24,6 +24,19 @@ void UUnitMovementComponent::SetUpdatedComponent(USceneComponent* NewUpdatedComp
 float UUnitMovementComponent::GetMaxSpeed() const {
 
     UMLAbilitySystemComponent* AbilitySystem = UnitOwner->GetMLAbilitySystemComponent();
-    return (AbilitySystem)?(AbilitySystem->GetStat(EMLStatType::MovementSpeed)):(0.0f);
+
+    if(AbilitySystem) {
+        FGameplayTagContainer MovementBlockedTags;
+        MovementBlockedTags.AddTag(FGameplayTag::RequestGameplayTag(TEXT("Debuffs.CrowdControl.Root")));
+        MovementBlockedTags.AddTag(FGameplayTag::RequestGameplayTag(TEXT("Debuffs.CrowdControl.Stun")));
+        MovementBlockedTags.AddTag(FGameplayTag::RequestGameplayTag(TEXT("Debuffs.CrowdControl.Airborne")));
+        MovementBlockedTags.AddTag(FGameplayTag::RequestGameplayTag(TEXT("Debuffs.CrowdControl.Suppression")));
+        if(AbilitySystem->HasAnyMatchingGameplayTags(MovementBlockedTags)) {
+            return 0;
+        }
+        return AbilitySystem->GetStat(EMLStatType::MovementSpeed);
+    } else {
+        return 0;
+    }
 
 }

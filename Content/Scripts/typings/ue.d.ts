@@ -1,6 +1,2340 @@
 /// <reference path="_part_0_ue.d.ts">/>
 /// <reference path="_part_1_ue.d.ts">/>
 /// <reference path="_part_2_ue.d.ts">/>
+declare class JavascriptTextBlock extends TextBlock { 
+	HighlightText: string;
+	HighlightTextDelegate: UnrealEngineDelegate<() => string>;
+	static Load(ResourceName: string): JavascriptTextBlock;
+	static Find(Outer: UObject, ResourceName: string): JavascriptTextBlock;
+	static GetDefaultObject(): JavascriptTextBlock;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): JavascriptTextBlock;
+	SetHighlightText(InHighlightText: string): void;
+	static C(Other: UObject | any): JavascriptTextBlock;
+}
+
+declare class JavascriptTileView extends TileView { 
+	JavascriptContext: JavascriptContext;
+	static Load(ResourceName: string): JavascriptTileView;
+	static Find(Outer: UObject, ResourceName: string): JavascriptTileView;
+	static GetDefaultObject(): JavascriptTileView;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): JavascriptTileView;
+	OnSelectionChanged(UObject: UObject,Type: ESelectInfo): void;
+	OnDoubleClick(UObject: UObject): void;
+	OnClick(UObject: UObject): void;
+	static C(Other: UObject | any): JavascriptTileView;
+}
+
+declare class JavascriptToolbarButtonContext extends UObject { 
+	OnGetLabel: UnrealEngineDelegate<() => string>;
+	OnGetTooltip: UnrealEngineDelegate<() => string>;
+	OnGetIcon: UnrealEngineDelegate<() => JavascriptSlateIcon>;
+	OnExecuteAction: UnrealEngineDelegate<(EditingObject: UObject) => void>;
+	OnCanExecuteAction: UnrealEngineDelegate<(EditingObject: UObject) => boolean>;
+	OnIsActionChecked: UnrealEngineDelegate<(EditingObject: UObject) => boolean>;
+	OnIsActionButtonVisible: UnrealEngineDelegate<(EditingObject: UObject) => boolean>;
+	static Load(ResourceName: string): JavascriptToolbarButtonContext;
+	static Find(Outer: UObject, ResourceName: string): JavascriptToolbarButtonContext;
+	static GetDefaultObject(): JavascriptToolbarButtonContext;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): JavascriptToolbarButtonContext;
+	UnmarkReferencedObject(): void;
+	MarkReferencedObject(): void;
+	static C(Other: UObject | any): JavascriptToolbarButtonContext;
+}
+
+declare class JavascriptUMGBlueprintLibrary extends BlueprintFunctionLibrary { 
+	static Load(ResourceName: string): JavascriptUMGBlueprintLibrary;
+	static Find(Outer: UObject, ResourceName: string): JavascriptUMGBlueprintLibrary;
+	static GetDefaultObject(): JavascriptUMGBlueprintLibrary;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): JavascriptUMGBlueprintLibrary;
+	static SlateColor_UseSubduedForeground(): SlateColor;
+	static SlateColor_UseForeground(): SlateColor;
+	static GetLineLength(TargetTextLayout: JavascriptTextLayout): number;
+	static GetAsText(TextLayout: JavascriptTextLayout): string;
+	static DrawSpaceSpline(Context?: PaintContext,InStart?: Vector2D,InStartDir?: Vector2D,InEnd?: Vector2D,InEndDir?: Vector2D,InThickness?: number,InTint?: LinearColor): {Context: PaintContext};
+	static ClearLines(TextLayout?: JavascriptTextLayout): {TextLayout: JavascriptTextLayout};
+	static AddLine(TextLayout?: JavascriptTextLayout,Model?: JavascriptTextModel,Runs?: JavascriptSlateTextRun[]): {TextLayout: JavascriptTextLayout};
+	static C(Other: UObject | any): JavascriptUMGBlueprintLibrary;
+}
+
+declare class JavascriptSlateStyle { 
+	clone() : JavascriptSlateStyle;
+	static C(Other: UObject | any): JavascriptSlateStyle;
+	AddBorderBrush(PropertyName: string,InImageName: string,InMargin: Margin,InColorAndOpacity: LinearColor,InImageType: ESlateBrushImageType): void;
+	AddBoxBrush(PropertyName: string,InImageName: string,InMargin: Margin,InColorAndOpacity: LinearColor,InImageType: ESlateBrushImageType): void;
+	AddFontInfo(PropertyName: string,FontInfo: SlateFontInfo): void;
+	AddImageBrush(PropertyName: string,InImageName: string,InImageSize: Vector2D,InTint: LinearColor,InTiling: ESlateBrushTileType,InImageType: ESlateBrushImageType): void;
+	AddSound(PropertyName: string,Sound: SlateSound): void;
+	Register(): void;
+	RootToContentDir(RelativePath: string): string;
+	RootToCoreContentDir(RelativePath: string): string;
+	SetContentRoot(InContentRootDir: string): void;
+	SetCoreContentRoot(InCoreContentRootDir: string): void;
+	Unregister(): void;
+	static AddBorderBrush(StyleSet: JavascriptSlateStyle,PropertyName: string,InImageName: string,InMargin: Margin,InColorAndOpacity: LinearColor,InImageType: ESlateBrushImageType): void;
+	static AddBoxBrush(StyleSet: JavascriptSlateStyle,PropertyName: string,InImageName: string,InMargin: Margin,InColorAndOpacity: LinearColor,InImageType: ESlateBrushImageType): void;
+	static AddFontInfo(StyleSet: JavascriptSlateStyle,PropertyName: string,FontInfo: SlateFontInfo): void;
+	static AddImageBrush(StyleSet: JavascriptSlateStyle,PropertyName: string,InImageName: string,InImageSize: Vector2D,InTint: LinearColor,InTiling: ESlateBrushTileType,InImageType: ESlateBrushImageType): void;
+	static AddSound(StyleSet: JavascriptSlateStyle,PropertyName: string,Sound: SlateSound): void;
+	static Register(StyleSet: JavascriptSlateStyle): void;
+	static RootToContentDir(StyleSet: JavascriptSlateStyle,RelativePath: string): string;
+	static RootToCoreContentDir(StyleSet: JavascriptSlateStyle,RelativePath: string): string;
+	static SetContentRoot(StyleSet: JavascriptSlateStyle,InContentRootDir: string): void;
+	static SetCoreContentRoot(StyleSet: JavascriptSlateStyle,InCoreContentRootDir: string): void;
+	static Unregister(StyleSet: JavascriptSlateStyle): void;
+	static CreateSlateStyle(InStyleSetName: string): JavascriptSlateStyle;
+}
+
+declare class JavascriptUMGLibrary extends BlueprintFunctionLibrary { 
+	static Load(ResourceName: string): JavascriptUMGLibrary;
+	static Find(Outer: UObject, ResourceName: string): JavascriptUMGLibrary;
+	static GetDefaultObject(): JavascriptUMGLibrary;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): JavascriptUMGLibrary;
+	static Unregister(StyleSet: JavascriptSlateStyle): void;
+	static TakeWidget(Widget: Widget): JavascriptSlateWidget;
+	static ShowWindow(NewWindow: JavascriptSlateWidget): void;
+	static SetCoreContentRoot(StyleSet: JavascriptSlateStyle,InCoreContentRootDir: string): void;
+	static SetContentRoot(StyleSet: JavascriptSlateStyle,InContentRootDir: string): void;
+	static SetContent(TargetWidget: NativeWidgetHost,SlateWidget: JavascriptSlateWidget): Widget;
+	static RootToCoreContentDir(StyleSet: JavascriptSlateStyle,RelativePath: string): string;
+	static RootToContentDir(StyleSet: JavascriptSlateStyle,RelativePath: string): string;
+	static Register(StyleSet: JavascriptSlateStyle): void;
+	static GetRootWindow(): JavascriptSlateWidget;
+	static GenerateDynamicImageResource(InDynamicBrushName: string): Vector2D;
+	static CreateSlateStyle(InStyleSetName: string): JavascriptSlateStyle;
+	static AddWindowAsNativeChild(NewWindow: JavascriptSlateWidget,RootWindow: JavascriptSlateWidget): void;
+	static AddWindow(NewWindow: JavascriptSlateWidget,bShowImmediately: boolean): void;
+	static AddSound(StyleSet: JavascriptSlateStyle,PropertyName: string,Sound: SlateSound): void;
+	static AddImageBrush(StyleSet: JavascriptSlateStyle,PropertyName: string,InImageName: string,InImageSize: Vector2D,InTint: LinearColor,InTiling: ESlateBrushTileType,InImageType: ESlateBrushImageType): void;
+	static AddFontInfo(StyleSet: JavascriptSlateStyle,PropertyName: string,FontInfo: SlateFontInfo): void;
+	static AddBoxBrush(StyleSet: JavascriptSlateStyle,PropertyName: string,InImageName: string,InMargin: Margin,InColorAndOpacity: LinearColor,InImageType: ESlateBrushImageType): void;
+	static AddBorderBrush(StyleSet: JavascriptSlateStyle,PropertyName: string,InImageName: string,InMargin: Margin,InColorAndOpacity: LinearColor,InImageType: ESlateBrushImageType): void;
+	static C(Other: UObject | any): JavascriptUMGLibrary;
+}
+
+declare class JavascriptWidget extends UserWidget { 
+	JavascriptContext: JavascriptContext;
+	OnInputActionEvent: UnrealEngineMulticastDelegate<(ActionName: string) => void>;
+	OnReleaseActionEvent: UnrealEngineMulticastDelegate<(ActionName: string) => void>;
+	OnInputAxisEvent: UnrealEngineMulticastDelegate<(Axis: number, AxisName: string) => void>;
+	ContentSlot: PanelSlot;
+	static Load(ResourceName: string): JavascriptWidget;
+	static Find(Outer: UObject, ResourceName: string): JavascriptWidget;
+	static GetDefaultObject(): JavascriptWidget;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): JavascriptWidget;
+	SetRootWidget(Widget: Widget): void;
+	RemoveChild(): boolean;
+	OnReleaseInputActionByName(ActionName: string): void;
+	OnListenForInputAxis(AxisName: string,EventType: EInputEvent,bConsume: boolean): void;
+	OnListenForInputAction(ActionName: string,EventType: EInputEvent,bConsume: boolean): void;
+	OnInputAxisByName(Axis: number,ActionName: string): void;
+	OnInputActionByName(ActionName: string): void;
+	OnDestroy(bReleaseChildren: boolean): void;
+	static HasValidCachedWidget(Widget: Widget): boolean;
+	static CallSynchronizeProperties(WidgetOrSlot: Visual): void;
+	AddChild(Content: Widget): PanelSlot;
+	static C(Other: UObject | any): JavascriptWidget;
+}
+
+declare type EJavascriptWindowType = 'Normal' | 'Menu' | 'ToolTip' | 'Notification' | 'CursorDecorator' | 'EJavascriptWindowType_MAX';
+declare var EJavascriptWindowType : { Normal:'Normal',Menu:'Menu',ToolTip:'ToolTip',Notification:'Notification',CursorDecorator:'CursorDecorator',EJavascriptWindowType_MAX:'EJavascriptWindowType_MAX', };
+declare class WindowStyle extends SlateWidgetStyle { 
+	MinimizeButtonStyle: ButtonStyle;
+	MaximizeButtonStyle: ButtonStyle;
+	RestoreButtonStyle: ButtonStyle;
+	CloseButtonStyle: ButtonStyle;
+	TitleTextStyle: TextBlockStyle;
+	ActiveTitleBrush: SlateBrush;
+	InactiveTitleBrush: SlateBrush;
+	FlashTitleBrush: SlateBrush;
+	BackgroundColor: SlateColor;
+	OutlineBrush: SlateBrush;
+	OutlineColor: SlateColor;
+	BorderBrush: SlateBrush;
+	BackgroundBrush: SlateBrush;
+	ChildBackgroundBrush: SlateBrush;
+	clone() : WindowStyle;
+	static C(Other: UObject | any): WindowStyle;
+}
+
+declare type EJavascriptAutoCenter = 'None' | 'PrimaryWorkArea' | 'PreferredWorkArea' | 'EJavascriptAutoCenter_MAX';
+declare var EJavascriptAutoCenter : { None:'None',PrimaryWorkArea:'PrimaryWorkArea',PreferredWorkArea:'PreferredWorkArea',EJavascriptAutoCenter_MAX:'EJavascriptAutoCenter_MAX', };
+declare type EJavascriptWindowTransparency = 'None' | 'PerWindow' | 'EJavascriptWindowTransparency_MAX';
+declare var EJavascriptWindowTransparency : { None:'None',PerWindow:'PerWindow',EJavascriptWindowTransparency_MAX:'EJavascriptWindowTransparency_MAX', };
+declare type EJavascriptSizingRule = 'FixedSize' | 'Autosized' | 'UserSized' | 'EJavascriptSizingRule_MAX';
+declare var EJavascriptSizingRule : { FixedSize:'FixedSize',Autosized:'Autosized',UserSized:'UserSized',EJavascriptSizingRule_MAX:'EJavascriptSizingRule_MAX', };
+declare class JavascriptWindow extends ContentWidget { 
+	Type: EJavascriptWindowType;
+	Style: WindowStyle;
+	Title: string;
+	bDragAnywhere: boolean;
+	AutoCenter: EJavascriptAutoCenter;
+	ScreenPosition: Vector2D;
+	ClientSize: Vector2D;
+	SupportsTransparency: EJavascriptWindowTransparency;
+	InitialOpacity: number;
+	IsInitiallyMaximized: boolean;
+	SizingRule: EJavascriptSizingRule;
+	IsPopupWindow: boolean;
+	FocusWhenFirstShown: boolean;
+	ActivateWhenFirstShown: boolean;
+	UseOSWindowBorder: boolean;
+	HasCloseButton: boolean;
+	SupportsMaximize: boolean;
+	SupportsMinimize: boolean;
+	CreateTitleBar: boolean;
+	SaneWindowPlacement: boolean;
+	LayoutBorder: Margin;
+	UserResizeBorder: Margin;
+	OnWindowClosed: UnrealEngineDelegate<() => void>;
+	OnWindowDeactivated: UnrealEngineDelegate<() => void>;
+	IsTopmostWindow: boolean;
+	static Load(ResourceName: string): JavascriptWindow;
+	static Find(Outer: UObject, ResourceName: string): JavascriptWindow;
+	static GetDefaultObject(): JavascriptWindow;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): JavascriptWindow;
+	ShowWindow(): void;
+	SetOpacity(InOpacity: number): void;
+	Resize(NewSize: Vector2D): void;
+	ReshapeWindow(NewPosition: Vector2D,NewSize: Vector2D): void;
+	RequestDestroyWindow(): void;
+	MoveWindowTo(NewPosition: Vector2D): void;
+	HideWindow(): void;
+	FlashWindow(): void;
+	EnableWindow(bEnable: boolean): void;
+	DestroyWindowImmediately(): void;
+	BringToFront(): void;
+	static C(Other: UObject | any): JavascriptWindow;
+	OpenFileDialog(DialogTitle: string,DefaultPath: string,DefaultFile: string,FileTypes: string,Flags: number,OutFilenames?: string[]): {OutFilenames: string[], $: boolean};
+	static OpenFileDialog(WindowHandle: JavascriptWindow,DialogTitle: string,DefaultPath: string,DefaultFile: string,FileTypes: string,Flags: number,OutFilenames?: string[]): {OutFilenames: string[], $: boolean};
+}
+
+declare class JavascriptHyperlinkSignature__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): JavascriptHyperlinkSignature__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): JavascriptHyperlinkSignature__PythonCallable;
+	static GetDefaultObject(): JavascriptHyperlinkSignature__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): JavascriptHyperlinkSignature__PythonCallable;
+	static C(Other: UObject | any): JavascriptHyperlinkSignature__PythonCallable;
+}
+
+declare class OnInputActionEvent__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): OnInputActionEvent__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): OnInputActionEvent__PythonCallable;
+	static GetDefaultObject(): OnInputActionEvent__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnInputActionEvent__PythonCallable;
+	static C(Other: UObject | any): OnInputActionEvent__PythonCallable;
+}
+
+declare class OnInputAxisEvent__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): OnInputAxisEvent__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): OnInputAxisEvent__PythonCallable;
+	static GetDefaultObject(): OnInputAxisEvent__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnInputAxisEvent__PythonCallable;
+	static C(Other: UObject | any): OnInputAxisEvent__PythonCallable;
+}
+
+declare class OnComboBoxOpened__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): OnComboBoxOpened__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): OnComboBoxOpened__PythonCallable;
+	static GetDefaultObject(): OnComboBoxOpened__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnComboBoxOpened__PythonCallable;
+	static C(Other: UObject | any): OnComboBoxOpened__PythonCallable;
+}
+
+declare class OnGetContent__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): OnGetContent__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): OnGetContent__PythonCallable;
+	static GetDefaultObject(): OnGetContent__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnGetContent__PythonCallable;
+	static C(Other: UObject | any): OnGetContent__PythonCallable;
+}
+
+declare class OnIsOpenChanged__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): OnIsOpenChanged__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): OnIsOpenChanged__PythonCallable;
+	static GetDefaultObject(): OnIsOpenChanged__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnIsOpenChanged__PythonCallable;
+	static C(Other: UObject | any): OnIsOpenChanged__PythonCallable;
+}
+
+declare class BoolDelegate__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): BoolDelegate__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): BoolDelegate__PythonCallable;
+	static GetDefaultObject(): BoolDelegate__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): BoolDelegate__PythonCallable;
+	static C(Other: UObject | any): BoolDelegate__PythonCallable;
+}
+
+declare class IconDelegate__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): IconDelegate__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): IconDelegate__PythonCallable;
+	static GetDefaultObject(): IconDelegate__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): IconDelegate__PythonCallable;
+	static C(Other: UObject | any): IconDelegate__PythonCallable;
+}
+
+declare class TextDelegate__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): TextDelegate__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): TextDelegate__PythonCallable;
+	static GetDefaultObject(): TextDelegate__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): TextDelegate__PythonCallable;
+	static C(Other: UObject | any): TextDelegate__PythonCallable;
+}
+
+declare class WidgetDelegate__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): WidgetDelegate__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): WidgetDelegate__PythonCallable;
+	static GetDefaultObject(): WidgetDelegate__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): WidgetDelegate__PythonCallable;
+	static C(Other: UObject | any): WidgetDelegate__PythonCallable;
+}
+
+declare class OnContextMenuOpening__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): OnContextMenuOpening__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): OnContextMenuOpening__PythonCallable;
+	static GetDefaultObject(): OnContextMenuOpening__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnContextMenuOpening__PythonCallable;
+	static C(Other: UObject | any): OnContextMenuOpening__PythonCallable;
+}
+
+declare class OnExpansionChanged__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): OnExpansionChanged__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): OnExpansionChanged__PythonCallable;
+	static GetDefaultObject(): OnExpansionChanged__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnExpansionChanged__PythonCallable;
+	static C(Other: UObject | any): OnExpansionChanged__PythonCallable;
+}
+
+declare class OnGenerateRow__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): OnGenerateRow__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): OnGenerateRow__PythonCallable;
+	static GetDefaultObject(): OnGenerateRow__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnGenerateRow__PythonCallable;
+	static C(Other: UObject | any): OnGenerateRow__PythonCallable;
+}
+
+declare class OnGetChildrenUObject__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): OnGetChildrenUObject__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): OnGetChildrenUObject__PythonCallable;
+	static GetDefaultObject(): OnGetChildrenUObject__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnGetChildrenUObject__PythonCallable;
+	static C(Other: UObject | any): OnGetChildrenUObject__PythonCallable;
+}
+
+declare class ActionCheckStateDelegate__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): ActionCheckStateDelegate__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): ActionCheckStateDelegate__PythonCallable;
+	static GetDefaultObject(): ActionCheckStateDelegate__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): ActionCheckStateDelegate__PythonCallable;
+	static C(Other: UObject | any): ActionCheckStateDelegate__PythonCallable;
+}
+
+declare class ExecuteAction__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): ExecuteAction__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): ExecuteAction__PythonCallable;
+	static GetDefaultObject(): ExecuteAction__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): ExecuteAction__PythonCallable;
+	static C(Other: UObject | any): ExecuteAction__PythonCallable;
+}
+
+declare class OnVScrollBarUserScrolled__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): OnVScrollBarUserScrolled__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): OnVScrollBarUserScrolled__PythonCallable;
+	static GetDefaultObject(): OnVScrollBarUserScrolled__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnVScrollBarUserScrolled__PythonCallable;
+	static C(Other: UObject | any): OnVScrollBarUserScrolled__PythonCallable;
+}
+
+declare class SetText__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): SetText__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): SetText__PythonCallable;
+	static GetDefaultObject(): SetText__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): SetText__PythonCallable;
+	static C(Other: UObject | any): SetText__PythonCallable;
+}
+
+declare class JavascriptCanExecuteActionWithEditingObject__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): JavascriptCanExecuteActionWithEditingObject__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): JavascriptCanExecuteActionWithEditingObject__PythonCallable;
+	static GetDefaultObject(): JavascriptCanExecuteActionWithEditingObject__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): JavascriptCanExecuteActionWithEditingObject__PythonCallable;
+	static C(Other: UObject | any): JavascriptCanExecuteActionWithEditingObject__PythonCallable;
+}
+
+declare class JavascriptExecuteActionWithEditingObject__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): JavascriptExecuteActionWithEditingObject__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): JavascriptExecuteActionWithEditingObject__PythonCallable;
+	static GetDefaultObject(): JavascriptExecuteActionWithEditingObject__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): JavascriptExecuteActionWithEditingObject__PythonCallable;
+	static C(Other: UObject | any): JavascriptExecuteActionWithEditingObject__PythonCallable;
+}
+
+declare class OnWindowDeactivated__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): OnWindowDeactivated__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): OnWindowDeactivated__PythonCallable;
+	static GetDefaultObject(): OnWindowDeactivated__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnWindowDeactivated__PythonCallable;
+	static C(Other: UObject | any): OnWindowDeactivated__PythonCallable;
+}
+
+declare class OnWindowWidgetClosed__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): OnWindowWidgetClosed__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): OnWindowWidgetClosed__PythonCallable;
+	static GetDefaultObject(): OnWindowWidgetClosed__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnWindowWidgetClosed__PythonCallable;
+	static C(Other: UObject | any): OnWindowWidgetClosed__PythonCallable;
+}
+
+declare type EJavascriptHttpRequestStatus = 'NotStarted' | 'Processing' | 'Failed' | 'Succeeded' | 'EJavascriptHttpRequestStatus_MAX';
+declare var EJavascriptHttpRequestStatus : { NotStarted:'NotStarted',Processing:'Processing',Failed:'Failed',Succeeded:'Succeeded',EJavascriptHttpRequestStatus_MAX:'EJavascriptHttpRequestStatus_MAX', };
+declare class JavascriptHttpRequest extends UObject { 
+	OnComplete: UnrealEngineDelegate<(successful: boolean) => void>;
+	OnProgress: UnrealEngineDelegate<(sent: number, recv: number) => void>;
+	static Load(ResourceName: string): JavascriptHttpRequest;
+	static Find(Outer: UObject, ResourceName: string): JavascriptHttpRequest;
+	static GetDefaultObject(): JavascriptHttpRequest;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): JavascriptHttpRequest;
+	SetVerb(Verb: string): void;
+	SetURL(URL: string): void;
+	SetHeader(HeaderName: string,HeaderValue: string): void;
+	SetContentWithFiles(FilePaths: string[],Boundary: string,Content: string): void;
+	SetContentFromMemory(): void;
+	SetContentAsString(ContentString: string): void;
+	ProcessRequest(): boolean;
+	GetVerb(): string;
+	GetStatus(): EJavascriptHttpRequestStatus;
+	GetResponseCode(): number;
+	GetElapsedTime(): number;
+	GetContentToMemory(): void;
+	GetContentLength(): number;
+	GetContentAsString(): string;
+	CancelRequest(): void;
+	static C(Other: UObject | any): JavascriptHttpRequest;
+}
+
+declare class JavascriptHttpRequestCompleteDelegate__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): JavascriptHttpRequestCompleteDelegate__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): JavascriptHttpRequestCompleteDelegate__PythonCallable;
+	static GetDefaultObject(): JavascriptHttpRequestCompleteDelegate__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): JavascriptHttpRequestCompleteDelegate__PythonCallable;
+	static C(Other: UObject | any): JavascriptHttpRequestCompleteDelegate__PythonCallable;
+}
+
+declare class JavascriptHttpRequestProgressDelegate__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): JavascriptHttpRequestProgressDelegate__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): JavascriptHttpRequestProgressDelegate__PythonCallable;
+	static GetDefaultObject(): JavascriptHttpRequestProgressDelegate__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): JavascriptHttpRequestProgressDelegate__PythonCallable;
+	static C(Other: UObject | any): JavascriptHttpRequestProgressDelegate__PythonCallable;
+}
+
+declare class JavascriptWebSocket extends UObject { 
+	OnReceived: UnrealEngineMulticastDelegate<() => void>;
+	OnConnected: UnrealEngineMulticastDelegate<() => void>;
+	OnError: UnrealEngineMulticastDelegate<() => void>;
+	static Load(ResourceName: string): JavascriptWebSocket;
+	static Find(Outer: UObject, ResourceName: string): JavascriptWebSocket;
+	static GetDefaultObject(): JavascriptWebSocket;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): JavascriptWebSocket;
+	Tick(): void;
+	SendMemory(NumBytes: number): void;
+	RemoteEndPoint(): string;
+	LocalEndPoint(): string;
+	GetReceivedBytes(): number;
+	Flush(): void;
+	Dispose(): void;
+	CopyBuffer(): void;
+	static Connect(Endpoint: string): JavascriptWebSocket;
+	static C(Other: UObject | any): JavascriptWebSocket;
+}
+
+declare class JavascriptWebSocketServer extends UObject { 
+	OnConnected: UnrealEngineMulticastDelegate<(WebSocket: JavascriptWebSocket) => void>;
+	Connections: JavascriptWebSocket[];
+	static Load(ResourceName: string): JavascriptWebSocketServer;
+	static Find(Outer: UObject, ResourceName: string): JavascriptWebSocketServer;
+	static GetDefaultObject(): JavascriptWebSocketServer;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): JavascriptWebSocketServer;
+	Tick(): void;
+	Info(): string;
+	Dispose(): void;
+	static Create(Port: number): JavascriptWebSocketServer;
+	static C(Other: UObject | any): JavascriptWebSocketServer;
+}
+
+declare class OnWebSocketDelegate__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): OnWebSocketDelegate__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): OnWebSocketDelegate__PythonCallable;
+	static GetDefaultObject(): OnWebSocketDelegate__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnWebSocketDelegate__PythonCallable;
+	static C(Other: UObject | any): OnWebSocketDelegate__PythonCallable;
+}
+
+declare class OnWebSocketServerDelegate__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): OnWebSocketServerDelegate__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): OnWebSocketServerDelegate__PythonCallable;
+	static GetDefaultObject(): OnWebSocketServerDelegate__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnWebSocketServerDelegate__PythonCallable;
+	static C(Other: UObject | any): OnWebSocketServerDelegate__PythonCallable;
+}
+
+declare class TcpMessagingSettings extends UObject { 
+	EnableTransport: boolean;
+	ListenEndpoint: string;
+	ConnectToEndpoints: string[];
+	ConnectionRetryDelay: number;
+	static Load(ResourceName: string): TcpMessagingSettings;
+	static Find(Outer: UObject, ResourceName: string): TcpMessagingSettings;
+	static GetDefaultObject(): TcpMessagingSettings;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): TcpMessagingSettings;
+	static C(Other: UObject | any): TcpMessagingSettings;
+}
+
+declare class UdpMessagingSettings extends UObject { 
+	EnableTransport: boolean;
+	bAutoRepair: boolean;
+	UnicastEndpoint: string;
+	MulticastEndpoint: string;
+	MulticastTimeToLive: number;
+	StaticEndpoints: string[];
+	EnableTunnel: boolean;
+	TunnelUnicastEndpoint: string;
+	TunnelMulticastEndpoint: string;
+	RemoteTunnelEndpoints: string[];
+	static Load(ResourceName: string): UdpMessagingSettings;
+	static Find(Outer: UObject, ResourceName: string): UdpMessagingSettings;
+	static GetDefaultObject(): UdpMessagingSettings;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): UdpMessagingSettings;
+	static C(Other: UObject | any): UdpMessagingSettings;
+}
+
+declare type EActorSequenceObjectReferenceType = 'ContextActor' | 'ExternalActor' | 'Component' | 'EActorSequenceObjectReferenceType_MAX';
+declare var EActorSequenceObjectReferenceType : { ContextActor:'ContextActor',ExternalActor:'ExternalActor',Component:'Component',EActorSequenceObjectReferenceType_MAX:'EActorSequenceObjectReferenceType_MAX', };
+declare class ActorSequenceObjectReference { 
+	Type: EActorSequenceObjectReferenceType;
+	ActorId: Guid;
+	PathToComponent: string;
+	clone() : ActorSequenceObjectReference;
+	static C(Other: UObject | any): ActorSequenceObjectReference;
+}
+
+declare class ActorSequenceObjectReferences { 
+	Array: ActorSequenceObjectReference[];
+	clone() : ActorSequenceObjectReferences;
+	static C(Other: UObject | any): ActorSequenceObjectReferences;
+}
+
+declare class ActorSequenceObjectReferenceMap { 
+	BindingIds: Guid[];
+	References: ActorSequenceObjectReferences[];
+	clone() : ActorSequenceObjectReferenceMap;
+	static C(Other: UObject | any): ActorSequenceObjectReferenceMap;
+}
+
+declare class ActorSequence extends MovieSceneSequence { 
+	MovieScene: MovieScene;
+	ObjectReferences: ActorSequenceObjectReferenceMap;
+	bHasBeenInitialized: boolean;
+	static Load(ResourceName: string): ActorSequence;
+	static Find(Outer: UObject, ResourceName: string): ActorSequence;
+	static GetDefaultObject(): ActorSequence;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): ActorSequence;
+	static C(Other: UObject | any): ActorSequence;
+}
+
+declare class ActorSequencePlayer extends MovieSceneSequencePlayer { 
+	static Load(ResourceName: string): ActorSequencePlayer;
+	static Find(Outer: UObject, ResourceName: string): ActorSequencePlayer;
+	static GetDefaultObject(): ActorSequencePlayer;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): ActorSequencePlayer;
+	static C(Other: UObject | any): ActorSequencePlayer;
+}
+
+declare class ActorSequenceComponent extends ActorComponent { 
+	PlaybackSettings: MovieSceneSequencePlaybackSettings;
+	Sequence: ActorSequence;
+	SequencePlayer: ActorSequencePlayer;
+	static Load(ResourceName: string): ActorSequenceComponent;
+	static Find(Outer: UObject, ResourceName: string): ActorSequenceComponent;
+	static GetDefaultObject(): ActorSequenceComponent;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): ActorSequenceComponent;
+	static C(Other: UObject | any): ActorSequenceComponent;
+}
+
+declare type ETargetDataFilterSelf = 'TDFS_Any' | 'TDFS_NoSelf' | 'TDFS_NoOthers' | 'TDFS_MAX';
+declare var ETargetDataFilterSelf : { TDFS_Any:'TDFS_Any',TDFS_NoSelf:'TDFS_NoSelf',TDFS_NoOthers:'TDFS_NoOthers',TDFS_MAX:'TDFS_MAX', };
+declare class GameplayTargetDataFilter { 
+	SelfActor: Actor;
+	SelfFilter: ETargetDataFilterSelf;
+	RequiredActorClass: UnrealEngineClass;
+	bReverseFilter: boolean;
+	clone() : GameplayTargetDataFilter;
+	static C(Other: UObject | any): GameplayTargetDataFilter;
+	MakeFilterHandle(FilterActor: Actor): GameplayTargetDataFilterHandle;
+	static MakeFilterHandle(Filter: GameplayTargetDataFilter,FilterActor: Actor): GameplayTargetDataFilterHandle;
+}
+
+declare class AbilitySystemBlueprintLibrary extends BlueprintFunctionLibrary { 
+	static Load(ResourceName: string): AbilitySystemBlueprintLibrary;
+	static Find(Outer: UObject, ResourceName: string): AbilitySystemBlueprintLibrary;
+	static GetDefaultObject(): AbilitySystemBlueprintLibrary;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): AbilitySystemBlueprintLibrary;
+	static TargetDataHasOrigin(TargetData: GameplayAbilityTargetDataHandle,index: number): boolean;
+	static TargetDataHasHitResult(HitResult: GameplayAbilityTargetDataHandle,index: number): boolean;
+	static TargetDataHasEndPoint(TargetData: GameplayAbilityTargetDataHandle,index: number): boolean;
+	static TargetDataHasActor(TargetData: GameplayAbilityTargetDataHandle,index: number): boolean;
+	static SetStackCountToMax(SpecHandle: GameplayEffectSpecHandle): GameplayEffectSpecHandle;
+	static SetStackCount(SpecHandle: GameplayEffectSpecHandle,StackCount: number): GameplayEffectSpecHandle;
+	static SetDuration(SpecHandle: GameplayEffectSpecHandle,Duration: number): GameplayEffectSpecHandle;
+	static SendGameplayEventToActor(Actor: Actor,EventTag: GameplayTag,Payload: GameplayEventData): void;
+	static NotEqual_GameplayAttributeGameplayAttribute(AttributeA: GameplayAttribute,AttributeB: GameplayAttribute): boolean;
+	static MakeSpecHandle(InGameplayEffect: GameplayEffect,InInstigator: Actor,InEffectCauser: Actor,InLevel: number): GameplayEffectSpecHandle;
+	static MakeGameplayCueParameters(NormalizedMagnitude: number,RawMagnitude: number,EffectContext: GameplayEffectContextHandle,MatchedTagName: GameplayTag,OriginalTag: GameplayTag,AggregatedSourceTags: GameplayTagContainer,AggregatedTargetTags: GameplayTagContainer,Location: Vector,Normal: Vector,Instigator: Actor,EffectCauser: Actor,SourceObject: UObject,PhysicalMaterial: PhysicalMaterial,GameplayEffectLevel: number,AbilityLevel: number,TargetAttachComponent: SceneComponent): GameplayCueParameters;
+	static MakeFilterHandle(Filter: GameplayTargetDataFilter,FilterActor: Actor): GameplayTargetDataFilterHandle;
+	static IsValid(Attribute: GameplayAttribute): boolean;
+	static IsInstigatorLocallyControlledPlayer(Parameters: GameplayCueParameters): boolean;
+	static IsInstigatorLocallyControlled(Parameters: GameplayCueParameters): boolean;
+	static HasHitResult(Parameters: GameplayCueParameters): boolean;
+	static GetTargetDataOrigin(TargetData: GameplayAbilityTargetDataHandle,index: number): Transform;
+	static GetTargetDataEndPointTransform(TargetData: GameplayAbilityTargetDataHandle,index: number): Transform;
+	static GetTargetDataEndPoint(TargetData: GameplayAbilityTargetDataHandle,index: number): Vector;
+	static GetOrigin(Parameters: GameplayCueParameters): Vector;
+	static GetModifiedAttributeMagnitude(SpecHandle: GameplayEffectSpecHandle,Attribute: GameplayAttribute): number;
+	static GetInstigatorTransform(Parameters: GameplayCueParameters): Transform;
+	static GetInstigatorActor(Parameters: GameplayCueParameters): Actor;
+	static GetHitResultFromTargetData(HitResult: GameplayAbilityTargetDataHandle,index: number): HitResult;
+	static GetHitResult(Parameters: GameplayCueParameters): HitResult;
+	static GetGameplayCueEndLocationAndNormal(TargetActor: Actor,Parameters: GameplayCueParameters,Location?: Vector,Normal?: Vector): {Location: Vector, Normal: Vector, $: boolean};
+	static GetGameplayCueDirection(TargetActor: Actor,Parameters: GameplayCueParameters,Direction?: Vector): {Direction: Vector, $: boolean};
+	static GetFloatAttributeFromAbilitySystemComponent(AbilitySystem: AbilitySystemComponent,Attribute: GameplayAttribute,bSuccessfullyFoundAttribute?: boolean): {bSuccessfullyFoundAttribute: boolean, $: number};
+	static GetFloatAttributeBaseFromAbilitySystemComponent(AbilitySystemComponent: AbilitySystemComponent,Attribute: GameplayAttribute,bSuccessfullyFoundAttribute?: boolean): {bSuccessfullyFoundAttribute: boolean, $: number};
+	static GetFloatAttributeBase(Actor: Actor,Attribute: GameplayAttribute,bSuccessfullyFoundAttribute?: boolean): {bSuccessfullyFoundAttribute: boolean, $: number};
+	static GetFloatAttribute(Actor: Actor,Attribute: GameplayAttribute,bSuccessfullyFoundAttribute?: boolean): {bSuccessfullyFoundAttribute: boolean, $: number};
+	static GetEffectContext(SpecHandle: GameplayEffectSpecHandle): GameplayEffectContextHandle;
+	static GetDataCountFromTargetData(TargetData: GameplayAbilityTargetDataHandle): number;
+	static GetAllLinkedGameplayEffectSpecHandles(SpecHandle: GameplayEffectSpecHandle): GameplayEffectSpecHandle[];
+	static GetAllActorsFromTargetData(TargetData: GameplayAbilityTargetDataHandle): Actor[];
+	static GetActorsFromTargetData(TargetData: GameplayAbilityTargetDataHandle,index: number): Actor[];
+	static GetActorCount(Parameters: GameplayCueParameters): number;
+	static GetActorByIndex(Parameters: GameplayCueParameters,index: number): Actor;
+	static GetActiveGameplayEffectTotalDuration(ActiveHandle: ActiveGameplayEffectHandle): number;
+	static GetActiveGameplayEffectStartTime(ActiveHandle: ActiveGameplayEffectHandle): number;
+	static GetActiveGameplayEffectStackLimitCount(ActiveHandle: ActiveGameplayEffectHandle): number;
+	static GetActiveGameplayEffectStackCount(ActiveHandle: ActiveGameplayEffectHandle): number;
+	static GetActiveGameplayEffectRemainingDuration(WorldContextObject: UObject,ActiveHandle: ActiveGameplayEffectHandle): number;
+	static GetActiveGameplayEffectExpectedEndTime(ActiveHandle: ActiveGameplayEffectHandle): number;
+	static GetActiveGameplayEffectDebugString(ActiveHandle: ActiveGameplayEffectHandle): string;
+	static GetAbilitySystemComponent(Actor: Actor): AbilitySystemComponent;
+	static FilterTargetData(TargetDataHandle: GameplayAbilityTargetDataHandle,ActorFilterClass: GameplayTargetDataFilterHandle): GameplayAbilityTargetDataHandle;
+	static EvaluateAttributeValueWithTagsAndBase(AbilitySystem: AbilitySystemComponent,Attribute: GameplayAttribute,SourceTags: GameplayTagContainer,TargetTags: GameplayTagContainer,BaseValue: number,bSuccess?: boolean): {bSuccess: boolean, $: number};
+	static EvaluateAttributeValueWithTags(AbilitySystem: AbilitySystemComponent,Attribute: GameplayAttribute,SourceTags: GameplayTagContainer,TargetTags: GameplayTagContainer,bSuccess?: boolean): {bSuccess: boolean, $: number};
+	static EqualEqual_GameplayAttributeGameplayAttribute(AttributeA: GameplayAttribute,AttributeB: GameplayAttribute): boolean;
+	static EffectContextSetOrigin(EffectContext: GameplayEffectContextHandle,Origin: Vector): void;
+	static EffectContextIsValid(EffectContext: GameplayEffectContextHandle): boolean;
+	static EffectContextIsInstigatorLocallyControlled(EffectContext: GameplayEffectContextHandle): boolean;
+	static EffectContextHasHitResult(EffectContext: GameplayEffectContextHandle): boolean;
+	static EffectContextGetSourceObject(EffectContext: GameplayEffectContextHandle): UObject;
+	static EffectContextGetOriginalInstigatorActor(EffectContext: GameplayEffectContextHandle): Actor;
+	static EffectContextGetOrigin(EffectContext: GameplayEffectContextHandle): Vector;
+	static EffectContextGetInstigatorActor(EffectContext: GameplayEffectContextHandle): Actor;
+	static EffectContextGetHitResult(EffectContext: GameplayEffectContextHandle): HitResult;
+	static EffectContextGetEffectCauser(EffectContext: GameplayEffectContextHandle): Actor;
+	static EffectContextAddHitResult(EffectContext: GameplayEffectContextHandle,HitResult: HitResult,bReset: boolean): void;
+	static DoesTargetDataContainActor(TargetData: GameplayAbilityTargetDataHandle,index: number,Actor: Actor): boolean;
+	static DoesGameplayCueMeetTagRequirements(Parameters: GameplayCueParameters,SourceTagReqs: GameplayTagRequirements,TargetTagReqs: GameplayTagRequirements): boolean;
+	static CloneSpecHandle(InNewInstigator: Actor,InEffectCauser: Actor,GameplayEffectSpecHandle_Clone: GameplayEffectSpecHandle): GameplayEffectSpecHandle;
+	static BreakGameplayCueParameters(Parameters: GameplayCueParameters,NormalizedMagnitude?: number,RawMagnitude?: number,EffectContext?: GameplayEffectContextHandle,MatchedTagName?: GameplayTag,OriginalTag?: GameplayTag,AggregatedSourceTags?: GameplayTagContainer,AggregatedTargetTags?: GameplayTagContainer,Location?: Vector,Normal?: Vector,Instigator?: Actor,EffectCauser?: Actor,SourceObject?: UObject,PhysicalMaterial?: PhysicalMaterial,GameplayEffectLevel?: number,AbilityLevel?: number,TargetAttachComponent?: SceneComponent): {NormalizedMagnitude: number, RawMagnitude: number, EffectContext: GameplayEffectContextHandle, MatchedTagName: GameplayTag, OriginalTag: GameplayTag, AggregatedSourceTags: GameplayTagContainer, AggregatedTargetTags: GameplayTagContainer, Location: Vector, Normal: Vector, Instigator: Actor, EffectCauser: Actor, SourceObject: UObject, PhysicalMaterial: PhysicalMaterial, GameplayEffectLevel: number, AbilityLevel: number, TargetAttachComponent: SceneComponent};
+	static AssignTagSetByCallerMagnitude(SpecHandle: GameplayEffectSpecHandle,DataTag: GameplayTag,Magnitude: number): GameplayEffectSpecHandle;
+	static AssignSetByCallerMagnitude(SpecHandle: GameplayEffectSpecHandle,DataName: string,Magnitude: number): GameplayEffectSpecHandle;
+	static AppendTargetDataHandle(TargetHandle: GameplayAbilityTargetDataHandle,HandleToAdd: GameplayAbilityTargetDataHandle): GameplayAbilityTargetDataHandle;
+	static AddLinkedGameplayEffectSpec(SpecHandle: GameplayEffectSpecHandle,LinkedGameplayEffectSpec: GameplayEffectSpecHandle): GameplayEffectSpecHandle;
+	static AddLinkedGameplayEffect(SpecHandle: GameplayEffectSpecHandle,LinkedGameplayEffect: UnrealEngineClass): GameplayEffectSpecHandle;
+	static AddGrantedTags(SpecHandle: GameplayEffectSpecHandle,NewGameplayTags: GameplayTagContainer): GameplayEffectSpecHandle;
+	static AddGrantedTag(SpecHandle: GameplayEffectSpecHandle,NewGameplayTag: GameplayTag): GameplayEffectSpecHandle;
+	static AddAssetTags(SpecHandle: GameplayEffectSpecHandle,NewGameplayTags: GameplayTagContainer): GameplayEffectSpecHandle;
+	static AddAssetTag(SpecHandle: GameplayEffectSpecHandle,NewGameplayTag: GameplayTag): GameplayEffectSpecHandle;
+	static AbilityTargetDataFromLocations(SourceLocation: GameplayAbilityTargetingLocationInfo,TargetLocation: GameplayAbilityTargetingLocationInfo): GameplayAbilityTargetDataHandle;
+	static AbilityTargetDataFromHitResult(HitResult: HitResult): GameplayAbilityTargetDataHandle;
+	static AbilityTargetDataFromActorArray(ActorArray: Actor[],OneTargetPerHandle: boolean): GameplayAbilityTargetDataHandle;
+	static AbilityTargetDataFromActor(Actor: Actor): GameplayAbilityTargetDataHandle;
+	static C(Other: UObject | any): AbilitySystemBlueprintLibrary;
+}
+
+declare class AbilitySystemDebugHUD extends HUD { 
+	static GetDefaultObject(): AbilitySystemDebugHUD;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): AbilitySystemDebugHUD;
+	static C(Other: UObject | any): AbilitySystemDebugHUD;
+}
+
+declare class NetSerializeScriptStructCache { 
+	ScriptStructs: ScriptStruct[];
+	clone() : NetSerializeScriptStructCache;
+	static C(Other: UObject | any): NetSerializeScriptStructCache;
+}
+
+declare class GameplayTagReponsePair { 
+	Tag: GameplayTag;
+	ResponseGameplayEffect: UnrealEngineClass;
+	ResponseGameplayEffects: UnrealEngineClass[];
+	SoftCountCap: number;
+	clone() : GameplayTagReponsePair;
+	static C(Other: UObject | any): GameplayTagReponsePair;
+}
+
+declare class GameplayTagResponseTableEntry { 
+	Positive: GameplayTagReponsePair;
+	Negative: GameplayTagReponsePair;
+	clone() : GameplayTagResponseTableEntry;
+	static C(Other: UObject | any): GameplayTagResponseTableEntry;
+}
+
+declare class GameplayTagReponseTable extends DataAsset { 
+	Entries: GameplayTagResponseTableEntry[];
+	static Load(ResourceName: string): GameplayTagReponseTable;
+	static Find(Outer: UObject, ResourceName: string): GameplayTagReponseTable;
+	static GetDefaultObject(): GameplayTagReponseTable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): GameplayTagReponseTable;
+	TagResponseEvent(Tag: GameplayTag,NewCount: number,ASC: AbilitySystemComponent,idx: number): void;
+	static C(Other: UObject | any): GameplayTagReponseTable;
+}
+
+declare class GameplayCueNotifyData { 
+	GameplayCueTag: GameplayTag;
+	GameplayCueNotifyObj: SoftObjectPath;
+	LoadedGameplayCueClass: UnrealEngineClass;
+	clone() : GameplayCueNotifyData;
+	static C(Other: UObject | any): GameplayCueNotifyData;
+}
+
+declare class GameplayCueSet extends DataAsset { 
+	GameplayCueData: GameplayCueNotifyData[];
+	static Load(ResourceName: string): GameplayCueSet;
+	static Find(Outer: UObject, ResourceName: string): GameplayCueSet;
+	static GetDefaultObject(): GameplayCueSet;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): GameplayCueSet;
+	static C(Other: UObject | any): GameplayCueSet;
+}
+
+declare class GameplayCueObjectLibrary { 
+	Paths: string[];
+	ActorObjectLibrary: ObjectLibrary;
+	StaticObjectLibrary: ObjectLibrary;
+	CueSet: GameplayCueSet;
+	bShouldSyncScan: boolean;
+	bShouldAsyncLoad: boolean;
+	bShouldSyncLoad: boolean;
+	bHasBeenInitialized: boolean;
+	clone() : GameplayCueObjectLibrary;
+	static C(Other: UObject | any): GameplayCueObjectLibrary;
+}
+
+declare class GameplayTagReferenceHelper { 
+	clone() : GameplayTagReferenceHelper;
+	static C(Other: UObject | any): GameplayTagReferenceHelper;
+}
+
+declare type EGameplayCueEvent = 'OnActive' | 'WhileActive' | 'Executed' | 'Removed' | 'EGameplayCueEvent_MAX';
+declare var EGameplayCueEvent : { OnActive:'OnActive',WhileActive:'WhileActive',Executed:'Executed',Removed:'Removed',EGameplayCueEvent_MAX:'EGameplayCueEvent_MAX', };
+declare class GameplayCueNotify_Actor extends Actor { 
+	bAutoDestroyOnRemove: boolean;
+	AutoDestroyDelay: number;
+	WarnIfTimelineIsStillRunning: boolean;
+	WarnIfLatentActionIsStillRunning: boolean;
+	GameplayCueTag: GameplayTag;
+	ReferenceHelper: GameplayTagReferenceHelper;
+	GameplayCueName: string;
+	bAutoAttachToOwner: boolean;
+	IsOverride: boolean;
+	bUniqueInstancePerInstigator: boolean;
+	bUniqueInstancePerSourceObject: boolean;
+	bAllowMultipleOnActiveEvents: boolean;
+	bAllowMultipleWhileActiveEvents: boolean;
+	NumPreallocatedInstances: number;
+	static GetDefaultObject(): GameplayCueNotify_Actor;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): GameplayCueNotify_Actor;
+	WhileActive(MyTarget: Actor,Parameters: GameplayCueParameters): boolean;
+	OnRemove(MyTarget: Actor,Parameters: GameplayCueParameters): boolean;
+	OnOwnerDestroyed(DestroyedActor: Actor): void;
+	OnExecute(MyTarget: Actor,Parameters: GameplayCueParameters): boolean;
+	OnActive(MyTarget: Actor,Parameters: GameplayCueParameters): boolean;
+	K2_HandleGameplayCue(MyTarget: Actor,EventType: EGameplayCueEvent,Parameters: GameplayCueParameters): void;
+	K2_EndGameplayCue(): void;
+	static C(Other: UObject | any): GameplayCueNotify_Actor;
+}
+
+declare type EGameplayCuePayloadType = 'EffectContext' | 'CueParameters' | 'FromSpec' | 'EGameplayCuePayloadType_MAX';
+declare var EGameplayCuePayloadType : { EffectContext:'EffectContext',CueParameters:'CueParameters',FromSpec:'FromSpec',EGameplayCuePayloadType_MAX:'EGameplayCuePayloadType_MAX', };
+declare class GameplayCuePendingExecute { 
+	PredictionKey: PredictionKey;
+	PayloadType: EGameplayCuePayloadType;
+	OwningComponent: AbilitySystemComponent;
+	FromSpec: GameplayEffectSpecForRPC;
+	CueParameters: GameplayCueParameters;
+	clone() : GameplayCuePendingExecute;
+	static C(Other: UObject | any): GameplayCuePendingExecute;
+}
+
+declare class PreallocationInfo { 
+	ClassesNeedingPreallocation: UnrealEngineClass[];
+	clone() : PreallocationInfo;
+	static C(Other: UObject | any): PreallocationInfo;
+}
+
+declare class GameplayCueManager extends DataAsset { 
+	RuntimeGameplayCueObjectLibrary: GameplayCueObjectLibrary;
+	EditorGameplayCueObjectLibrary: GameplayCueObjectLibrary;
+	LoadedGameplayCueNotifyClasses: UnrealEngineClass[];
+	GameplayCueClassesForPreallocation: UnrealEngineClass[];
+	PendingExecuteCues: GameplayCuePendingExecute[];
+	GameplayCueSendContextCount: number;
+	PreallocationInfoList_Internal: PreallocationInfo[];
+	static Load(ResourceName: string): GameplayCueManager;
+	static Find(Outer: UObject, ResourceName: string): GameplayCueManager;
+	static GetDefaultObject(): GameplayCueManager;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): GameplayCueManager;
+	static C(Other: UObject | any): GameplayCueManager;
+}
+
+declare class AbilitySystemGlobals extends UObject { 
+	AbilitySystemGlobalsClassName: SoftClassPath;
+	ActivateFailIsDeadTag: GameplayTag;
+	ActivateFailIsDeadName: string;
+	ActivateFailCooldownTag: GameplayTag;
+	ActivateFailCooldownName: string;
+	ActivateFailCostTag: GameplayTag;
+	ActivateFailCostName: string;
+	ActivateFailTagsBlockedTag: GameplayTag;
+	ActivateFailTagsBlockedName: string;
+	ActivateFailTagsMissingTag: GameplayTag;
+	ActivateFailTagsMissingName: string;
+	ActivateFailNetworkingTag: GameplayTag;
+	ActivateFailNetworkingName: string;
+	MinimalReplicationTagCountBits: number;
+	TargetDataStructCache: NetSerializeScriptStructCache;
+	bAllowGameplayModEvaluationChannels: boolean;
+	DefaultGameplayModEvaluationChannel: EGameplayModEvaluationChannel;
+	GameplayModEvaluationChannelAliases: string;
+	GlobalCurveTableName: SoftObjectPath;
+	GlobalCurveTable: CurveTable;
+	GlobalAttributeMetaDataTableName: SoftObjectPath;
+	GlobalAttributeMetaDataTable: DataTable;
+	GlobalAttributeSetDefaultsTableName: SoftObjectPath;
+	GlobalAttributeSetDefaultsTableNames: SoftObjectPath[];
+	GlobalAttributeDefaultsTables: CurveTable[];
+	GlobalGameplayCueManagerClass: SoftObjectPath;
+	GlobalGameplayCueManagerName: SoftObjectPath;
+	GameplayCueNotifyPaths: string[];
+	GameplayTagResponseTableName: SoftObjectPath;
+	GameplayTagResponseTable: GameplayTagReponseTable;
+	PredictTargetGameplayEffects: boolean;
+	GlobalGameplayCueManager: GameplayCueManager;
+	static Load(ResourceName: string): AbilitySystemGlobals;
+	static Find(Outer: UObject, ResourceName: string): AbilitySystemGlobals;
+	static GetDefaultObject(): AbilitySystemGlobals;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): AbilitySystemGlobals;
+	ToggleIgnoreAbilitySystemCosts(): void;
+	ToggleIgnoreAbilitySystemCooldowns(): void;
+	static C(Other: UObject | any): AbilitySystemGlobals;
+}
+
+declare class AbilitySystemInterface extends Interface { 
+	static Load(ResourceName: string): AbilitySystemInterface;
+	static Find(Outer: UObject, ResourceName: string): AbilitySystemInterface;
+	static GetDefaultObject(): AbilitySystemInterface;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): AbilitySystemInterface;
+	static C(Other: UObject | any): AbilitySystemInterface;
+}
+
+declare class AbilitySystemReplicationProxyInterface extends Interface { 
+	static Load(ResourceName: string): AbilitySystemReplicationProxyInterface;
+	static Find(Outer: UObject, ResourceName: string): AbilitySystemReplicationProxyInterface;
+	static GetDefaultObject(): AbilitySystemReplicationProxyInterface;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): AbilitySystemReplicationProxyInterface;
+	static C(Other: UObject | any): AbilitySystemReplicationProxyInterface;
+}
+
+declare class AbilitySystemTestAttributeSet extends AttributeSet { 
+	MaxHealth: number;
+	Health: number;
+	Mana: number;
+	MaxMana: number;
+	Damage: number;
+	SpellDamage: number;
+	PhysicalDamage: number;
+	CritChance: number;
+	CritMultiplier: number;
+	ArmorDamageReduction: number;
+	DodgeChance: number;
+	LifeSteal: number;
+	Strength: number;
+	StackingAttribute1: number;
+	StackingAttribute2: number;
+	NoStackAttribute: number;
+	static Load(ResourceName: string): AbilitySystemTestAttributeSet;
+	static Find(Outer: UObject, ResourceName: string): AbilitySystemTestAttributeSet;
+	static GetDefaultObject(): AbilitySystemTestAttributeSet;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): AbilitySystemTestAttributeSet;
+	static C(Other: UObject | any): AbilitySystemTestAttributeSet;
+}
+
+declare class AbilitySystemTestPawn extends DefaultPawn { 
+	AbilitySystemComponent: AbilitySystemComponent;
+	static GetDefaultObject(): AbilitySystemTestPawn;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): AbilitySystemTestPawn;
+	static C(Other: UObject | any): AbilitySystemTestPawn;
+}
+
+declare class AbilityTask extends GameplayTask { 
+	Ability: GameplayAbility;
+	AbilitySystemComponent: AbilitySystemComponent;
+	static Load(ResourceName: string): AbilityTask;
+	static Find(Outer: UObject, ResourceName: string): AbilityTask;
+	static GetDefaultObject(): AbilityTask;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): AbilityTask;
+	static C(Other: UObject | any): AbilityTask;
+}
+
+declare type ERootMotionFinishVelocityMode = 'MaintainLastRootMotionVelocity' | 'SetVelocity' | 'ClampVelocity' | 'ERootMotionFinishVelocityMode_MAX';
+declare var ERootMotionFinishVelocityMode : { MaintainLastRootMotionVelocity:'MaintainLastRootMotionVelocity',SetVelocity:'SetVelocity',ClampVelocity:'ClampVelocity',ERootMotionFinishVelocityMode_MAX:'ERootMotionFinishVelocityMode_MAX', };
+declare class AbilityTask_ApplyRootMotion_Base extends AbilityTask { 
+	ForceName: string;
+	FinishVelocityMode: ERootMotionFinishVelocityMode;
+	FinishSetVelocity: Vector;
+	FinishClampVelocity: number;
+	MovementComponent: CharacterMovementComponent;
+	static Load(ResourceName: string): AbilityTask_ApplyRootMotion_Base;
+	static Find(Outer: UObject, ResourceName: string): AbilityTask_ApplyRootMotion_Base;
+	static GetDefaultObject(): AbilityTask_ApplyRootMotion_Base;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): AbilityTask_ApplyRootMotion_Base;
+	static C(Other: UObject | any): AbilityTask_ApplyRootMotion_Base;
+}
+
+declare class AbilityTask_ApplyRootMotionConstantForce extends AbilityTask_ApplyRootMotion_Base { 
+	OnFinish: UnrealEngineMulticastDelegate<() => void>;
+	WorldDirection: Vector;
+	Strength: number;
+	Duration: number;
+	bIsAdditive: boolean;
+	StrengthOverTime: CurveFloat;
+	static Load(ResourceName: string): AbilityTask_ApplyRootMotionConstantForce;
+	static Find(Outer: UObject, ResourceName: string): AbilityTask_ApplyRootMotionConstantForce;
+	static GetDefaultObject(): AbilityTask_ApplyRootMotionConstantForce;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): AbilityTask_ApplyRootMotionConstantForce;
+	static ApplyRootMotionConstantForce(OwningAbility: GameplayAbility,TaskInstanceName: string,WorldDirection: Vector,Strength: number,Duration: number,bIsAdditive: boolean,StrengthOverTime: CurveFloat,VelocityOnFinishMode: ERootMotionFinishVelocityMode,SetVelocityOnFinish: Vector,ClampVelocityOnFinish: number): AbilityTask_ApplyRootMotionConstantForce;
+	static C(Other: UObject | any): AbilityTask_ApplyRootMotionConstantForce;
+}
+
+declare class AbilityTask_ApplyRootMotionJumpForce extends AbilityTask_ApplyRootMotion_Base { 
+	OnFinish: UnrealEngineMulticastDelegate<() => void>;
+	OnLanded: UnrealEngineMulticastDelegate<() => void>;
+	Rotation: Rotator;
+	Distance: number;
+	Height: number;
+	Duration: number;
+	MinimumLandedTriggerTime: number;
+	bFinishOnLanded: boolean;
+	PathOffsetCurve: CurveVector;
+	TimeMappingCurve: CurveFloat;
+	static Load(ResourceName: string): AbilityTask_ApplyRootMotionJumpForce;
+	static Find(Outer: UObject, ResourceName: string): AbilityTask_ApplyRootMotionJumpForce;
+	static GetDefaultObject(): AbilityTask_ApplyRootMotionJumpForce;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): AbilityTask_ApplyRootMotionJumpForce;
+	OnLandedCallback(Hit: HitResult): void;
+	Finish(): void;
+	static ApplyRootMotionJumpForce(OwningAbility: GameplayAbility,TaskInstanceName: string,Rotation: Rotator,Distance: number,Height: number,Duration: number,MinimumLandedTriggerTime: number,bFinishOnLanded: boolean,VelocityOnFinishMode: ERootMotionFinishVelocityMode,SetVelocityOnFinish: Vector,ClampVelocityOnFinish: number,PathOffsetCurve: CurveVector,TimeMappingCurve: CurveFloat): AbilityTask_ApplyRootMotionJumpForce;
+	static C(Other: UObject | any): AbilityTask_ApplyRootMotionJumpForce;
+}
+
+declare type ERootMotionMoveToActorTargetOffsetType = 'AlignFromTargetToSource' | 'AlignToTargetForward' | 'AlignToWorldSpace' | 'ERootMotionMoveToActorTargetOffsetType_MAX';
+declare var ERootMotionMoveToActorTargetOffsetType : { AlignFromTargetToSource:'AlignFromTargetToSource',AlignToTargetForward:'AlignToTargetForward',AlignToWorldSpace:'AlignToWorldSpace',ERootMotionMoveToActorTargetOffsetType_MAX:'ERootMotionMoveToActorTargetOffsetType_MAX', };
+declare class AbilityTask_ApplyRootMotionMoveToActorForce extends AbilityTask_ApplyRootMotion_Base { 
+	OnFinished: UnrealEngineMulticastDelegate<(DestinationReached: boolean, TimedOut: boolean, FinalTargetLocation: Vector) => void>;
+	StartLocation: Vector;
+	TargetLocation: Vector;
+	TargetActor: Actor;
+	TargetLocationOffset: Vector;
+	OffsetAlignment: ERootMotionMoveToActorTargetOffsetType;
+	Duration: number;
+	bDisableDestinationReachedInterrupt: boolean;
+	bSetNewMovementMode: boolean;
+	NewMovementMode: EMovementMode;
+	bRestrictSpeedToExpected: boolean;
+	PathOffsetCurve: CurveVector;
+	TimeMappingCurve: CurveFloat;
+	TargetLerpSpeedHorizontalCurve: CurveFloat;
+	TargetLerpSpeedVerticalCurve: CurveFloat;
+	static Load(ResourceName: string): AbilityTask_ApplyRootMotionMoveToActorForce;
+	static Find(Outer: UObject, ResourceName: string): AbilityTask_ApplyRootMotionMoveToActorForce;
+	static GetDefaultObject(): AbilityTask_ApplyRootMotionMoveToActorForce;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): AbilityTask_ApplyRootMotionMoveToActorForce;
+	OnTargetActorSwapped(OriginalTarget: Actor,NewTarget: Actor): void;
+	OnRep_TargetLocation(): void;
+	static ApplyRootMotionMoveToTargetDataActorForce(OwningAbility: GameplayAbility,TaskInstanceName: string,TargetDataHandle: GameplayAbilityTargetDataHandle,TargetDataIndex: number,TargetActorIndex: number,TargetLocationOffset: Vector,OffsetAlignment: ERootMotionMoveToActorTargetOffsetType,Duration: number,TargetLerpSpeedHorizontal: CurveFloat,TargetLerpSpeedVertical: CurveFloat,bSetNewMovementMode: boolean,MovementMode: EMovementMode,bRestrictSpeedToExpected: boolean,PathOffsetCurve: CurveVector,TimeMappingCurve: CurveFloat,VelocityOnFinishMode: ERootMotionFinishVelocityMode,SetVelocityOnFinish: Vector,ClampVelocityOnFinish: number,bDisableDestinationReachedInterrupt: boolean): AbilityTask_ApplyRootMotionMoveToActorForce;
+	static ApplyRootMotionMoveToActorForce(OwningAbility: GameplayAbility,TaskInstanceName: string,TargetActor: Actor,TargetLocationOffset: Vector,OffsetAlignment: ERootMotionMoveToActorTargetOffsetType,Duration: number,TargetLerpSpeedHorizontal: CurveFloat,TargetLerpSpeedVertical: CurveFloat,bSetNewMovementMode: boolean,MovementMode: EMovementMode,bRestrictSpeedToExpected: boolean,PathOffsetCurve: CurveVector,TimeMappingCurve: CurveFloat,VelocityOnFinishMode: ERootMotionFinishVelocityMode,SetVelocityOnFinish: Vector,ClampVelocityOnFinish: number,bDisableDestinationReachedInterrupt: boolean): AbilityTask_ApplyRootMotionMoveToActorForce;
+	static C(Other: UObject | any): AbilityTask_ApplyRootMotionMoveToActorForce;
+}
+
+declare class AbilityTask_ApplyRootMotionMoveToForce extends AbilityTask_ApplyRootMotion_Base { 
+	OnTimedOut: UnrealEngineMulticastDelegate<() => void>;
+	OnTimedOutAndDestinationReached: UnrealEngineMulticastDelegate<() => void>;
+	StartLocation: Vector;
+	TargetLocation: Vector;
+	Duration: number;
+	bSetNewMovementMode: boolean;
+	NewMovementMode: EMovementMode;
+	bRestrictSpeedToExpected: boolean;
+	PathOffsetCurve: CurveVector;
+	static Load(ResourceName: string): AbilityTask_ApplyRootMotionMoveToForce;
+	static Find(Outer: UObject, ResourceName: string): AbilityTask_ApplyRootMotionMoveToForce;
+	static GetDefaultObject(): AbilityTask_ApplyRootMotionMoveToForce;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): AbilityTask_ApplyRootMotionMoveToForce;
+	static ApplyRootMotionMoveToForce(OwningAbility: GameplayAbility,TaskInstanceName: string,TargetLocation: Vector,Duration: number,bSetNewMovementMode: boolean,MovementMode: EMovementMode,bRestrictSpeedToExpected: boolean,PathOffsetCurve: CurveVector,VelocityOnFinishMode: ERootMotionFinishVelocityMode,SetVelocityOnFinish: Vector,ClampVelocityOnFinish: number): AbilityTask_ApplyRootMotionMoveToForce;
+	static C(Other: UObject | any): AbilityTask_ApplyRootMotionMoveToForce;
+}
+
+declare class AbilityTask_ApplyRootMotionRadialForce extends AbilityTask_ApplyRootMotion_Base { 
+	OnFinish: UnrealEngineMulticastDelegate<() => void>;
+	Location: Vector;
+	LocationActor: Actor;
+	Strength: number;
+	Duration: number;
+	Radius: number;
+	bIsPush: boolean;
+	bIsAdditive: boolean;
+	bNoZForce: boolean;
+	StrengthDistanceFalloff: CurveFloat;
+	StrengthOverTime: CurveFloat;
+	bUseFixedWorldDirection: boolean;
+	FixedWorldDirection: Rotator;
+	static Load(ResourceName: string): AbilityTask_ApplyRootMotionRadialForce;
+	static Find(Outer: UObject, ResourceName: string): AbilityTask_ApplyRootMotionRadialForce;
+	static GetDefaultObject(): AbilityTask_ApplyRootMotionRadialForce;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): AbilityTask_ApplyRootMotionRadialForce;
+	static ApplyRootMotionRadialForce(OwningAbility: GameplayAbility,TaskInstanceName: string,Location: Vector,LocationActor: Actor,Strength: number,Duration: number,Radius: number,bIsPush: boolean,bIsAdditive: boolean,bNoZForce: boolean,StrengthDistanceFalloff: CurveFloat,StrengthOverTime: CurveFloat,bUseFixedWorldDirection: boolean,FixedWorldDirection: Rotator,VelocityOnFinishMode: ERootMotionFinishVelocityMode,SetVelocityOnFinish: Vector,ClampVelocityOnFinish: number): AbilityTask_ApplyRootMotionRadialForce;
+	static C(Other: UObject | any): AbilityTask_ApplyRootMotionRadialForce;
+}
+
+declare class AbilityTask_MoveToLocation extends AbilityTask { 
+	OnTargetLocationReached: UnrealEngineMulticastDelegate<() => void>;
+	StartLocation: Vector;
+	TargetLocation: Vector;
+	DurationOfMovement: number;
+	LerpCurve: CurveFloat;
+	LerpCurveVector: CurveVector;
+	static Load(ResourceName: string): AbilityTask_MoveToLocation;
+	static Find(Outer: UObject, ResourceName: string): AbilityTask_MoveToLocation;
+	static GetDefaultObject(): AbilityTask_MoveToLocation;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): AbilityTask_MoveToLocation;
+	static MoveToLocation(OwningAbility: GameplayAbility,TaskInstanceName: string,Location: Vector,Duration: number,OptionalInterpolationCurve: CurveFloat,OptionalVectorInterpolationCurve: CurveVector): AbilityTask_MoveToLocation;
+	static C(Other: UObject | any): AbilityTask_MoveToLocation;
+}
+
+declare type EAbilityTaskNetSyncType = 'BothWait' | 'OnlyServerWait' | 'OnlyClientWait' | 'EAbilityTaskNetSyncType_MAX';
+declare var EAbilityTaskNetSyncType : { BothWait:'BothWait',OnlyServerWait:'OnlyServerWait',OnlyClientWait:'OnlyClientWait',EAbilityTaskNetSyncType_MAX:'EAbilityTaskNetSyncType_MAX', };
+declare class AbilityTask_NetworkSyncPoint extends AbilityTask { 
+	OnSync: UnrealEngineMulticastDelegate<() => void>;
+	static Load(ResourceName: string): AbilityTask_NetworkSyncPoint;
+	static Find(Outer: UObject, ResourceName: string): AbilityTask_NetworkSyncPoint;
+	static GetDefaultObject(): AbilityTask_NetworkSyncPoint;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): AbilityTask_NetworkSyncPoint;
+	static WaitNetSync(OwningAbility: GameplayAbility,SyncType: EAbilityTaskNetSyncType): AbilityTask_NetworkSyncPoint;
+	OnSignalCallback(): void;
+	static C(Other: UObject | any): AbilityTask_NetworkSyncPoint;
+}
+
+declare class AbilityTask_PlayMontageAndWait extends AbilityTask { 
+	OnCompleted: UnrealEngineMulticastDelegate<() => void>;
+	OnBlendOut: UnrealEngineMulticastDelegate<() => void>;
+	OnInterrupted: UnrealEngineMulticastDelegate<() => void>;
+	OnCancelled: UnrealEngineMulticastDelegate<() => void>;
+	MontageToPlay: AnimMontage;
+	Rate: number;
+	StartSection: string;
+	AnimRootMotionTranslationScale: number;
+	bStopWhenAbilityEnds: boolean;
+	static Load(ResourceName: string): AbilityTask_PlayMontageAndWait;
+	static Find(Outer: UObject, ResourceName: string): AbilityTask_PlayMontageAndWait;
+	static GetDefaultObject(): AbilityTask_PlayMontageAndWait;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): AbilityTask_PlayMontageAndWait;
+	OnMontageInterrupted(): void;
+	OnMontageEnded(Montage: AnimMontage,bInterrupted: boolean): void;
+	OnMontageBlendingOut(Montage: AnimMontage,bInterrupted: boolean): void;
+	static CreatePlayMontageAndWaitProxy(OwningAbility: GameplayAbility,TaskInstanceName: string,MontageToPlay: AnimMontage,Rate: number,StartSection: string,bStopWhenAbilityEnds: boolean,AnimRootMotionTranslationScale: number): AbilityTask_PlayMontageAndWait;
+	static C(Other: UObject | any): AbilityTask_PlayMontageAndWait;
+}
+
+declare class AbilityTask_Repeat extends AbilityTask { 
+	OnPerformAction: UnrealEngineMulticastDelegate<(ActionNumber: number) => void>;
+	OnFinished: UnrealEngineMulticastDelegate<(ActionNumber: number) => void>;
+	static Load(ResourceName: string): AbilityTask_Repeat;
+	static Find(Outer: UObject, ResourceName: string): AbilityTask_Repeat;
+	static GetDefaultObject(): AbilityTask_Repeat;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): AbilityTask_Repeat;
+	static RepeatAction(OwningAbility: GameplayAbility,TimeBetweenActions: number,TotalActionCount: number): AbilityTask_Repeat;
+	static C(Other: UObject | any): AbilityTask_Repeat;
+}
+
+declare class AbilityTask_SpawnActor extends AbilityTask { 
+	Success: UnrealEngineMulticastDelegate<(SpawnedActor: Actor) => void>;
+	DidNotSpawn: UnrealEngineMulticastDelegate<(SpawnedActor: Actor) => void>;
+	static Load(ResourceName: string): AbilityTask_SpawnActor;
+	static Find(Outer: UObject, ResourceName: string): AbilityTask_SpawnActor;
+	static GetDefaultObject(): AbilityTask_SpawnActor;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): AbilityTask_SpawnActor;
+	static SpawnActor(OwningAbility: GameplayAbility,TargetData: GameplayAbilityTargetDataHandle,Class: UnrealEngineClass): AbilityTask_SpawnActor;
+	FinishSpawningActor(OwningAbility: GameplayAbility,TargetData: GameplayAbilityTargetDataHandle,SpawnedActor: Actor): void;
+	BeginSpawningActor(OwningAbility: GameplayAbility,TargetData: GameplayAbilityTargetDataHandle,Class: UnrealEngineClass,SpawnedActor?: Actor): {SpawnedActor: Actor, $: boolean};
+	static C(Other: UObject | any): AbilityTask_SpawnActor;
+}
+
+declare class AbilityTask_StartAbilityState extends AbilityTask { 
+	OnStateEnded: UnrealEngineMulticastDelegate<() => void>;
+	OnStateInterrupted: UnrealEngineMulticastDelegate<() => void>;
+	static Load(ResourceName: string): AbilityTask_StartAbilityState;
+	static Find(Outer: UObject, ResourceName: string): AbilityTask_StartAbilityState;
+	static GetDefaultObject(): AbilityTask_StartAbilityState;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): AbilityTask_StartAbilityState;
+	static StartAbilityState(OwningAbility: GameplayAbility,StateName: string,bEndCurrentState: boolean): AbilityTask_StartAbilityState;
+	static C(Other: UObject | any): AbilityTask_StartAbilityState;
+}
+
+declare class AbilityTask_VisualizeTargeting extends AbilityTask { 
+	TimeElapsed: UnrealEngineMulticastDelegate<() => void>;
+	static Load(ResourceName: string): AbilityTask_VisualizeTargeting;
+	static Find(Outer: UObject, ResourceName: string): AbilityTask_VisualizeTargeting;
+	static GetDefaultObject(): AbilityTask_VisualizeTargeting;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): AbilityTask_VisualizeTargeting;
+	static VisualizeTargetingUsingActor(OwningAbility: GameplayAbility,TargetActor: GameplayAbilityTargetActor,TaskInstanceName: string,Duration: number): AbilityTask_VisualizeTargeting;
+	static VisualizeTargeting(OwningAbility: GameplayAbility,Class: UnrealEngineClass,TaskInstanceName: string,Duration: number): AbilityTask_VisualizeTargeting;
+	FinishSpawningActor(OwningAbility: GameplayAbility,SpawnedActor: GameplayAbilityTargetActor): void;
+	BeginSpawningActor(OwningAbility: GameplayAbility,Class: UnrealEngineClass,SpawnedActor?: GameplayAbilityTargetActor): {SpawnedActor: GameplayAbilityTargetActor, $: boolean};
+	static C(Other: UObject | any): AbilityTask_VisualizeTargeting;
+}
+
+declare class AbilityTask_WaitAbilityActivate extends AbilityTask { 
+	OnActivate: UnrealEngineMulticastDelegate<(ActivatedAbility: GameplayAbility) => void>;
+	static Load(ResourceName: string): AbilityTask_WaitAbilityActivate;
+	static Find(Outer: UObject, ResourceName: string): AbilityTask_WaitAbilityActivate;
+	static GetDefaultObject(): AbilityTask_WaitAbilityActivate;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): AbilityTask_WaitAbilityActivate;
+	static WaitForAbilityActivateWithTagRequirements(OwningAbility: GameplayAbility,TagRequirements: GameplayTagRequirements,IncludeTriggeredAbilities: boolean,TriggerOnce: boolean): AbilityTask_WaitAbilityActivate;
+	static WaitForAbilityActivate_Query(OwningAbility: GameplayAbility,Query: GameplayTagQuery,IncludeTriggeredAbilities: boolean,TriggerOnce: boolean): AbilityTask_WaitAbilityActivate;
+	static WaitForAbilityActivate(OwningAbility: GameplayAbility,WithTag: GameplayTag,WithoutTag: GameplayTag,IncludeTriggeredAbilities: boolean,TriggerOnce: boolean): AbilityTask_WaitAbilityActivate;
+	OnAbilityActivate(ActivatedAbility: GameplayAbility): void;
+	static C(Other: UObject | any): AbilityTask_WaitAbilityActivate;
+}
+
+declare class AbilityTask_WaitAbilityCommit extends AbilityTask { 
+	OnCommit: UnrealEngineMulticastDelegate<(ActivatedAbility: GameplayAbility) => void>;
+	static Load(ResourceName: string): AbilityTask_WaitAbilityCommit;
+	static Find(Outer: UObject, ResourceName: string): AbilityTask_WaitAbilityCommit;
+	static GetDefaultObject(): AbilityTask_WaitAbilityCommit;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): AbilityTask_WaitAbilityCommit;
+	static WaitForAbilityCommit_Query(OwningAbility: GameplayAbility,Query: GameplayTagQuery,TriggerOnce: boolean): AbilityTask_WaitAbilityCommit;
+	static WaitForAbilityCommit(OwningAbility: GameplayAbility,WithTag: GameplayTag,WithoutTage: GameplayTag,TriggerOnce: boolean): AbilityTask_WaitAbilityCommit;
+	OnAbilityCommit(ActivatedAbility: GameplayAbility): void;
+	static C(Other: UObject | any): AbilityTask_WaitAbilityCommit;
+}
+
+declare type EWaitAttributeChangeComparison = 'None' | 'GreaterThan' | 'LessThan' | 'GreaterThanOrEqualTo' | 'LessThanOrEqualTo' | 'NotEqualTo' | 'ExactlyEqualTo' | 'MAX';
+declare var EWaitAttributeChangeComparison : { None:'None',GreaterThan:'GreaterThan',LessThan:'LessThan',GreaterThanOrEqualTo:'GreaterThanOrEqualTo',LessThanOrEqualTo:'LessThanOrEqualTo',NotEqualTo:'NotEqualTo',ExactlyEqualTo:'ExactlyEqualTo',MAX:'MAX', };
+declare class AbilityTask_WaitAttributeChange extends AbilityTask { 
+	OnChange: UnrealEngineMulticastDelegate<() => void>;
+	ExternalOwner: AbilitySystemComponent;
+	static Load(ResourceName: string): AbilityTask_WaitAttributeChange;
+	static Find(Outer: UObject, ResourceName: string): AbilityTask_WaitAttributeChange;
+	static GetDefaultObject(): AbilityTask_WaitAttributeChange;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): AbilityTask_WaitAttributeChange;
+	static WaitForAttributeChangeWithComparison(OwningAbility: GameplayAbility,InAttribute: GameplayAttribute,InWithTag: GameplayTag,InWithoutTag: GameplayTag,InComparisonType: EWaitAttributeChangeComparison,InComparisonValue: number,TriggerOnce: boolean,OptionalExternalOwner: Actor): AbilityTask_WaitAttributeChange;
+	static WaitForAttributeChange(OwningAbility: GameplayAbility,Attribute: GameplayAttribute,WithSrcTag: GameplayTag,WithoutSrcTag: GameplayTag,TriggerOnce: boolean,OptionalExternalOwner: Actor): AbilityTask_WaitAttributeChange;
+	static C(Other: UObject | any): AbilityTask_WaitAttributeChange;
+}
+
+declare class AbilityTask_WaitAttributeChangeRatioThreshold extends AbilityTask { 
+	OnChange: UnrealEngineMulticastDelegate<(bMatchesComparison: boolean, CurrentRatio: number) => void>;
+	ExternalOwner: AbilitySystemComponent;
+	static Load(ResourceName: string): AbilityTask_WaitAttributeChangeRatioThreshold;
+	static Find(Outer: UObject, ResourceName: string): AbilityTask_WaitAttributeChangeRatioThreshold;
+	static GetDefaultObject(): AbilityTask_WaitAttributeChangeRatioThreshold;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): AbilityTask_WaitAttributeChangeRatioThreshold;
+	static WaitForAttributeChangeRatioThreshold(OwningAbility: GameplayAbility,AttributeNumerator: GameplayAttribute,AttributeDenominator: GameplayAttribute,ComparisonType: EWaitAttributeChangeComparison,ComparisonValue: number,bTriggerOnce: boolean,OptionalExternalOwner: Actor): AbilityTask_WaitAttributeChangeRatioThreshold;
+	static C(Other: UObject | any): AbilityTask_WaitAttributeChangeRatioThreshold;
+}
+
+declare class AbilityTask_WaitAttributeChangeThreshold extends AbilityTask { 
+	OnChange: UnrealEngineMulticastDelegate<(bMatchesComparison: boolean, CurrentValue: number) => void>;
+	ExternalOwner: AbilitySystemComponent;
+	static Load(ResourceName: string): AbilityTask_WaitAttributeChangeThreshold;
+	static Find(Outer: UObject, ResourceName: string): AbilityTask_WaitAttributeChangeThreshold;
+	static GetDefaultObject(): AbilityTask_WaitAttributeChangeThreshold;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): AbilityTask_WaitAttributeChangeThreshold;
+	static WaitForAttributeChangeThreshold(OwningAbility: GameplayAbility,Attribute: GameplayAttribute,ComparisonType: EWaitAttributeChangeComparison,ComparisonValue: number,bTriggerOnce: boolean,OptionalExternalOwner: Actor): AbilityTask_WaitAttributeChangeThreshold;
+	static C(Other: UObject | any): AbilityTask_WaitAttributeChangeThreshold;
+}
+
+declare class AbilityTask_WaitCancel extends AbilityTask { 
+	OnCancel: UnrealEngineMulticastDelegate<() => void>;
+	static Load(ResourceName: string): AbilityTask_WaitCancel;
+	static Find(Outer: UObject, ResourceName: string): AbilityTask_WaitCancel;
+	static GetDefaultObject(): AbilityTask_WaitCancel;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): AbilityTask_WaitCancel;
+	static WaitCancel(OwningAbility: GameplayAbility): AbilityTask_WaitCancel;
+	OnLocalCancelCallback(): void;
+	OnCancelCallback(): void;
+	static C(Other: UObject | any): AbilityTask_WaitCancel;
+}
+
+declare class AbilityTask_WaitConfirm extends AbilityTask { 
+	OnConfirm: UnrealEngineMulticastDelegate<() => void>;
+	static Load(ResourceName: string): AbilityTask_WaitConfirm;
+	static Find(Outer: UObject, ResourceName: string): AbilityTask_WaitConfirm;
+	static GetDefaultObject(): AbilityTask_WaitConfirm;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): AbilityTask_WaitConfirm;
+	static WaitConfirm(OwningAbility: GameplayAbility): AbilityTask_WaitConfirm;
+	OnConfirmCallback(InAbility: GameplayAbility): void;
+	static C(Other: UObject | any): AbilityTask_WaitConfirm;
+}
+
+declare class AbilityTask_WaitConfirmCancel extends AbilityTask { 
+	OnConfirm: UnrealEngineMulticastDelegate<() => void>;
+	OnCancel: UnrealEngineMulticastDelegate<() => void>;
+	static Load(ResourceName: string): AbilityTask_WaitConfirmCancel;
+	static Find(Outer: UObject, ResourceName: string): AbilityTask_WaitConfirmCancel;
+	static GetDefaultObject(): AbilityTask_WaitConfirmCancel;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): AbilityTask_WaitConfirmCancel;
+	static WaitConfirmCancel(OwningAbility: GameplayAbility): AbilityTask_WaitConfirmCancel;
+	OnLocalConfirmCallback(): void;
+	OnLocalCancelCallback(): void;
+	OnConfirmCallback(): void;
+	OnCancelCallback(): void;
+	static C(Other: UObject | any): AbilityTask_WaitConfirmCancel;
+}
+
+declare class AbilityTask_WaitDelay extends AbilityTask { 
+	OnFinish: UnrealEngineMulticastDelegate<() => void>;
+	static Load(ResourceName: string): AbilityTask_WaitDelay;
+	static Find(Outer: UObject, ResourceName: string): AbilityTask_WaitDelay;
+	static GetDefaultObject(): AbilityTask_WaitDelay;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): AbilityTask_WaitDelay;
+	static WaitDelay(OwningAbility: GameplayAbility,Time: number): AbilityTask_WaitDelay;
+	static C(Other: UObject | any): AbilityTask_WaitDelay;
+}
+
+declare class AbilityTask_WaitGameplayEffectApplied extends AbilityTask { 
+	ExternalOwner: AbilitySystemComponent;
+	static Load(ResourceName: string): AbilityTask_WaitGameplayEffectApplied;
+	static Find(Outer: UObject, ResourceName: string): AbilityTask_WaitGameplayEffectApplied;
+	static GetDefaultObject(): AbilityTask_WaitGameplayEffectApplied;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): AbilityTask_WaitGameplayEffectApplied;
+	OnApplyGameplayEffectCallback(Target: AbilitySystemComponent,SpecApplied: GameplayEffectSpec,ActiveHandle: ActiveGameplayEffectHandle): void;
+	static C(Other: UObject | any): AbilityTask_WaitGameplayEffectApplied;
+}
+
+declare class AbilityTask_WaitGameplayEffectApplied_Self extends AbilityTask_WaitGameplayEffectApplied { 
+	OnApplied: UnrealEngineMulticastDelegate<(Source: Actor, SpecHandle: GameplayEffectSpecHandle, ActiveHandle: ActiveGameplayEffectHandle) => void>;
+	static Load(ResourceName: string): AbilityTask_WaitGameplayEffectApplied_Self;
+	static Find(Outer: UObject, ResourceName: string): AbilityTask_WaitGameplayEffectApplied_Self;
+	static GetDefaultObject(): AbilityTask_WaitGameplayEffectApplied_Self;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): AbilityTask_WaitGameplayEffectApplied_Self;
+	static WaitGameplayEffectAppliedToSelf_Query(OwningAbility: GameplayAbility,SourceFilter: GameplayTargetDataFilterHandle,SourceTagQuery: GameplayTagQuery,TargetTagQuery: GameplayTagQuery,TriggerOnce: boolean,OptionalExternalOwner: Actor,ListenForPeriodicEffect: boolean): AbilityTask_WaitGameplayEffectApplied_Self;
+	static WaitGameplayEffectAppliedToSelf(OwningAbility: GameplayAbility,SourceFilter: GameplayTargetDataFilterHandle,SourceTagRequirements: GameplayTagRequirements,TargetTagRequirements: GameplayTagRequirements,TriggerOnce: boolean,OptionalExternalOwner: Actor,ListenForPeriodicEffect: boolean): AbilityTask_WaitGameplayEffectApplied_Self;
+	static C(Other: UObject | any): AbilityTask_WaitGameplayEffectApplied_Self;
+}
+
+declare class AbilityTask_WaitGameplayEffectApplied_Target extends AbilityTask_WaitGameplayEffectApplied { 
+	OnApplied: UnrealEngineMulticastDelegate<(Target: Actor, SpecHandle: GameplayEffectSpecHandle, ActiveHandle: ActiveGameplayEffectHandle) => void>;
+	static Load(ResourceName: string): AbilityTask_WaitGameplayEffectApplied_Target;
+	static Find(Outer: UObject, ResourceName: string): AbilityTask_WaitGameplayEffectApplied_Target;
+	static GetDefaultObject(): AbilityTask_WaitGameplayEffectApplied_Target;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): AbilityTask_WaitGameplayEffectApplied_Target;
+	static WaitGameplayEffectAppliedToTarget_Query(OwningAbility: GameplayAbility,SourceFilter: GameplayTargetDataFilterHandle,SourceTagQuery: GameplayTagQuery,TargetTagQuery: GameplayTagQuery,TriggerOnce: boolean,OptionalExternalOwner: Actor,ListenForPeriodicEffect: boolean): AbilityTask_WaitGameplayEffectApplied_Target;
+	static WaitGameplayEffectAppliedToTarget(OwningAbility: GameplayAbility,TargetFilter: GameplayTargetDataFilterHandle,SourceTagRequirements: GameplayTagRequirements,TargetTagRequirements: GameplayTagRequirements,TriggerOnce: boolean,OptionalExternalOwner: Actor,ListenForPeriodicEffects: boolean): AbilityTask_WaitGameplayEffectApplied_Target;
+	static C(Other: UObject | any): AbilityTask_WaitGameplayEffectApplied_Target;
+}
+
+declare class AbilityTask_WaitGameplayEffectBlockedImmunity extends AbilityTask { 
+	bLocked: UnrealEngineMulticastDelegate<(BlockedSpec: GameplayEffectSpecHandle, ImmunityGameplayEffectHandle: ActiveGameplayEffectHandle) => void>;
+	ExternalOwner: AbilitySystemComponent;
+	static Load(ResourceName: string): AbilityTask_WaitGameplayEffectBlockedImmunity;
+	static Find(Outer: UObject, ResourceName: string): AbilityTask_WaitGameplayEffectBlockedImmunity;
+	static GetDefaultObject(): AbilityTask_WaitGameplayEffectBlockedImmunity;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): AbilityTask_WaitGameplayEffectBlockedImmunity;
+	static WaitGameplayEffectBlockedByImmunity(OwningAbility: GameplayAbility,SourceTagRequirements: GameplayTagRequirements,TargetTagRequirements: GameplayTagRequirements,OptionalExternalTarget: Actor,OnlyTriggerOnce: boolean): AbilityTask_WaitGameplayEffectBlockedImmunity;
+	static C(Other: UObject | any): AbilityTask_WaitGameplayEffectBlockedImmunity;
+}
+
+declare class GameplayEffectRemovalInfo { 
+	bPrematureRemoval: boolean;
+	StackCount: number;
+	EffectContext: GameplayEffectContextHandle;
+	clone() : GameplayEffectRemovalInfo;
+	static C(Other: UObject | any): GameplayEffectRemovalInfo;
+}
+
+declare class AbilityTask_WaitGameplayEffectRemoved extends AbilityTask { 
+	OnRemoved: UnrealEngineMulticastDelegate<(GameplayEffectRemovalInfo: GameplayEffectRemovalInfo) => void>;
+	InvalidHandle: UnrealEngineMulticastDelegate<(GameplayEffectRemovalInfo: GameplayEffectRemovalInfo) => void>;
+	static Load(ResourceName: string): AbilityTask_WaitGameplayEffectRemoved;
+	static Find(Outer: UObject, ResourceName: string): AbilityTask_WaitGameplayEffectRemoved;
+	static GetDefaultObject(): AbilityTask_WaitGameplayEffectRemoved;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): AbilityTask_WaitGameplayEffectRemoved;
+	static WaitForGameplayEffectRemoved(OwningAbility: GameplayAbility,Handle: ActiveGameplayEffectHandle): AbilityTask_WaitGameplayEffectRemoved;
+	OnGameplayEffectRemoved(InGameplayEffectRemovalInfo: GameplayEffectRemovalInfo): void;
+	static C(Other: UObject | any): AbilityTask_WaitGameplayEffectRemoved;
+}
+
+declare class AbilityTask_WaitGameplayEffectStackChange extends AbilityTask { 
+	OnChange: UnrealEngineMulticastDelegate<(Handle: ActiveGameplayEffectHandle, NewCount: number, OldCount: number) => void>;
+	InvalidHandle: UnrealEngineMulticastDelegate<(Handle: ActiveGameplayEffectHandle, NewCount: number, OldCount: number) => void>;
+	static Load(ResourceName: string): AbilityTask_WaitGameplayEffectStackChange;
+	static Find(Outer: UObject, ResourceName: string): AbilityTask_WaitGameplayEffectStackChange;
+	static GetDefaultObject(): AbilityTask_WaitGameplayEffectStackChange;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): AbilityTask_WaitGameplayEffectStackChange;
+	static WaitForGameplayEffectStackChange(OwningAbility: GameplayAbility,Handle: ActiveGameplayEffectHandle): AbilityTask_WaitGameplayEffectStackChange;
+	OnGameplayEffectStackChange(Handle: ActiveGameplayEffectHandle,NewCount: number,OldCount: number): void;
+	static C(Other: UObject | any): AbilityTask_WaitGameplayEffectStackChange;
+}
+
+declare class AbilityTask_WaitGameplayEvent extends AbilityTask { 
+	EventReceived: UnrealEngineMulticastDelegate<(Payload: GameplayEventData) => void>;
+	OptionalExternalTarget: AbilitySystemComponent;
+	static Load(ResourceName: string): AbilityTask_WaitGameplayEvent;
+	static Find(Outer: UObject, ResourceName: string): AbilityTask_WaitGameplayEvent;
+	static GetDefaultObject(): AbilityTask_WaitGameplayEvent;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): AbilityTask_WaitGameplayEvent;
+	static WaitGameplayEvent(OwningAbility: GameplayAbility,EventTag: GameplayTag,OptionalExternalTarget: Actor,OnlyTriggerOnce: boolean,OnlyMatchExact: boolean): AbilityTask_WaitGameplayEvent;
+	static C(Other: UObject | any): AbilityTask_WaitGameplayEvent;
+}
+
+declare class AbilityTask_WaitGameplayTag extends AbilityTask { 
+	OptionalExternalTarget: AbilitySystemComponent;
+	static Load(ResourceName: string): AbilityTask_WaitGameplayTag;
+	static Find(Outer: UObject, ResourceName: string): AbilityTask_WaitGameplayTag;
+	static GetDefaultObject(): AbilityTask_WaitGameplayTag;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): AbilityTask_WaitGameplayTag;
+	GameplayTagCallback(Tag: GameplayTag,NewCount: number): void;
+	static C(Other: UObject | any): AbilityTask_WaitGameplayTag;
+}
+
+declare class AbilityTask_WaitGameplayTagAdded extends AbilityTask_WaitGameplayTag { 
+	Added: UnrealEngineMulticastDelegate<() => void>;
+	static Load(ResourceName: string): AbilityTask_WaitGameplayTagAdded;
+	static Find(Outer: UObject, ResourceName: string): AbilityTask_WaitGameplayTagAdded;
+	static GetDefaultObject(): AbilityTask_WaitGameplayTagAdded;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): AbilityTask_WaitGameplayTagAdded;
+	static WaitGameplayTagAdd(OwningAbility: GameplayAbility,Tag: GameplayTag,InOptionalExternalTarget: Actor,OnlyTriggerOnce: boolean): AbilityTask_WaitGameplayTagAdded;
+	static C(Other: UObject | any): AbilityTask_WaitGameplayTagAdded;
+}
+
+declare class AbilityTask_WaitGameplayTagRemoved extends AbilityTask_WaitGameplayTag { 
+	Removed: UnrealEngineMulticastDelegate<() => void>;
+	static Load(ResourceName: string): AbilityTask_WaitGameplayTagRemoved;
+	static Find(Outer: UObject, ResourceName: string): AbilityTask_WaitGameplayTagRemoved;
+	static GetDefaultObject(): AbilityTask_WaitGameplayTagRemoved;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): AbilityTask_WaitGameplayTagRemoved;
+	static WaitGameplayTagRemove(OwningAbility: GameplayAbility,Tag: GameplayTag,InOptionalExternalTarget: Actor,OnlyTriggerOnce: boolean): AbilityTask_WaitGameplayTagRemoved;
+	static C(Other: UObject | any): AbilityTask_WaitGameplayTagRemoved;
+}
+
+declare class AbilityTask_WaitInputPress extends AbilityTask { 
+	OnPress: UnrealEngineMulticastDelegate<(TimeWaited: number) => void>;
+	static Load(ResourceName: string): AbilityTask_WaitInputPress;
+	static Find(Outer: UObject, ResourceName: string): AbilityTask_WaitInputPress;
+	static GetDefaultObject(): AbilityTask_WaitInputPress;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): AbilityTask_WaitInputPress;
+	static WaitInputPress(OwningAbility: GameplayAbility,bTestAlreadyPressed: boolean): AbilityTask_WaitInputPress;
+	OnPressCallback(): void;
+	static C(Other: UObject | any): AbilityTask_WaitInputPress;
+}
+
+declare class AbilityTask_WaitInputRelease extends AbilityTask { 
+	OnRelease: UnrealEngineMulticastDelegate<(TimeHeld: number) => void>;
+	static Load(ResourceName: string): AbilityTask_WaitInputRelease;
+	static Find(Outer: UObject, ResourceName: string): AbilityTask_WaitInputRelease;
+	static GetDefaultObject(): AbilityTask_WaitInputRelease;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): AbilityTask_WaitInputRelease;
+	static WaitInputRelease(OwningAbility: GameplayAbility,bTestAlreadyReleased: boolean): AbilityTask_WaitInputRelease;
+	OnReleaseCallback(): void;
+	static C(Other: UObject | any): AbilityTask_WaitInputRelease;
+}
+
+declare class AbilityTask_WaitMovementModeChange extends AbilityTask { 
+	OnChange: UnrealEngineMulticastDelegate<(NewMovementMode: EMovementMode) => void>;
+	static Load(ResourceName: string): AbilityTask_WaitMovementModeChange;
+	static Find(Outer: UObject, ResourceName: string): AbilityTask_WaitMovementModeChange;
+	static GetDefaultObject(): AbilityTask_WaitMovementModeChange;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): AbilityTask_WaitMovementModeChange;
+	OnMovementModeChange(Character: Character,PrevMovementMode: EMovementMode,PreviousCustomMode: number): void;
+	static CreateWaitMovementModeChange(OwningAbility: GameplayAbility,NewMode: EMovementMode): AbilityTask_WaitMovementModeChange;
+	static C(Other: UObject | any): AbilityTask_WaitMovementModeChange;
+}
+
+declare class AbilityTask_WaitOverlap extends AbilityTask { 
+	OnOverlap: UnrealEngineMulticastDelegate<(TargetData: GameplayAbilityTargetDataHandle) => void>;
+	static Load(ResourceName: string): AbilityTask_WaitOverlap;
+	static Find(Outer: UObject, ResourceName: string): AbilityTask_WaitOverlap;
+	static GetDefaultObject(): AbilityTask_WaitOverlap;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): AbilityTask_WaitOverlap;
+	static WaitForOverlap(OwningAbility: GameplayAbility): AbilityTask_WaitOverlap;
+	OnHitCallback(HitComp: PrimitiveComponent,OtherActor: Actor,OtherComp: PrimitiveComponent,NormalImpulse: Vector,Hit: HitResult): void;
+	static C(Other: UObject | any): AbilityTask_WaitOverlap;
+}
+
+declare type EGameplayTargetingConfirmation = 'Instant' | 'UserConfirmed' | 'Custom' | 'CustomMulti' | 'EGameplayTargetingConfirmation_MAX';
+declare var EGameplayTargetingConfirmation : { Instant:'Instant',UserConfirmed:'UserConfirmed',Custom:'Custom',CustomMulti:'CustomMulti',EGameplayTargetingConfirmation_MAX:'EGameplayTargetingConfirmation_MAX', };
+declare class AbilityTask_WaitTargetData extends AbilityTask { 
+	ValidData: UnrealEngineMulticastDelegate<(Data: GameplayAbilityTargetDataHandle) => void>;
+	Cancelled: UnrealEngineMulticastDelegate<(Data: GameplayAbilityTargetDataHandle) => void>;
+	TargetClass: UnrealEngineClass;
+	TargetActor: GameplayAbilityTargetActor;
+	static Load(ResourceName: string): AbilityTask_WaitTargetData;
+	static Find(Outer: UObject, ResourceName: string): AbilityTask_WaitTargetData;
+	static GetDefaultObject(): AbilityTask_WaitTargetData;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): AbilityTask_WaitTargetData;
+	static WaitTargetDataUsingActor(OwningAbility: GameplayAbility,TaskInstanceName: string,ConfirmationType: EGameplayTargetingConfirmation,TargetActor: GameplayAbilityTargetActor): AbilityTask_WaitTargetData;
+	static WaitTargetData(OwningAbility: GameplayAbility,TaskInstanceName: string,ConfirmationType: EGameplayTargetingConfirmation,Class: UnrealEngineClass): AbilityTask_WaitTargetData;
+	OnTargetDataReplicatedCancelledCallback(): void;
+	OnTargetDataReplicatedCallback(Data: GameplayAbilityTargetDataHandle,ActivationTag: GameplayTag): void;
+	OnTargetDataReadyCallback(Data: GameplayAbilityTargetDataHandle): void;
+	OnTargetDataCancelledCallback(Data: GameplayAbilityTargetDataHandle): void;
+	FinishSpawningActor(OwningAbility: GameplayAbility,SpawnedActor: GameplayAbilityTargetActor): void;
+	BeginSpawningActor(OwningAbility: GameplayAbility,Class: UnrealEngineClass,SpawnedActor?: GameplayAbilityTargetActor): {SpawnedActor: GameplayAbilityTargetActor, $: boolean};
+	static C(Other: UObject | any): AbilityTask_WaitTargetData;
+}
+
+declare class AbilityTask_WaitVelocityChange extends AbilityTask { 
+	OnVelocityChage: UnrealEngineMulticastDelegate<() => void>;
+	CachedMovementComponent: MovementComponent;
+	static Load(ResourceName: string): AbilityTask_WaitVelocityChange;
+	static Find(Outer: UObject, ResourceName: string): AbilityTask_WaitVelocityChange;
+	static GetDefaultObject(): AbilityTask_WaitVelocityChange;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): AbilityTask_WaitVelocityChange;
+	static CreateWaitVelocityChange(OwningAbility: GameplayAbility,Direction: Vector,MinimumMagnitude: number): AbilityTask_WaitVelocityChange;
+	static C(Other: UObject | any): AbilityTask_WaitVelocityChange;
+}
+
+declare class GameplayAbility_CharacterJump extends GameplayAbility { 
+	static Load(ResourceName: string): GameplayAbility_CharacterJump;
+	static Find(Outer: UObject, ResourceName: string): GameplayAbility_CharacterJump;
+	static GetDefaultObject(): GameplayAbility_CharacterJump;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): GameplayAbility_CharacterJump;
+	static C(Other: UObject | any): GameplayAbility_CharacterJump;
+}
+
+declare class GameplayAbility_Montage extends GameplayAbility { 
+	MontageToPlay: AnimMontage;
+	PlayRate: number;
+	SectionName: string;
+	GameplayEffectClassesWhileAnimating: UnrealEngineClass[];
+	GameplayEffectsWhileAnimating: GameplayEffect[];
+	static Load(ResourceName: string): GameplayAbility_Montage;
+	static Find(Outer: UObject, ResourceName: string): GameplayAbility_Montage;
+	static GetDefaultObject(): GameplayAbility_Montage;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): GameplayAbility_Montage;
+	static C(Other: UObject | any): GameplayAbility_Montage;
+}
+
+declare class GameplayAbilityBlueprint extends Blueprint { 
+	static Load(ResourceName: string): GameplayAbilityBlueprint;
+	static Find(Outer: UObject, ResourceName: string): GameplayAbilityBlueprint;
+	static GetDefaultObject(): GameplayAbilityBlueprint;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): GameplayAbilityBlueprint;
+	static C(Other: UObject | any): GameplayAbilityBlueprint;
+}
+
+declare type EGameplayAbilityInputBinds = 'Ability1' | 'Ability2' | 'Ability3' | 'Ability4' | 'Ability5' | 'Ability6' | 'Ability7' | 'Ability8' | 'Ability9' | 'EGameplayAbilityInputBinds_MAX';
+declare var EGameplayAbilityInputBinds : { Ability1:'Ability1',Ability2:'Ability2',Ability3:'Ability3',Ability4:'Ability4',Ability5:'Ability5',Ability6:'Ability6',Ability7:'Ability7',Ability8:'Ability8',Ability9:'Ability9',EGameplayAbilityInputBinds_MAX:'EGameplayAbilityInputBinds_MAX', };
+declare class GameplayAbilityBindInfo { 
+	Command: EGameplayAbilityInputBinds;
+	GameplayAbilityClass: UnrealEngineClass;
+	clone() : GameplayAbilityBindInfo;
+	static C(Other: UObject | any): GameplayAbilityBindInfo;
+}
+
+declare class GameplayAbilitySet extends DataAsset { 
+	Abilities: GameplayAbilityBindInfo[];
+	static Load(ResourceName: string): GameplayAbilitySet;
+	static Find(Outer: UObject, ResourceName: string): GameplayAbilitySet;
+	static GetDefaultObject(): GameplayAbilitySet;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): GameplayAbilitySet;
+	static C(Other: UObject | any): GameplayAbilitySet;
+}
+
+declare class GameplayAbilityTargetActor_Trace extends GameplayAbilityTargetActor { 
+	MaxRange: number;
+	TraceProfile: CollisionProfileName;
+	bTraceAffectsAimPitch: boolean;
+	static GetDefaultObject(): GameplayAbilityTargetActor_Trace;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): GameplayAbilityTargetActor_Trace;
+	static C(Other: UObject | any): GameplayAbilityTargetActor_Trace;
+}
+
+declare class GameplayAbilityTargetActor_GroundTrace extends GameplayAbilityTargetActor_Trace { 
+	CollisionRadius: number;
+	CollisionHeight: number;
+	static GetDefaultObject(): GameplayAbilityTargetActor_GroundTrace;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): GameplayAbilityTargetActor_GroundTrace;
+	static C(Other: UObject | any): GameplayAbilityTargetActor_GroundTrace;
+}
+
+declare class GameplayAbilityTargetActor_ActorPlacement extends GameplayAbilityTargetActor_GroundTrace { 
+	PlacedActorClass: UnrealEngineClass;
+	PlacedActorMaterial: MaterialInterface;
+	static GetDefaultObject(): GameplayAbilityTargetActor_ActorPlacement;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): GameplayAbilityTargetActor_ActorPlacement;
+	static C(Other: UObject | any): GameplayAbilityTargetActor_ActorPlacement;
+}
+
+declare class GameplayAbilityTargetActor_Radius extends GameplayAbilityTargetActor { 
+	Radius: number;
+	static GetDefaultObject(): GameplayAbilityTargetActor_Radius;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): GameplayAbilityTargetActor_Radius;
+	static C(Other: UObject | any): GameplayAbilityTargetActor_Radius;
+}
+
+declare class GameplayAbilityTargetActor_SingleLineTrace extends GameplayAbilityTargetActor_Trace { 
+	static GetDefaultObject(): GameplayAbilityTargetActor_SingleLineTrace;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): GameplayAbilityTargetActor_SingleLineTrace;
+	static C(Other: UObject | any): GameplayAbilityTargetActor_SingleLineTrace;
+}
+
+declare class GameplayAbilityWorldReticle_ActorVisualization extends GameplayAbilityWorldReticle { 
+	CollisionComponent: CapsuleComponent;
+	VisualizationComponents: ActorComponent[];
+	static GetDefaultObject(): GameplayAbilityWorldReticle_ActorVisualization;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): GameplayAbilityWorldReticle_ActorVisualization;
+	static C(Other: UObject | any): GameplayAbilityWorldReticle_ActorVisualization;
+}
+
+declare class GameplayCueInterface extends Interface { 
+	static Load(ResourceName: string): GameplayCueInterface;
+	static Find(Outer: UObject, ResourceName: string): GameplayCueInterface;
+	static GetDefaultObject(): GameplayCueInterface;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): GameplayCueInterface;
+	ForwardGameplayCueToParent(): void;
+	BlueprintCustomHandler(EventType: EGameplayCueEvent,Parameters: GameplayCueParameters): void;
+	static C(Other: UObject | any): GameplayCueInterface;
+}
+
+declare class GameplayCueNotify_Static extends UObject { 
+	GameplayCueTag: GameplayTag;
+	ReferenceHelper: GameplayTagReferenceHelper;
+	GameplayCueName: string;
+	IsOverride: boolean;
+	static Load(ResourceName: string): GameplayCueNotify_Static;
+	static Find(Outer: UObject, ResourceName: string): GameplayCueNotify_Static;
+	static GetDefaultObject(): GameplayCueNotify_Static;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): GameplayCueNotify_Static;
+	WhileActive(MyTarget: Actor,Parameters: GameplayCueParameters): boolean;
+	OnRemove(MyTarget: Actor,Parameters: GameplayCueParameters): boolean;
+	OnExecute(MyTarget: Actor,Parameters: GameplayCueParameters): boolean;
+	OnActive(MyTarget: Actor,Parameters: GameplayCueParameters): boolean;
+	K2_HandleGameplayCue(MyTarget: Actor,EventType: EGameplayCueEvent,Parameters: GameplayCueParameters): void;
+	static C(Other: UObject | any): GameplayCueNotify_Static;
+}
+
+declare class GameplayCueNotify_HitImpact extends GameplayCueNotify_Static { 
+	Sound: SoundBase;
+	ParticleSystem: ParticleSystem;
+	static Load(ResourceName: string): GameplayCueNotify_HitImpact;
+	static Find(Outer: UObject, ResourceName: string): GameplayCueNotify_HitImpact;
+	static GetDefaultObject(): GameplayCueNotify_HitImpact;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): GameplayCueNotify_HitImpact;
+	static C(Other: UObject | any): GameplayCueNotify_HitImpact;
+}
+
+declare class GameplayCueTranslator extends UObject { 
+	static Load(ResourceName: string): GameplayCueTranslator;
+	static Find(Outer: UObject, ResourceName: string): GameplayCueTranslator;
+	static GetDefaultObject(): GameplayCueTranslator;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): GameplayCueTranslator;
+	static C(Other: UObject | any): GameplayCueTranslator;
+}
+
+declare class GameplayCueTranslator_Test extends GameplayCueTranslator { 
+	static Load(ResourceName: string): GameplayCueTranslator_Test;
+	static Find(Outer: UObject, ResourceName: string): GameplayCueTranslator_Test;
+	static GetDefaultObject(): GameplayCueTranslator_Test;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): GameplayCueTranslator_Test;
+	static C(Other: UObject | any): GameplayCueTranslator_Test;
+}
+
+declare class GameplayEffectUIData_TextOnly extends GameplayEffectUIData { 
+	Description: string;
+	static Load(ResourceName: string): GameplayEffectUIData_TextOnly;
+	static Find(Outer: UObject, ResourceName: string): GameplayEffectUIData_TextOnly;
+	static GetDefaultObject(): GameplayEffectUIData_TextOnly;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): GameplayEffectUIData_TextOnly;
+	static C(Other: UObject | any): GameplayEffectUIData_TextOnly;
+}
+
+declare class TickableAttributeSetInterface extends Interface { 
+	static Load(ResourceName: string): TickableAttributeSetInterface;
+	static Find(Outer: UObject, ResourceName: string): TickableAttributeSetInterface;
+	static GetDefaultObject(): TickableAttributeSetInterface;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): TickableAttributeSetInterface;
+	static C(Other: UObject | any): TickableAttributeSetInterface;
+}
+
+declare class ActiveGameplayEffectQueryCustomMatch_Dynamic__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): ActiveGameplayEffectQueryCustomMatch_Dynamic__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): ActiveGameplayEffectQueryCustomMatch_Dynamic__PythonCallable;
+	static GetDefaultObject(): ActiveGameplayEffectQueryCustomMatch_Dynamic__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): ActiveGameplayEffectQueryCustomMatch_Dynamic__PythonCallable;
+	static C(Other: UObject | any): ActiveGameplayEffectQueryCustomMatch_Dynamic__PythonCallable;
+}
+
+declare class ApplyRootMotionConstantForceDelegate__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): ApplyRootMotionConstantForceDelegate__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): ApplyRootMotionConstantForceDelegate__PythonCallable;
+	static GetDefaultObject(): ApplyRootMotionConstantForceDelegate__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): ApplyRootMotionConstantForceDelegate__PythonCallable;
+	static C(Other: UObject | any): ApplyRootMotionConstantForceDelegate__PythonCallable;
+}
+
+declare class ApplyRootMotionJumpForceDelegate__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): ApplyRootMotionJumpForceDelegate__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): ApplyRootMotionJumpForceDelegate__PythonCallable;
+	static GetDefaultObject(): ApplyRootMotionJumpForceDelegate__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): ApplyRootMotionJumpForceDelegate__PythonCallable;
+	static C(Other: UObject | any): ApplyRootMotionJumpForceDelegate__PythonCallable;
+}
+
+declare class ApplyRootMotionMoveToActorForceDelegate__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): ApplyRootMotionMoveToActorForceDelegate__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): ApplyRootMotionMoveToActorForceDelegate__PythonCallable;
+	static GetDefaultObject(): ApplyRootMotionMoveToActorForceDelegate__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): ApplyRootMotionMoveToActorForceDelegate__PythonCallable;
+	static C(Other: UObject | any): ApplyRootMotionMoveToActorForceDelegate__PythonCallable;
+}
+
+declare class ApplyRootMotionMoveToForceDelegate__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): ApplyRootMotionMoveToForceDelegate__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): ApplyRootMotionMoveToForceDelegate__PythonCallable;
+	static GetDefaultObject(): ApplyRootMotionMoveToForceDelegate__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): ApplyRootMotionMoveToForceDelegate__PythonCallable;
+	static C(Other: UObject | any): ApplyRootMotionMoveToForceDelegate__PythonCallable;
+}
+
+declare class ApplyRootMotionRadialForceDelegate__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): ApplyRootMotionRadialForceDelegate__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): ApplyRootMotionRadialForceDelegate__PythonCallable;
+	static GetDefaultObject(): ApplyRootMotionRadialForceDelegate__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): ApplyRootMotionRadialForceDelegate__PythonCallable;
+	static C(Other: UObject | any): ApplyRootMotionRadialForceDelegate__PythonCallable;
+}
+
+declare class MoveToLocationDelegate__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): MoveToLocationDelegate__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): MoveToLocationDelegate__PythonCallable;
+	static GetDefaultObject(): MoveToLocationDelegate__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MoveToLocationDelegate__PythonCallable;
+	static C(Other: UObject | any): MoveToLocationDelegate__PythonCallable;
+}
+
+declare class NetworkSyncDelegate__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): NetworkSyncDelegate__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): NetworkSyncDelegate__PythonCallable;
+	static GetDefaultObject(): NetworkSyncDelegate__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): NetworkSyncDelegate__PythonCallable;
+	static C(Other: UObject | any): NetworkSyncDelegate__PythonCallable;
+}
+
+declare class MontageWaitSimpleDelegate__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): MontageWaitSimpleDelegate__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): MontageWaitSimpleDelegate__PythonCallable;
+	static GetDefaultObject(): MontageWaitSimpleDelegate__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MontageWaitSimpleDelegate__PythonCallable;
+	static C(Other: UObject | any): MontageWaitSimpleDelegate__PythonCallable;
+}
+
+declare class RepeatedActionDelegate__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): RepeatedActionDelegate__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): RepeatedActionDelegate__PythonCallable;
+	static GetDefaultObject(): RepeatedActionDelegate__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): RepeatedActionDelegate__PythonCallable;
+	static C(Other: UObject | any): RepeatedActionDelegate__PythonCallable;
+}
+
+declare class SpawnActorDelegate__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): SpawnActorDelegate__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): SpawnActorDelegate__PythonCallable;
+	static GetDefaultObject(): SpawnActorDelegate__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): SpawnActorDelegate__PythonCallable;
+	static C(Other: UObject | any): SpawnActorDelegate__PythonCallable;
+}
+
+declare class AbilityStateDelegate__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): AbilityStateDelegate__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): AbilityStateDelegate__PythonCallable;
+	static GetDefaultObject(): AbilityStateDelegate__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): AbilityStateDelegate__PythonCallable;
+	static C(Other: UObject | any): AbilityStateDelegate__PythonCallable;
+}
+
+declare class VisualizeTargetingDelegate__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): VisualizeTargetingDelegate__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): VisualizeTargetingDelegate__PythonCallable;
+	static GetDefaultObject(): VisualizeTargetingDelegate__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): VisualizeTargetingDelegate__PythonCallable;
+	static C(Other: UObject | any): VisualizeTargetingDelegate__PythonCallable;
+}
+
+declare class WaitAbilityActivateDelegate__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): WaitAbilityActivateDelegate__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): WaitAbilityActivateDelegate__PythonCallable;
+	static GetDefaultObject(): WaitAbilityActivateDelegate__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): WaitAbilityActivateDelegate__PythonCallable;
+	static C(Other: UObject | any): WaitAbilityActivateDelegate__PythonCallable;
+}
+
+declare class WaitAbilityCommitDelegate__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): WaitAbilityCommitDelegate__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): WaitAbilityCommitDelegate__PythonCallable;
+	static GetDefaultObject(): WaitAbilityCommitDelegate__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): WaitAbilityCommitDelegate__PythonCallable;
+	static C(Other: UObject | any): WaitAbilityCommitDelegate__PythonCallable;
+}
+
+declare class WaitAttributeChangeDelegate__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): WaitAttributeChangeDelegate__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): WaitAttributeChangeDelegate__PythonCallable;
+	static GetDefaultObject(): WaitAttributeChangeDelegate__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): WaitAttributeChangeDelegate__PythonCallable;
+	static C(Other: UObject | any): WaitAttributeChangeDelegate__PythonCallable;
+}
+
+declare class WaitAttributeChangeRatioThresholdDelegate__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): WaitAttributeChangeRatioThresholdDelegate__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): WaitAttributeChangeRatioThresholdDelegate__PythonCallable;
+	static GetDefaultObject(): WaitAttributeChangeRatioThresholdDelegate__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): WaitAttributeChangeRatioThresholdDelegate__PythonCallable;
+	static C(Other: UObject | any): WaitAttributeChangeRatioThresholdDelegate__PythonCallable;
+}
+
+declare class WaitAttributeChangeThresholdDelegate__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): WaitAttributeChangeThresholdDelegate__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): WaitAttributeChangeThresholdDelegate__PythonCallable;
+	static GetDefaultObject(): WaitAttributeChangeThresholdDelegate__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): WaitAttributeChangeThresholdDelegate__PythonCallable;
+	static C(Other: UObject | any): WaitAttributeChangeThresholdDelegate__PythonCallable;
+}
+
+declare class WaitCancelDelegate__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): WaitCancelDelegate__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): WaitCancelDelegate__PythonCallable;
+	static GetDefaultObject(): WaitCancelDelegate__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): WaitCancelDelegate__PythonCallable;
+	static C(Other: UObject | any): WaitCancelDelegate__PythonCallable;
+}
+
+declare class WaitConfirmCancelDelegate__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): WaitConfirmCancelDelegate__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): WaitConfirmCancelDelegate__PythonCallable;
+	static GetDefaultObject(): WaitConfirmCancelDelegate__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): WaitConfirmCancelDelegate__PythonCallable;
+	static C(Other: UObject | any): WaitConfirmCancelDelegate__PythonCallable;
+}
+
+declare class WaitDelayDelegate__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): WaitDelayDelegate__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): WaitDelayDelegate__PythonCallable;
+	static GetDefaultObject(): WaitDelayDelegate__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): WaitDelayDelegate__PythonCallable;
+	static C(Other: UObject | any): WaitDelayDelegate__PythonCallable;
+}
+
+declare class GameplayEffectAppliedSelfDelegate__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): GameplayEffectAppliedSelfDelegate__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): GameplayEffectAppliedSelfDelegate__PythonCallable;
+	static GetDefaultObject(): GameplayEffectAppliedSelfDelegate__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): GameplayEffectAppliedSelfDelegate__PythonCallable;
+	static C(Other: UObject | any): GameplayEffectAppliedSelfDelegate__PythonCallable;
+}
+
+declare class GameplayEffectAppliedTargetDelegate__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): GameplayEffectAppliedTargetDelegate__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): GameplayEffectAppliedTargetDelegate__PythonCallable;
+	static GetDefaultObject(): GameplayEffectAppliedTargetDelegate__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): GameplayEffectAppliedTargetDelegate__PythonCallable;
+	static C(Other: UObject | any): GameplayEffectAppliedTargetDelegate__PythonCallable;
+}
+
+declare class GameplayEffectBlockedDelegate__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): GameplayEffectBlockedDelegate__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): GameplayEffectBlockedDelegate__PythonCallable;
+	static GetDefaultObject(): GameplayEffectBlockedDelegate__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): GameplayEffectBlockedDelegate__PythonCallable;
+	static C(Other: UObject | any): GameplayEffectBlockedDelegate__PythonCallable;
+}
+
+declare class WaitGameplayEffectRemovedDelegate__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): WaitGameplayEffectRemovedDelegate__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): WaitGameplayEffectRemovedDelegate__PythonCallable;
+	static GetDefaultObject(): WaitGameplayEffectRemovedDelegate__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): WaitGameplayEffectRemovedDelegate__PythonCallable;
+	static C(Other: UObject | any): WaitGameplayEffectRemovedDelegate__PythonCallable;
+}
+
+declare class WaitGameplayEffectStackChangeDelegate__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): WaitGameplayEffectStackChangeDelegate__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): WaitGameplayEffectStackChangeDelegate__PythonCallable;
+	static GetDefaultObject(): WaitGameplayEffectStackChangeDelegate__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): WaitGameplayEffectStackChangeDelegate__PythonCallable;
+	static C(Other: UObject | any): WaitGameplayEffectStackChangeDelegate__PythonCallable;
+}
+
+declare class WaitGameplayEventDelegate__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): WaitGameplayEventDelegate__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): WaitGameplayEventDelegate__PythonCallable;
+	static GetDefaultObject(): WaitGameplayEventDelegate__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): WaitGameplayEventDelegate__PythonCallable;
+	static C(Other: UObject | any): WaitGameplayEventDelegate__PythonCallable;
+}
+
+declare class WaitGameplayTagDelegate__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): WaitGameplayTagDelegate__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): WaitGameplayTagDelegate__PythonCallable;
+	static GetDefaultObject(): WaitGameplayTagDelegate__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): WaitGameplayTagDelegate__PythonCallable;
+	static C(Other: UObject | any): WaitGameplayTagDelegate__PythonCallable;
+}
+
+declare class InputPressDelegate__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): InputPressDelegate__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): InputPressDelegate__PythonCallable;
+	static GetDefaultObject(): InputPressDelegate__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): InputPressDelegate__PythonCallable;
+	static C(Other: UObject | any): InputPressDelegate__PythonCallable;
+}
+
+declare class InputReleaseDelegate__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): InputReleaseDelegate__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): InputReleaseDelegate__PythonCallable;
+	static GetDefaultObject(): InputReleaseDelegate__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): InputReleaseDelegate__PythonCallable;
+	static C(Other: UObject | any): InputReleaseDelegate__PythonCallable;
+}
+
+declare class MovementModeChangedDelegate__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): MovementModeChangedDelegate__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): MovementModeChangedDelegate__PythonCallable;
+	static GetDefaultObject(): MovementModeChangedDelegate__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MovementModeChangedDelegate__PythonCallable;
+	static C(Other: UObject | any): MovementModeChangedDelegate__PythonCallable;
+}
+
+declare class WaitOverlapDelegate__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): WaitOverlapDelegate__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): WaitOverlapDelegate__PythonCallable;
+	static GetDefaultObject(): WaitOverlapDelegate__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): WaitOverlapDelegate__PythonCallable;
+	static C(Other: UObject | any): WaitOverlapDelegate__PythonCallable;
+}
+
+declare class WaitTargetDataDelegate__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): WaitTargetDataDelegate__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): WaitTargetDataDelegate__PythonCallable;
+	static GetDefaultObject(): WaitTargetDataDelegate__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): WaitTargetDataDelegate__PythonCallable;
+	static C(Other: UObject | any): WaitTargetDataDelegate__PythonCallable;
+}
+
+declare class WaitVelocityChangeDelegate__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): WaitVelocityChangeDelegate__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): WaitVelocityChangeDelegate__PythonCallable;
+	static GetDefaultObject(): WaitVelocityChangeDelegate__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): WaitVelocityChangeDelegate__PythonCallable;
+	static C(Other: UObject | any): WaitVelocityChangeDelegate__PythonCallable;
+}
+
+declare class AbilityAbilityKey__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): AbilityAbilityKey__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): AbilityAbilityKey__PythonCallable;
+	static GetDefaultObject(): AbilityAbilityKey__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): AbilityAbilityKey__PythonCallable;
+	static C(Other: UObject | any): AbilityAbilityKey__PythonCallable;
+}
+
+declare class AbilityConfirmOrCancel__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): AbilityConfirmOrCancel__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): AbilityConfirmOrCancel__PythonCallable;
+	static GetDefaultObject(): AbilityConfirmOrCancel__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): AbilityConfirmOrCancel__PythonCallable;
+	static C(Other: UObject | any): AbilityConfirmOrCancel__PythonCallable;
+}
+
+declare class GameplayAbilitiesBlueprintFactory extends Factory { 
+	BlueprintType: EBlueprintType;
+	ParentClass: UnrealEngineClass;
+	static Load(ResourceName: string): GameplayAbilitiesBlueprintFactory;
+	static Find(Outer: UObject, ResourceName: string): GameplayAbilitiesBlueprintFactory;
+	static GetDefaultObject(): GameplayAbilitiesBlueprintFactory;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): GameplayAbilitiesBlueprintFactory;
+	static C(Other: UObject | any): GameplayAbilitiesBlueprintFactory;
+}
+
+declare class GameplayAbilityGraph extends EdGraph { 
+	static Load(ResourceName: string): GameplayAbilityGraph;
+	static Find(Outer: UObject, ResourceName: string): GameplayAbilityGraph;
+	static GetDefaultObject(): GameplayAbilityGraph;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): GameplayAbilityGraph;
+	static C(Other: UObject | any): GameplayAbilityGraph;
+}
+
+declare class GameplayAbilityGraphSchema extends EdGraphSchema_K2 { 
+	static Load(ResourceName: string): GameplayAbilityGraphSchema;
+	static Find(Outer: UObject, ResourceName: string): GameplayAbilityGraphSchema;
+	static GetDefaultObject(): GameplayAbilityGraphSchema;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): GameplayAbilityGraphSchema;
+	static C(Other: UObject | any): GameplayAbilityGraphSchema;
+}
+
+declare class GameplayEffectCreationData { 
+	MenuPath: string;
+	BaseName: string;
+	ParentGameplayEffect: UnrealEngineClass;
+	clone() : GameplayEffectCreationData;
+	static C(Other: UObject | any): GameplayEffectCreationData;
+}
+
+declare class GameplayEffectCreationMenu extends UObject { 
+	Definitions: GameplayEffectCreationData[];
+	static Load(ResourceName: string): GameplayEffectCreationMenu;
+	static Find(Outer: UObject, ResourceName: string): GameplayEffectCreationMenu;
+	static GetDefaultObject(): GameplayEffectCreationMenu;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): GameplayEffectCreationMenu;
+	static C(Other: UObject | any): GameplayEffectCreationMenu;
+}
+
+declare class K2Node_GameplayCueEvent extends K2Node_Event { 
+	static Load(ResourceName: string): K2Node_GameplayCueEvent;
+	static Find(Outer: UObject, ResourceName: string): K2Node_GameplayCueEvent;
+	static GetDefaultObject(): K2Node_GameplayCueEvent;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): K2Node_GameplayCueEvent;
+	static C(Other: UObject | any): K2Node_GameplayCueEvent;
+}
+
+declare class K2Node_LatentAbilityCall extends K2Node_LatentGameplayTaskCall { 
+	static Load(ResourceName: string): K2Node_LatentAbilityCall;
+	static Find(Outer: UObject, ResourceName: string): K2Node_LatentAbilityCall;
+	static GetDefaultObject(): K2Node_LatentAbilityCall;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): K2Node_LatentAbilityCall;
+	static C(Other: UObject | any): K2Node_LatentAbilityCall;
+}
+
+declare type ELocationAccuracy = 'LA_ThreeKilometers' | 'LA_OneKilometer' | 'LA_HundredMeters' | 'LA_TenMeters' | 'LA_Best' | 'LA_Navigation' | 'LA_MAX';
+declare var ELocationAccuracy : { LA_ThreeKilometers:'LA_ThreeKilometers',LA_OneKilometer:'LA_OneKilometer',LA_HundredMeters:'LA_HundredMeters',LA_TenMeters:'LA_TenMeters',LA_Best:'LA_Best',LA_Navigation:'LA_Navigation',LA_MAX:'LA_MAX', };
+declare class LocationServicesData { 
+	Timestamp: number;
+	Longitude: number;
+	Latitude: number;
+	HorizontalAccuracy: number;
+	VerticalAccuracy: number;
+	Altitude: number;
+	clone() : LocationServicesData;
+	static C(Other: UObject | any): LocationServicesData;
+	static GetLastKnownLocation(): LocationServicesData;
+}
+
+declare class LocationServicesImpl extends UObject { 
+	OnLocationChanged: UnrealEngineMulticastDelegate<(LocationData: LocationServicesData) => void>;
+	static Load(ResourceName: string): LocationServicesImpl;
+	static Find(Outer: UObject, ResourceName: string): LocationServicesImpl;
+	static GetDefaultObject(): LocationServicesImpl;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): LocationServicesImpl;
+	static C(Other: UObject | any): LocationServicesImpl;
+}
+
+declare class LocationServices extends BlueprintFunctionLibrary { 
+	static Load(ResourceName: string): LocationServices;
+	static Find(Outer: UObject, ResourceName: string): LocationServices;
+	static GetDefaultObject(): LocationServices;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): LocationServices;
+	static StopLocationServices(): boolean;
+	static StartLocationServices(): boolean;
+	static IsLocationAccuracyAvailable(Accuracy: ELocationAccuracy): boolean;
+	static InitLocationServices(Accuracy: ELocationAccuracy,UpdateFrequency: number,MinDistanceFilter: number): boolean;
+	static GetLocationServicesImpl(): LocationServicesImpl;
+	static GetLastKnownLocation(): LocationServicesData;
+	static AreLocationServicesEnabled(): boolean;
+	static C(Other: UObject | any): LocationServices;
+}
+
+declare class LocationServicesData_OnLocationChanged__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): LocationServicesData_OnLocationChanged__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): LocationServicesData_OnLocationChanged__PythonCallable;
+	static GetDefaultObject(): LocationServicesData_OnLocationChanged__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): LocationServicesData_OnLocationChanged__PythonCallable;
+	static C(Other: UObject | any): LocationServicesData_OnLocationChanged__PythonCallable;
+}
+
+declare class TireConfigMaterialFriction { 
+	PhysicalMaterial: PhysicalMaterial;
+	FrictionScale: number;
+	clone() : TireConfigMaterialFriction;
+	static C(Other: UObject | any): TireConfigMaterialFriction;
+}
+
+declare class TireConfig extends DataAsset { 
+	FrictionScale: number;
+	TireFrictionScales: TireConfigMaterialFriction[];
+	static Load(ResourceName: string): TireConfig;
+	static Find(Outer: UObject, ResourceName: string): TireConfig;
+	static GetDefaultObject(): TireConfig;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): TireConfig;
+	static C(Other: UObject | any): TireConfig;
+}
+
+declare type EWheelSweepType = 'SimpleAndComplex' | 'Simple' | 'Complex' | 'EWheelSweepType_MAX';
+declare var EWheelSweepType : { SimpleAndComplex:'SimpleAndComplex',Simple:'Simple',Complex:'Complex',EWheelSweepType_MAX:'EWheelSweepType_MAX', };
+declare class VehicleWheel extends UObject { 
+	CollisionMesh: StaticMesh;
+	bDontCreateShape: boolean;
+	bAutoAdjustCollisionSize: boolean;
+	Offset: Vector;
+	ShapeRadius: number;
+	ShapeWidth: number;
+	Mass: number;
+	DampingRate: number;
+	SteerAngle: number;
+	bAffectedByHandbrake: boolean;
+	TireType: TireType;
+	TireConfig: TireConfig;
+	LatStiffMaxLoad: number;
+	LatStiffValue: number;
+	LongStiffValue: number;
+	SuspensionForceOffset: number;
+	SuspensionMaxRaise: number;
+	SuspensionMaxDrop: number;
+	SuspensionNaturalFrequency: number;
+	SuspensionDampingRatio: number;
+	SweepType: EWheelSweepType;
+	MaxBrakeTorque: number;
+	MaxHandBrakeTorque: number;
+	VehicleSim: WheeledVehicleMovementComponent;
+	WheelIndex: number;
+	DebugLongSlip: number;
+	DebugLatSlip: number;
+	DebugNormalizedTireLoad: number;
+	DebugWheelTorque: number;
+	DebugLongForce: number;
+	DebugLatForce: number;
+	Location: Vector;
+	OldLocation: Vector;
+	Velocity: Vector;
+	static Load(ResourceName: string): VehicleWheel;
+	static Find(Outer: UObject, ResourceName: string): VehicleWheel;
+	static GetDefaultObject(): VehicleWheel;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): VehicleWheel;
+	IsInAir(): boolean;
+	GetSuspensionOffset(): number;
+	GetSteerAngle(): number;
+	GetRotationAngle(): number;
+	static C(Other: UObject | any): VehicleWheel;
+}
+
+declare class WheelSetup { 
+	WheelClass: UnrealEngineClass;
+	BoneName: string;
+	AdditionalOffset: Vector;
+	bDisableSteering: boolean;
+	clone() : WheelSetup;
+	static C(Other: UObject | any): WheelSetup;
+}
+
+declare class ReplicatedVehicleState { 
+	SteeringInput: number;
+	ThrottleInput: number;
+	BrakeInput: number;
+	HandbrakeInput: number;
+	CurrentGear: number;
+	clone() : ReplicatedVehicleState;
+	static C(Other: UObject | any): ReplicatedVehicleState;
+}
+
+declare class VehicleInputRate { 
+	RiseRate: number;
+	FallRate: number;
+	clone() : VehicleInputRate;
+	static C(Other: UObject | any): VehicleInputRate;
+}
+
+declare class WheeledVehicleMovementComponent extends PawnMovementComponent { 
+	bDeprecatedSpringOffsetMode: boolean;
+	bReverseAsBrake: boolean;
+	bUseRVOAvoidance: boolean;
+	bRawHandbrakeInput: boolean;
+	bRawGearUpInput: boolean;
+	bRawGearDownInput: boolean;
+	bWasAvoidanceUpdated: boolean;
+	Mass: number;
+	WheelSetups: WheelSetup[];
+	DragCoefficient: number;
+	ChassisWidth: number;
+	ChassisHeight: number;
+	DragArea: number;
+	EstimatedMaxEngineSpeed: number;
+	MaxEngineRPM: number;
+	DebugDragMagnitude: number;
+	InertiaTensorScale: Vector;
+	MinNormalizedTireLoad: number;
+	MinNormalizedTireLoadFiltered: number;
+	MaxNormalizedTireLoad: number;
+	MaxNormalizedTireLoadFiltered: number;
+	ThresholdLongitudinalSpeed: number;
+	LowForwardSpeedSubStepCount: number;
+	HighForwardSpeedSubStepCount: number;
+	Wheels: VehicleWheel[];
+	RVOAvoidanceRadius: number;
+	RVOAvoidanceHeight: number;
+	AvoidanceConsiderationRadius: number;
+	RVOSteeringStep: number;
+	RVOThrottleStep: number;
+	AvoidanceUID: number;
+	AvoidanceGroup: NavAvoidanceMask;
+	GroupsToAvoid: NavAvoidanceMask;
+	GroupsToIgnore: NavAvoidanceMask;
+	AvoidanceWeight: number;
+	PendingLaunchVelocity: Vector;
+	ReplicatedState: ReplicatedVehicleState;
+	RawSteeringInput: number;
+	RawThrottleInput: number;
+	RawBrakeInput: number;
+	SteeringInput: number;
+	ThrottleInput: number;
+	BrakeInput: number;
+	HandbrakeInput: number;
+	IdleBrakeInput: number;
+	StopThreshold: number;
+	WrongDirectionThreshold: number;
+	ThrottleInputRate: VehicleInputRate;
+	BrakeInputRate: VehicleInputRate;
+	HandbrakeInputRate: VehicleInputRate;
+	SteeringInputRate: VehicleInputRate;
+	OverrideController: Controller;
+	static Load(ResourceName: string): WheeledVehicleMovementComponent;
+	static Find(Outer: UObject, ResourceName: string): WheeledVehicleMovementComponent;
+	static GetDefaultObject(): WheeledVehicleMovementComponent;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): WheeledVehicleMovementComponent;
+	SetUseAutoGears(bUseAuto: boolean): void;
+	SetThrottleInput(Throttle: number): void;
+	SetTargetGear(GearNum: number,bImmediate: boolean): void;
+	SetSteeringInput(Steering: number): void;
+	SetHandbrakeInput(bNewHandbrake: boolean): void;
+	SetGroupsToIgnoreMask(GroupMask: NavAvoidanceMask): void;
+	SetGroupsToIgnore(GroupFlags: number): void;
+	SetGroupsToAvoidMask(GroupMask: NavAvoidanceMask): void;
+	SetGroupsToAvoid(GroupFlags: number): void;
+	SetGearUp(bNewGearUp: boolean): void;
+	SetGearDown(bNewGearDown: boolean): void;
+	SetBrakeInput(Brake: number): void;
+	SetAvoidanceGroupMask(GroupMask: NavAvoidanceMask): void;
+	SetAvoidanceGroup(GroupFlags: number): void;
+	SetAvoidanceEnabled(bEnable: boolean): void;
+	ServerUpdateState(InSteeringInput: number,InThrottleInput: number,InBrakeInput: number,InHandbrakeInput: number,CurrentGear: number): void;
+	GetUseAutoGears(): boolean;
+	GetTargetGear(): number;
+	GetForwardSpeed(): number;
+	GetEngineRotationSpeed(): number;
+	GetEngineMaxRotationSpeed(): number;
+	GetCurrentGear(): number;
+	static C(Other: UObject | any): WheeledVehicleMovementComponent;
+}
+
+declare class SimpleWheeledVehicleMovementComponent extends WheeledVehicleMovementComponent { 
+	static Load(ResourceName: string): SimpleWheeledVehicleMovementComponent;
+	static Find(Outer: UObject, ResourceName: string): SimpleWheeledVehicleMovementComponent;
+	static GetDefaultObject(): SimpleWheeledVehicleMovementComponent;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): SimpleWheeledVehicleMovementComponent;
+	SetSteerAngle(SteerAngle: number,WheelIndex: number): void;
+	SetDriveTorque(DriveTorque: number,WheelIndex: number): void;
+	SetBrakeTorque(BrakeTorque: number,WheelIndex: number): void;
+	static C(Other: UObject | any): SimpleWheeledVehicleMovementComponent;
+}
+
+declare class WheeledVehicle extends Pawn { 
+	Mesh: SkeletalMeshComponent;
+	VehicleMovement: WheeledVehicleMovementComponent;
+	static GetDefaultObject(): WheeledVehicle;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): WheeledVehicle;
+	static C(Other: UObject | any): WheeledVehicle;
+}
+
+declare class VehicleAnimInstance extends AnimInstance { 
+	WheeledVehicleMovementComponent: WheeledVehicleMovementComponent;
+	static Load(ResourceName: string): VehicleAnimInstance;
+	static Find(Outer: UObject, ResourceName: string): VehicleAnimInstance;
+	static GetDefaultObject(): VehicleAnimInstance;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): VehicleAnimInstance;
+	GetVehicle(): WheeledVehicle;
+	static C(Other: UObject | any): VehicleAnimInstance;
+}
+
+declare class VehicleEngineData { 
+	TorqueCurve: RuntimeFloatCurve;
+	MaxRPM: number;
+	MOI: number;
+	DampingRateFullThrottle: number;
+	DampingRateZeroThrottleClutchEngaged: number;
+	DampingRateZeroThrottleClutchDisengaged: number;
+	clone() : VehicleEngineData;
+	static C(Other: UObject | any): VehicleEngineData;
+}
+
+declare type EVehicleDifferential4W = 'LimitedSlip_4W' | 'LimitedSlip_FrontDrive' | 'LimitedSlip_RearDrive' | 'Open_4W' | 'Open_FrontDrive' | 'Open_RearDrive' | 'EVehicleDifferential4W_MAX';
+declare var EVehicleDifferential4W : { LimitedSlip_4W:'LimitedSlip_4W',LimitedSlip_FrontDrive:'LimitedSlip_FrontDrive',LimitedSlip_RearDrive:'LimitedSlip_RearDrive',Open_4W:'Open_4W',Open_FrontDrive:'Open_FrontDrive',Open_RearDrive:'Open_RearDrive',EVehicleDifferential4W_MAX:'EVehicleDifferential4W_MAX', };
+declare class VehicleDifferential4WData { 
+	DifferentialType: EVehicleDifferential4W;
+	FrontRearSplit: number;
+	FrontLeftRightSplit: number;
+	RearLeftRightSplit: number;
+	CentreBias: number;
+	FrontBias: number;
+	RearBias: number;
+	clone() : VehicleDifferential4WData;
+	static C(Other: UObject | any): VehicleDifferential4WData;
+}
+
+declare class VehicleGearData { 
+	Ratio: number;
+	DownRatio: number;
+	UpRatio: number;
+	clone() : VehicleGearData;
+	static C(Other: UObject | any): VehicleGearData;
+}
+
+declare class VehicleTransmissionData { 
+	bUseGearAutoBox: boolean;
+	GearSwitchTime: number;
+	GearAutoBoxLatency: number;
+	FinalRatio: number;
+	ForwardGears: VehicleGearData[];
+	ReverseGearRatio: number;
+	NeutralGearUpRatio: number;
+	ClutchStrength: number;
+	clone() : VehicleTransmissionData;
+	static C(Other: UObject | any): VehicleTransmissionData;
+}
+
+declare class WheeledVehicleMovementComponent4W extends WheeledVehicleMovementComponent { 
+	EngineSetup: VehicleEngineData;
+	DifferentialSetup: VehicleDifferential4WData;
+	AckermannAccuracy: number;
+	TransmissionSetup: VehicleTransmissionData;
+	SteeringCurve: RuntimeFloatCurve;
+	static Load(ResourceName: string): WheeledVehicleMovementComponent4W;
+	static Find(Outer: UObject, ResourceName: string): WheeledVehicleMovementComponent4W;
+	static GetDefaultObject(): WheeledVehicleMovementComponent4W;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): WheeledVehicleMovementComponent4W;
+	static C(Other: UObject | any): WheeledVehicleMovementComponent4W;
+}
+
+declare class AnimNode_WheelHandler extends AnimNode_SkeletalControlBase { 
+	clone() : AnimNode_WheelHandler;
+	static C(Other: UObject | any): AnimNode_WheelHandler;
+}
+
+declare class AnimGraphNode_WheelHandler extends AnimGraphNode_SkeletalControlBase { 
+	UNode: AnimNode_WheelHandler;
+	static Load(ResourceName: string): AnimGraphNode_WheelHandler;
+	static Find(Outer: UObject, ResourceName: string): AnimGraphNode_WheelHandler;
+	static GetDefaultObject(): AnimGraphNode_WheelHandler;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): AnimGraphNode_WheelHandler;
+	static C(Other: UObject | any): AnimGraphNode_WheelHandler;
+}
+
+declare class AbilityCooldownMMC extends GameplayModMagnitudeCalculation { 
+	static Load(ResourceName: string): AbilityCooldownMMC;
+	static Find(Outer: UObject, ResourceName: string): AbilityCooldownMMC;
+	static GetDefaultObject(): AbilityCooldownMMC;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): AbilityCooldownMMC;
+	static C(Other: UObject | any): AbilityCooldownMMC;
+}
+
+declare class AbilityCostMMC extends GameplayModMagnitudeCalculation { 
+	static Load(ResourceName: string): AbilityCostMMC;
+	static Find(Outer: UObject, ResourceName: string): AbilityCostMMC;
+	static GetDefaultObject(): AbilityCostMMC;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): AbilityCostMMC;
+	static C(Other: UObject | any): AbilityCostMMC;
+}
+
+declare class BasicAttackCooldownEffect extends GameplayEffect { 
+	static Load(ResourceName: string): BasicAttackCooldownEffect;
+	static Find(Outer: UObject, ResourceName: string): BasicAttackCooldownEffect;
+	static GetDefaultObject(): BasicAttackCooldownEffect;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): BasicAttackCooldownEffect;
+	static C(Other: UObject | any): BasicAttackCooldownEffect;
+}
+
+declare class MLCameraComponent extends CameraComponent { 
+	CameraSpeed: number;
+	static Load(ResourceName: string): MLCameraComponent;
+	static Find(Outer: UObject, ResourceName: string): MLCameraComponent;
+	static GetDefaultObject(): MLCameraComponent;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MLCameraComponent;
+	static C(Other: UObject | any): MLCameraComponent;
+}
+
+declare class MLBasicAttackAbilityBase extends GameplayAbility { 
+	static Load(ResourceName: string): MLBasicAttackAbilityBase;
+	static Find(Outer: UObject, ResourceName: string): MLBasicAttackAbilityBase;
+	static GetDefaultObject(): MLBasicAttackAbilityBase;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MLBasicAttackAbilityBase;
+	static C(Other: UObject | any): MLBasicAttackAbilityBase;
+}
+
+declare type ECauseOfDeath = 'UnitDamage' | 'Execution' | 'SelfInflictedDamage' | 'ECauseOfDeath_MAX';
+declare var ECauseOfDeath : { UnitDamage:'UnitDamage',Execution:'Execution',SelfInflictedDamage:'SelfInflictedDamage',ECauseOfDeath_MAX:'ECauseOfDeath_MAX', };
+declare type EDamageType = 'PhysicalDamage' | 'MagicalDamage' | 'TrueDamage' | 'PureDamage' | 'EDamageType_MAX';
+declare var EDamageType : { PhysicalDamage:'PhysicalDamage',MagicalDamage:'MagicalDamage',TrueDamage:'TrueDamage',PureDamage:'PureDamage',EDamageType_MAX:'EDamageType_MAX', };
+declare type EDamageEffects = 'None' | 'OnHit' | 'OnAttack' | 'Spell' | 'EDamageEffects_MAX';
+declare var EDamageEffects : { None:'None',OnHit:'OnHit',OnAttack:'OnAttack',Spell:'Spell',EDamageEffects_MAX:'EDamageEffects_MAX', };
+declare type ETeam = 'Neutral' | 'Green' | 'Purple' | 'ETeam_MAX';
+declare var ETeam : { Neutral:'Neutral',Green:'Green',Purple:'Purple',ETeam_MAX:'ETeam_MAX', };
+declare type EMLStatType = 'CurrentHealth' | 'MaximumHealth' | 'AttackDamage' | 'AttackSpeed' | 'FlatPhysicalArmorPen' | 'FlatMagicalArmorPen' | 'PhysicalArmor' | 'MagicalArmor' | 'MovementSpeed' | 'AbilityPower' | 'CurrentResource' | 'MaximumResource' | 'CooldownReduction' | 'EMLStatType_MAX';
+declare var EMLStatType : { CurrentHealth:'CurrentHealth',MaximumHealth:'MaximumHealth',AttackDamage:'AttackDamage',AttackSpeed:'AttackSpeed',FlatPhysicalArmorPen:'FlatPhysicalArmorPen',FlatMagicalArmorPen:'FlatMagicalArmorPen',PhysicalArmor:'PhysicalArmor',MagicalArmor:'MagicalArmor',MovementSpeed:'MovementSpeed',AbilityPower:'AbilityPower',CurrentResource:'CurrentResource',MaximumResource:'MaximumResource',CooldownReduction:'CooldownReduction',EMLStatType_MAX:'EMLStatType_MAX', };
+declare type EStatGroup = 'Base' | 'Bonus' | 'Total' | 'EStatGroup_MAX';
+declare var EStatGroup : { Base:'Base',Bonus:'Bonus',Total:'Total',EStatGroup_MAX:'EStatGroup_MAX', };
+declare class MLAbilitySystemComponent extends AbilitySystemComponent { 
+	bHasMovementAttributes: boolean;
+	bHasDefenseAttributes: boolean;
+	bHasOffenseAttributes: boolean;
+	static Load(ResourceName: string): MLAbilitySystemComponent;
+	static Find(Outer: UObject, ResourceName: string): MLAbilitySystemComponent;
+	static GetDefaultObject(): MLAbilitySystemComponent;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MLAbilitySystemComponent;
+	SetLevel(NewLevel: number): number;
+	GetStat(StatType: EMLStatType,StatGroup: EStatGroup): number;
+	GetLevel(): number;
+	static C(Other: UObject | any): MLAbilitySystemComponent;
+}
+
+declare class UnitCapsuleComponent extends CapsuleComponent { 
+	static Load(ResourceName: string): UnitCapsuleComponent;
+	static Find(Outer: UObject, ResourceName: string): UnitCapsuleComponent;
+	static GetDefaultObject(): UnitCapsuleComponent;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): UnitCapsuleComponent;
+	static C(Other: UObject | any): UnitCapsuleComponent;
+}
+
+declare class MLProjectileInteractionComponent extends SphereComponent { 
+	static Load(ResourceName: string): MLProjectileInteractionComponent;
+	static Find(Outer: UObject, ResourceName: string): MLProjectileInteractionComponent;
+	static GetDefaultObject(): MLProjectileInteractionComponent;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MLProjectileInteractionComponent;
+	static C(Other: UObject | any): MLProjectileInteractionComponent;
+}
+
+declare class MLProjectileMovementComponent extends ProjectileMovementComponent { 
+	ProjectileSpeed: number;
+	static Load(ResourceName: string): MLProjectileMovementComponent;
+	static Find(Outer: UObject, ResourceName: string): MLProjectileMovementComponent;
+	static GetDefaultObject(): MLProjectileMovementComponent;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MLProjectileMovementComponent;
+	static C(Other: UObject | any): MLProjectileMovementComponent;
+}
+
 declare class MLProjectileBase extends Actor { 
 	ProjectileInteractionComponent: MLProjectileInteractionComponent;
 	ProjectileMovement: MLProjectileMovementComponent;
@@ -694,7 +3028,9 @@ declare class LayersBlueprintLibrary extends BlueprintFunctionLibrary {
 	static Find(Outer: UObject, ResourceName: string): LayersBlueprintLibrary;
 	static GetDefaultObject(): LayersBlueprintLibrary;
 	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): LayersBlueprintLibrary;
+	static RemoveActorFromLayer(InActor: Actor,Layer: ActorLayer): void;
 	static GetActors(WorldContextObject: UObject,ActorLayer: ActorLayer): Actor[];
+	static AddActorToLayer(InActor: Actor,Layer: ActorLayer): void;
 	static C(Other: UObject | any): LayersBlueprintLibrary;
 }
 
@@ -862,158 +3198,49 @@ declare class SpeedTreeImportData extends AssetImportData {
 	static C(Other: UObject | any): SpeedTreeImportData;
 }
 
-declare class DatasmithSceneNewFactory extends Factory { 
-	static Load(ResourceName: string): DatasmithSceneNewFactory;
-	static Find(Outer: UObject, ResourceName: string): DatasmithSceneNewFactory;
-	static GetDefaultObject(): DatasmithSceneNewFactory;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): DatasmithSceneNewFactory;
-	static C(Other: UObject | any): DatasmithSceneNewFactory;
+declare class LevelVariantSetsActorFactory extends ActorFactory { 
+	static Load(ResourceName: string): LevelVariantSetsActorFactory;
+	static Find(Outer: UObject, ResourceName: string): LevelVariantSetsActorFactory;
+	static GetDefaultObject(): LevelVariantSetsActorFactory;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): LevelVariantSetsActorFactory;
+	static C(Other: UObject | any): LevelVariantSetsActorFactory;
 }
 
-declare class CapturedPropSegment { 
-	PropertyName: string;
-	PropertyIndex: number;
-	ComponentName: string;
-	clone() : CapturedPropSegment;
-	static C(Other: UObject | any): CapturedPropSegment;
+declare class VariantManagerFactoryNew extends Factory { 
+	static Load(ResourceName: string): VariantManagerFactoryNew;
+	static Find(Outer: UObject, ResourceName: string): VariantManagerFactoryNew;
+	static GetDefaultObject(): VariantManagerFactoryNew;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): VariantManagerFactoryNew;
+	static C(Other: UObject | any): VariantManagerFactoryNew;
 }
 
-declare type EPropertyValueCategory = 'Undefined' | 'Generic' | 'RelativeLocation' | 'RelativeRotation' | 'RelativeScale3D' | 'bVisible' | 'Material' | 'Color' | 'EPropertyValueCategory_MAX';
-declare var EPropertyValueCategory : { Undefined:'Undefined',Generic:'Generic',RelativeLocation:'RelativeLocation',RelativeRotation:'RelativeRotation',RelativeScale3D:'RelativeScale3D',bVisible:'bVisible',Material:'Material',Color:'Color',EPropertyValueCategory_MAX:'EPropertyValueCategory_MAX', };
-declare class PropertyValue extends UObject { 
-	Properties: Property[];
-	PropertyIndices: number[];
-	CapturedPropSegments: CapturedPropSegment[];
-	FullDisplayString: string;
-	PropertySetterName: string;
-	PropertySetterParameterDefaults: any;
-	bHasRecordedData: boolean;
-	LeafPropertyClass: UnrealEngineClass;
-	ValueBytes: number[];
-	PropCategory: EPropertyValueCategory;
-	static Load(ResourceName: string): PropertyValue;
-	static Find(Outer: UObject, ResourceName: string): PropertyValue;
-	static GetDefaultObject(): PropertyValue;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): PropertyValue;
-	HasRecordedData(): boolean;
-	GetPropertyTooltip(): string;
-	GetFullDisplayString(): string;
-	static C(Other: UObject | any): PropertyValue;
-}
-
-declare class FunctionCaller { 
-	FunctionName: string;
-	FunctionEntry: any;
-	clone() : FunctionCaller;
-	static C(Other: UObject | any): FunctionCaller;
-}
-
-declare class VariantObjectBinding extends UObject { 
-	ObjectPtr: SoftObjectPath;
-	LazyObjectPtr: any;
-	CapturedProperties: PropertyValue[];
-	FunctionCallers: FunctionCaller[];
-	static Load(ResourceName: string): VariantObjectBinding;
-	static Find(Outer: UObject, ResourceName: string): VariantObjectBinding;
-	static GetDefaultObject(): VariantObjectBinding;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): VariantObjectBinding;
-	static C(Other: UObject | any): VariantObjectBinding;
-}
-
-declare class Variant extends UObject { 
-	DisplayText: string;
-	ObjectBindings: VariantObjectBinding[];
-	static Load(ResourceName: string): Variant;
-	static Find(Outer: UObject, ResourceName: string): Variant;
-	static GetDefaultObject(): Variant;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): Variant;
-	SwitchOn(): void;
-	SetDisplayText(NewDisplayText: string): void;
-	GetNumActors(): number;
-	GetDisplayText(): string;
-	GetActor(ActorIndex: number): Actor;
-	static C(Other: UObject | any): Variant;
-}
-
-declare class VariantSet extends UObject { 
-	DisplayText: string;
-	bExpanded: boolean;
-	Variants: Variant[];
-	static Load(ResourceName: string): VariantSet;
-	static Find(Outer: UObject, ResourceName: string): VariantSet;
-	static GetDefaultObject(): VariantSet;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): VariantSet;
-	SetDisplayText(NewDisplayText: string): void;
-	GetVariantByName(VariantName: string): Variant;
-	GetVariant(VariantIndex: number): Variant;
-	GetNumVariants(): number;
-	GetDisplayText(): string;
-	static C(Other: UObject | any): VariantSet;
-}
-
-declare class LevelVariantSets extends UObject { 
-	DirectorBlueprint: UObject;
-	DirectorClass: UnrealEngineClass;
-	VariantSets: VariantSet[];
-	static Load(ResourceName: string): LevelVariantSets;
-	static Find(Outer: UObject, ResourceName: string): LevelVariantSets;
-	static GetDefaultObject(): LevelVariantSets;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): LevelVariantSets;
-	GetVariantSetByName(VariantSetName: string): VariantSet;
-	GetVariantSet(VariantSetIndex: number): VariantSet;
-	GetNumVariantSets(): number;
-	static C(Other: UObject | any): LevelVariantSets;
-}
-
-declare class LevelVariantSetsActor extends Actor { 
-	LevelVariantSets: SoftObjectPath;
-	static GetDefaultObject(): LevelVariantSetsActor;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): LevelVariantSetsActor;
-	SwitchOnVariantByName(VariantSetName: string,VariantName: string): boolean;
-	SwitchOnVariantByIndex(VariantSetIndex: number,VariantIndex: number): boolean;
-	SetLevelVariantSets(InVariantSets: LevelVariantSets): void;
-	GetLevelVariantSets(bLoad: boolean): LevelVariantSets;
-	static C(Other: UObject | any): LevelVariantSetsActor;
-}
-
-declare class LevelVariantSetsFunctionDirector extends UObject { 
-	static Load(ResourceName: string): LevelVariantSetsFunctionDirector;
-	static Find(Outer: UObject, ResourceName: string): LevelVariantSetsFunctionDirector;
-	static GetDefaultObject(): LevelVariantSetsFunctionDirector;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): LevelVariantSetsFunctionDirector;
-	static C(Other: UObject | any): LevelVariantSetsFunctionDirector;
-}
-
-declare class PropertyValueTransform extends PropertyValue { 
-	static Load(ResourceName: string): PropertyValueTransform;
-	static Find(Outer: UObject, ResourceName: string): PropertyValueTransform;
-	static GetDefaultObject(): PropertyValueTransform;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): PropertyValueTransform;
-	static C(Other: UObject | any): PropertyValueTransform;
-}
-
-declare class PropertyValueVisibility extends PropertyValue { 
-	static Load(ResourceName: string): PropertyValueVisibility;
-	static Find(Outer: UObject, ResourceName: string): PropertyValueVisibility;
-	static GetDefaultObject(): PropertyValueVisibility;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): PropertyValueVisibility;
-	static C(Other: UObject | any): PropertyValueVisibility;
-}
-
-declare class PropertyValueColor extends PropertyValue { 
-	static Load(ResourceName: string): PropertyValueColor;
-	static Find(Outer: UObject, ResourceName: string): PropertyValueColor;
-	static GetDefaultObject(): PropertyValueColor;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): PropertyValueColor;
-	static C(Other: UObject | any): PropertyValueColor;
-}
-
-declare class PropertyValueMaterial extends PropertyValue { 
-	static Load(ResourceName: string): PropertyValueMaterial;
-	static Find(Outer: UObject, ResourceName: string): PropertyValueMaterial;
-	static GetDefaultObject(): PropertyValueMaterial;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): PropertyValueMaterial;
-	static C(Other: UObject | any): PropertyValueMaterial;
+declare type EVariantManagerTestEnum = 'None' | 'FirstOption' | 'SecondOption' | 'ThirdOption' | 'EVariantManagerTestEnum_MAX';
+declare var EVariantManagerTestEnum : { None:'None',FirstOption:'FirstOption',SecondOption:'SecondOption',ThirdOption:'ThirdOption',EVariantManagerTestEnum_MAX:'EVariantManagerTestEnum_MAX', };
+declare class VariantManagerTestActor extends Actor { 
+	EnumWithNoDefault: EVariantManagerTestEnum;
+	EnumWithSecondDefault: EVariantManagerTestEnum;
+	CapturedByteProperty: number;
+	CapturedIntProperty: number;
+	CapturedFloatProperty: number;
+	bCapturedBoolProperty: boolean;
+	CapturedObjectProperty: UObject;
+	CapturedInterfaceProperty: any;
+	CapturedNameProperty: string;
+	CapturedStrProperty: string;
+	CapturedTextProperty: string;
+	CapturedRotatorProperty: Rotator;
+	CapturedColorProperty: Color;
+	CapturedLinearColorProperty: LinearColor;
+	CapturedVectorProperty: Vector;
+	CapturedQuatProperty: Quat;
+	CapturedVector4Property: Vector4;
+	CapturedVector2DProperty: Vector2D;
+	CapturedIntPointProperty: IntPoint;
+	CapturedUObjectArrayProperty: UObject[];
+	CapturedVectorArrayProperty: Vector[];
+	static GetDefaultObject(): VariantManagerTestActor;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): VariantManagerTestActor;
+	static C(Other: UObject | any): VariantManagerTestActor;
 }
 
 declare class GeometryCacheTrack extends UObject { 
@@ -1194,8 +3421,8 @@ declare class AbcMaterialSettings {
 	static C(Other: UObject | any): AbcMaterialSettings;
 }
 
-declare type EBaseCalculationType = 'PercentageBased' | 'FixedNumber' | 'EBaseCalculationType_MAX';
-declare var EBaseCalculationType : { PercentageBased:'PercentageBased',FixedNumber:'FixedNumber',EBaseCalculationType_MAX:'EBaseCalculationType_MAX', };
+declare type EBaseCalculationType = 'None' | 'PercentageBased' | 'FixedNumber' | 'EBaseCalculationType_MAX';
+declare var EBaseCalculationType : { None:'None',PercentageBased:'PercentageBased',FixedNumber:'FixedNumber',EBaseCalculationType_MAX:'EBaseCalculationType_MAX', };
 declare class AbcCompressionSettings { 
 	bMergeMeshes: boolean;
 	bBakeMatrixAnimation: boolean;
@@ -1307,6 +3534,7 @@ declare class ScreenshotComparisonCommandlet extends Commandlet {
 
 declare class MovieSceneGeometryCacheParams { 
 	GeometryCacheAsset: GeometryCache;
+	FirstLoopStartFrameOffset: FrameNumber;
 	StartFrameOffset: FrameNumber;
 	EndFrameOffset: FrameNumber;
 	PlayRate: number;
@@ -1336,21 +3564,44 @@ declare class MovieSceneGeometryCacheTrack extends MovieSceneNameableTrack {
 	static C(Other: UObject | any): MovieSceneGeometryCacheTrack;
 }
 
-declare class WebSocketConnection extends NetConnection { 
-	static Load(ResourceName: string): WebSocketConnection;
-	static Find(Outer: UObject, ResourceName: string): WebSocketConnection;
-	static GetDefaultObject(): WebSocketConnection;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): WebSocketConnection;
-	static C(Other: UObject | any): WebSocketConnection;
+declare class MagicLeapAudioFunctionLibrary extends BlueprintFunctionLibrary { 
+	static Load(ResourceName: string): MagicLeapAudioFunctionLibrary;
+	static Find(Outer: UObject, ResourceName: string): MagicLeapAudioFunctionLibrary;
+	static GetDefaultObject(): MagicLeapAudioFunctionLibrary;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MagicLeapAudioFunctionLibrary;
+	static C(Other: UObject | any): MagicLeapAudioFunctionLibrary;
 }
 
-declare class WebSocketNetDriver extends NetDriver { 
-	WebSocketPort: number;
-	static Load(ResourceName: string): WebSocketNetDriver;
-	static Find(Outer: UObject, ResourceName: string): WebSocketNetDriver;
-	static GetDefaultObject(): WebSocketNetDriver;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): WebSocketNetDriver;
-	static C(Other: UObject | any): WebSocketNetDriver;
+declare class MagicLeapAudioJackPluggedDelegate__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): MagicLeapAudioJackPluggedDelegate__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): MagicLeapAudioJackPluggedDelegate__PythonCallable;
+	static GetDefaultObject(): MagicLeapAudioJackPluggedDelegate__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MagicLeapAudioJackPluggedDelegate__PythonCallable;
+	static C(Other: UObject | any): MagicLeapAudioJackPluggedDelegate__PythonCallable;
+}
+
+declare class MagicLeapAudioJackPluggedDelegateMulti__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): MagicLeapAudioJackPluggedDelegateMulti__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): MagicLeapAudioJackPluggedDelegateMulti__PythonCallable;
+	static GetDefaultObject(): MagicLeapAudioJackPluggedDelegateMulti__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MagicLeapAudioJackPluggedDelegateMulti__PythonCallable;
+	static C(Other: UObject | any): MagicLeapAudioJackPluggedDelegateMulti__PythonCallable;
+}
+
+declare class MagicLeapAudioJackUnpluggedDelegate__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): MagicLeapAudioJackUnpluggedDelegate__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): MagicLeapAudioJackUnpluggedDelegate__PythonCallable;
+	static GetDefaultObject(): MagicLeapAudioJackUnpluggedDelegate__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MagicLeapAudioJackUnpluggedDelegate__PythonCallable;
+	static C(Other: UObject | any): MagicLeapAudioJackUnpluggedDelegate__PythonCallable;
+}
+
+declare class MagicLeapAudioJackUnpluggedDelegateMulti__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): MagicLeapAudioJackUnpluggedDelegateMulti__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): MagicLeapAudioJackUnpluggedDelegateMulti__PythonCallable;
+	static GetDefaultObject(): MagicLeapAudioJackUnpluggedDelegateMulti__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MagicLeapAudioJackUnpluggedDelegateMulti__PythonCallable;
+	static C(Other: UObject | any): MagicLeapAudioJackUnpluggedDelegateMulti__PythonCallable;
 }
 
 declare class ImgMediaSettings extends UObject { 
@@ -1480,14 +3731,6 @@ declare class IPClient extends ClientUnitTest {
 	static GetDefaultObject(): IPClient;
 	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): IPClient;
 	static C(Other: UObject | any): IPClient;
-}
-
-declare class HTML5Client extends IPClient { 
-	static Load(ResourceName: string): HTML5Client;
-	static Find(Outer: UObject, ResourceName: string): HTML5Client;
-	static GetDefaultObject(): HTML5Client;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): HTML5Client;
-	static C(Other: UObject | any): HTML5Client;
 }
 
 declare class NUTActor extends Actor { 
@@ -1654,6 +3897,14 @@ declare class VMTestClassB extends UObject {
 	static C(Other: UObject | any): VMTestClassB;
 }
 
+declare class WebSocketClient extends IPClient { 
+	static Load(ResourceName: string): WebSocketClient;
+	static Find(Outer: UObject, ResourceName: string): WebSocketClient;
+	static GetDefaultObject(): WebSocketClient;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): WebSocketClient;
+	static C(Other: UObject | any): WebSocketClient;
+}
+
 declare class ExecuteOnServer__PythonCallable extends PythonCallableForDelegate { 
 	static Load(ResourceName: string): ExecuteOnServer__PythonCallable;
 	static Find(Outer: UObject, ResourceName: string): ExecuteOnServer__PythonCallable;
@@ -1815,6 +4066,39 @@ declare class ArchVisCharMovementComponent extends CharacterMovementComponent {
 	static C(Other: UObject | any): ArchVisCharMovementComponent;
 }
 
+declare type ECollectionScriptingShareType = 'Local' | 'Private' | 'Shared' | 'ECollectionScriptingShareType_MAX';
+declare var ECollectionScriptingShareType : { Local:'Local',Private:'Private',Shared:'Shared',ECollectionScriptingShareType_MAX:'ECollectionScriptingShareType_MAX', };
+declare class AssetTagsSubsystem extends EngineSubsystem { 
+	static Load(ResourceName: string): AssetTagsSubsystem;
+	static Find(Outer: UObject, ResourceName: string): AssetTagsSubsystem;
+	static GetDefaultObject(): AssetTagsSubsystem;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): AssetTagsSubsystem;
+	ReparentCollection(Name: string,NewParentName: string): boolean;
+	RenameCollection(Name: string,NewName: string): boolean;
+	RemoveAssetsFromCollection(Name: string,AssetPathNames: string[]): boolean;
+	RemoveAssetPtrsFromCollection(Name: string,AssetPtrs: UObject[]): boolean;
+	RemoveAssetPtrFromCollection(Name: string,AssetPtr: UObject): boolean;
+	RemoveAssetFromCollection(Name: string,AssetPathName: string): boolean;
+	RemoveAssetDatasFromCollection(Name: string,AssetDatas: AssetData[]): boolean;
+	RemoveAssetDataFromCollection(Name: string,AssetData: AssetData): boolean;
+	GetCollectionsContainingAssetPtr(AssetPtr: UObject): string[];
+	GetCollectionsContainingAssetData(AssetData: AssetData): string[];
+	GetCollectionsContainingAsset(AssetPathName: string): string[];
+	GetCollections(): string[];
+	GetAssetsInCollection(Name: string): AssetData[];
+	EmptyCollection(Name: string): boolean;
+	DestroyCollection(Name: string): boolean;
+	CreateCollection(Name: string,ShareType: ECollectionScriptingShareType): boolean;
+	CollectionExists(Name: string): boolean;
+	AddAssetToCollection(Name: string,AssetPathName: string): boolean;
+	AddAssetsToCollection(Name: string,AssetPathNames: string[]): boolean;
+	AddAssetPtrToCollection(Name: string,AssetPtr: UObject): boolean;
+	AddAssetPtrsToCollection(Name: string,AssetPtrs: UObject[]): boolean;
+	AddAssetDataToCollection(Name: string,AssetData: AssetData): boolean;
+	AddAssetDatasToCollection(Name: string,AssetDatas: AssetData[]): boolean;
+	static C(Other: UObject | any): AssetTagsSubsystem;
+}
+
 declare class AudioCaptureDeviceInfo { 
 	DeviceName: string;
 	NumInputChannels: number;
@@ -1917,425 +4201,6 @@ declare class CustomMeshComponent extends MeshComponent {
 	static C(Other: UObject | any): CustomMeshComponent;
 }
 
-declare class ChaosEventListenerComponent extends ActorComponent { 
-	static Load(ResourceName: string): ChaosEventListenerComponent;
-	static Find(Outer: UObject, ResourceName: string): ChaosEventListenerComponent;
-	static GetDefaultObject(): ChaosEventListenerComponent;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): ChaosEventListenerComponent;
-	static C(Other: UObject | any): ChaosEventListenerComponent;
-}
-
-declare class ChaosGameplayEventDispatcher extends ChaosEventListenerComponent { 
-	CollisionEventRegistrations: any;
-	BreakEventRegistrations: any;
-	static Load(ResourceName: string): ChaosGameplayEventDispatcher;
-	static Find(Outer: UObject, ResourceName: string): ChaosGameplayEventDispatcher;
-	static GetDefaultObject(): ChaosGameplayEventDispatcher;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): ChaosGameplayEventDispatcher;
-	static C(Other: UObject | any): ChaosGameplayEventDispatcher;
-}
-
-declare class ChaosNotifyHandlerInterface extends Interface { 
-	static Load(ResourceName: string): ChaosNotifyHandlerInterface;
-	static Find(Outer: UObject, ResourceName: string): ChaosNotifyHandlerInterface;
-	static GetDefaultObject(): ChaosNotifyHandlerInterface;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): ChaosNotifyHandlerInterface;
-	static C(Other: UObject | any): ChaosNotifyHandlerInterface;
-}
-
-declare class ChaosPhysicsCollisionInfo { 
-	Component: PrimitiveComponent;
-	OtherComponent: PrimitiveComponent;
-	Location: Vector;
-	Normal: Vector;
-	AccumulatedImpulse: Vector;
-	Velocity: Vector;
-	OtherVelocity: Vector;
-	AngularVelocity: Vector;
-	OtherAngularVelocity: Vector;
-	Mass: number;
-	OtherMass: number;
-	clone() : ChaosPhysicsCollisionInfo;
-	static C(Other: UObject | any): ChaosPhysicsCollisionInfo;
-	ConvertPhysicsCollisionToHitResult(): HitResult;
-	static ConvertPhysicsCollisionToHitResult(PhysicsCollision: ChaosPhysicsCollisionInfo): HitResult;
-}
-
-declare class ChaosSolverEngineBlueprintLibrary extends BlueprintFunctionLibrary { 
-	static Load(ResourceName: string): ChaosSolverEngineBlueprintLibrary;
-	static Find(Outer: UObject, ResourceName: string): ChaosSolverEngineBlueprintLibrary;
-	static GetDefaultObject(): ChaosSolverEngineBlueprintLibrary;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): ChaosSolverEngineBlueprintLibrary;
-	static ConvertPhysicsCollisionToHitResult(PhysicsCollision: ChaosPhysicsCollisionInfo): HitResult;
-	static C(Other: UObject | any): ChaosSolverEngineBlueprintLibrary;
-}
-
-declare class ChaosSolver extends UObject { 
-	static Load(ResourceName: string): ChaosSolver;
-	static Find(Outer: UObject, ResourceName: string): ChaosSolver;
-	static GetDefaultObject(): ChaosSolver;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): ChaosSolver;
-	static C(Other: UObject | any): ChaosSolver;
-}
-
-declare type EClusterConnectionTypeEnum = 'Chaos_PointImplicit' | 'Chaos_DelaunayTriangulation' | 'Chaos_MinimalSpanningSubsetDelaunayTriangulation' | 'Chaos_PointImplicitAugmentedWithMinimalDelaunay' | 'Chaos_None' | 'Chaos_EClsuterCreationParameters_Max' | 'Chaos_MAX';
-declare var EClusterConnectionTypeEnum : { Chaos_PointImplicit:'Chaos_PointImplicit',Chaos_DelaunayTriangulation:'Chaos_DelaunayTriangulation',Chaos_MinimalSpanningSubsetDelaunayTriangulation:'Chaos_MinimalSpanningSubsetDelaunayTriangulation',Chaos_PointImplicitAugmentedWithMinimalDelaunay:'Chaos_PointImplicitAugmentedWithMinimalDelaunay',Chaos_None:'Chaos_None',Chaos_EClsuterCreationParameters_Max:'Chaos_EClsuterCreationParameters_Max',Chaos_MAX:'Chaos_MAX', };
-declare class SolverCollisionFilterSettings { 
-	FilterEnabled: boolean;
-	MinMass: number;
-	MinSpeed: number;
-	MinImpulse: number;
-	clone() : SolverCollisionFilterSettings;
-	static C(Other: UObject | any): SolverCollisionFilterSettings;
-}
-
-declare class SolverBreakingFilterSettings { 
-	FilterEnabled: boolean;
-	MinMass: number;
-	MinSpeed: number;
-	MinVolume: number;
-	clone() : SolverBreakingFilterSettings;
-	static C(Other: UObject | any): SolverBreakingFilterSettings;
-}
-
-declare class SolverTrailingFilterSettings { 
-	FilterEnabled: boolean;
-	MinMass: number;
-	MinSpeed: number;
-	MinVolume: number;
-	clone() : SolverTrailingFilterSettings;
-	static C(Other: UObject | any): SolverTrailingFilterSettings;
-}
-
-declare class ChaosDebugSubstepControl { 
-	bPause: boolean;
-	bSubstep: boolean;
-	bStep: boolean;
-	clone() : ChaosDebugSubstepControl;
-	static C(Other: UObject | any): ChaosDebugSubstepControl;
-}
-
-declare class ChaosSolverActor extends Actor { 
-	TimeStepMultiplier: number;
-	CollisionIterations: number;
-	PushOutIterations: number;
-	PushOutPairIterations: number;
-	ClusterConnectionFactor: number;
-	ClusterUnionConnectionType: EClusterConnectionTypeEnum;
-	DoGenerateCollisionData: boolean;
-	CollisionFilterSettings: SolverCollisionFilterSettings;
-	DoGenerateBreakingData: boolean;
-	BreakingFilterSettings: SolverBreakingFilterSettings;
-	DoGenerateTrailingData: boolean;
-	TrailingFilterSettings: SolverTrailingFilterSettings;
-	bHasFloor: boolean;
-	FloorHeight: number;
-	MassScale: number;
-	ChaosDebugSubstepControl: ChaosDebugSubstepControl;
-	SpriteComponent: BillboardComponent;
-	GameplayEventDispatcherComponent: ChaosGameplayEventDispatcher;
-	static GetDefaultObject(): ChaosSolverActor;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): ChaosSolverActor;
-	SetSolverActive(bActive: boolean): void;
-	SetAsCurrentWorldSolver(): void;
-	static C(Other: UObject | any): ChaosSolverActor;
-}
-
-declare class ChaosSolverSettings extends DeveloperSettings { 
-	DefaultChaosSolverActorClass: SoftClassPath;
-	static Load(ResourceName: string): ChaosSolverSettings;
-	static Find(Outer: UObject, ResourceName: string): ChaosSolverSettings;
-	static GetDefaultObject(): ChaosSolverSettings;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): ChaosSolverSettings;
-	static C(Other: UObject | any): ChaosSolverSettings;
-}
-
-declare class FieldSystem extends UObject { 
-	static Load(ResourceName: string): FieldSystem;
-	static Find(Outer: UObject, ResourceName: string): FieldSystem;
-	static GetDefaultObject(): FieldSystem;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): FieldSystem;
-	static C(Other: UObject | any): FieldSystem;
-}
-
-declare type EFieldPhysicsType = 'Field_DynamicState' | 'Field_LinearForce' | 'Field_ExternalClusterStrain' | 'Field_Kill' | 'Field_LinearVelocity' | 'Field_AngularVelociy' | 'Field_AngularTorque' | 'Field_InternalClusterStrain' | 'Field_DisableThreshold' | 'Field_SleepingThreshold' | 'Field_PositionStatic' | 'Field_PositionAnimated' | 'Field_PositionTarget' | 'Field_DynamicConstraint' | 'Field_CollisionGroup' | 'Field_ActivateDisabled' | 'Field_PhysicsType_Max';
-declare var EFieldPhysicsType : { Field_DynamicState:'Field_DynamicState',Field_LinearForce:'Field_LinearForce',Field_ExternalClusterStrain:'Field_ExternalClusterStrain',Field_Kill:'Field_Kill',Field_LinearVelocity:'Field_LinearVelocity',Field_AngularVelociy:'Field_AngularVelociy',Field_AngularTorque:'Field_AngularTorque',Field_InternalClusterStrain:'Field_InternalClusterStrain',Field_DisableThreshold:'Field_DisableThreshold',Field_SleepingThreshold:'Field_SleepingThreshold',Field_PositionStatic:'Field_PositionStatic',Field_PositionAnimated:'Field_PositionAnimated',Field_PositionTarget:'Field_PositionTarget',Field_DynamicConstraint:'Field_DynamicConstraint',Field_CollisionGroup:'Field_CollisionGroup',Field_ActivateDisabled:'Field_ActivateDisabled',Field_PhysicsType_Max:'Field_PhysicsType_Max', };
-declare class FieldSystemMetaData extends ActorComponent { 
-	static Load(ResourceName: string): FieldSystemMetaData;
-	static Find(Outer: UObject, ResourceName: string): FieldSystemMetaData;
-	static GetDefaultObject(): FieldSystemMetaData;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): FieldSystemMetaData;
-	static C(Other: UObject | any): FieldSystemMetaData;
-}
-
-declare class FieldNodeBase extends ActorComponent { 
-	static Load(ResourceName: string): FieldNodeBase;
-	static Find(Outer: UObject, ResourceName: string): FieldNodeBase;
-	static GetDefaultObject(): FieldNodeBase;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): FieldNodeBase;
-	static C(Other: UObject | any): FieldNodeBase;
-}
-
-declare class FieldSystemComponent extends PrimitiveComponent { 
-	FieldSystem: FieldSystem;
-	SupportedSolvers: ChaosSolverActor[];
-	static Load(ResourceName: string): FieldSystemComponent;
-	static Find(Outer: UObject, ResourceName: string): FieldSystemComponent;
-	static GetDefaultObject(): FieldSystemComponent;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): FieldSystemComponent;
-	ResetFieldSystem(): void;
-	ApplyUniformVectorFalloffForce(Enabled: boolean,Position: Vector,Direction: Vector,Radius: number,Magnitude: number): void;
-	ApplyStrainField(Enabled: boolean,Position: Vector,Radius: number,Magnitude: number,Iterations: number): void;
-	ApplyStayDynamicField(Enabled: boolean,Position: Vector,Radius: number): void;
-	ApplyRadialVectorFalloffForce(Enabled: boolean,Position: Vector,Radius: number,Magnitude: number): void;
-	ApplyRadialForce(Enabled: boolean,Position: Vector,Magnitude: number): void;
-	ApplyPhysicsField(Enabled: boolean,Target: EFieldPhysicsType,MetaData: FieldSystemMetaData,Field: FieldNodeBase): void;
-	ApplyLinearForce(Enabled: boolean,Direction: Vector,Magnitude: number): void;
-	AddFieldCommand(Enabled: boolean,Target: EFieldPhysicsType,MetaData: FieldSystemMetaData,Field: FieldNodeBase): void;
-	static C(Other: UObject | any): FieldSystemComponent;
-}
-
-declare class FieldSystemActor extends Actor { 
-	FieldSystemComponent: FieldSystemComponent;
-	static GetDefaultObject(): FieldSystemActor;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): FieldSystemActor;
-	static C(Other: UObject | any): FieldSystemActor;
-}
-
-declare class FieldSystemMetaDataIteration extends FieldSystemMetaData { 
-	Iterations: number;
-	static Load(ResourceName: string): FieldSystemMetaDataIteration;
-	static Find(Outer: UObject, ResourceName: string): FieldSystemMetaDataIteration;
-	static GetDefaultObject(): FieldSystemMetaDataIteration;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): FieldSystemMetaDataIteration;
-	SetMetaDataIteration(Iterations: number): FieldSystemMetaDataIteration;
-	static C(Other: UObject | any): FieldSystemMetaDataIteration;
-}
-
-declare type EFieldResolutionType = 'Field_Resolution_Minimal' | 'Field_Resolution_DisabledParents' | 'Field_Resolution_Maximum' | 'Field_Resolution_Max';
-declare var EFieldResolutionType : { Field_Resolution_Minimal:'Field_Resolution_Minimal',Field_Resolution_DisabledParents:'Field_Resolution_DisabledParents',Field_Resolution_Maximum:'Field_Resolution_Maximum',Field_Resolution_Max:'Field_Resolution_Max', };
-declare class FieldSystemMetaDataProcessingResolution extends FieldSystemMetaData { 
-	ResolutionType: EFieldResolutionType;
-	static Load(ResourceName: string): FieldSystemMetaDataProcessingResolution;
-	static Find(Outer: UObject, ResourceName: string): FieldSystemMetaDataProcessingResolution;
-	static GetDefaultObject(): FieldSystemMetaDataProcessingResolution;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): FieldSystemMetaDataProcessingResolution;
-	SetMetaDataaProcessingResolutionType(ResolutionType: EFieldResolutionType): FieldSystemMetaDataProcessingResolution;
-	static C(Other: UObject | any): FieldSystemMetaDataProcessingResolution;
-}
-
-declare class FieldNodeInt extends FieldNodeBase { 
-	static Load(ResourceName: string): FieldNodeInt;
-	static Find(Outer: UObject, ResourceName: string): FieldNodeInt;
-	static GetDefaultObject(): FieldNodeInt;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): FieldNodeInt;
-	static C(Other: UObject | any): FieldNodeInt;
-}
-
-declare class FieldNodeFloat extends FieldNodeBase { 
-	static Load(ResourceName: string): FieldNodeFloat;
-	static Find(Outer: UObject, ResourceName: string): FieldNodeFloat;
-	static GetDefaultObject(): FieldNodeFloat;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): FieldNodeFloat;
-	static C(Other: UObject | any): FieldNodeFloat;
-}
-
-declare class FieldNodeVector extends FieldNodeBase { 
-	static Load(ResourceName: string): FieldNodeVector;
-	static Find(Outer: UObject, ResourceName: string): FieldNodeVector;
-	static GetDefaultObject(): FieldNodeVector;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): FieldNodeVector;
-	static C(Other: UObject | any): FieldNodeVector;
-}
-
-declare class UniformInteger extends FieldNodeInt { 
-	Magnitude: number;
-	static Load(ResourceName: string): UniformInteger;
-	static Find(Outer: UObject, ResourceName: string): UniformInteger;
-	static GetDefaultObject(): UniformInteger;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): UniformInteger;
-	SetUniformInteger(Magnitude: number): UniformInteger;
-	static C(Other: UObject | any): UniformInteger;
-}
-
-declare type ESetMaskConditionType = 'Field_Set_Always' | 'Field_Set_IFF_NOT_Interior' | 'Field_Set_IFF_NOT_Exterior' | 'Field_MaskCondition_Max';
-declare var ESetMaskConditionType : { Field_Set_Always:'Field_Set_Always',Field_Set_IFF_NOT_Interior:'Field_Set_IFF_NOT_Interior',Field_Set_IFF_NOT_Exterior:'Field_Set_IFF_NOT_Exterior',Field_MaskCondition_Max:'Field_MaskCondition_Max', };
-declare class RadialIntMask extends FieldNodeInt { 
-	Radius: number;
-	Position: Vector;
-	InteriorValue: number;
-	ExteriorValue: number;
-	SetMaskCondition: ESetMaskConditionType;
-	static Load(ResourceName: string): RadialIntMask;
-	static Find(Outer: UObject, ResourceName: string): RadialIntMask;
-	static GetDefaultObject(): RadialIntMask;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): RadialIntMask;
-	SetRadialIntMask(Radius: number,Position: Vector,InteriorValue: number,ExteriorValue: number,SetMaskConditionIn: ESetMaskConditionType): RadialIntMask;
-	static C(Other: UObject | any): RadialIntMask;
-}
-
-declare class UniformScalar extends FieldNodeFloat { 
-	Magnitude: number;
-	static Load(ResourceName: string): UniformScalar;
-	static Find(Outer: UObject, ResourceName: string): UniformScalar;
-	static GetDefaultObject(): UniformScalar;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): UniformScalar;
-	SetUniformScalar(Magnitude: number): UniformScalar;
-	static C(Other: UObject | any): UniformScalar;
-}
-
-declare type EFieldFalloffType = 'Field_FallOff_None' | 'Field_Falloff_Linear' | 'Field_Falloff_Inverse' | 'Field_Falloff_Squared' | 'Field_Falloff_Logarithmic' | 'Field_Falloff_Max';
-declare var EFieldFalloffType : { Field_FallOff_None:'Field_FallOff_None',Field_Falloff_Linear:'Field_Falloff_Linear',Field_Falloff_Inverse:'Field_Falloff_Inverse',Field_Falloff_Squared:'Field_Falloff_Squared',Field_Falloff_Logarithmic:'Field_Falloff_Logarithmic',Field_Falloff_Max:'Field_Falloff_Max', };
-declare class RadialFalloff extends FieldNodeFloat { 
-	Magnitude: number;
-	MinRange: number;
-	MaxRange: number;
-	Default: number;
-	Radius: number;
-	Position: Vector;
-	Falloff: EFieldFalloffType;
-	static Load(ResourceName: string): RadialFalloff;
-	static Find(Outer: UObject, ResourceName: string): RadialFalloff;
-	static GetDefaultObject(): RadialFalloff;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): RadialFalloff;
-	SetRadialFalloff(Magnitude: number,MinRange: number,MaxRange: number,Default: number,Radius: number,Position: Vector,Falloff: EFieldFalloffType): RadialFalloff;
-	static C(Other: UObject | any): RadialFalloff;
-}
-
-declare class PlaneFalloff extends FieldNodeFloat { 
-	Magnitude: number;
-	MinRange: number;
-	MaxRange: number;
-	Default: number;
-	Distance: number;
-	Position: Vector;
-	Normal: Vector;
-	Falloff: EFieldFalloffType;
-	static Load(ResourceName: string): PlaneFalloff;
-	static Find(Outer: UObject, ResourceName: string): PlaneFalloff;
-	static GetDefaultObject(): PlaneFalloff;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): PlaneFalloff;
-	SetPlaneFalloff(Magnitude: number,MinRange: number,MaxRange: number,Default: number,Distance: number,Position: Vector,Normal: Vector,Falloff: EFieldFalloffType): PlaneFalloff;
-	static C(Other: UObject | any): PlaneFalloff;
-}
-
-declare class BoxFalloff extends FieldNodeFloat { 
-	Magnitude: number;
-	MinRange: number;
-	MaxRange: number;
-	Default: number;
-	Transform: Transform;
-	Falloff: EFieldFalloffType;
-	static Load(ResourceName: string): BoxFalloff;
-	static Find(Outer: UObject, ResourceName: string): BoxFalloff;
-	static GetDefaultObject(): BoxFalloff;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): BoxFalloff;
-	SetBoxFalloff(Magnitude: number,MinRange: number,MaxRange: number,Default: number,Transform: Transform,Falloff: EFieldFalloffType): BoxFalloff;
-	static C(Other: UObject | any): BoxFalloff;
-}
-
-declare class NoiseField extends FieldNodeFloat { 
-	MinRange: number;
-	MaxRange: number;
-	Transform: Transform;
-	static Load(ResourceName: string): NoiseField;
-	static Find(Outer: UObject, ResourceName: string): NoiseField;
-	static GetDefaultObject(): NoiseField;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): NoiseField;
-	SetNoiseField(MinRange: number,MaxRange: number,Transform: Transform): NoiseField;
-	static C(Other: UObject | any): NoiseField;
-}
-
-declare class UniformVector extends FieldNodeVector { 
-	Magnitude: number;
-	Direction: Vector;
-	static Load(ResourceName: string): UniformVector;
-	static Find(Outer: UObject, ResourceName: string): UniformVector;
-	static GetDefaultObject(): UniformVector;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): UniformVector;
-	SetUniformVector(Magnitude: number,Direction: Vector): UniformVector;
-	static C(Other: UObject | any): UniformVector;
-}
-
-declare class RadialVector extends FieldNodeVector { 
-	Magnitude: number;
-	Position: Vector;
-	static Load(ResourceName: string): RadialVector;
-	static Find(Outer: UObject, ResourceName: string): RadialVector;
-	static GetDefaultObject(): RadialVector;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): RadialVector;
-	SetRadialVector(Magnitude: number,Position: Vector): RadialVector;
-	static C(Other: UObject | any): RadialVector;
-}
-
-declare class RandomVector extends FieldNodeVector { 
-	Magnitude: number;
-	static Load(ResourceName: string): RandomVector;
-	static Find(Outer: UObject, ResourceName: string): RandomVector;
-	static GetDefaultObject(): RandomVector;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): RandomVector;
-	SetRandomVector(Magnitude: number): RandomVector;
-	static C(Other: UObject | any): RandomVector;
-}
-
-declare type EFieldOperationType = 'Field_Multiply' | 'Field_Divide' | 'Field_Add' | 'Field_Substract' | 'Field_Operation_Max';
-declare var EFieldOperationType : { Field_Multiply:'Field_Multiply',Field_Divide:'Field_Divide',Field_Add:'Field_Add',Field_Substract:'Field_Substract',Field_Operation_Max:'Field_Operation_Max', };
-declare class OperatorField extends FieldNodeBase { 
-	Magnitude: number;
-	RightField: FieldNodeBase;
-	LeftField: FieldNodeBase;
-	Operation: EFieldOperationType;
-	static Load(ResourceName: string): OperatorField;
-	static Find(Outer: UObject, ResourceName: string): OperatorField;
-	static GetDefaultObject(): OperatorField;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OperatorField;
-	SetOperatorField(Magnitude: number,RightField: FieldNodeBase,LeftField: FieldNodeBase,Operation: EFieldOperationType): OperatorField;
-	static C(Other: UObject | any): OperatorField;
-}
-
-declare class ToIntegerField extends FieldNodeInt { 
-	FloatField: FieldNodeFloat;
-	static Load(ResourceName: string): ToIntegerField;
-	static Find(Outer: UObject, ResourceName: string): ToIntegerField;
-	static GetDefaultObject(): ToIntegerField;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): ToIntegerField;
-	SetToIntegerField(FloatField: FieldNodeFloat): ToIntegerField;
-	static C(Other: UObject | any): ToIntegerField;
-}
-
-declare class ToFloatField extends FieldNodeFloat { 
-	IntField: FieldNodeInt;
-	static Load(ResourceName: string): ToFloatField;
-	static Find(Outer: UObject, ResourceName: string): ToFloatField;
-	static GetDefaultObject(): ToFloatField;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): ToFloatField;
-	SetToFloatField(IntegerField: FieldNodeInt): ToFloatField;
-	static C(Other: UObject | any): ToFloatField;
-}
-
-declare type EFieldCullingOperationType = 'Field_Culling_Inside' | 'Field_Culling_Outside' | 'Field_Culling_Operation_Max' | 'Field_Culling_MAX';
-declare var EFieldCullingOperationType : { Field_Culling_Inside:'Field_Culling_Inside',Field_Culling_Outside:'Field_Culling_Outside',Field_Culling_Operation_Max:'Field_Culling_Operation_Max',Field_Culling_MAX:'Field_Culling_MAX', };
-declare class CullingField extends FieldNodeBase { 
-	Culling: FieldNodeBase;
-	Field: FieldNodeBase;
-	Operation: EFieldCullingOperationType;
-	static Load(ResourceName: string): CullingField;
-	static Find(Outer: UObject, ResourceName: string): CullingField;
-	static GetDefaultObject(): CullingField;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): CullingField;
-	SetCullingField(Culling: FieldNodeBase,Field: FieldNodeBase,Operation: EFieldCullingOperationType): CullingField;
-	static C(Other: UObject | any): CullingField;
-}
-
-declare class ReturnResultsTerminal extends FieldNodeBase { 
-	static Load(ResourceName: string): ReturnResultsTerminal;
-	static Find(Outer: UObject, ResourceName: string): ReturnResultsTerminal;
-	static GetDefaultObject(): ReturnResultsTerminal;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): ReturnResultsTerminal;
-	SetReturnResultsTerminal(): ReturnResultsTerminal;
-	static C(Other: UObject | any): ReturnResultsTerminal;
-}
-
 declare type EChaosCollisionSortMethod = 'SortNone' | 'SortByHighestMass' | 'SortByHighestSpeed' | 'SortByHighestImpulse' | 'SortByNearestFirst' | 'Count' | 'EChaosCollisionSortMethod_MAX';
 declare var EChaosCollisionSortMethod : { SortNone:'SortNone',SortByHighestMass:'SortByHighestMass',SortByHighestSpeed:'SortByHighestSpeed',SortByHighestImpulse:'SortByHighestImpulse',SortByNearestFirst:'SortByNearestFirst',Count:'Count',EChaosCollisionSortMethod_MAX:'EChaosCollisionSortMethod_MAX', };
 declare class ChaosCollisionEventRequestSettings { 
@@ -2383,8 +4248,6 @@ declare class ChaosCollisionEventData {
 	Mass1: number;
 	Mass2: number;
 	Impulse: Vector;
-	ParticleIndex: number;
-	LevelsetIndex: number;
 	clone() : ChaosCollisionEventData;
 	static C(Other: UObject | any): ChaosCollisionEventData;
 }
@@ -2408,6 +4271,8 @@ declare class ChaosTrailingEventData {
 	static C(Other: UObject | any): ChaosTrailingEventData;
 }
 
+declare type ECollisionTypeEnum = 'Chaos_Volumetric' | 'Chaos_Surface_Volumetric' | 'Chaos_Max';
+declare var ECollisionTypeEnum : { Chaos_Volumetric:'Chaos_Volumetric',Chaos_Surface_Volumetric:'Chaos_Surface_Volumetric',Chaos_Max:'Chaos_Max', };
 declare type EImplicitTypeEnum = 'Chaos_Implicit_Box' | 'Chaos_Implicit_Sphere' | 'Chaos_Implicit_Capsule' | 'Chaos_Implicit_LevelSet' | 'Chaos_Implicit_None' | 'Chaos_Max';
 declare var EImplicitTypeEnum : { Chaos_Implicit_Box:'Chaos_Implicit_Box',Chaos_Implicit_Sphere:'Chaos_Implicit_Sphere',Chaos_Implicit_Capsule:'Chaos_Implicit_Capsule',Chaos_Implicit_LevelSet:'Chaos_Implicit_LevelSet',Chaos_Implicit_None:'Chaos_Implicit_None',Chaos_Max:'Chaos_Max', };
 declare class GeometryCollectionSizeSpecificData { 
@@ -2453,6 +4318,10 @@ declare class GeometryCollection extends UObject {
 	static C(Other: UObject | any): GeometryCollection;
 }
 
+declare type EObjectStateTypeEnum = 'Chaos_NONE' | 'Chaos_Object_Sleeping' | 'Chaos_Object_Kinematic' | 'Chaos_Object_Static' | 'Chaos_Object_Dynamic' | 'Chaos_Object_UserDefined' | 'Chaos_Max';
+declare var EObjectStateTypeEnum : { Chaos_NONE:'Chaos_NONE',Chaos_Object_Sleeping:'Chaos_Object_Sleeping',Chaos_Object_Kinematic:'Chaos_Object_Kinematic',Chaos_Object_Static:'Chaos_Object_Static',Chaos_Object_Dynamic:'Chaos_Object_Dynamic',Chaos_Object_UserDefined:'Chaos_Object_UserDefined',Chaos_Max:'Chaos_Max', };
+declare type EInitialVelocityTypeEnum = 'Chaos_Initial_Velocity_User_Defined' | 'Chaos_Initial_Velocity_None' | 'Chaos_Max';
+declare var EInitialVelocityTypeEnum : { Chaos_Initial_Velocity_User_Defined:'Chaos_Initial_Velocity_User_Defined',Chaos_Initial_Velocity_None:'Chaos_Initial_Velocity_None',Chaos_Max:'Chaos_Max', };
 declare type EGeometryCollectionCacheType = 'None' | 'Record' | 'Play' | 'RecordAndPlay' | 'EGeometryCollectionCacheType_MAX';
 declare var EGeometryCollectionCacheType : { None:'None',Record:'Record',Play:'Play',RecordAndPlay:'RecordAndPlay',EGeometryCollectionCacheType_MAX:'EGeometryCollectionCacheType_MAX', };
 declare class SolverCollisionData { 
@@ -2555,7 +4424,7 @@ declare class GeometryCollectionComponent extends MeshComponent {
 	ChaosSolverActor: ChaosSolverActor;
 	RestCollection: GeometryCollection;
 	InitializationFields: FieldSystemActor[];
-	simulating: boolean;
+	Simulating: boolean;
 	ObjectType: EObjectStateTypeEnum;
 	EnableClustering: boolean;
 	ClusterGroupIndex: number;
@@ -2768,7 +4637,7 @@ declare class SkeletalMeshSimulationComponent extends ActorComponent {
 }
 
 declare class StaticMeshSimulationComponent extends ActorComponent { 
-	simulating: boolean;
+	Simulating: boolean;
 	bNotifyCollisions: boolean;
 	ObjectType: EObjectStateTypeEnum;
 	Mass: number;
@@ -2810,27 +4679,6 @@ declare class EditableGeometryCollectionAdapter extends EditableMeshAdapter {
 	static GetDefaultObject(): EditableGeometryCollectionAdapter;
 	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): EditableGeometryCollectionAdapter;
 	static C(Other: UObject | any): EditableGeometryCollectionAdapter;
-}
-
-declare class ElementID { 
-	IDValue: number;
-	clone() : ElementID;
-	static C(Other: UObject | any): ElementID;
-}
-
-declare class VertexID extends ElementID { 
-	clone() : VertexID;
-	static C(Other: UObject | any): VertexID;
-}
-
-declare class EdgeID extends ElementID { 
-	clone() : EdgeID;
-	static C(Other: UObject | any): EdgeID;
-}
-
-declare class PolygonID extends ElementID { 
-	clone() : PolygonID;
-	static C(Other: UObject | any): PolygonID;
 }
 
 declare type ETriangleTessellationMode = 'ThreeTriangles' | 'FourTriangles' | 'ETriangleTessellationMode_MAX';
@@ -2879,11 +4727,6 @@ declare class AttributesForVertex {
 	static C(Other: UObject | any): AttributesForVertex;
 }
 
-declare class VertexInstanceID extends ElementID { 
-	clone() : VertexInstanceID;
-	static C(Other: UObject | any): VertexInstanceID;
-}
-
 declare class AttributesForVertexInstance { 
 	VertexInstanceID: VertexInstanceID;
 	VertexInstanceAttributes: MeshElementAttributeList;
@@ -2905,14 +4748,6 @@ declare class VertexAttributesForPolygon {
 	static C(Other: UObject | any): VertexAttributesForPolygon;
 }
 
-declare class VerticesForEdge { 
-	EdgeID: EdgeID;
-	NewVertexID0: VertexID;
-	NewVertexID1: VertexID;
-	clone() : VerticesForEdge;
-	static C(Other: UObject | any): VerticesForEdge;
-}
-
 declare class AttributesForEdge { 
 	EdgeID: EdgeID;
 	EdgeAttributes: MeshElementAttributeList;
@@ -2927,21 +4762,8 @@ declare class VertexToMove {
 	static C(Other: UObject | any): VertexToMove;
 }
 
-declare class PolygonGroupID extends ElementID { 
-	clone() : PolygonGroupID;
-	static C(Other: UObject | any): PolygonGroupID;
-}
-
 declare type EInsetPolygonsMode = 'All' | 'CenterPolygonOnly' | 'SidePolygonsOnly' | 'EInsetPolygonsMode_MAX';
 declare var EInsetPolygonsMode : { All:'All',CenterPolygonOnly:'CenterPolygonOnly',SidePolygonsOnly:'SidePolygonsOnly',EInsetPolygonsMode_MAX:'EInsetPolygonsMode_MAX', };
-declare class VertexAndAttributes { 
-	VertexInstanceID: VertexInstanceID;
-	VertexID: VertexID;
-	PolygonVertexAttributes: MeshElementAttributeList;
-	clone() : VertexAndAttributes;
-	static C(Other: UObject | any): VertexAndAttributes;
-}
-
 declare class SubdividedQuadVertex { 
 	VertexPositionIndex: number;
 	TextureCoordinate0: Vector2D;
@@ -2984,14 +4806,6 @@ declare class SubdivisionLimitData {
 	static C(Other: UObject | any): SubdivisionLimitData;
 }
 
-declare class MeshTriangle { 
-	VertexInstanceID0: VertexInstanceID;
-	VertexInstanceID1: VertexInstanceID;
-	VertexInstanceID2: VertexInstanceID;
-	clone() : MeshTriangle;
-	static C(Other: UObject | any): MeshTriangle;
-}
-
 declare class VertexToCreate { 
 	VertexAttributes: MeshElementAttributeList;
 	OriginalVertexID: VertexID;
@@ -3005,6 +4819,14 @@ declare class VertexInstanceToCreate {
 	OriginalVertexInstanceID: VertexInstanceID;
 	clone() : VertexInstanceToCreate;
 	static C(Other: UObject | any): VertexInstanceToCreate;
+}
+
+declare class VertexAndAttributes { 
+	VertexInstanceID: VertexInstanceID;
+	VertexID: VertexID;
+	PolygonVertexAttributes: MeshElementAttributeList;
+	clone() : VertexAndAttributes;
+	static C(Other: UObject | any): VertexAndAttributes;
 }
 
 declare type EPolygonEdgeHardness = 'NewEdgesSoft' | 'NewEdgesHard' | 'AllEdgesSoft' | 'AllEdgesHard' | 'EPolygonEdgeHardness_MAX';
@@ -3028,7 +4850,6 @@ declare class PolygonGroupToCreate {
 declare class EdgeToCreate { 
 	VertexID0: VertexID;
 	VertexID1: VertexID;
-	ConnectedPolygons: PolygonID[];
 	EdgeAttributes: MeshElementAttributeList;
 	OriginalEdgeID: EdgeID;
 	clone() : EdgeToCreate;
@@ -3087,7 +4908,6 @@ declare class EditableMesh extends UObject {
 	SetTextureCoordinateCount(NumTexCoords: number): void;
 	SetSubdivisionCount(NewSubdivisionCount: number): void;
 	SetPolygonsVertexAttributes(VertexAttributesForPolygons: VertexAttributesForPolygon[]): void;
-	SetEdgesVertices(VerticesForEdges: VerticesForEdge[]): void;
 	SetEdgesHardnessAutomatically(EdgeIDs: EdgeID[],MaxDotProductForSoftEdge: number): void;
 	SetEdgesHardness(EdgeIDs: EdgeID[],EdgesNewIsHard: boolean[]): void;
 	SetEdgesCreaseSharpness(EdgeIDs: EdgeID[],EdgesNewCreaseSharpness: number[]): void;
@@ -3100,7 +4920,6 @@ declare class EditableMesh extends UObject {
 	SearchSpatialDatabaseForPolygonsInVolume(planes: Plane[],OutPolygons?: PolygonID[]): {OutPolygons: PolygonID[]};
 	RevertInstance(): EditableMesh;
 	Revert(): void;
-	RemovePolygonPerimeterVertices(PolygonID: PolygonID,FirstVertexNumberToRemove: number,NumVerticesToRemove: number,bDeleteOrphanedVertexInstances: boolean): void;
 	RebuildRenderMesh(): void;
 	QuadrangulateMesh(OutNewPolygonIDs?: PolygonID[]): {OutNewPolygonIDs: PolygonID[]};
 	PropagateInstanceChanges(): void;
@@ -3126,7 +4945,6 @@ declare class EditableMesh extends UObject {
 	static InvalidPolygonGroupID(): PolygonGroupID;
 	static InvalidEdgeID(): EdgeID;
 	InsetPolygons(PolygonIDs: PolygonID[],InsetFixedDistance: number,InsetProgressTowardCenter: number,Mode: EInsetPolygonsMode,OutNewCenterPolygonIDs?: PolygonID[],OutNewSidePolygonIDs?: PolygonID[]): {OutNewCenterPolygonIDs: PolygonID[], OutNewSidePolygonIDs: PolygonID[]};
-	InsertPolygonPerimeterVertices(PolygonID: PolygonID,InsertBeforeVertexNumber: number,VerticesToInsert: VertexAndAttributes[]): void;
 	InsertEdgeLoop(EdgeID: EdgeID,Splits: number[],OutNewEdgeIDs?: EdgeID[]): {OutNewEdgeIDs: EdgeID[]};
 	InitializeAdapters(): void;
 	GetVertexPairEdge(VertexID: VertexID,NextVertexID: VertexID,bOutEdgeWindingIsReversed?: boolean): {bOutEdgeWindingIsReversed: boolean, $: EdgeID};
@@ -3145,7 +4963,7 @@ declare class EditableMesh extends UObject {
 	GetSubdivisionLimitData(): SubdivisionLimitData;
 	GetSubdivisionCount(): number;
 	GetPolygonTriangulatedTriangleCount(PolygonID: PolygonID): number;
-	GetPolygonTriangulatedTriangle(PolygonID: PolygonID,PolygonTriangleNumber: number): MeshTriangle;
+	GetPolygonTriangulatedTriangle(PolygonID: PolygonID,PolygonTriangleNumber: number): TriangleID;
 	GetPolygonPerimeterVertices(PolygonID: PolygonID,OutPolygonPerimeterVertexIDs?: VertexID[]): {OutPolygonPerimeterVertexIDs: VertexID[]};
 	GetPolygonPerimeterVertexInstances(PolygonID: PolygonID,OutPolygonPerimeterVertexInstanceIDs?: VertexInstanceID[]): {OutPolygonPerimeterVertexInstanceIDs: VertexInstanceID[]};
 	GetPolygonPerimeterVertexInstance(PolygonID: PolygonID,PolygonVertexNumber: number): VertexInstanceID;
@@ -3192,14 +5010,12 @@ declare class EditableMesh extends UObject {
 	CreateMissingPolygonPerimeterEdges(PolygonID: PolygonID,OutNewEdgeIDs?: EdgeID[]): {OutNewEdgeIDs: EdgeID[]};
 	CreateEmptyVertexRange(NumVerticesToCreate: number,OutNewVertexIDs?: VertexID[]): {OutNewVertexIDs: VertexID[]};
 	CreateEdges(EdgesToCreate: EdgeToCreate[],OutNewEdgeIDs?: EdgeID[]): {OutNewEdgeIDs: EdgeID[]};
-	ComputePolygonTriangulation(PolygonID: PolygonID,OutTriangles?: MeshTriangle[]): {OutTriangles: MeshTriangle[]};
 	ComputePolygonsSharedEdges(PolygonIDs: PolygonID[],OutSharedEdgeIDs?: EdgeID[]): {OutSharedEdgeIDs: EdgeID[]};
 	ComputePolygonPlane(PolygonID: PolygonID): Plane;
 	ComputePolygonNormal(PolygonID: PolygonID): Vector;
 	ComputePolygonCenter(PolygonID: PolygonID): Vector;
 	ComputeBoundingBoxAndSphere(): BoxSphereBounds;
 	ComputeBoundingBox(): Box;
-	ComputeBarycentricWeightForPointOnPolygon(PolygonID: PolygonID,PointOnPolygon: Vector,OutTriangle?: MeshTriangle,OutTriangleVertexWeights?: Vector): {OutTriangle: MeshTriangle, OutTriangleVertexWeights: Vector, $: boolean};
 	CommitInstance(ComponentToInstanceTo: PrimitiveComponent): EditableMesh;
 	Commit(): void;
 	ChangePolygonsVertexInstances(VertexInstancesForPolygons: ChangeVertexInstancesForPolygon[]): void;
@@ -3298,12 +5114,175 @@ declare class OnRequestContentFailed__PythonCallable extends PythonCallableForDe
 	static C(Other: UObject | any): OnRequestContentFailed__PythonCallable;
 }
 
+declare type EOculusMR_BoundaryType = 'BT_OuterBoundary' | 'BT_PlayArea' | 'BT_MAX';
+declare var EOculusMR_BoundaryType : { BT_OuterBoundary:'BT_OuterBoundary',BT_PlayArea:'BT_PlayArea',BT_MAX:'BT_MAX', };
+declare class OculusMR_PlaneMeshTriangle { 
+	Vertex0: Vector;
+	UV0: Vector2D;
+	Vertex1: Vector;
+	UV1: Vector2D;
+	Vertex2: Vector;
+	UV2: Vector2D;
+	clone() : OculusMR_PlaneMeshTriangle;
+	static C(Other: UObject | any): OculusMR_PlaneMeshTriangle;
+}
+
+declare class OculusMR_PlaneMeshComponent extends MeshComponent { 
+	static Load(ResourceName: string): OculusMR_PlaneMeshComponent;
+	static Find(Outer: UObject, ResourceName: string): OculusMR_PlaneMeshComponent;
+	static GetDefaultObject(): OculusMR_PlaneMeshComponent;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OculusMR_PlaneMeshComponent;
+	SetCustomMeshTriangles(Triangles: OculusMR_PlaneMeshTriangle[]): boolean;
+	ClearCustomMeshTriangles(): void;
+	AddCustomMeshTriangles(Triangles: OculusMR_PlaneMeshTriangle[]): void;
+	static C(Other: UObject | any): OculusMR_PlaneMeshComponent;
+}
+
+declare type EOculusMR_ClippingReference = 'CR_TrackingReference' | 'CR_Head' | 'CR_MAX';
+declare var EOculusMR_ClippingReference : { CR_TrackingReference:'CR_TrackingReference',CR_Head:'CR_Head',CR_MAX:'CR_MAX', };
+declare type EOculusMR_VirtualGreenScreenType = 'VGS_Off' | 'VGS_OuterBoundary' | 'VGS_PlayArea' | 'VGS_MAX';
+declare var EOculusMR_VirtualGreenScreenType : { VGS_Off:'VGS_Off',VGS_OuterBoundary:'VGS_OuterBoundary',VGS_PlayArea:'VGS_PlayArea',VGS_MAX:'VGS_MAX', };
+declare type EOculusMR_PostProcessEffects = 'PPE_Off' | 'PPE_On' | 'PPE_MAX';
+declare var EOculusMR_PostProcessEffects : { PPE_Off:'PPE_Off',PPE_On:'PPE_On',PPE_MAX:'PPE_MAX', };
+declare type EOculusMR_CompositionMethod = 'ExternalComposition' | 'DirectComposition' | 'EOculusMR_MAX';
+declare var EOculusMR_CompositionMethod : { ExternalComposition:'ExternalComposition',DirectComposition:'DirectComposition',EOculusMR_MAX:'EOculusMR_MAX', };
+declare type EOculusMR_CameraDeviceEnum = 'CD_None' | 'CD_WebCamera0' | 'CD_WebCamera1' | 'CD_ZEDCamera' | 'CD_MAX';
+declare var EOculusMR_CameraDeviceEnum : { CD_None:'CD_None',CD_WebCamera0:'CD_WebCamera0',CD_WebCamera1:'CD_WebCamera1',CD_ZEDCamera:'CD_ZEDCamera',CD_MAX:'CD_MAX', };
+declare type EOculusMR_DepthQuality = 'DQ_Low' | 'DQ_Medium' | 'DQ_High' | 'DQ_MAX';
+declare var EOculusMR_DepthQuality : { DQ_Low:'DQ_Low',DQ_Medium:'DQ_Medium',DQ_High:'DQ_High',DQ_MAX:'DQ_MAX', };
+declare class OculusMR_Settings extends UObject { 
+	ClippingReference: EOculusMR_ClippingReference;
+	bUseTrackedCameraResolution: boolean;
+	WidthPerView: number;
+	HeightPerView: number;
+	CastingLatency: number;
+	BackdropColor: Color;
+	HandPoseStateLatency: number;
+	ChromaKeyColor: Color;
+	ChromaKeySimilarity: number;
+	ChromaKeySmoothRange: number;
+	ChromaKeySpillRange: number;
+	VirtualGreenScreenType: EOculusMR_VirtualGreenScreenType;
+	DynamicLightingDepthSmoothFactor: number;
+	DynamicLightingDepthVariationClampingValue: number;
+	ExternalCompositionPostProcessEffects: EOculusMR_PostProcessEffects;
+	bIsCasting: boolean;
+	CompositionMethod: EOculusMR_CompositionMethod;
+	CapturingCamera: EOculusMR_CameraDeviceEnum;
+	bUseDynamicLighting: boolean;
+	DepthQuality: EOculusMR_DepthQuality;
+	static Load(ResourceName: string): OculusMR_Settings;
+	static Find(Outer: UObject, ResourceName: string): OculusMR_Settings;
+	static GetDefaultObject(): OculusMR_Settings;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OculusMR_Settings;
+	SetUseDynamicLighting(Val: boolean): void;
+	SetIsCasting(Val: boolean): void;
+	SetDepthQuality(Val: EOculusMR_DepthQuality): void;
+	SetCompositionMethod(Val: EOculusMR_CompositionMethod): void;
+	SetCapturingCamera(Val: EOculusMR_CameraDeviceEnum): void;
+	SaveToIni(): void;
+	LoadFromIni(): void;
+	GetUseDynamicLighting(): boolean;
+	GetIsCasting(): boolean;
+	GetDepthQuality(): EOculusMR_DepthQuality;
+	GetCompositionMethod(): EOculusMR_CompositionMethod;
+	GetCapturingCamera(): EOculusMR_CameraDeviceEnum;
+	GetBindToTrackedCameraIndex(): number;
+	BindToTrackedCameraIndexIfAvailable(InTrackedCameraIndex: number): void;
+	static C(Other: UObject | any): OculusMR_Settings;
+}
+
+declare class TrackedCamera { 
+	index: number;
+	Name: string;
+	FieldOfView: number;
+	SizeX: number;
+	SizeY: number;
+	AttachedTrackedDevice: ETrackedDeviceType;
+	CalibratedRotation: Rotator;
+	CalibratedOffset: Vector;
+	UserRotation: Rotator;
+	UserOffset: Vector;
+	RawRotation: Rotator;
+	RawOffset: Vector;
+	clone() : TrackedCamera;
+	static C(Other: UObject | any): TrackedCamera;
+}
+
+declare class OculusMR_State extends UObject { 
+	TrackedCamera: TrackedCamera;
+	TrackingReferenceComponent: SceneComponent;
+	ChangeCameraStateRequested: boolean;
+	BindToTrackedCameraIndexRequested: boolean;
+	static Load(ResourceName: string): OculusMR_State;
+	static Find(Outer: UObject, ResourceName: string): OculusMR_State;
+	static GetDefaultObject(): OculusMR_State;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OculusMR_State;
+	static C(Other: UObject | any): OculusMR_State;
+}
+
+declare class OculusMR_CastingCameraActor extends SceneCapture2D { 
+	VRNotificationComponent: VRNotificationsComponent;
+	CameraColorTexture: Texture2D;
+	CameraDepthTexture: Texture2D;
+	PlaneMeshComponent: OculusMR_PlaneMeshComponent;
+	ChromaKeyMaterial: Material;
+	ChromaKeyLitMaterial: Material;
+	OpaqueColoredMaterial: Material;
+	ChromaKeyMaterialInstance: MaterialInstanceDynamic;
+	ChromaKeyLitMaterialInstance: MaterialInstanceDynamic;
+	CameraFrameMaterialInstance: MaterialInstanceDynamic;
+	BackdropMaterialInstance: MaterialInstanceDynamic;
+	BoundaryActor: OculusMR_BoundaryActor;
+	BoundarySceneCaptureActor: SceneCapture2D;
+	DefaultTexture_White: Texture2D;
+	BackgroundRenderTargets: TextureRenderTarget2D[];
+	ForegroundCaptureActor: SceneCapture2D;
+	ForegroundRenderTargets: TextureRenderTarget2D[];
+	MRSettings: OculusMR_Settings;
+	MRState: OculusMR_State;
+	static GetDefaultObject(): OculusMR_CastingCameraActor;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OculusMR_CastingCameraActor;
+	static C(Other: UObject | any): OculusMR_CastingCameraActor;
+}
+
+declare class OculusMR_BoundaryMeshComponent extends MeshComponent { 
+	BoundaryType: EOculusMR_BoundaryType;
+	BottomZ: number;
+	TopZ: number;
+	WhiteMaterial: Material;
+	CastingCameraActor: OculusMR_CastingCameraActor;
+	static Load(ResourceName: string): OculusMR_BoundaryMeshComponent;
+	static Find(Outer: UObject, ResourceName: string): OculusMR_BoundaryMeshComponent;
+	static GetDefaultObject(): OculusMR_BoundaryMeshComponent;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OculusMR_BoundaryMeshComponent;
+	static C(Other: UObject | any): OculusMR_BoundaryMeshComponent;
+}
+
+declare class OculusMR_BoundaryActor extends Actor { 
+	BoundaryMeshComponent: OculusMR_BoundaryMeshComponent;
+	static GetDefaultObject(): OculusMR_BoundaryActor;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OculusMR_BoundaryActor;
+	static C(Other: UObject | any): OculusMR_BoundaryActor;
+}
+
+declare class OculusMRFunctionLibrary extends BlueprintFunctionLibrary { 
+	static Load(ResourceName: string): OculusMRFunctionLibrary;
+	static Find(Outer: UObject, ResourceName: string): OculusMRFunctionLibrary;
+	static GetDefaultObject(): OculusMRFunctionLibrary;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OculusMRFunctionLibrary;
+	static SetTrackingReferenceComponent(Component: SceneComponent): void;
+	static IsMrcEnabled(): boolean;
+	static IsMrcActive(): boolean;
+	static GetTrackingReferenceComponent(): SceneComponent;
+	static GetOculusMRSettings(): OculusMR_Settings;
+	static C(Other: UObject | any): OculusMRFunctionLibrary;
+}
+
 declare type EAndroidInstallLocation = 'InternalOnly' | 'PreferExternal' | 'Auto' | 'EAndroidInstallLocation_MAX';
 declare var EAndroidInstallLocation : { InternalOnly:'InternalOnly',PreferExternal:'PreferExternal',Auto:'Auto',EAndroidInstallLocation_MAX:'EAndroidInstallLocation_MAX', };
 declare type EAndroidScreenOrientation = 'Portrait' | 'ReversePortrait' | 'SensorPortrait' | 'Landscape' | 'ReverseLandscape' | 'SensorLandscape' | 'Sensor' | 'FullSensor' | 'EAndroidScreenOrientation_MAX';
 declare var EAndroidScreenOrientation : { Portrait:'Portrait',ReversePortrait:'ReversePortrait',SensorPortrait:'SensorPortrait',Landscape:'Landscape',ReverseLandscape:'ReverseLandscape',SensorLandscape:'SensorLandscape',Sensor:'Sensor',FullSensor:'FullSensor',EAndroidScreenOrientation_MAX:'EAndroidScreenOrientation_MAX', };
-declare type EAndroidAntVerbosity = 'Quiet' | 'Normal' | 'Verbose' | 'EAndroidAntVerbosity_MAX';
-declare var EAndroidAntVerbosity : { Quiet:'Quiet',Normal:'Normal',Verbose:'Verbose',EAndroidAntVerbosity_MAX:'EAndroidAntVerbosity_MAX', };
 declare type EAndroidDepthBufferPreference = 'Default' | 'Bits16' | 'Bits24' | 'Bits32' | 'EAndroidDepthBufferPreference_MAX';
 declare var EAndroidDepthBufferPreference : { Default:'Default',Bits16:'Bits16',Bits24:'Bits24',Bits32:'Bits32',EAndroidDepthBufferPreference_MAX:'EAndroidDepthBufferPreference_MAX', };
 declare type EOculusMobileDevice = 'GearGo' | 'Quest' | 'EOculusMobileDevice_MAX';
@@ -3326,15 +5305,6 @@ declare class GooglePlayLeaderboardMapping {
 
 declare type EAndroidAudio = 'Default' | 'OGG' | 'ADPCM' | 'EAndroidAudio_MAX';
 declare var EAndroidAudio : { Default:'Default',OGG:'OGG',ADPCM:'ADPCM',EAndroidAudio_MAX:'EAndroidAudio_MAX', };
-declare class PlatformRuntimeAudioCompressionOverrides { 
-	bOverrideCompressionTimes: boolean;
-	DurationThreshold: number;
-	MaxNumRandomBranches: number;
-	SoundCueQualityIndex: number;
-	clone() : PlatformRuntimeAudioCompressionOverrides;
-	static C(Other: UObject | any): PlatformRuntimeAudioCompressionOverrides;
-}
-
 declare type EAndroidGraphicsDebugger = 'None' | 'Mali' | 'Adreno' | 'EAndroidGraphicsDebugger_MAX';
 declare var EAndroidGraphicsDebugger : { None:'None',Mali:'Mali',Adreno:'Adreno',EAndroidGraphicsDebugger_MAX:'EAndroidGraphicsDebugger_MAX', };
 declare class AndroidRuntimeSettings extends UObject { 
@@ -3356,10 +5326,11 @@ declare class AndroidRuntimeSettings extends UObject {
 	bAllowLargeOBBFiles: boolean;
 	bAllowPatchOBBFile: boolean;
 	bUseExternalFilesDir: boolean;
+	bPublicLogFiles: boolean;
 	Orientation: EAndroidScreenOrientation;
 	MaxAspectRatio: number;
 	bUseDisplayCutout: boolean;
-	AntVerbosity: EAndroidAntVerbosity;
+	bRestoreNotificationsOnReboot: boolean;
 	bFullScreen: boolean;
 	bEnableNewKeyboard: boolean;
 	DepthBufferPreference: EAndroidDepthBufferPreference;
@@ -3413,7 +5384,11 @@ declare class AndroidRuntimeSettings extends UObject {
 	ReverbPlugin: string;
 	OcclusionPlugin: string;
 	CompressionOverrides: PlatformRuntimeAudioCompressionOverrides;
+	ChunkSizeKB: number;
+	bUseAudioStreamCaching: boolean;
+	CacheSizeKB: number;
 	bResampleForDevice: boolean;
+	SoundCueCookQualityIndex: number;
 	MaxSampleRate: number;
 	HighSampleRate: number;
 	MedSampleRate: number;
@@ -3459,693 +5434,58 @@ declare class OculusEditorSettings extends UObject {
 	static C(Other: UObject | any): OculusEditorSettings;
 }
 
+declare class RedistPackage { 
+	Included: boolean;
+	Name: string;
+	ID: string;
+	clone() : RedistPackage;
+	static C(Other: UObject | any): RedistPackage;
+}
+
 declare type EOculusPlatformTarget = 'Rift' | 'Quest' | 'Mobile' | 'Length' | 'EOculusPlatformTarget_MAX';
 declare var EOculusPlatformTarget : { Rift:'Rift',Quest:'Quest',Mobile:'Mobile',Length:'Length',EOculusPlatformTarget_MAX:'EOculusPlatformTarget_MAX', };
+declare type EOculusGamepadEmulation = 'Off' | 'Twinstick' | 'RightDPad' | 'LeftDPad' | 'Length' | 'EOculusGamepadEmulation_MAX';
+declare var EOculusGamepadEmulation : { Off:'Off',Twinstick:'Twinstick',RightDPad:'RightDPad',LeftDPad:'LeftDPad',Length:'Length',EOculusGamepadEmulation_MAX:'EOculusGamepadEmulation_MAX', };
+declare type EOculusAssetType = 'Default' | 'Store' | 'Language_Pack' | 'Length' | 'EOculusAssetType_MAX';
+declare var EOculusAssetType : { Default:'Default',Store:'Store',Language_Pack:'Language_Pack',Length:'Length',EOculusAssetType_MAX:'EOculusAssetType_MAX', };
+declare class AssetConfig { 
+	AssetType: EOculusAssetType;
+	required: boolean;
+	Name: string;
+	Sku: string;
+	clone() : AssetConfig;
+	static C(Other: UObject | any): AssetConfig;
+}
+
+declare class AssetConfigArray { 
+	ConfigArray: AssetConfig[];
+	clone() : AssetConfigArray;
+	static C(Other: UObject | any): AssetConfigArray;
+}
+
 declare class OculusPlatformToolSettings extends UObject { 
 	OculusRiftBuildDirectory: string;
 	OculusRiftBuildVersion: string;
+	OculusRiftLaunchParams: string;
+	OculusRiftFireWallException: boolean;
+	OculusRift2DLaunchPath: string;
+	OculusRift2DLaunchParams: string;
+	OculusRedistPackages: RedistPackage[];
 	OculusTargetPlatform: EOculusPlatformTarget;
 	OculusApplicationID: string[];
 	OculusApplicationToken: string[];
 	OculusReleaseChannel: string[];
 	OculusReleaseNote: string[];
 	OculusLaunchFilePath: string[];
+	OculusRiftGamepadEmulation: EOculusGamepadEmulation;
+	OculusLanguagePacksPath: string[];
+	OculusExpansionFilesPath: string[];
+	OculusAssetConfigs: AssetConfigArray[];
 	static Load(ResourceName: string): OculusPlatformToolSettings;
 	static Find(Outer: UObject, ResourceName: string): OculusPlatformToolSettings;
 	static GetDefaultObject(): OculusPlatformToolSettings;
 	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OculusPlatformToolSettings;
 	static C(Other: UObject | any): OculusPlatformToolSettings;
-}
-
-declare type ESteamVRTouchDPadMapping = 'FaceButtons' | 'ThumbstickDirections' | 'Disabled' | 'ESteamVRTouchDPadMapping_MAX';
-declare var ESteamVRTouchDPadMapping : { FaceButtons:'FaceButtons',ThumbstickDirections:'ThumbstickDirections',Disabled:'Disabled',ESteamVRTouchDPadMapping_MAX:'ESteamVRTouchDPadMapping_MAX', };
-declare class SteamVRControllerLibrary extends BlueprintFunctionLibrary { 
-	static Load(ResourceName: string): SteamVRControllerLibrary;
-	static Find(Outer: UObject, ResourceName: string): SteamVRControllerLibrary;
-	static GetDefaultObject(): SteamVRControllerLibrary;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): SteamVRControllerLibrary;
-	static SetTouchDPadMapping(NewMapping: ESteamVRTouchDPadMapping): void;
-	static C(Other: UObject | any): SteamVRControllerLibrary;
-}
-
-declare class JavascriptPinParams { 
-	ContainerType: EPinContainerType;
-	bIsReference: boolean;
-	bIsConst: boolean;
-	index: number;
-	clone() : JavascriptPinParams;
-	static C(Other: UObject | any): JavascriptPinParams;
-}
-
-declare class JavascriptGraphEdNode extends EdGraphNode { 
-	BackgroundColor: SlateColor;
-	GraphNode: UObject;
-	IsTitleOnly: boolean;
-	OnWidgetFinalized: UnrealEngineDelegate<() => void>;
-	Bidirectional: boolean;
-	PriorityOrder: number;
-	static Load(ResourceName: string): JavascriptGraphEdNode;
-	static Find(Outer: UObject, ResourceName: string): JavascriptGraphEdNode;
-	static GetDefaultObject(): JavascriptGraphEdNode;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): JavascriptGraphEdNode;
-	UpdateSlate(): void;
-	SetVisible(bVisible: boolean): void;
-	SetTitleSelectionMode(InTitleHeight: number): void;
-	SetEnable(bEnable: boolean): void;
-	ResetTitleSelectionMode(): void;
-	RemovePinByName(PinName: string): boolean;
-	RemovePin(Pin: JavascriptEdGraphPin): boolean;
-	GetVisible(): boolean;
-	GetNumOfPins(Direction: EEdGraphPinDirection): number;
-	GetDesiredSize(): Vector2D;
-	CreatePin(Dir: EEdGraphPinDirection,PinCategory: string,PinSubCategory: string,PinSubCategoryObject: UObject,PinName: string,PinToolTip: string,PinDisplayName: string,InPinParams: JavascriptPinParams): JavascriptEdGraphPin;
-	static C(Other: UObject | any): JavascriptGraphEdNode;
-}
-
-declare class JavascriptSlateEdNode { 
-	clone() : JavascriptSlateEdNode;
-	static C(Other: UObject | any): JavascriptSlateEdNode;
-	AddPinToHoverSet(Pin: JavascriptEdGraphPin): void;
-	RemovePinFromHoverSet(Pin: JavascriptEdGraphPin): void;
-	static AddPinToHoverSet(InSlateEdNode: JavascriptSlateEdNode,Pin: JavascriptEdGraphPin): void;
-	static RemovePinFromHoverSet(InSlateNode: JavascriptSlateEdNode,Pin: JavascriptEdGraphPin): void;
-}
-
-declare class JavascriptPerformSecondPassLayoutContainer { 
-	PrevNode: EdGraphNode;
-	NextNode: EdGraphNode;
-	NodeIndex: number;
-	MaxNodes: number;
-	clone() : JavascriptPerformSecondPassLayoutContainer;
-	static C(Other: UObject | any): JavascriptPerformSecondPassLayoutContainer;
-}
-
-declare class JavascriptConnectionParams { 
-	WireColor: LinearColor;
-	AssociatedPin1: JavascriptEdGraphPin;
-	AssociatedPin2: JavascriptEdGraphPin;
-	WireThickness: number;
-	bDrawBubbles: boolean;
-	bUserFlag1: boolean;
-	bUserFlag2: boolean;
-	StartDirection: EEdGraphPinDirection;
-	EndDirection: EEdGraphPinDirection;
-	clone() : JavascriptConnectionParams;
-	static C(Other: UObject | any): JavascriptConnectionParams;
-}
-
-declare class JavascriptGraphConnectionDrawingPolicyContainer { 
-	clone() : JavascriptGraphConnectionDrawingPolicyContainer;
-	static C(Other: UObject | any): JavascriptGraphConnectionDrawingPolicyContainer;
-	ApplyHoverDeemphasis(OutputPin: JavascriptEdGraphPin,InputPin: JavascriptEdGraphPin,Thickness: number,WireColor: LinearColor): void;
-	DetermineWiringStyle(OutputPin: JavascriptEdGraphPin,InputPin: JavascriptEdGraphPin,Params?: JavascriptConnectionParams): {Params: JavascriptConnectionParams};
-	DrawConnection(A: Vector2D,B: Vector2D,Params: JavascriptConnectionParams): void;
-	DrawSplineWithArrow(StartAnchorPoint: Vector2D,EndAnchorPoint: Vector2D,Params: JavascriptConnectionParams): void;
-	GetHorveredPinNum(): number;
-	IsContainedHoveredPins(Pin: JavascriptEdGraphPin): boolean;
-	MakeRotatedBox(ArrowDrawPos: Vector2D,AngleInRadians: number,WireColor: LinearColor): void;
-	static ApplyHoverDeemphasis(Container: JavascriptGraphConnectionDrawingPolicyContainer,OutputPin: JavascriptEdGraphPin,InputPin: JavascriptEdGraphPin,Thickness: number,WireColor: LinearColor): void;
-	static DetermineWiringStyle(Container: JavascriptGraphConnectionDrawingPolicyContainer,OutputPin: JavascriptEdGraphPin,InputPin: JavascriptEdGraphPin,Params?: JavascriptConnectionParams): {Params: JavascriptConnectionParams};
-	static DrawConnection(Container: JavascriptGraphConnectionDrawingPolicyContainer,A: Vector2D,B: Vector2D,Params: JavascriptConnectionParams): void;
-	static DrawSplineWithArrow(Container: JavascriptGraphConnectionDrawingPolicyContainer,StartAnchorPoint: Vector2D,EndAnchorPoint: Vector2D,Params: JavascriptConnectionParams): void;
-	static GetHorveredPinNum(Container: JavascriptGraphConnectionDrawingPolicyContainer): number;
-	static IsContainedHoveredPins(Container: JavascriptGraphConnectionDrawingPolicyContainer,Pin: JavascriptEdGraphPin): boolean;
-	static MakeRotatedBox(Container: JavascriptGraphConnectionDrawingPolicyContainer,ArrowDrawPos: Vector2D,AngleInRadians: number,WireColor: LinearColor): void;
-}
-
-declare type EGraphSchemaGetStringQuery = 'Description' | 'Title' | 'EGraphSchemaGetStringQuery_MAX';
-declare var EGraphSchemaGetStringQuery : { Description:'Description',Title:'Title',EGraphSchemaGetStringQuery_MAX:'EGraphSchemaGetStringQuery_MAX', };
-declare class JavascriptGraphMenuBuilder extends JavascriptMenuBuilder { 
-	Graph: EdGraph;
-	GraphNode: EdGraphNode;
-	GraphPin: JavascriptEdGraphPin;
-	bIsDebugging: boolean;
-	clone() : JavascriptGraphMenuBuilder;
-	static C(Other: UObject | any): JavascriptGraphMenuBuilder;
-}
-
-declare type ECanCreateConnectionResponse = 'CONNECT_RESPONSE_MAKE' | 'CONNECT_RESPONSE_DISALLOW' | 'CONNECT_RESPONSE_BREAK_OTHERS_A' | 'CONNECT_RESPONSE_BREAK_OTHERS_B' | 'CONNECT_RESPONSE_BREAK_OTHERS_AB' | 'CONNECT_RESPONSE_MAKE_WITH_CONVERSION_NODE' | 'CONNECT_RESPONSE_MAX';
-declare var ECanCreateConnectionResponse : { CONNECT_RESPONSE_MAKE:'CONNECT_RESPONSE_MAKE',CONNECT_RESPONSE_DISALLOW:'CONNECT_RESPONSE_DISALLOW',CONNECT_RESPONSE_BREAK_OTHERS_A:'CONNECT_RESPONSE_BREAK_OTHERS_A',CONNECT_RESPONSE_BREAK_OTHERS_B:'CONNECT_RESPONSE_BREAK_OTHERS_B',CONNECT_RESPONSE_BREAK_OTHERS_AB:'CONNECT_RESPONSE_BREAK_OTHERS_AB',CONNECT_RESPONSE_MAKE_WITH_CONVERSION_NODE:'CONNECT_RESPONSE_MAKE_WITH_CONVERSION_NODE',CONNECT_RESPONSE_MAX:'CONNECT_RESPONSE_MAX', };
-declare class JavascriptPinConnectionResponse { 
-	Message: string;
-	Response: ECanCreateConnectionResponse;
-	clone() : JavascriptPinConnectionResponse;
-	static C(Other: UObject | any): JavascriptPinConnectionResponse;
-}
-
-declare class EdGraphSchemaAction { 
-	MenuDescription: string;
-	TooltipDescription: string;
-	Category: string;
-	Keywords: string;
-	Grouping: number;
-	SectionID: number;
-	MenuDescriptionArray: string[];
-	FullSearchTitlesArray: string[];
-	FullSearchKeywordsArray: string[];
-	FullSearchCategoryArray: string[];
-	LocalizedMenuDescriptionArray: string[];
-	LocalizedFullSearchTitlesArray: string[];
-	LocalizedFullSearchKeywordsArray: string[];
-	LocalizedFullSearchCategoryArray: string[];
-	SearchText: string;
-	clone() : EdGraphSchemaAction;
-	static C(Other: UObject | any): EdGraphSchemaAction;
-}
-
-declare class PerformActionContext { 
-	ParentGraph: EdGraph;
-	FromPins: JavascriptEdGraphPin[];
-	Location: Vector2D;
-	bSelectNewNode: boolean;
-	clone() : PerformActionContext;
-	static C(Other: UObject | any): PerformActionContext;
-}
-
-declare class JavascriptArrangedWidget { 
-	clone() : JavascriptArrangedWidget;
-	static C(Other: UObject | any): JavascriptArrangedWidget;
-}
-
-declare class JavascriptPinWidget { 
-	clone() : JavascriptPinWidget;
-	static C(Other: UObject | any): JavascriptPinWidget;
-}
-
-declare class JavascriptDetermineLinkGeometryContainer { 
-	clone() : JavascriptDetermineLinkGeometryContainer;
-	static C(Other: UObject | any): JavascriptDetermineLinkGeometryContainer;
-	FindPinGeometries(PinWidget: JavascriptPinWidget): JavascriptArrangedWidget;
-	FindPinToPinWidgetMap(Pin: JavascriptEdGraphPin): JavascriptPinWidget;
-	GetArrangedNodes(UNode: EdGraphNode): JavascriptArrangedWidget;
-	GetOutputPinWidget(): JavascriptPinWidget;
-	static FindPinGeometries(Container: JavascriptDetermineLinkGeometryContainer,PinWidget: JavascriptPinWidget): JavascriptArrangedWidget;
-	static FindPinToPinWidgetMap(Container: JavascriptDetermineLinkGeometryContainer,Pin: JavascriptEdGraphPin): JavascriptPinWidget;
-	static GetArrangedNodes(Container: JavascriptDetermineLinkGeometryContainer,UNode: EdGraphNode): JavascriptArrangedWidget;
-	static GetOutputPinWidget(Container: JavascriptDetermineLinkGeometryContainer): JavascriptPinWidget;
-}
-
-declare class JavascriptGraphAssetGraphSchema extends EdGraphSchema { 
-	OnGetPinColor: UnrealEngineDelegate<(bHovered: boolean, Pin: JavascriptEdGraphPin) => SlateColor>;
-	OnGetDefaultValueVisibility: UnrealEngineDelegate<(Pin: JavascriptEdGraphPin) => boolean>;
-	OnGetSlateBrushName: UnrealEngineDelegate<(bHovered: boolean, Pin: JavascriptEdGraphPin) => string>;
-	OnPinConnectionListChanged: UnrealEngineDelegate<(Pin: JavascriptEdGraphPin) => void>;
-	OnTryCreateConnection: UnrealEngineDelegate<(PinA: JavascriptEdGraphPin, PinB: JavascriptEdGraphPin) => void>;
-	OnMouseEnter: UnrealEngineDelegate<(Instance: JavascriptGraphEdNode, SlateEdNode: JavascriptSlateEdNode, UPointerEvent: UPointerEvent) => void>;
-	OnMouseLeave: UnrealEngineDelegate<(Instance: JavascriptGraphEdNode, SlateEdNode: JavascriptSlateEdNode, UPointerEvent: UPointerEvent) => void>;
-	OnMouseMove: UnrealEngineDelegate<(Instance: JavascriptGraphEdNode, Delta: Vector2D, bUserIsDragging: boolean, MouseZone: number, UPointerEvent: UPointerEvent) => boolean>;
-	OnMouseButtonDown: UnrealEngineDelegate<(Instance: JavascriptGraphEdNode, MyGeometry: Geometry, UPointerEvent: UPointerEvent) => boolean>;
-	OnMouseButtonUp: UnrealEngineDelegate<(Instance: JavascriptGraphEdNode, MyGeometry: Geometry, UPointerEvent: UPointerEvent) => boolean>;
-	OnPerformSecondPassLayout: UnrealEngineDelegate<(Instance: JavascriptGraphEdNode) => JavascriptPerformSecondPassLayoutContainer>;
-	OnRequiresSecondPassLayout: UnrealEngineDelegate<(Instance: JavascriptGraphEdNode) => boolean>;
-	OnMoveTo: UnrealEngineDelegate<(Instance: JavascriptGraphEdNode, NewPosition: Vector2D) => boolean>;
-	OnTakeContentWidget: UnrealEngineDelegate<(Instance: JavascriptGraphEdNode, OutLeftNodeBoxWidget: JavascriptSlateWidget, OutRightNodeBoxWidget: JavascriptSlateWidget) => JavascriptSlateWidget>;
-	OnGetValueWidget: UnrealEngineDelegate<(Pin: JavascriptEdGraphPin) => JavascriptSlateWidget>;
-	OnGetActualPinWidget: UnrealEngineDelegate<(Pin: JavascriptEdGraphPin) => JavascriptSlateWidget>;
-	OnGetPinStatusIndicator: UnrealEngineDelegate<(Pin: JavascriptEdGraphPin) => JavascriptSlateWidget>;
-	OnDisableMakePins: UnrealEngineDelegate<(Instance: JavascriptGraphEdNode) => boolean>;
-	OnUsingDefaultPin: UnrealEngineDelegate<(Pin: JavascriptEdGraphPin) => boolean>;
-	OnGetPinLabelVisibility: UnrealEngineDelegate<(Pin: JavascriptEdGraphPin) => boolean>;
-	OnUsingAlternativeInputPinBox: UnrealEngineDelegate<(Pin: JavascriptEdGraphPin) => boolean>;
-	OnUsingAlternativeOutputPinBox: UnrealEngineDelegate<(Pin: JavascriptEdGraphPin) => boolean>;
-	OnUsingNodeWidgetMap: UnrealEngineDelegate<() => boolean>;
-	OnDetermineWiringStyle: UnrealEngineDelegate<(A: JavascriptEdGraphPin, B: JavascriptEdGraphPin, Params: JavascriptConnectionParams, Container: JavascriptGraphConnectionDrawingPolicyContainer) => void>;
-	OnComputeSplineTangent: UnrealEngineDelegate<(A: Vector2D, B: Vector2D) => Vector2D>;
-	OnDrawSplineWithArrow: UnrealEngineDelegate<(A: Vector2D, B: Vector2D, Params: JavascriptConnectionParams, Container: JavascriptGraphConnectionDrawingPolicyContainer, ArrowRadius: Vector2D) => boolean>;
-	OnDrawSplineWithArrow_Geom: UnrealEngineDelegate<(A: Geometry, B: Geometry, Params: JavascriptConnectionParams, Container: JavascriptGraphConnectionDrawingPolicyContainer) => boolean>;
-	OnDrawPreviewConnector: UnrealEngineDelegate<(PinGeometry: Geometry, StartPoint: Vector2D, Endpoint: Vector2D, Pin: JavascriptEdGraphPin, Params: JavascriptConnectionParams, Container: JavascriptGraphConnectionDrawingPolicyContainer) => boolean>;
-	OnTakeUserWidget: UnrealEngineDelegate<(Instance: JavascriptGraphEdNode) => JavascriptSlateWidget>;
-	OnTakeTitleAreaWidget: UnrealEngineDelegate<(Instance: JavascriptGraphEdNode) => JavascriptSlateWidget>;
-	OnTakeErrorReportingWidget: UnrealEngineDelegate<(Instance: JavascriptGraphEdNode) => JavascriptSlateWidget>;
-	OnGetString: UnrealEngineDelegate<(Instance: JavascriptGraphEdNode, Query: EGraphSchemaGetStringQuery) => string>;
-	OnBuildMenu: UnrealEngineDelegate<(Builder: JavascriptGraphMenuBuilder) => void>;
-	OnAllocateDefaultPins: UnrealEngineDelegate<(UNode: JavascriptGraphEdNode) => void>;
-	OnCreatePin: UnrealEngineDelegate<(Pin: JavascriptEdGraphPin) => JavascriptSlateWidget>;
-	OnCanCreateConnection: UnrealEngineDelegate<(A: JavascriptEdGraphPin, B: JavascriptEdGraphPin) => JavascriptPinConnectionResponse>;
-	OnPerformAction: UnrealEngineDelegate<(Action: EdGraphSchemaAction, Context: PerformActionContext) => EdGraphNode>;
-	OnContextActions: UnrealEngineDelegate<(FromPin: JavascriptEdGraphPin) => EdGraphSchemaAction[]>;
-	OnNodeConnectionListChanged: UnrealEngineDelegate<(UNode: JavascriptGraphEdNode) => void>;
-	OnCreateAutomaticConversionNodeAndConnections: UnrealEngineDelegate<(A: JavascriptEdGraphPin, B: JavascriptEdGraphPin) => boolean>;
-	OnDetermineLinkGeometry: UnrealEngineDelegate<(OutPin: JavascriptEdGraphPin, InputPin: JavascriptEdGraphPin, StartWidgetGeometry: JavascriptArrangedWidget, EndWidgetGeometry: JavascriptArrangedWidget, Container: JavascriptDetermineLinkGeometryContainer) => boolean>;
-	OnIsNodeComment: UnrealEngineDelegate<(Instance: JavascriptGraphEdNode) => boolean>;
-	OnEndUserInteraction: UnrealEngineDelegate<(UNode: JavascriptGraphEdNode) => void>;
-	OnCreateOutputSideAddButton: UnrealEngineDelegate<(Instance: JavascriptGraphEdNode) => boolean>;
-	OnAddPinByAddButton: UnrealEngineDelegate<(UNode: JavascriptGraphEdNode) => void>;
-	OnShouldAlwaysPurgeOnModification: UnrealEngineDelegate<() => boolean>;
-	OnDragEnter: UnrealEngineDelegate<(Target: JavascriptGraphEdNode, Capture: JavascriptGraphEdNode, MyGeometry: Geometry) => boolean>;
-	OnDragLeave: UnrealEngineDelegate<(Instance: JavascriptGraphEdNode) => boolean>;
-	OnDragOver: UnrealEngineDelegate<(Target: JavascriptGraphEdNode, Capture: JavascriptGraphEdNode, MyGeometry: Geometry) => boolean>;
-	OnDrop: UnrealEngineDelegate<(Target: JavascriptGraphEdNode, Capture: JavascriptGraphEdNode, MyGeometry: Geometry) => boolean>;
-	static Load(ResourceName: string): JavascriptGraphAssetGraphSchema;
-	static Find(Outer: UObject, ResourceName: string): JavascriptGraphAssetGraphSchema;
-	static GetDefaultObject(): JavascriptGraphAssetGraphSchema;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): JavascriptGraphAssetGraphSchema;
-	BreakSinglePinLink(SourcePin: JavascriptEdGraphPin,TargetPin: JavascriptEdGraphPin): void;
-	BreakPinLinks(TargetPin: JavascriptEdGraphPin,bSendsNodeNotifcation: boolean): void;
-	BreakNodeLinks(TargetNode: EdGraphNode): void;
-	static C(Other: UObject | any): JavascriptGraphAssetGraphSchema;
-}
-
-declare class JavascriptNodeCreator { 
-	UNode: JavascriptGraphEdNode;
-	clone() : JavascriptNodeCreator;
-	static C(Other: UObject | any): JavascriptNodeCreator;
-	Finalize(): {Creator: JavascriptNodeCreator};
-	static Finalize(Creator?: JavascriptNodeCreator): {Creator: JavascriptNodeCreator};
-}
-
-declare class JavascriptGraphEdGraph extends EdGraph { 
-	static Load(ResourceName: string): JavascriptGraphEdGraph;
-	static Find(Outer: UObject, ResourceName: string): JavascriptGraphEdGraph;
-	static GetDefaultObject(): JavascriptGraphEdGraph;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): JavascriptGraphEdGraph;
-	RebuildGenericGraph(): void;
-	static C(Other: UObject | any): JavascriptGraphEdGraph;
-	CreateEmptyNode(): JavascriptGraphEdNode;
-	NodeCreator(bSelectNewNode: boolean): JavascriptNodeCreator;
-	static CreateEmptyNode(Graph: JavascriptGraphEdGraph): JavascriptGraphEdNode;
-	static NodeCreator(Graph: JavascriptGraphEdGraph,bSelectNewNode: boolean): JavascriptNodeCreator;
-}
-
-declare class JavascriptGraphEditorLibrary extends BlueprintFunctionLibrary { 
-	static Load(ResourceName: string): JavascriptGraphEditorLibrary;
-	static Find(Outer: UObject, ResourceName: string): JavascriptGraphEditorLibrary;
-	static GetDefaultObject(): JavascriptGraphEditorLibrary;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): JavascriptGraphEditorLibrary;
-	static TryConnection(Schema: EdGraphSchema,A: JavascriptEdGraphPin,B: JavascriptEdGraphPin): void;
-	static SetPinType(Pin: JavascriptEdGraphPin,PinType: EdGraphPinType): void;
-	static SetPinInfo(A: JavascriptEdGraphPin,InPinName: string,InPinToolTip: string): void;
-	static SetPinHidden(A: JavascriptEdGraphPin,bHidden: boolean): void;
-	static SetParentPin(A: JavascriptEdGraphPin,Parent: JavascriptEdGraphPin): void;
-	static SetNodeMetaData(Schema: EdGraphSchema,UNode: EdGraphNode,KeyValue: string): boolean;
-	static ResizeNode(UNode: EdGraphNode,NewSize: Vector2D): void;
-	static RemovePinFromHoverSet(InSlateNode: JavascriptSlateEdNode,Pin: JavascriptEdGraphPin): void;
-	static NodeCreator(Graph: JavascriptGraphEdGraph,bSelectNewNode: boolean): JavascriptNodeCreator;
-	static MakeRotatedBox(Container: JavascriptGraphConnectionDrawingPolicyContainer,ArrowDrawPos: Vector2D,AngleInRadians: number,WireColor: LinearColor): void;
-	static MakeLinkTo(A: JavascriptEdGraphPin,B: JavascriptEdGraphPin): void;
-	static IsValid(A: JavascriptEdGraphPin): boolean;
-	static IsPinHidden(A: JavascriptEdGraphPin): boolean;
-	static IsContainedHoveredPins(Container: JavascriptGraphConnectionDrawingPolicyContainer,Pin: JavascriptEdGraphPin): boolean;
-	static GetSubPins(A: JavascriptEdGraphPin): JavascriptEdGraphPin[];
-	static GetPinType(A: JavascriptEdGraphPin): EdGraphPinType;
-	static GetPins(UNode: EdGraphNode): JavascriptEdGraphPin[];
-	static GetPinName(A: JavascriptEdGraphPin): string;
-	static GetPinIndex(A: JavascriptEdGraphPin): number;
-	static GetPinGUID(A: JavascriptEdGraphPin): Guid;
-	static GetPinContainerType(A: JavascriptEdGraphPin): EJavascriptPinContainerType;
-	static GetParentPin(A: JavascriptEdGraphPin): JavascriptEdGraphPin;
-	static GetOwningNode(A: JavascriptEdGraphPin): EdGraphNode;
-	static GetOutputPinWidget(Container: JavascriptDetermineLinkGeometryContainer): JavascriptPinWidget;
-	static GetLinkedTo(A: JavascriptEdGraphPin): JavascriptEdGraphPin[];
-	static GetLinkedPinNum(A: JavascriptEdGraphPin): number;
-	static GetHorveredPinNum(Container: JavascriptGraphConnectionDrawingPolicyContainer): number;
-	static GetDirection(A: JavascriptEdGraphPin): EEdGraphPinDirection;
-	static GetDefaultObject(): JavascriptEdGraphPin;
-	static GetArrangedNodes(Container: JavascriptDetermineLinkGeometryContainer,UNode: EdGraphNode): JavascriptArrangedWidget;
-	static FindPinToPinWidgetMap(Container: JavascriptDetermineLinkGeometryContainer,Pin: JavascriptEdGraphPin): JavascriptPinWidget;
-	static FindPinGeometries(Container: JavascriptDetermineLinkGeometryContainer,PinWidget: JavascriptPinWidget): JavascriptArrangedWidget;
-	static FindPin(UNode: EdGraphNode,PinName: string,Direction: EEdGraphPinDirection): JavascriptEdGraphPin;
-	static FindClosestPointOnGeom(Geom: Geometry,TestPoint: Vector2D): Vector2D;
-	static Finalize(Creator?: JavascriptNodeCreator): {Creator: JavascriptNodeCreator};
-	static DrawSplineWithArrow(Container: JavascriptGraphConnectionDrawingPolicyContainer,StartAnchorPoint: Vector2D,EndAnchorPoint: Vector2D,Params: JavascriptConnectionParams): void;
-	static DrawConnection(Container: JavascriptGraphConnectionDrawingPolicyContainer,A: Vector2D,B: Vector2D,Params: JavascriptConnectionParams): void;
-	static DetermineWiringStyle(Container: JavascriptGraphConnectionDrawingPolicyContainer,OutputPin: JavascriptEdGraphPin,InputPin: JavascriptEdGraphPin,Params?: JavascriptConnectionParams): {Params: JavascriptConnectionParams};
-	static DestroyNode(UNode: EdGraphNode): void;
-	static CreateEmptyNode(Graph: JavascriptGraphEdGraph): JavascriptGraphEdNode;
-	static CenterOf(Geom: Geometry): Vector2D;
-	static CanUserDeleteNode(UNode: EdGraphNode): boolean;
-	static CanDuplicateNode(UNode: EdGraphNode): boolean;
-	static BreakLinkTo(A: JavascriptEdGraphPin,B: JavascriptEdGraphPin): void;
-	static BreakAllPinLinks(A: JavascriptEdGraphPin): void;
-	static AutowireNewNode(UNode: EdGraphNode,FromPin: JavascriptEdGraphPin): void;
-	static ApplyHoverDeemphasis(Container: JavascriptGraphConnectionDrawingPolicyContainer,OutputPin: JavascriptEdGraphPin,InputPin: JavascriptEdGraphPin,Thickness: number,WireColor: LinearColor): void;
-	static AddPinToHoverSet(InSlateEdNode: JavascriptSlateEdNode,Pin: JavascriptEdGraphPin): void;
-	static C(Other: UObject | any): JavascriptGraphEditorLibrary;
-}
-
-declare class JavascriptGraphAppearanceInfo { 
-	CornerImage: SlateBrush;
-	CornerText: string;
-	PIENotifyText: string;
-	ReadOnlyText: string;
-	InstructionText: string;
-	clone() : JavascriptGraphAppearanceInfo;
-	static C(Other: UObject | any): JavascriptGraphAppearanceInfo;
-}
-
-declare class JavascriptGraphEditorWidget extends Widget { 
-	EdGraph: JavascriptGraphEdGraph;
-	OnNodeDoubleClicked: UnrealEngineDelegate<(UNode: EdGraphNode) => void>;
-	OnDropActor: UnrealEngineDelegate<(Actors: Actor[], Graph: EdGraph, Point: Vector2D) => void>;
-	OnDisallowedPinConnection: UnrealEngineDelegate<(A: JavascriptEdGraphPin, B: JavascriptEdGraphPin) => void>;
-	OnSelectedNodesChanged: UnrealEngineDelegate<(Set: UObject[]) => void>;
-	AppearanceInfo: JavascriptGraphAppearanceInfo;
-	CommandList: JavascriptUICommandList;
-	static Load(ResourceName: string): JavascriptGraphEditorWidget;
-	static Find(Outer: UObject, ResourceName: string): JavascriptGraphEditorWidget;
-	static GetDefaultObject(): JavascriptGraphEditorWidget;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): JavascriptGraphEditorWidget;
-	SetViewLocation(Location: Vector2D,ZoomAmount: number): void;
-	SetNodeSelection(UNode: EdGraphNode,bSelect: boolean): void;
-	SetGraph(InEdGraph: JavascriptGraphEdGraph): void;
-	SelectAllNodes(): void;
-	static NewGraph(ParentScope: UObject): JavascriptGraphEdGraph;
-	JumpToPin(JumpToMe: JavascriptEdGraphPin): void;
-	JumpToNode(JumpToMe: EdGraphNode,bRequestRename: boolean,bSelectNode: boolean): void;
-	GetViewLocation(OutLocation?: Vector2D,OutZoomAmount?: number): {OutLocation: Vector2D, OutZoomAmount: number};
-	GetSelectedNodes(): UObject[];
-	GetPasteLocation(): Vector2D;
-	ClearSelectionSet(): void;
-	static C(Other: UObject | any): JavascriptGraphEditorWidget;
-}
-
-declare class JavascriptGraphEdNodeWidget extends Widget { 
-	EdNode: JavascriptGraphEdNode;
-	static Load(ResourceName: string): JavascriptGraphEdNodeWidget;
-	static Find(Outer: UObject, ResourceName: string): JavascriptGraphEdNodeWidget;
-	static GetDefaultObject(): JavascriptGraphEdNodeWidget;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): JavascriptGraphEdNodeWidget;
-	SetNode(InEdNode: JavascriptGraphEdNode): void;
-	static C(Other: UObject | any): JavascriptGraphEdNodeWidget;
-}
-
-declare class JavascriptTextProperty { 
-	Key: string;
-	Namespace: string;
-	Value: string;
-	TableId: string;
-	clone() : JavascriptTextProperty;
-	static C(Other: UObject | any): JavascriptTextProperty;
-}
-
-declare class JavascriptGraphTextPropertyEditableTextBox extends Widget { 
-	OnGetGraphPin: UnrealEngineDelegate<() => JavascriptEdGraphPin>;
-	OnGetDefaultValue: UnrealEngineDelegate<() => JavascriptTextProperty>;
-	OnTextCommitted: UnrealEngineMulticastDelegate<(TextProperty: JavascriptTextProperty) => void>;
-	WidgetStyle: EditableTextBoxStyle;
-	WrapTextAt: number;
-	AutoWrapText: boolean;
-	static Load(ResourceName: string): JavascriptGraphTextPropertyEditableTextBox;
-	static Find(Outer: UObject, ResourceName: string): JavascriptGraphTextPropertyEditableTextBox;
-	static GetDefaultObject(): JavascriptGraphTextPropertyEditableTextBox;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): JavascriptGraphTextPropertyEditableTextBox;
-	static C(Other: UObject | any): JavascriptGraphTextPropertyEditableTextBox;
-}
-
-declare class OnBuildMenu__PythonCallable extends PythonCallableForDelegate { 
-	static Load(ResourceName: string): OnBuildMenu__PythonCallable;
-	static Find(Outer: UObject, ResourceName: string): OnBuildMenu__PythonCallable;
-	static GetDefaultObject(): OnBuildMenu__PythonCallable;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnBuildMenu__PythonCallable;
-	static C(Other: UObject | any): OnBuildMenu__PythonCallable;
-}
-
-declare class OnCanCreateConnection__PythonCallable extends PythonCallableForDelegate { 
-	static Load(ResourceName: string): OnCanCreateConnection__PythonCallable;
-	static Find(Outer: UObject, ResourceName: string): OnCanCreateConnection__PythonCallable;
-	static GetDefaultObject(): OnCanCreateConnection__PythonCallable;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnCanCreateConnection__PythonCallable;
-	static C(Other: UObject | any): OnCanCreateConnection__PythonCallable;
-}
-
-declare class OnContextActions__PythonCallable extends PythonCallableForDelegate { 
-	static Load(ResourceName: string): OnContextActions__PythonCallable;
-	static Find(Outer: UObject, ResourceName: string): OnContextActions__PythonCallable;
-	static GetDefaultObject(): OnContextActions__PythonCallable;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnContextActions__PythonCallable;
-	static C(Other: UObject | any): OnContextActions__PythonCallable;
-}
-
-declare class OnCreateAutomaticConversionNodeAndConnections__PythonCallable extends PythonCallableForDelegate { 
-	static Load(ResourceName: string): OnCreateAutomaticConversionNodeAndConnections__PythonCallable;
-	static Find(Outer: UObject, ResourceName: string): OnCreateAutomaticConversionNodeAndConnections__PythonCallable;
-	static GetDefaultObject(): OnCreateAutomaticConversionNodeAndConnections__PythonCallable;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnCreateAutomaticConversionNodeAndConnections__PythonCallable;
-	static C(Other: UObject | any): OnCreateAutomaticConversionNodeAndConnections__PythonCallable;
-}
-
-declare class OnCreatePin__PythonCallable extends PythonCallableForDelegate { 
-	static Load(ResourceName: string): OnCreatePin__PythonCallable;
-	static Find(Outer: UObject, ResourceName: string): OnCreatePin__PythonCallable;
-	static GetDefaultObject(): OnCreatePin__PythonCallable;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnCreatePin__PythonCallable;
-	static C(Other: UObject | any): OnCreatePin__PythonCallable;
-}
-
-declare class OnDetermineLinkGeometry__PythonCallable extends PythonCallableForDelegate { 
-	static Load(ResourceName: string): OnDetermineLinkGeometry__PythonCallable;
-	static Find(Outer: UObject, ResourceName: string): OnDetermineLinkGeometry__PythonCallable;
-	static GetDefaultObject(): OnDetermineLinkGeometry__PythonCallable;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnDetermineLinkGeometry__PythonCallable;
-	static C(Other: UObject | any): OnDetermineLinkGeometry__PythonCallable;
-}
-
-declare class OnDetermineWiringStyle__PythonCallable extends PythonCallableForDelegate { 
-	static Load(ResourceName: string): OnDetermineWiringStyle__PythonCallable;
-	static Find(Outer: UObject, ResourceName: string): OnDetermineWiringStyle__PythonCallable;
-	static GetDefaultObject(): OnDetermineWiringStyle__PythonCallable;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnDetermineWiringStyle__PythonCallable;
-	static C(Other: UObject | any): OnDetermineWiringStyle__PythonCallable;
-}
-
-declare class OnDrawPreviewConnector__PythonCallable extends PythonCallableForDelegate { 
-	static Load(ResourceName: string): OnDrawPreviewConnector__PythonCallable;
-	static Find(Outer: UObject, ResourceName: string): OnDrawPreviewConnector__PythonCallable;
-	static GetDefaultObject(): OnDrawPreviewConnector__PythonCallable;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnDrawPreviewConnector__PythonCallable;
-	static C(Other: UObject | any): OnDrawPreviewConnector__PythonCallable;
-}
-
-declare class OnDrawSplineWithArrow__PythonCallable extends PythonCallableForDelegate { 
-	static Load(ResourceName: string): OnDrawSplineWithArrow__PythonCallable;
-	static Find(Outer: UObject, ResourceName: string): OnDrawSplineWithArrow__PythonCallable;
-	static GetDefaultObject(): OnDrawSplineWithArrow__PythonCallable;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnDrawSplineWithArrow__PythonCallable;
-	static C(Other: UObject | any): OnDrawSplineWithArrow__PythonCallable;
-}
-
-declare class OnDrawSplineWithArrow_Geom__PythonCallable extends PythonCallableForDelegate { 
-	static Load(ResourceName: string): OnDrawSplineWithArrow_Geom__PythonCallable;
-	static Find(Outer: UObject, ResourceName: string): OnDrawSplineWithArrow_Geom__PythonCallable;
-	static GetDefaultObject(): OnDrawSplineWithArrow_Geom__PythonCallable;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnDrawSplineWithArrow_Geom__PythonCallable;
-	static C(Other: UObject | any): OnDrawSplineWithArrow_Geom__PythonCallable;
-}
-
-declare class OnEdNodeAction__PythonCallable extends PythonCallableForDelegate { 
-	static Load(ResourceName: string): OnEdNodeAction__PythonCallable;
-	static Find(Outer: UObject, ResourceName: string): OnEdNodeAction__PythonCallable;
-	static GetDefaultObject(): OnEdNodeAction__PythonCallable;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnEdNodeAction__PythonCallable;
-	static C(Other: UObject | any): OnEdNodeAction__PythonCallable;
-}
-
-declare class OnGetBoolean__PythonCallable extends PythonCallableForDelegate { 
-	static Load(ResourceName: string): OnGetBoolean__PythonCallable;
-	static Find(Outer: UObject, ResourceName: string): OnGetBoolean__PythonCallable;
-	static GetDefaultObject(): OnGetBoolean__PythonCallable;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnGetBoolean__PythonCallable;
-	static C(Other: UObject | any): OnGetBoolean__PythonCallable;
-}
-
-declare class OnGetBoolean_GraphPin__PythonCallable extends PythonCallableForDelegate { 
-	static Load(ResourceName: string): OnGetBoolean_GraphPin__PythonCallable;
-	static Find(Outer: UObject, ResourceName: string): OnGetBoolean_GraphPin__PythonCallable;
-	static GetDefaultObject(): OnGetBoolean_GraphPin__PythonCallable;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnGetBoolean_GraphPin__PythonCallable;
-	static C(Other: UObject | any): OnGetBoolean_GraphPin__PythonCallable;
-}
-
-declare class OnGetBooleanMoveTo__PythonCallable extends PythonCallableForDelegate { 
-	static Load(ResourceName: string): OnGetBooleanMoveTo__PythonCallable;
-	static Find(Outer: UObject, ResourceName: string): OnGetBooleanMoveTo__PythonCallable;
-	static GetDefaultObject(): OnGetBooleanMoveTo__PythonCallable;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnGetBooleanMoveTo__PythonCallable;
-	static C(Other: UObject | any): OnGetBooleanMoveTo__PythonCallable;
-}
-
-declare class OnGetBooleanWidget__PythonCallable extends PythonCallableForDelegate { 
-	static Load(ResourceName: string): OnGetBooleanWidget__PythonCallable;
-	static Find(Outer: UObject, ResourceName: string): OnGetBooleanWidget__PythonCallable;
-	static GetDefaultObject(): OnGetBooleanWidget__PythonCallable;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnGetBooleanWidget__PythonCallable;
-	static C(Other: UObject | any): OnGetBooleanWidget__PythonCallable;
-}
-
-declare class OnGetPinColor__PythonCallable extends PythonCallableForDelegate { 
-	static Load(ResourceName: string): OnGetPinColor__PythonCallable;
-	static Find(Outer: UObject, ResourceName: string): OnGetPinColor__PythonCallable;
-	static GetDefaultObject(): OnGetPinColor__PythonCallable;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnGetPinColor__PythonCallable;
-	static C(Other: UObject | any): OnGetPinColor__PythonCallable;
-}
-
-declare class OnGetPins__PythonCallable extends PythonCallableForDelegate { 
-	static Load(ResourceName: string): OnGetPins__PythonCallable;
-	static Find(Outer: UObject, ResourceName: string): OnGetPins__PythonCallable;
-	static GetDefaultObject(): OnGetPins__PythonCallable;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnGetPins__PythonCallable;
-	static C(Other: UObject | any): OnGetPins__PythonCallable;
-}
-
-declare class OnGetSlateBrushName__PythonCallable extends PythonCallableForDelegate { 
-	static Load(ResourceName: string): OnGetSlateBrushName__PythonCallable;
-	static Find(Outer: UObject, ResourceName: string): OnGetSlateBrushName__PythonCallable;
-	static GetDefaultObject(): OnGetSlateBrushName__PythonCallable;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnGetSlateBrushName__PythonCallable;
-	static C(Other: UObject | any): OnGetSlateBrushName__PythonCallable;
-}
-
-declare class OnGetString__PythonCallable extends PythonCallableForDelegate { 
-	static Load(ResourceName: string): OnGetString__PythonCallable;
-	static Find(Outer: UObject, ResourceName: string): OnGetString__PythonCallable;
-	static GetDefaultObject(): OnGetString__PythonCallable;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnGetString__PythonCallable;
-	static C(Other: UObject | any): OnGetString__PythonCallable;
-}
-
-declare class OnMouseDragEvent__PythonCallable extends PythonCallableForDelegate { 
-	static Load(ResourceName: string): OnMouseDragEvent__PythonCallable;
-	static Find(Outer: UObject, ResourceName: string): OnMouseDragEvent__PythonCallable;
-	static GetDefaultObject(): OnMouseDragEvent__PythonCallable;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnMouseDragEvent__PythonCallable;
-	static C(Other: UObject | any): OnMouseDragEvent__PythonCallable;
-}
-
-declare class OnMouseEvent__PythonCallable extends PythonCallableForDelegate { 
-	static Load(ResourceName: string): OnMouseEvent__PythonCallable;
-	static Find(Outer: UObject, ResourceName: string): OnMouseEvent__PythonCallable;
-	static GetDefaultObject(): OnMouseEvent__PythonCallable;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnMouseEvent__PythonCallable;
-	static C(Other: UObject | any): OnMouseEvent__PythonCallable;
-}
-
-declare class OnMouseEventAdvanced__PythonCallable extends PythonCallableForDelegate { 
-	static Load(ResourceName: string): OnMouseEventAdvanced__PythonCallable;
-	static Find(Outer: UObject, ResourceName: string): OnMouseEventAdvanced__PythonCallable;
-	static GetDefaultObject(): OnMouseEventAdvanced__PythonCallable;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnMouseEventAdvanced__PythonCallable;
-	static C(Other: UObject | any): OnMouseEventAdvanced__PythonCallable;
-}
-
-declare class OnPerformAction__PythonCallable extends PythonCallableForDelegate { 
-	static Load(ResourceName: string): OnPerformAction__PythonCallable;
-	static Find(Outer: UObject, ResourceName: string): OnPerformAction__PythonCallable;
-	static GetDefaultObject(): OnPerformAction__PythonCallable;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnPerformAction__PythonCallable;
-	static C(Other: UObject | any): OnPerformAction__PythonCallable;
-}
-
-declare class OnPerformSecondPassLayout__PythonCallable extends PythonCallableForDelegate { 
-	static Load(ResourceName: string): OnPerformSecondPassLayout__PythonCallable;
-	static Find(Outer: UObject, ResourceName: string): OnPerformSecondPassLayout__PythonCallable;
-	static GetDefaultObject(): OnPerformSecondPassLayout__PythonCallable;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnPerformSecondPassLayout__PythonCallable;
-	static C(Other: UObject | any): OnPerformSecondPassLayout__PythonCallable;
-}
-
-declare class OnPinConnectionListChanged__PythonCallable extends PythonCallableForDelegate { 
-	static Load(ResourceName: string): OnPinConnectionListChanged__PythonCallable;
-	static Find(Outer: UObject, ResourceName: string): OnPinConnectionListChanged__PythonCallable;
-	static GetDefaultObject(): OnPinConnectionListChanged__PythonCallable;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnPinConnectionListChanged__PythonCallable;
-	static C(Other: UObject | any): OnPinConnectionListChanged__PythonCallable;
-}
-
-declare class OnShouldAlwaysPurgeOnModification__PythonCallable extends PythonCallableForDelegate { 
-	static Load(ResourceName: string): OnShouldAlwaysPurgeOnModification__PythonCallable;
-	static Find(Outer: UObject, ResourceName: string): OnShouldAlwaysPurgeOnModification__PythonCallable;
-	static GetDefaultObject(): OnShouldAlwaysPurgeOnModification__PythonCallable;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnShouldAlwaysPurgeOnModification__PythonCallable;
-	static C(Other: UObject | any): OnShouldAlwaysPurgeOnModification__PythonCallable;
-}
-
-declare class OnTakeContentWidget__PythonCallable extends PythonCallableForDelegate { 
-	static Load(ResourceName: string): OnTakeContentWidget__PythonCallable;
-	static Find(Outer: UObject, ResourceName: string): OnTakeContentWidget__PythonCallable;
-	static GetDefaultObject(): OnTakeContentWidget__PythonCallable;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnTakeContentWidget__PythonCallable;
-	static C(Other: UObject | any): OnTakeContentWidget__PythonCallable;
-}
-
-declare class OnTakeWidget__PythonCallable extends PythonCallableForDelegate { 
-	static Load(ResourceName: string): OnTakeWidget__PythonCallable;
-	static Find(Outer: UObject, ResourceName: string): OnTakeWidget__PythonCallable;
-	static GetDefaultObject(): OnTakeWidget__PythonCallable;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnTakeWidget__PythonCallable;
-	static C(Other: UObject | any): OnTakeWidget__PythonCallable;
-}
-
-declare class OnTryCreateConnection__PythonCallable extends PythonCallableForDelegate { 
-	static Load(ResourceName: string): OnTryCreateConnection__PythonCallable;
-	static Find(Outer: UObject, ResourceName: string): OnTryCreateConnection__PythonCallable;
-	static GetDefaultObject(): OnTryCreateConnection__PythonCallable;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnTryCreateConnection__PythonCallable;
-	static C(Other: UObject | any): OnTryCreateConnection__PythonCallable;
-}
-
-declare class OnVectorArith__PythonCallable extends PythonCallableForDelegate { 
-	static Load(ResourceName: string): OnVectorArith__PythonCallable;
-	static Find(Outer: UObject, ResourceName: string): OnVectorArith__PythonCallable;
-	static GetDefaultObject(): OnVectorArith__PythonCallable;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnVectorArith__PythonCallable;
-	static C(Other: UObject | any): OnVectorArith__PythonCallable;
-}
-
-declare class OnDisallowedPinConnection__PythonCallable extends PythonCallableForDelegate { 
-	static Load(ResourceName: string): OnDisallowedPinConnection__PythonCallable;
-	static Find(Outer: UObject, ResourceName: string): OnDisallowedPinConnection__PythonCallable;
-	static GetDefaultObject(): OnDisallowedPinConnection__PythonCallable;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnDisallowedPinConnection__PythonCallable;
-	static C(Other: UObject | any): OnDisallowedPinConnection__PythonCallable;
-}
-
-declare class OnDropActor__PythonCallable extends PythonCallableForDelegate { 
-	static Load(ResourceName: string): OnDropActor__PythonCallable;
-	static Find(Outer: UObject, ResourceName: string): OnDropActor__PythonCallable;
-	static GetDefaultObject(): OnDropActor__PythonCallable;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnDropActor__PythonCallable;
-	static C(Other: UObject | any): OnDropActor__PythonCallable;
-}
-
-declare class SetNodes__PythonCallable extends PythonCallableForDelegate { 
-	static Load(ResourceName: string): SetNodes__PythonCallable;
-	static Find(Outer: UObject, ResourceName: string): SetNodes__PythonCallable;
-	static GetDefaultObject(): SetNodes__PythonCallable;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): SetNodes__PythonCallable;
-	static C(Other: UObject | any): SetNodes__PythonCallable;
-}
-
-declare class SingleNode__PythonCallable extends PythonCallableForDelegate { 
-	static Load(ResourceName: string): SingleNode__PythonCallable;
-	static Find(Outer: UObject, ResourceName: string): SingleNode__PythonCallable;
-	static GetDefaultObject(): SingleNode__PythonCallable;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): SingleNode__PythonCallable;
-	static C(Other: UObject | any): SingleNode__PythonCallable;
-}
-
-declare class OnWidgetFinalized__PythonCallable extends PythonCallableForDelegate { 
-	static Load(ResourceName: string): OnWidgetFinalized__PythonCallable;
-	static Find(Outer: UObject, ResourceName: string): OnWidgetFinalized__PythonCallable;
-	static GetDefaultObject(): OnWidgetFinalized__PythonCallable;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnWidgetFinalized__PythonCallable;
-	static C(Other: UObject | any): OnWidgetFinalized__PythonCallable;
-}
-
-declare class OnGetDefaultValue__PythonCallable extends PythonCallableForDelegate { 
-	static Load(ResourceName: string): OnGetDefaultValue__PythonCallable;
-	static Find(Outer: UObject, ResourceName: string): OnGetDefaultValue__PythonCallable;
-	static GetDefaultObject(): OnGetDefaultValue__PythonCallable;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnGetDefaultValue__PythonCallable;
-	static C(Other: UObject | any): OnGetDefaultValue__PythonCallable;
-}
-
-declare class OnGetGraphPin__PythonCallable extends PythonCallableForDelegate { 
-	static Load(ResourceName: string): OnGetGraphPin__PythonCallable;
-	static Find(Outer: UObject, ResourceName: string): OnGetGraphPin__PythonCallable;
-	static GetDefaultObject(): OnGetGraphPin__PythonCallable;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnGetGraphPin__PythonCallable;
-	static C(Other: UObject | any): OnGetGraphPin__PythonCallable;
 }
 
 declare type EJavasriptTabActivationCause = 'UserClickedOnTab' | 'SetDirectly' | 'EJavasriptTabActivationCause_MAX';
@@ -4180,6 +5520,82 @@ declare class JavascriptEditorTab extends UObject {
 	static C(Other: UObject | any): JavascriptEditorTab;
 }
 
+declare class JavascriptUICommandInfo { 
+	clone() : JavascriptUICommandInfo;
+	static C(Other: UObject | any): JavascriptUICommandInfo;
+	static GenericCommand(What: string): JavascriptUICommandInfo;
+}
+
+declare class JavascriptUICommand { 
+	ID: string;
+	FriendlyName: string;
+	Description: string;
+	DefaultChord: InputChord;
+	ActionType: EJavasrciptUserInterfaceActionType;
+	CommandInfo: JavascriptUICommandInfo;
+	IconStyleName: string;
+	clone() : JavascriptUICommand;
+	static C(Other: UObject | any): JavascriptUICommand;
+}
+
+declare class JavascriptBindingContext { 
+	clone() : JavascriptBindingContext;
+	static C(Other: UObject | any): JavascriptBindingContext;
+	Destroy(): void;
+	UI_COMMAND_Function(Command: JavascriptUICommand,InTextSubNamespace: string): JavascriptUICommandInfo;
+	static Destroy(Context: JavascriptBindingContext): void;
+	static UI_COMMAND_Function(This: JavascriptBindingContext,Command: JavascriptUICommand,InTextSubNamespace: string): JavascriptUICommandInfo;
+	static NewBindingContext(InContextName: string,InContextDesc: string,InContextParent: string,InStyleSetName: string): JavascriptBindingContext;
+}
+
+declare class JavascriptUICommandList { 
+	clone() : JavascriptUICommandList;
+	static C(Other: UObject | any): JavascriptUICommandList;
+	CreateMenuBarBuilder(UFunction: JavascriptFunction): void;
+	CreateMenuBuilder(bInShouldCloseWindowAfterMenuSelection: boolean,UFunction: JavascriptFunction): void;
+	CreateToolbarBuilder(Orientation: EOrientation,UFunction: JavascriptFunction): void;
+	ProcessCommandBindings_KeyEvent(InKeyEvent: KeyEvent): boolean;
+	ProcessCommandBindings_PointerEvent(InMouseEvent: UPointerEvent): boolean;
+	static CreateMenuBarBuilder(CommandList: JavascriptUICommandList,UFunction: JavascriptFunction): void;
+	static CreateMenuBuilder(CommandList: JavascriptUICommandList,bInShouldCloseWindowAfterMenuSelection: boolean,UFunction: JavascriptFunction): void;
+	static CreateToolbarBuilder(CommandList: JavascriptUICommandList,Orientation: EOrientation,UFunction: JavascriptFunction): void;
+	static ProcessCommandBindings_KeyEvent(CommandList: JavascriptUICommandList,InKeyEvent: KeyEvent): boolean;
+	static ProcessCommandBindings_PointerEvent(CommandList: JavascriptUICommandList,InMouseEvent: UPointerEvent): boolean;
+	static CreateUICommandList(): JavascriptUICommandList;
+	static GetLevelEditorActions(): JavascriptUICommandList;
+}
+
+declare class JavascriptUICommands extends UObject { 
+	OnExecuteAction: UnrealEngineDelegate<(ID: string) => void>;
+	OnCanExecuteAction: UnrealEngineDelegate<(ID: string) => boolean>;
+	OnIsActionChecked: UnrealEngineDelegate<(ID: string) => boolean>;
+	OnIsActionButtonVisible: UnrealEngineDelegate<(ID: string) => boolean>;
+	Commands: JavascriptUICommand[];
+	ContextName: string;
+	ContextDesc: string;
+	ContextNameParent: string;
+	StyleSetName: string;
+	TextSubNamespace: string;
+	CommandInfos: JavascriptUICommandInfo[];
+	BindingContext: JavascriptBindingContext;
+	static Load(ResourceName: string): JavascriptUICommands;
+	static Find(Outer: UObject, ResourceName: string): JavascriptUICommands;
+	static GetDefaultObject(): JavascriptUICommands;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): JavascriptUICommands;
+	Uninitialize(): void;
+	Unbind(List: JavascriptUICommandList): void;
+	Refresh(): void;
+	Initialize(): void;
+	GetAction(ID: string): JavascriptUICommandInfo;
+	Discard(): void;
+	Commit(): void;
+	static BroadcastCommandsChanged(InContextName: string): void;
+	Bind(List: JavascriptUICommandList): void;
+	static C(Other: UObject | any): JavascriptUICommands;
+}
+
+declare type EJavascriptExtensionHook = 'Before' | 'After' | 'First' | 'EJavascriptExtensionHook_MAX';
+declare var EJavascriptExtensionHook : { Before:'Before',After:'After',First:'First',EJavascriptExtensionHook_MAX:'EJavascriptExtensionHook_MAX', };
 declare class JavascriptMenuExtension { 
 	ExtensionHook: string;
 	HookPosition: EJavascriptExtensionHook;
@@ -4362,6 +5778,7 @@ declare class JavascriptEditorGlobalDelegates extends UObject {
 	PreSaveWorld_Friendly(SaveFlags: number,World: World): void;
 	PreBeginPIE(bIsSimulating: boolean): void;
 	PostSaveWorld_Friendly(SaveFlags: number,World: World,bSuccess: boolean): void;
+	PostPIEStarted(bIsSimulating: boolean): void;
 	PostLandscapeLayerUpdated(): void;
 	OnShutdownPostPackagesSaved(): void;
 	OnPathRemoved(Path: string): void;
@@ -4426,6 +5843,58 @@ declare class JavascriptEditorInputProcessor extends UObject {
 	HandleAnalogInputEvent(InKeyEvent: AnalogInputEvent): boolean;
 	Activate(bEnable: boolean): void;
 	static C(Other: UObject | any): JavascriptEditorInputProcessor;
+}
+
+declare class JavascriptExtensionBase { 
+	clone() : JavascriptExtensionBase;
+	static C(Other: UObject | any): JavascriptExtensionBase;
+}
+
+declare class JavascriptMenuBuilder { 
+	clone() : JavascriptMenuBuilder;
+	static C(Other: UObject | any): JavascriptMenuBuilder;
+	AddComboButton(UObject?: JavascriptComboButtonContext): {Builder: JavascriptMenuBuilder};
+	AddMenuByCommands(UICommands?: JavascriptUICommands): {Builder: JavascriptMenuBuilder};
+	AddMenuEntry(UObject?: JavascriptMenuContext): {Builder: JavascriptMenuBuilder};
+	AddPullDownMenu(InMenuLabel?: string,InToolTip?: string,InPullDownMenu?: JavascriptFunction,InExtensionHook?: string,InTutorialHighlightName?: string): {MenuBuilder: JavascriptMenuBuilder};
+	AddSeparator(): {Builder: JavascriptMenuBuilder};
+	AddSubMenu(Label?: string,Tooltip?: string,bInOpenSubMenuOnClick?: boolean,UFunction?: JavascriptFunction): {Builder: JavascriptMenuBuilder};
+	AddToolBarButton(CommandInfo?: JavascriptUICommandInfo): {Builder: JavascriptMenuBuilder};
+	AddToolBarButtonByContext(Context?: JavascriptToolbarButtonContext,EditingObject?: UObject): {Builder: JavascriptMenuBuilder};
+	AddWidget(Widget?: Widget,Label?: string,bNoIndent?: boolean,InTutorialHighlightName?: string,bSearchable?: boolean): {Builder: JavascriptMenuBuilder};
+	BeginSection(InExtensionHook?: string,MenuHeadingText?: string): {Builder: JavascriptMenuBuilder};
+	EndSection(): {Builder: JavascriptMenuBuilder};
+	PopCommandList(): {Builder: JavascriptMenuBuilder};
+	PushCommandList(List?: JavascriptUICommandList): {Builder: JavascriptMenuBuilder};
+	static AddComboButton(Builder?: JavascriptMenuBuilder,UObject?: JavascriptComboButtonContext): {Builder: JavascriptMenuBuilder};
+	static AddMenuByCommands(Builder?: JavascriptMenuBuilder,UICommands?: JavascriptUICommands): {Builder: JavascriptMenuBuilder};
+	static AddMenuEntry(Builder?: JavascriptMenuBuilder,UObject?: JavascriptMenuContext): {Builder: JavascriptMenuBuilder};
+	static AddPullDownMenu(MenuBuilder?: JavascriptMenuBuilder,InMenuLabel?: string,InToolTip?: string,InPullDownMenu?: JavascriptFunction,InExtensionHook?: string,InTutorialHighlightName?: string): {MenuBuilder: JavascriptMenuBuilder};
+	static AddSeparator(Builder?: JavascriptMenuBuilder): {Builder: JavascriptMenuBuilder};
+	static AddSubMenu(Builder?: JavascriptMenuBuilder,Label?: string,Tooltip?: string,bInOpenSubMenuOnClick?: boolean,UFunction?: JavascriptFunction): {Builder: JavascriptMenuBuilder};
+	static AddToolBarButton(Builder?: JavascriptMenuBuilder,CommandInfo?: JavascriptUICommandInfo): {Builder: JavascriptMenuBuilder};
+	static AddToolBarButtonByContext(Builder?: JavascriptMenuBuilder,Context?: JavascriptToolbarButtonContext,EditingObject?: UObject): {Builder: JavascriptMenuBuilder};
+	static AddWidget(Builder?: JavascriptMenuBuilder,Widget?: Widget,Label?: string,bNoIndent?: boolean,InTutorialHighlightName?: string,bSearchable?: boolean): {Builder: JavascriptMenuBuilder};
+	static BeginSection(Builder?: JavascriptMenuBuilder,InExtensionHook?: string,MenuHeadingText?: string): {Builder: JavascriptMenuBuilder};
+	static EndSection(Builder?: JavascriptMenuBuilder): {Builder: JavascriptMenuBuilder};
+	static PopCommandList(Builder?: JavascriptMenuBuilder): {Builder: JavascriptMenuBuilder};
+	static PushCommandList(Builder?: JavascriptMenuBuilder,List?: JavascriptUICommandList): {Builder: JavascriptMenuBuilder};
+}
+
+declare class JavascriptExtender { 
+	clone() : JavascriptExtender;
+	static C(Other: UObject | any): JavascriptExtender;
+	AddMenubarExtension(ExtensionHook: string,HookPosition: EJavascriptExtensionHook,CommandList: JavascriptUICommandList,UFunction: JavascriptFunction): JavascriptExtensionBase;
+	AddMenuExtension(ExtensionHook: string,HookPosition: EJavascriptExtensionHook,CommandList: JavascriptUICommandList,UFunction: JavascriptFunction): JavascriptExtensionBase;
+	AddToolBarExtension(ExtensionHook: string,HookPosition: EJavascriptExtensionHook,CommandList: JavascriptUICommandList,UFunction: JavascriptFunction): JavascriptExtensionBase;
+	Apply(ExtensionHook: string,HookPosition: EJavascriptExtensionHook,MenuBuilder?: JavascriptMenuBuilder): {MenuBuilder: JavascriptMenuBuilder};
+	RemoveExtension(Extension: JavascriptExtensionBase): void;
+	static AddMenubarExtension(Extender: JavascriptExtender,ExtensionHook: string,HookPosition: EJavascriptExtensionHook,CommandList: JavascriptUICommandList,UFunction: JavascriptFunction): JavascriptExtensionBase;
+	static AddMenuExtension(Extender: JavascriptExtender,ExtensionHook: string,HookPosition: EJavascriptExtensionHook,CommandList: JavascriptUICommandList,UFunction: JavascriptFunction): JavascriptExtensionBase;
+	static AddToolBarExtension(Extender: JavascriptExtender,ExtensionHook: string,HookPosition: EJavascriptExtensionHook,CommandList: JavascriptUICommandList,UFunction: JavascriptFunction): JavascriptExtensionBase;
+	static Apply(Extender: JavascriptExtender,ExtensionHook: string,HookPosition: EJavascriptExtensionHook,MenuBuilder?: JavascriptMenuBuilder): {MenuBuilder: JavascriptMenuBuilder};
+	static RemoveExtension(Extender: JavascriptExtender,Extension: JavascriptExtensionBase): void;
+	static Combine(Extenders: JavascriptExtender[]): JavascriptExtender;
 }
 
 declare class JavascriptLazyExtenderDelegates extends UObject { 
@@ -4540,6 +6009,7 @@ declare class JavascriptEditorLibrary extends BlueprintFunctionLibrary {
 	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): JavascriptEditorLibrary;
 	static UpdateModelComponents(Level: Level): void;
 	static ToggleSelect(USelection: USelection,InObject: UObject): void;
+	static ToggleIsExecuteTestModePIE(): boolean;
 	static SetIsTemporarilyHiddenInEditor(Actor: Actor,bIsHidden: boolean): void;
 	static SetHitProxy(PDI: JavascriptPDI,Name: string): void;
 	static SetHeightmapDataFromMemory(LandscapeInfo: LandscapeInfo,MinX: number,MinY: number,MaxX: number,MaxY: number): void;
@@ -4575,6 +6045,7 @@ declare class JavascriptEditorLibrary extends BlueprintFunctionLibrary {
 	static IsActive(Transactor: Transactor): boolean;
 	static InvalidateModelGeometry(World: World,InLevel: Level): void;
 	static HasMetaData(Field: Field,Key: string): boolean;
+	static GetUniqueID(InObject: UObject): number;
 	static GetTransaction(Transactor: Transactor,QueueIndex: number): JavascriptTransaction;
 	static GetToolBarExtensibilityManager(What: string): JavascriptExtensibilityManager;
 	static GetTitle(Transaction: JavascriptTransaction): string;
@@ -4594,11 +6065,16 @@ declare class JavascriptEditorLibrary extends BlueprintFunctionLibrary {
 	static GetLandscapeExtent(LandscapeInfo: LandscapeInfo,MinX?: number,MinY?: number,MaxX?: number,MaxY?: number): {MinX: number, MinY: number, MaxX: number, MaxY: number, $: boolean};
 	static GetKeyNameByKeyEvent(Event: KeyEvent): string;
 	static GetKey(Click: JavascriptViewportClick): Key;
+	static GetIsShiftDownByKeyEvent(Event: KeyEvent): boolean;
+	static GetIsExecuteTestModePIE(): boolean;
+	static GetIsControlDownByKeyEvent(Event: KeyEvent): boolean;
+	static GetIsAltDownByKeyEvent(Event: KeyEvent): boolean;
 	static GetHeightmapDataToMemory(LandscapeInfo: LandscapeInfo,MinX: number,MinY: number,MaxX: number,MaxY: number): void;
 	static GetGroup(Name: string): JavascriptWorkspaceItem;
 	static GetFolderPath(Actor: Actor): string;
 	static GetEvent(Click: JavascriptViewportClick): EInputEvent;
 	static GetEngine(): EditorEngine;
+	static GetEditorPlayWorld(): World;
 	static GetDirection(Click: JavascriptViewportClick): Vector;
 	static GetDefaultBrush(World: World): Brush;
 	static GetDataTableAsJSON(InDataTable: DataTable,InDTExportFlags: number): string;
@@ -4766,6 +6242,7 @@ declare class JavascriptEditorViewport extends PanelWidget {
 	SetSimulatePhysics(bShouldSimulatePhysics: boolean): void;
 	SetRealtime(bInRealtime: boolean,bStoreCurrentValue: boolean): void;
 	SetProfileIndex(InProfileIndex: number): void;
+	SetLightLocation(InLightPos: Vector): void;
 	SetLightDirection(InLightDir: Rotator): void;
 	SetLightColor(LightColor: Color): void;
 	SetLightBrightness(LightBrightness: number): void;
@@ -4948,6 +6425,55 @@ declare class JavascriptLogSubscriber extends UObject {
 	static C(Other: UObject | any): JavascriptLogSubscriber;
 }
 
+declare class JavascriptMenuLibrary extends BlueprintFunctionLibrary { 
+	static Load(ResourceName: string): JavascriptMenuLibrary;
+	static Find(Outer: UObject, ResourceName: string): JavascriptMenuLibrary;
+	static GetDefaultObject(): JavascriptMenuLibrary;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): JavascriptMenuLibrary;
+	static UI_COMMAND_Function(This: JavascriptBindingContext,Command: JavascriptUICommand,InTextSubNamespace: string): JavascriptUICommandInfo;
+	static RemoveExtension(Extender: JavascriptExtender,Extension: JavascriptExtensionBase): void;
+	static PushCommandList(Builder?: JavascriptMenuBuilder,List?: JavascriptUICommandList): {Builder: JavascriptMenuBuilder};
+	static ProcessCommandBindings_PointerEvent(CommandList: JavascriptUICommandList,InMouseEvent: UPointerEvent): boolean;
+	static ProcessCommandBindings_KeyEvent(CommandList: JavascriptUICommandList,InKeyEvent: KeyEvent): boolean;
+	static PopCommandList(Builder?: JavascriptMenuBuilder): {Builder: JavascriptMenuBuilder};
+	static NewBindingContext(InContextName: string,InContextDesc: string,InContextParent: string,InStyleSetName: string): JavascriptBindingContext;
+	static GenericCommand(What: string): JavascriptUICommandInfo;
+	static EndSection(Builder?: JavascriptMenuBuilder): {Builder: JavascriptMenuBuilder};
+	static Destroy(Context: JavascriptBindingContext): void;
+	static CreateUICommandList(): JavascriptUICommandList;
+	static CreateToolbarBuilder(CommandList: JavascriptUICommandList,Orientation: EOrientation,UFunction: JavascriptFunction): void;
+	static CreateMenuBuilder(CommandList: JavascriptUICommandList,bInShouldCloseWindowAfterMenuSelection: boolean,UFunction: JavascriptFunction): void;
+	static CreateMenuBarBuilder(CommandList: JavascriptUICommandList,UFunction: JavascriptFunction): void;
+	static Combine(Extenders: JavascriptExtender[]): JavascriptExtender;
+	static BeginSection(Builder?: JavascriptMenuBuilder,InExtensionHook?: string,MenuHeadingText?: string): {Builder: JavascriptMenuBuilder};
+	static Apply(Extender: JavascriptExtender,ExtensionHook: string,HookPosition: EJavascriptExtensionHook,MenuBuilder?: JavascriptMenuBuilder): {MenuBuilder: JavascriptMenuBuilder};
+	static AddWidget(Builder?: JavascriptMenuBuilder,Widget?: Widget,Label?: string,bNoIndent?: boolean,InTutorialHighlightName?: string,bSearchable?: boolean): {Builder: JavascriptMenuBuilder};
+	static AddToolBarExtension(Extender: JavascriptExtender,ExtensionHook: string,HookPosition: EJavascriptExtensionHook,CommandList: JavascriptUICommandList,UFunction: JavascriptFunction): JavascriptExtensionBase;
+	static AddToolBarButtonByContext(Builder?: JavascriptMenuBuilder,Context?: JavascriptToolbarButtonContext,EditingObject?: UObject): {Builder: JavascriptMenuBuilder};
+	static AddToolBarButton(Builder?: JavascriptMenuBuilder,CommandInfo?: JavascriptUICommandInfo): {Builder: JavascriptMenuBuilder};
+	static AddSubMenu(Builder?: JavascriptMenuBuilder,Label?: string,Tooltip?: string,bInOpenSubMenuOnClick?: boolean,UFunction?: JavascriptFunction): {Builder: JavascriptMenuBuilder};
+	static AddSeparator(Builder?: JavascriptMenuBuilder): {Builder: JavascriptMenuBuilder};
+	static AddPullDownMenu(MenuBuilder?: JavascriptMenuBuilder,InMenuLabel?: string,InToolTip?: string,InPullDownMenu?: JavascriptFunction,InExtensionHook?: string,InTutorialHighlightName?: string): {MenuBuilder: JavascriptMenuBuilder};
+	static AddMenuExtension(Extender: JavascriptExtender,ExtensionHook: string,HookPosition: EJavascriptExtensionHook,CommandList: JavascriptUICommandList,UFunction: JavascriptFunction): JavascriptExtensionBase;
+	static AddMenuEntry(Builder?: JavascriptMenuBuilder,UObject?: JavascriptMenuContext): {Builder: JavascriptMenuBuilder};
+	static AddMenuByCommands(Builder?: JavascriptMenuBuilder,UICommands?: JavascriptUICommands): {Builder: JavascriptMenuBuilder};
+	static AddMenubarExtension(Extender: JavascriptExtender,ExtensionHook: string,HookPosition: EJavascriptExtensionHook,CommandList: JavascriptUICommandList,UFunction: JavascriptFunction): JavascriptExtensionBase;
+	static AddComboButton(Builder?: JavascriptMenuBuilder,UObject?: JavascriptComboButtonContext): {Builder: JavascriptMenuBuilder};
+	static C(Other: UObject | any): JavascriptMenuLibrary;
+}
+
+declare class JavascriptMultiBox extends Widget { 
+	OnHook: UnrealEngineDelegate<(ID: string, Self: JavascriptMultiBox, CurrentBuilder: JavascriptMenuBuilder) => void>;
+	static Load(ResourceName: string): JavascriptMultiBox;
+	static Find(Outer: UObject, ResourceName: string): JavascriptMultiBox;
+	static GetDefaultObject(): JavascriptMultiBox;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): JavascriptMultiBox;
+	static Bind(Builder: JavascriptMenuBuilder): void;
+	AddSubMenu(Builder?: JavascriptMenuBuilder,ID?: string,Label?: string,Tooltip?: string,bInOpenSubMenuOnClick?: boolean): {Builder: JavascriptMenuBuilder};
+	AddPullDownMenu(Builder?: JavascriptMenuBuilder,ID?: string,Label?: string,Tooltip?: string): {Builder: JavascriptMenuBuilder};
+	static C(Other: UObject | any): JavascriptMultiBox;
+}
+
 declare type EJSCheckBoxState = 'Unchecked' | 'Checked' | 'Undetermined' | 'EJSCheckBoxState_MAX';
 declare var EJSCheckBoxState : { Unchecked:'Unchecked',Checked:'Checked',Undetermined:'Undetermined',EJSCheckBoxState_MAX:'EJSCheckBoxState_MAX', };
 declare class JavascriptNotification extends UObject { 
@@ -4988,22 +6514,44 @@ declare class JavascriptPropertyHandle {
 	static C(Other: UObject | any): JavascriptPropertyHandle;
 	CreatePropertyNameWidget(NameOverride: string,ToolTipOverride: string,bDisplayResetToDefault: boolean,bHideText: boolean,bHideThumbnail: boolean): JavascriptSlateWidget;
 	CreatePropertyValueWidget(bHideDefaultPropertyButtons: boolean): JavascriptSlateWidget;
+	GeneratePathToProperty(): string;
 	GetChildHandle(Name: string): JavascriptPropertyHandle;
+	GetIndexInArray(): number;
+	GetJavascriptRefValue(OutValue?: JavascriptRef): {OutValue: JavascriptRef, $: EPropertyAccessResult};
+	GetKeyHandle(): JavascriptPropertyHandle;
 	GetMetaData(Key: string): string;
+	GetObjectValue(OutValue?: UObject): {OutValue: UObject, $: EPropertyAccessResult};
+	GetOuterObjects(): UObject[];
+	GetParentHandle(): JavascriptPropertyHandle;
 	GetProperty(): Property;
 	GetValueAsFormattedString(OutValue?: string): {OutValue: string, $: EPropertyAccessResult};
+	IsArrayProperty(): boolean;
+	IsArrayPropertyWithValueType(): boolean;
 	IsEditConst(): boolean;
 	IsValidHandle(): boolean;
+	SetJavascriptRefValue(InValue: JavascriptRef): EPropertyAccessResult;
+	SetObjectValue(InValue: UObject): EPropertyAccessResult;
 	SetOnPropertyValueChanged(Custom: JavascriptPropertyCustomization): void;
 	SetValueFromFormattedString(InValue: string): EPropertyAccessResult;
 	static CreatePropertyNameWidget(Handle: JavascriptPropertyHandle,NameOverride: string,ToolTipOverride: string,bDisplayResetToDefault: boolean,bHideText: boolean,bHideThumbnail: boolean): JavascriptSlateWidget;
 	static CreatePropertyValueWidget(Handle: JavascriptPropertyHandle,bHideDefaultPropertyButtons: boolean): JavascriptSlateWidget;
+	static GeneratePathToProperty(Handle: JavascriptPropertyHandle): string;
 	static GetChildHandle(Parent: JavascriptPropertyHandle,Name: string): JavascriptPropertyHandle;
+	static GetIndexInArray(Handle: JavascriptPropertyHandle): number;
+	static GetJavascriptRefValue(Handle: JavascriptPropertyHandle,OutValue?: JavascriptRef): {OutValue: JavascriptRef, $: EPropertyAccessResult};
+	static GetKeyHandle(Handle: JavascriptPropertyHandle): JavascriptPropertyHandle;
 	static GetMetaData(Handle: JavascriptPropertyHandle,Key: string): string;
+	static GetObjectValue(Handle: JavascriptPropertyHandle,OutValue?: UObject): {OutValue: UObject, $: EPropertyAccessResult};
+	static GetOuterObjects(Handle: JavascriptPropertyHandle): UObject[];
+	static GetParentHandle(Handle: JavascriptPropertyHandle): JavascriptPropertyHandle;
 	static GetProperty(Handle: JavascriptPropertyHandle): Property;
 	static GetValueAsFormattedString(Handle: JavascriptPropertyHandle,OutValue?: string): {OutValue: string, $: EPropertyAccessResult};
+	static IsArrayProperty(Handle: JavascriptPropertyHandle): boolean;
+	static IsArrayPropertyWithValueType(Handle: JavascriptPropertyHandle): boolean;
 	static IsEditConst(Handle: JavascriptPropertyHandle): boolean;
 	static IsValidHandle(Handle: JavascriptPropertyHandle): boolean;
+	static SetJavascriptRefValue(Handle: JavascriptPropertyHandle,InValue: JavascriptRef): EPropertyAccessResult;
+	static SetObjectValue(Handle: JavascriptPropertyHandle,InValue: UObject): EPropertyAccessResult;
 	static SetOnPropertyValueChanged(Handle: JavascriptPropertyHandle,Custom: JavascriptPropertyCustomization): void;
 	static SetValueFromFormattedString(Handle: JavascriptPropertyHandle,InValue: string): EPropertyAccessResult;
 }
@@ -5101,8 +6649,10 @@ declare class JavascriptPropertyCustomizationLibrary extends BlueprintFunctionLi
 	static SetValueFromFormattedString(Handle: JavascriptPropertyHandle,InValue: string): EPropertyAccessResult;
 	static SetVAlign(Decl: JavascriptDetailWidgetDecl,InAlignment: EVerticalAlignment): void;
 	static SetOnPropertyValueChanged(Handle: JavascriptPropertyHandle,Custom: JavascriptPropertyCustomization): void;
+	static SetObjectValue(Handle: JavascriptPropertyHandle,InValue: UObject): EPropertyAccessResult;
 	static SetMinDesiredWidth(Decl: JavascriptDetailWidgetDecl,MinWidth: number): void;
 	static SetMaxDesiredWidth(Decl: JavascriptDetailWidgetDecl,MaxWidth: number): void;
+	static SetJavascriptRefValue(Handle: JavascriptPropertyHandle,InValue: JavascriptRef): EPropertyAccessResult;
 	static SetHAlign(Decl: JavascriptDetailWidgetDecl,InAlignment: EHorizontalAlignment): void;
 	static SetFilterString(Row: JavascriptDetailWidgetRow,InFilterString: string): void;
 	static SetContent(Decl: JavascriptDetailWidgetDecl,Widget: JavascriptSlateWidget): void;
@@ -5110,11 +6660,20 @@ declare class JavascriptPropertyCustomizationLibrary extends BlueprintFunctionLi
 	static NameContent(Row: JavascriptDetailWidgetRow): JavascriptDetailWidgetDecl;
 	static IsValidHandle(Handle: JavascriptPropertyHandle): boolean;
 	static IsEditConst(Handle: JavascriptPropertyHandle): boolean;
+	static IsArrayPropertyWithValueType(Handle: JavascriptPropertyHandle): boolean;
+	static IsArrayProperty(Handle: JavascriptPropertyHandle): boolean;
 	static GetValueAsFormattedString(Handle: JavascriptPropertyHandle,OutValue?: string): {OutValue: string, $: EPropertyAccessResult};
 	static GetProperty(Handle: JavascriptPropertyHandle): Property;
+	static GetParentHandle(Handle: JavascriptPropertyHandle): JavascriptPropertyHandle;
+	static GetOuterObjects(Handle: JavascriptPropertyHandle): UObject[];
+	static GetObjectValue(Handle: JavascriptPropertyHandle,OutValue?: UObject): {OutValue: UObject, $: EPropertyAccessResult};
 	static GetMetaData(Handle: JavascriptPropertyHandle,Key: string): string;
+	static GetKeyHandle(Handle: JavascriptPropertyHandle): JavascriptPropertyHandle;
+	static GetJavascriptRefValue(Handle: JavascriptPropertyHandle,OutValue?: JavascriptRef): {OutValue: JavascriptRef, $: EPropertyAccessResult};
+	static GetIndexInArray(Handle: JavascriptPropertyHandle): number;
 	static GetChildHandle(Parent: JavascriptPropertyHandle,Name: string): JavascriptPropertyHandle;
 	static GenerateStructValueWidget(ChildBuilder: JavascriptDetailChildrenBuilder,StructPropertyHandle: JavascriptPropertyHandle): JavascriptSlateWidget;
+	static GeneratePathToProperty(Handle: JavascriptPropertyHandle): string;
 	static CustomWidget(Row: JavascriptDetailPropertyRow,bShowChildren: boolean): JavascriptDetailWidgetRow;
 	static CreatePropertyValueWidget(Handle: JavascriptPropertyHandle,bHideDefaultPropertyButtons: boolean): JavascriptSlateWidget;
 	static CreatePropertyNameWidget(Handle: JavascriptPropertyHandle,NameOverride: string,ToolTipOverride: string,bDisplayResetToDefault: boolean,bHideText: boolean,bHideThumbnail: boolean): JavascriptSlateWidget;
@@ -5126,12 +6685,40 @@ declare class JavascriptPropertyCustomizationLibrary extends BlueprintFunctionLi
 	static C(Other: UObject | any): JavascriptPropertyCustomizationLibrary;
 }
 
+declare type EPropertyEditorNameAreaSettings = 'HideNameArea' | 'ObjectsUseNameArea' | 'ActorsUseNameArea' | 'ComponentsAndActorsUseNameArea' | 'EPropertyEditorNameAreaSettings_MAX';
+declare var EPropertyEditorNameAreaSettings : { HideNameArea:'HideNameArea',ObjectsUseNameArea:'ObjectsUseNameArea',ActorsUseNameArea:'ActorsUseNameArea',ComponentsAndActorsUseNameArea:'ComponentsAndActorsUseNameArea',EPropertyEditorNameAreaSettings_MAX:'EPropertyEditorNameAreaSettings_MAX', };
+declare class PropertyEditor extends Widget { 
+	OnChange: UnrealEngineMulticastDelegate<(PropertyName: string, MemberPropertyName: string) => void>;
+	bUpdateFromSelection: boolean;
+	bLockable: boolean;
+	bAllowSearch: boolean;
+	bHideSelectionTip: boolean;
+	bReadOnly: boolean;
+	bEnablePropertyPath: boolean;
+	NameAreaSettings: EPropertyEditorNameAreaSettings;
+	static Load(ResourceName: string): PropertyEditor;
+	static Find(Outer: UObject, ResourceName: string): PropertyEditor;
+	static GetDefaultObject(): PropertyEditor;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): PropertyEditor;
+	SetObjects(Objects: UObject[],bForceRefresh: boolean,bOverrideLock: boolean): void;
+	SetObject(UObject: UObject,bForceRefresh: boolean): void;
+	IsPropertyVisible(PropertName: string,ParentPropertyName: string,PropertyPaths: string[]): boolean;
+	IsPropertyReadOnly(PropertyName: string,ParentPropertyName: string,PropertyPaths: string[]): boolean;
+	ForceRefresh(): void;
+	Destruct(): void;
+	Construct(): void;
+	static C(Other: UObject | any): PropertyEditor;
+}
+
 declare class JavascriptPropertyTable extends Widget { 
+	OnGenerateInvalidCellWidget: UnrealEngineDelegate<() => JavascriptSlateWidget>;
+	bUseCustomColumns: boolean;
 	static Load(ResourceName: string): JavascriptPropertyTable;
 	static Find(Outer: UObject, ResourceName: string): JavascriptPropertyTable;
 	static GetDefaultObject(): JavascriptPropertyTable;
 	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): JavascriptPropertyTable;
 	SetEditingObjects(InEditingObjects: UObject[]): void;
+	GetSelectedTableObjects(): UObject[];
 	GetEditingObjects(): UObject[];
 	static C(Other: UObject | any): JavascriptPropertyTable;
 }
@@ -5200,28 +6787,692 @@ declare class JavascriptWebBrowser extends Widget {
 	static C(Other: UObject | any): JavascriptWebBrowser;
 }
 
-declare type EPropertyEditorNameAreaSettings = 'HideNameArea' | 'ObjectsUseNameArea' | 'ActorsUseNameArea' | 'ComponentsAndActorsUseNameArea' | 'EPropertyEditorNameAreaSettings_MAX';
-declare var EPropertyEditorNameAreaSettings : { HideNameArea:'HideNameArea',ObjectsUseNameArea:'ObjectsUseNameArea',ActorsUseNameArea:'ActorsUseNameArea',ComponentsAndActorsUseNameArea:'ComponentsAndActorsUseNameArea',EPropertyEditorNameAreaSettings_MAX:'EPropertyEditorNameAreaSettings_MAX', };
-declare class PropertyEditor extends Widget { 
-	OnChange: UnrealEngineMulticastDelegate<(PropertyName: string, MemberPropertyName: string) => void>;
-	bUpdateFromSelection: boolean;
-	bLockable: boolean;
-	bAllowSearch: boolean;
-	bHideSelectionTip: boolean;
-	bReadOnly: boolean;
-	bEnablePropertyPath: boolean;
-	NameAreaSettings: EPropertyEditorNameAreaSettings;
-	static Load(ResourceName: string): PropertyEditor;
-	static Find(Outer: UObject, ResourceName: string): PropertyEditor;
-	static GetDefaultObject(): PropertyEditor;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): PropertyEditor;
-	SetObjects(Objects: UObject[],bForceRefresh: boolean,bOverrideLock: boolean): void;
-	SetObject(UObject: UObject,bForceRefresh: boolean): void;
-	IsPropertyVisible(PropertName: string,ParentPropertyName: string,PropertyPaths: string[]): boolean;
-	IsPropertyReadOnly(PropertyName: string,ParentPropertyName: string,PropertyPaths: string[]): boolean;
-	Destruct(): void;
-	Construct(): void;
-	static C(Other: UObject | any): PropertyEditor;
+declare class JavascriptPinParams { 
+	ContainerType: EPinContainerType;
+	bIsReference: boolean;
+	bIsConst: boolean;
+	index: number;
+	clone() : JavascriptPinParams;
+	static C(Other: UObject | any): JavascriptPinParams;
+}
+
+declare class JavascriptGraphEdNode extends EdGraphNode { 
+	BackgroundColor: SlateColor;
+	GraphNode: UObject;
+	IsTitleOnly: boolean;
+	IsCustomNode: boolean;
+	OnWidgetFinalized: UnrealEngineDelegate<() => void>;
+	Bidirectional: boolean;
+	PriorityOrder: number;
+	static Load(ResourceName: string): JavascriptGraphEdNode;
+	static Find(Outer: UObject, ResourceName: string): JavascriptGraphEdNode;
+	static GetDefaultObject(): JavascriptGraphEdNode;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): JavascriptGraphEdNode;
+	UpdateSlate(): void;
+	SetVisible(bVisible: boolean): void;
+	SetTitleSelectionMode(InTitleHeight: number): void;
+	SetEnable(bEnable: boolean): void;
+	ResetTitleSelectionMode(): void;
+	RemovePinByName(PinName: string): boolean;
+	RemovePin(Pin: JavascriptEdGraphPin): boolean;
+	GetVisible(): boolean;
+	GetNumOfPins(Direction: EEdGraphPinDirection): number;
+	GetDesiredSize(): Vector2D;
+	CreatePin(Dir: EEdGraphPinDirection,PinCategory: string,PinSubCategory: string,PinSubCategoryObject: UObject,PinName: string,PinToolTip: string,PinDisplayName: string,InPinParams: JavascriptPinParams): JavascriptEdGraphPin;
+	static C(Other: UObject | any): JavascriptGraphEdNode;
+	GetOwnerPanel(): JavascriptSlateWidget;
+	static GetOwnerPanel(UNode: JavascriptGraphEdNode): JavascriptSlateWidget;
+}
+
+declare class JavascriptSlateEdNode { 
+	clone() : JavascriptSlateEdNode;
+	static C(Other: UObject | any): JavascriptSlateEdNode;
+	AddPinToHoverSet(Pin: JavascriptEdGraphPin): void;
+	RemovePinFromHoverSet(Pin: JavascriptEdGraphPin): void;
+	static AddPinToHoverSet(InSlateEdNode: JavascriptSlateEdNode,Pin: JavascriptEdGraphPin): void;
+	static RemovePinFromHoverSet(InSlateNode: JavascriptSlateEdNode,Pin: JavascriptEdGraphPin): void;
+}
+
+declare class JavascriptPerformSecondPassLayoutContainer { 
+	PrevNode: EdGraphNode;
+	NextNode: EdGraphNode;
+	NodeIndex: number;
+	MaxNodes: number;
+	clone() : JavascriptPerformSecondPassLayoutContainer;
+	static C(Other: UObject | any): JavascriptPerformSecondPassLayoutContainer;
+}
+
+declare class JavascriptConnectionParams { 
+	WireColor: LinearColor;
+	AssociatedPin1: JavascriptEdGraphPin;
+	AssociatedPin2: JavascriptEdGraphPin;
+	WireThickness: number;
+	bDrawBubbles: boolean;
+	bUserFlag1: boolean;
+	bUserFlag2: boolean;
+	StartDirection: EEdGraphPinDirection;
+	EndDirection: EEdGraphPinDirection;
+	clone() : JavascriptConnectionParams;
+	static C(Other: UObject | any): JavascriptConnectionParams;
+}
+
+declare class JavascriptGraphConnectionDrawingPolicyContainer { 
+	clone() : JavascriptGraphConnectionDrawingPolicyContainer;
+	static C(Other: UObject | any): JavascriptGraphConnectionDrawingPolicyContainer;
+	ApplyHoverDeemphasis(OutputPin: JavascriptEdGraphPin,InputPin: JavascriptEdGraphPin,Thickness: number,WireColor: LinearColor): void;
+	DetermineWiringStyle(OutputPin: JavascriptEdGraphPin,InputPin: JavascriptEdGraphPin,Params?: JavascriptConnectionParams): {Params: JavascriptConnectionParams};
+	DrawConnection(A: Vector2D,B: Vector2D,Params: JavascriptConnectionParams): void;
+	DrawSplineWithArrow(StartAnchorPoint: Vector2D,EndAnchorPoint: Vector2D,Params: JavascriptConnectionParams): void;
+	GetHorveredPinNum(): number;
+	IsContainedHoveredPins(Pin: JavascriptEdGraphPin): boolean;
+	MakeRotatedBox(ArrowDrawPos: Vector2D,AngleInRadians: number,WireColor: LinearColor): void;
+	static ApplyHoverDeemphasis(Container: JavascriptGraphConnectionDrawingPolicyContainer,OutputPin: JavascriptEdGraphPin,InputPin: JavascriptEdGraphPin,Thickness: number,WireColor: LinearColor): void;
+	static DetermineWiringStyle(Container: JavascriptGraphConnectionDrawingPolicyContainer,OutputPin: JavascriptEdGraphPin,InputPin: JavascriptEdGraphPin,Params?: JavascriptConnectionParams): {Params: JavascriptConnectionParams};
+	static DrawConnection(Container: JavascriptGraphConnectionDrawingPolicyContainer,A: Vector2D,B: Vector2D,Params: JavascriptConnectionParams): void;
+	static DrawSplineWithArrow(Container: JavascriptGraphConnectionDrawingPolicyContainer,StartAnchorPoint: Vector2D,EndAnchorPoint: Vector2D,Params: JavascriptConnectionParams): void;
+	static GetHorveredPinNum(Container: JavascriptGraphConnectionDrawingPolicyContainer): number;
+	static IsContainedHoveredPins(Container: JavascriptGraphConnectionDrawingPolicyContainer,Pin: JavascriptEdGraphPin): boolean;
+	static MakeRotatedBox(Container: JavascriptGraphConnectionDrawingPolicyContainer,ArrowDrawPos: Vector2D,AngleInRadians: number,WireColor: LinearColor): void;
+}
+
+declare type EGraphSchemaGetStringQuery = 'Description' | 'Title' | 'EGraphSchemaGetStringQuery_MAX';
+declare var EGraphSchemaGetStringQuery : { Description:'Description',Title:'Title',EGraphSchemaGetStringQuery_MAX:'EGraphSchemaGetStringQuery_MAX', };
+declare class JavascriptGraphMenuBuilder extends JavascriptMenuBuilder { 
+	Graph: EdGraph;
+	GraphNode: EdGraphNode;
+	GraphPin: JavascriptEdGraphPin;
+	bIsDebugging: boolean;
+	clone() : JavascriptGraphMenuBuilder;
+	static C(Other: UObject | any): JavascriptGraphMenuBuilder;
+}
+
+declare type ECanCreateConnectionResponse = 'CONNECT_RESPONSE_MAKE' | 'CONNECT_RESPONSE_DISALLOW' | 'CONNECT_RESPONSE_BREAK_OTHERS_A' | 'CONNECT_RESPONSE_BREAK_OTHERS_B' | 'CONNECT_RESPONSE_BREAK_OTHERS_AB' | 'CONNECT_RESPONSE_MAKE_WITH_CONVERSION_NODE' | 'CONNECT_RESPONSE_MAX';
+declare var ECanCreateConnectionResponse : { CONNECT_RESPONSE_MAKE:'CONNECT_RESPONSE_MAKE',CONNECT_RESPONSE_DISALLOW:'CONNECT_RESPONSE_DISALLOW',CONNECT_RESPONSE_BREAK_OTHERS_A:'CONNECT_RESPONSE_BREAK_OTHERS_A',CONNECT_RESPONSE_BREAK_OTHERS_B:'CONNECT_RESPONSE_BREAK_OTHERS_B',CONNECT_RESPONSE_BREAK_OTHERS_AB:'CONNECT_RESPONSE_BREAK_OTHERS_AB',CONNECT_RESPONSE_MAKE_WITH_CONVERSION_NODE:'CONNECT_RESPONSE_MAKE_WITH_CONVERSION_NODE',CONNECT_RESPONSE_MAX:'CONNECT_RESPONSE_MAX', };
+declare class JavascriptPinConnectionResponse { 
+	Message: string;
+	Response: ECanCreateConnectionResponse;
+	clone() : JavascriptPinConnectionResponse;
+	static C(Other: UObject | any): JavascriptPinConnectionResponse;
+}
+
+declare class EdGraphSchemaAction { 
+	MenuDescription: string;
+	TooltipDescription: string;
+	Category: string;
+	Keywords: string;
+	Grouping: number;
+	SectionID: number;
+	MenuDescriptionArray: string[];
+	FullSearchTitlesArray: string[];
+	FullSearchKeywordsArray: string[];
+	FullSearchCategoryArray: string[];
+	LocalizedMenuDescriptionArray: string[];
+	LocalizedFullSearchTitlesArray: string[];
+	LocalizedFullSearchKeywordsArray: string[];
+	LocalizedFullSearchCategoryArray: string[];
+	SearchText: string;
+	clone() : EdGraphSchemaAction;
+	static C(Other: UObject | any): EdGraphSchemaAction;
+}
+
+declare class PerformActionContext { 
+	ParentGraph: EdGraph;
+	FromPins: JavascriptEdGraphPin[];
+	Location: Vector2D;
+	bSelectNewNode: boolean;
+	clone() : PerformActionContext;
+	static C(Other: UObject | any): PerformActionContext;
+}
+
+declare class JavascriptArrangedWidget { 
+	clone() : JavascriptArrangedWidget;
+	static C(Other: UObject | any): JavascriptArrangedWidget;
+}
+
+declare class JavascriptPinWidget { 
+	clone() : JavascriptPinWidget;
+	static C(Other: UObject | any): JavascriptPinWidget;
+}
+
+declare class JavascriptDetermineLinkGeometryContainer { 
+	clone() : JavascriptDetermineLinkGeometryContainer;
+	static C(Other: UObject | any): JavascriptDetermineLinkGeometryContainer;
+	FindPinGeometries(PinWidget: JavascriptPinWidget): JavascriptArrangedWidget;
+	FindPinToPinWidgetMap(Pin: JavascriptEdGraphPin): JavascriptPinWidget;
+	GetArrangedNodes(UNode: EdGraphNode): JavascriptArrangedWidget;
+	GetOutputPinWidget(): JavascriptPinWidget;
+	static FindPinGeometries(Container: JavascriptDetermineLinkGeometryContainer,PinWidget: JavascriptPinWidget): JavascriptArrangedWidget;
+	static FindPinToPinWidgetMap(Container: JavascriptDetermineLinkGeometryContainer,Pin: JavascriptEdGraphPin): JavascriptPinWidget;
+	static GetArrangedNodes(Container: JavascriptDetermineLinkGeometryContainer,UNode: EdGraphNode): JavascriptArrangedWidget;
+	static GetOutputPinWidget(Container: JavascriptDetermineLinkGeometryContainer): JavascriptPinWidget;
+}
+
+declare class JavascriptGraphAssetGraphSchema extends EdGraphSchema { 
+	OnGetPinColor: UnrealEngineDelegate<(bHovered: boolean, Pin: JavascriptEdGraphPin) => SlateColor>;
+	OnGetDefaultValueVisibility: UnrealEngineDelegate<(Pin: JavascriptEdGraphPin) => boolean>;
+	OnGetSlateBrushName: UnrealEngineDelegate<(bHovered: boolean, Pin: JavascriptEdGraphPin) => string>;
+	OnPinConnectionListChanged: UnrealEngineDelegate<(Pin: JavascriptEdGraphPin) => void>;
+	OnTryCreateConnection: UnrealEngineDelegate<(PinA: JavascriptEdGraphPin, PinB: JavascriptEdGraphPin) => void>;
+	OnMouseEnter: UnrealEngineDelegate<(Instance: JavascriptGraphEdNode, SlateEdNode: JavascriptSlateEdNode, UPointerEvent: UPointerEvent) => void>;
+	OnMouseLeave: UnrealEngineDelegate<(Instance: JavascriptGraphEdNode, SlateEdNode: JavascriptSlateEdNode, UPointerEvent: UPointerEvent) => void>;
+	OnMouseMove: UnrealEngineDelegate<(Instance: JavascriptGraphEdNode, Delta: Vector2D, bUserIsDragging: boolean, MouseZone: number, UPointerEvent: UPointerEvent) => boolean>;
+	OnMouseButtonDown: UnrealEngineDelegate<(Instance: JavascriptGraphEdNode, MyGeometry: Geometry, UPointerEvent: UPointerEvent) => boolean>;
+	OnMouseButtonUp: UnrealEngineDelegate<(Instance: JavascriptGraphEdNode, MyGeometry: Geometry, UPointerEvent: UPointerEvent) => boolean>;
+	OnPerformSecondPassLayout: UnrealEngineDelegate<(Instance: JavascriptGraphEdNode) => JavascriptPerformSecondPassLayoutContainer>;
+	OnRequiresSecondPassLayout: UnrealEngineDelegate<(Instance: JavascriptGraphEdNode) => boolean>;
+	OnMoveTo: UnrealEngineDelegate<(Instance: JavascriptGraphEdNode, NewPosition: Vector2D) => boolean>;
+	OnTakeContentWidget: UnrealEngineDelegate<(Instance: JavascriptGraphEdNode, OutLeftNodeBoxWidget: JavascriptSlateWidget, OutRightNodeBoxWidget: JavascriptSlateWidget) => JavascriptSlateWidget>;
+	OnGetValueWidget: UnrealEngineDelegate<(Pin: JavascriptEdGraphPin) => Widget>;
+	OnGetActualPinWidget: UnrealEngineDelegate<(Pin: JavascriptEdGraphPin) => Widget>;
+	OnGetPinStatusIndicator: UnrealEngineDelegate<(Pin: JavascriptEdGraphPin) => Widget>;
+	OnDisableMakePins: UnrealEngineDelegate<(Instance: JavascriptGraphEdNode) => boolean>;
+	OnUsingDefaultPin: UnrealEngineDelegate<(Pin: JavascriptEdGraphPin) => boolean>;
+	OnGetPinLabelVisibility: UnrealEngineDelegate<(Pin: JavascriptEdGraphPin) => boolean>;
+	OnGetCustomPinBoxWidget: UnrealEngineDelegate<(Pin: JavascriptEdGraphPin) => JavascriptSlateWidget>;
+	OnUsingNodeWidgetMap: UnrealEngineDelegate<() => boolean>;
+	OnDetermineWiringStyle: UnrealEngineDelegate<(A: JavascriptEdGraphPin, B: JavascriptEdGraphPin, Params: JavascriptConnectionParams, Container: JavascriptGraphConnectionDrawingPolicyContainer) => void>;
+	OnComputeSplineTangent: UnrealEngineDelegate<(A: Vector2D, B: Vector2D) => Vector2D>;
+	OnDrawSplineWithArrow: UnrealEngineDelegate<(A: Vector2D, B: Vector2D, Params: JavascriptConnectionParams, Container: JavascriptGraphConnectionDrawingPolicyContainer, ArrowRadius: Vector2D) => boolean>;
+	OnDrawSplineWithArrow_Geom: UnrealEngineDelegate<(A: Geometry, B: Geometry, Params: JavascriptConnectionParams, Container: JavascriptGraphConnectionDrawingPolicyContainer) => boolean>;
+	OnDrawPreviewConnector: UnrealEngineDelegate<(PinGeometry: Geometry, StartPoint: Vector2D, Endpoint: Vector2D, Pin: JavascriptEdGraphPin, Params: JavascriptConnectionParams, Container: JavascriptGraphConnectionDrawingPolicyContainer) => boolean>;
+	OnTakeUserWidget: UnrealEngineDelegate<(Instance: JavascriptGraphEdNode) => Widget>;
+	OnTakeTitleAreaWidget: UnrealEngineDelegate<(Instance: JavascriptGraphEdNode) => Widget>;
+	OnTakeErrorReportingWidget: UnrealEngineDelegate<(Instance: JavascriptGraphEdNode) => Widget>;
+	OnGetString: UnrealEngineDelegate<(Instance: JavascriptGraphEdNode, Query: EGraphSchemaGetStringQuery) => string>;
+	OnBuildMenu: UnrealEngineDelegate<(Builder: JavascriptGraphMenuBuilder) => void>;
+	OnAllocateDefaultPins: UnrealEngineDelegate<(UNode: JavascriptGraphEdNode) => void>;
+	OnCreatePin: UnrealEngineDelegate<(Pin: JavascriptEdGraphPin) => Widget>;
+	OnCanCreateConnection: UnrealEngineDelegate<(A: JavascriptEdGraphPin, B: JavascriptEdGraphPin) => JavascriptPinConnectionResponse>;
+	OnPerformAction: UnrealEngineDelegate<(Action: EdGraphSchemaAction, Context: PerformActionContext) => EdGraphNode>;
+	OnContextActions: UnrealEngineDelegate<(FromPin: JavascriptEdGraphPin) => EdGraphSchemaAction[]>;
+	OnNodeConnectionListChanged: UnrealEngineDelegate<(UNode: JavascriptGraphEdNode) => void>;
+	OnCreateAutomaticConversionNodeAndConnections: UnrealEngineDelegate<(A: JavascriptEdGraphPin, B: JavascriptEdGraphPin) => boolean>;
+	OnDetermineLinkGeometry: UnrealEngineDelegate<(OutPin: JavascriptEdGraphPin, InputPin: JavascriptEdGraphPin, StartWidgetGeometry: JavascriptArrangedWidget, EndWidgetGeometry: JavascriptArrangedWidget, Container: JavascriptDetermineLinkGeometryContainer) => boolean>;
+	OnIsNodeComment: UnrealEngineDelegate<(Instance: JavascriptGraphEdNode) => boolean>;
+	OnEndUserInteraction: UnrealEngineDelegate<(UNode: JavascriptGraphEdNode) => void>;
+	OnCreateOutputSideAddButton: UnrealEngineDelegate<(Instance: JavascriptGraphEdNode) => boolean>;
+	OnAddPinByAddButton: UnrealEngineDelegate<(UNode: JavascriptGraphEdNode) => void>;
+	OnShouldAlwaysPurgeOnModification: UnrealEngineDelegate<() => boolean>;
+	OnDragEnter: UnrealEngineDelegate<(Target: JavascriptGraphEdNode, Capture: JavascriptGraphEdNode, MyGeometry: Geometry) => boolean>;
+	OnDragLeave: UnrealEngineDelegate<(Instance: JavascriptGraphEdNode) => boolean>;
+	OnDragOver: UnrealEngineDelegate<(Target: JavascriptGraphEdNode, Capture: JavascriptGraphEdNode, MyGeometry: Geometry) => boolean>;
+	OnDrop: UnrealEngineDelegate<(Target: JavascriptGraphEdNode, Capture: JavascriptGraphEdNode, MyGeometry: Geometry) => boolean>;
+	static Load(ResourceName: string): JavascriptGraphAssetGraphSchema;
+	static Find(Outer: UObject, ResourceName: string): JavascriptGraphAssetGraphSchema;
+	static GetDefaultObject(): JavascriptGraphAssetGraphSchema;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): JavascriptGraphAssetGraphSchema;
+	BreakSinglePinLink(SourcePin: JavascriptEdGraphPin,TargetPin: JavascriptEdGraphPin): void;
+	BreakPinLinks(TargetPin: JavascriptEdGraphPin,bSendsNodeNotifcation: boolean): void;
+	BreakNodeLinks(TargetNode: EdGraphNode): void;
+	static C(Other: UObject | any): JavascriptGraphAssetGraphSchema;
+}
+
+declare class JavascriptGraphEdCustomNodeWidget extends Widget { 
+	EdNode: JavascriptGraphEdNode;
+	static Load(ResourceName: string): JavascriptGraphEdCustomNodeWidget;
+	static Find(Outer: UObject, ResourceName: string): JavascriptGraphEdCustomNodeWidget;
+	static GetDefaultObject(): JavascriptGraphEdCustomNodeWidget;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): JavascriptGraphEdCustomNodeWidget;
+	SetNode(InEdNode: JavascriptGraphEdNode): void;
+	SetGraphPanel(InGraphPanel: JavascriptSlateWidget): void;
+	static C(Other: UObject | any): JavascriptGraphEdCustomNodeWidget;
+}
+
+declare class JavascriptNodeCreator { 
+	UNode: JavascriptGraphEdNode;
+	clone() : JavascriptNodeCreator;
+	static C(Other: UObject | any): JavascriptNodeCreator;
+	Finalize(): {Creator: JavascriptNodeCreator};
+	static Finalize(Creator?: JavascriptNodeCreator): {Creator: JavascriptNodeCreator};
+}
+
+declare class JavascriptGraphEdGraph extends EdGraph { 
+	CustomNodes: JavascriptGraphEdNode[];
+	static Load(ResourceName: string): JavascriptGraphEdGraph;
+	static Find(Outer: UObject, ResourceName: string): JavascriptGraphEdGraph;
+	static GetDefaultObject(): JavascriptGraphEdGraph;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): JavascriptGraphEdGraph;
+	RebuildGenericGraph(): void;
+	static C(Other: UObject | any): JavascriptGraphEdGraph;
+	CustomNodeCreator(): JavascriptNodeCreator;
+	NodeCreator(bSelectNewNode: boolean): JavascriptNodeCreator;
+	static CustomNodeCreator(Graph: JavascriptGraphEdGraph): JavascriptNodeCreator;
+	static NodeCreator(Graph: JavascriptGraphEdGraph,bSelectNewNode: boolean): JavascriptNodeCreator;
+}
+
+declare class JavascriptGraphEditorLibrary extends BlueprintFunctionLibrary { 
+	static Load(ResourceName: string): JavascriptGraphEditorLibrary;
+	static Find(Outer: UObject, ResourceName: string): JavascriptGraphEditorLibrary;
+	static GetDefaultObject(): JavascriptGraphEditorLibrary;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): JavascriptGraphEditorLibrary;
+	static TryConnection(Schema: EdGraphSchema,A: JavascriptEdGraphPin,B: JavascriptEdGraphPin): void;
+	static SetPinType(Pin: JavascriptEdGraphPin,PinType: EdGraphPinType): void;
+	static SetPinInfo(A: JavascriptEdGraphPin,InPinName: string,InPinToolTip: string): void;
+	static SetPinHidden(A: JavascriptEdGraphPin,bHidden: boolean): void;
+	static SetPinContainerType(A: JavascriptEdGraphPin,ContainerType: EJavascriptPinContainerType): void;
+	static SetParentPin(A: JavascriptEdGraphPin,Parent: JavascriptEdGraphPin): void;
+	static SetNodeMetaData(Schema: EdGraphSchema,UNode: EdGraphNode,KeyValue: string): boolean;
+	static ResizeNode(UNode: EdGraphNode,NewSize: Vector2D): void;
+	static RemovePinFromHoverSet(InSlateNode: JavascriptSlateEdNode,Pin: JavascriptEdGraphPin): void;
+	static NodeCreator(Graph: JavascriptGraphEdGraph,bSelectNewNode: boolean): JavascriptNodeCreator;
+	static MakeRotatedBox(Container: JavascriptGraphConnectionDrawingPolicyContainer,ArrowDrawPos: Vector2D,AngleInRadians: number,WireColor: LinearColor): void;
+	static MakeLinkTo(A: JavascriptEdGraphPin,B: JavascriptEdGraphPin): void;
+	static IsValid(A: JavascriptEdGraphPin): boolean;
+	static IsPinHidden(A: JavascriptEdGraphPin): boolean;
+	static IsContainedHoveredPins(Container: JavascriptGraphConnectionDrawingPolicyContainer,Pin: JavascriptEdGraphPin): boolean;
+	static GetSubPins(A: JavascriptEdGraphPin): JavascriptEdGraphPin[];
+	static GetPinType(A: JavascriptEdGraphPin): EdGraphPinType;
+	static GetPins(UNode: EdGraphNode): JavascriptEdGraphPin[];
+	static GetPinName(A: JavascriptEdGraphPin): string;
+	static GetPinIndex(A: JavascriptEdGraphPin): number;
+	static GetPinGUID(A: JavascriptEdGraphPin): Guid;
+	static GetPinContainerType(A: JavascriptEdGraphPin): EJavascriptPinContainerType;
+	static GetParentPin(A: JavascriptEdGraphPin): JavascriptEdGraphPin;
+	static GetOwningNode(A: JavascriptEdGraphPin): EdGraphNode;
+	static GetOwnerPanel(UNode: JavascriptGraphEdNode): JavascriptSlateWidget;
+	static GetOutputPinWidget(Container: JavascriptDetermineLinkGeometryContainer): JavascriptPinWidget;
+	static GetLinkedTo(A: JavascriptEdGraphPin): JavascriptEdGraphPin[];
+	static GetLinkedPinNum(A: JavascriptEdGraphPin): number;
+	static GetHorveredPinNum(Container: JavascriptGraphConnectionDrawingPolicyContainer): number;
+	static GetDirection(A: JavascriptEdGraphPin): EEdGraphPinDirection;
+	static GetDefaultObject(): JavascriptEdGraphPin;
+	static GetArrangedNodes(Container: JavascriptDetermineLinkGeometryContainer,UNode: EdGraphNode): JavascriptArrangedWidget;
+	static FindPinToPinWidgetMap(Container: JavascriptDetermineLinkGeometryContainer,Pin: JavascriptEdGraphPin): JavascriptPinWidget;
+	static FindPinGeometries(Container: JavascriptDetermineLinkGeometryContainer,PinWidget: JavascriptPinWidget): JavascriptArrangedWidget;
+	static FindPin(UNode: EdGraphNode,PinName: string,Direction: EEdGraphPinDirection): JavascriptEdGraphPin;
+	static FindClosestPointOnGeom(Geom: Geometry,TestPoint: Vector2D): Vector2D;
+	static Finalize(Creator?: JavascriptNodeCreator): {Creator: JavascriptNodeCreator};
+	static DrawSplineWithArrow(Container: JavascriptGraphConnectionDrawingPolicyContainer,StartAnchorPoint: Vector2D,EndAnchorPoint: Vector2D,Params: JavascriptConnectionParams): void;
+	static DrawConnection(Container: JavascriptGraphConnectionDrawingPolicyContainer,A: Vector2D,B: Vector2D,Params: JavascriptConnectionParams): void;
+	static DetermineWiringStyle(Container: JavascriptGraphConnectionDrawingPolicyContainer,OutputPin: JavascriptEdGraphPin,InputPin: JavascriptEdGraphPin,Params?: JavascriptConnectionParams): {Params: JavascriptConnectionParams};
+	static DestroyNode(UNode: EdGraphNode): void;
+	static CustomNodeCreator(Graph: JavascriptGraphEdGraph): JavascriptNodeCreator;
+	static CenterOf(Geom: Geometry): Vector2D;
+	static CanUserDeleteNode(UNode: EdGraphNode): boolean;
+	static CanDuplicateNode(UNode: EdGraphNode): boolean;
+	static BreakLinkTo(A: JavascriptEdGraphPin,B: JavascriptEdGraphPin): void;
+	static BreakAllPinLinks(A: JavascriptEdGraphPin): void;
+	static AutowireNewNode(UNode: EdGraphNode,FromPin: JavascriptEdGraphPin): void;
+	static ApplyHoverDeemphasis(Container: JavascriptGraphConnectionDrawingPolicyContainer,OutputPin: JavascriptEdGraphPin,InputPin: JavascriptEdGraphPin,Thickness: number,WireColor: LinearColor): void;
+	static AddPinToHoverSet(InSlateEdNode: JavascriptSlateEdNode,Pin: JavascriptEdGraphPin): void;
+	static C(Other: UObject | any): JavascriptGraphEditorLibrary;
+}
+
+declare class JavascriptGraphAppearanceInfo { 
+	CornerImage: SlateBrush;
+	CornerText: string;
+	PIENotifyText: string;
+	ReadOnlyText: string;
+	InstructionText: string;
+	clone() : JavascriptGraphAppearanceInfo;
+	static C(Other: UObject | any): JavascriptGraphAppearanceInfo;
+}
+
+declare type EPinVisibility = 'Pin_Show' | 'Pin_HideNoConnection' | 'Pin_HideNoConnectionNoDefault' | 'Pin_MAX';
+declare var EPinVisibility : { Pin_Show:'Pin_Show',Pin_HideNoConnection:'Pin_HideNoConnection',Pin_HideNoConnectionNoDefault:'Pin_HideNoConnectionNoDefault',Pin_MAX:'Pin_MAX', };
+declare class JavascriptGraphEditorWidget extends Widget { 
+	EdGraph: JavascriptGraphEdGraph;
+	OnNodeDoubleClicked: UnrealEngineDelegate<(UNode: EdGraphNode) => void>;
+	OnDropActor: UnrealEngineDelegate<(Actors: Actor[], Graph: EdGraph, Point: Vector2D) => void>;
+	OnDisallowedPinConnection: UnrealEngineDelegate<(A: JavascriptEdGraphPin, B: JavascriptEdGraphPin) => void>;
+	OnSelectedNodesChanged: UnrealEngineDelegate<(Set: UObject[]) => void>;
+	AppearanceInfo: JavascriptGraphAppearanceInfo;
+	CommandList: JavascriptUICommandList;
+	static Load(ResourceName: string): JavascriptGraphEditorWidget;
+	static Find(Outer: UObject, ResourceName: string): JavascriptGraphEditorWidget;
+	static GetDefaultObject(): JavascriptGraphEditorWidget;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): JavascriptGraphEditorWidget;
+	SetViewLocation(Location: Vector2D,ZoomAmount: number): void;
+	SetPinVisibility(InVisibility: EPinVisibility): void;
+	SetNodeSelection(UNode: EdGraphNode,bSelect: boolean): void;
+	SetGraph(InEdGraph: JavascriptGraphEdGraph): void;
+	SelectAllNodes(): void;
+	NotifyGraphChanged(): void;
+	static NewGraph(ParentScope: UObject): JavascriptGraphEdGraph;
+	JumpToPin(JumpToMe: JavascriptEdGraphPin): void;
+	JumpToNode(JumpToMe: EdGraphNode,bRequestRename: boolean,bSelectNode: boolean): void;
+	GetViewLocation(OutLocation?: Vector2D,OutZoomAmount?: number): {OutLocation: Vector2D, OutZoomAmount: number};
+	GetSelectedNodes(): UObject[];
+	GetPasteLocation(): Vector2D;
+	ClearSelectionSet(): void;
+	static C(Other: UObject | any): JavascriptGraphEditorWidget;
+}
+
+declare class JavascriptGraphEdNodeWidget extends Widget { 
+	EdNode: JavascriptGraphEdNode;
+	static Load(ResourceName: string): JavascriptGraphEdNodeWidget;
+	static Find(Outer: UObject, ResourceName: string): JavascriptGraphEdNodeWidget;
+	static GetDefaultObject(): JavascriptGraphEdNodeWidget;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): JavascriptGraphEdNodeWidget;
+	SetNode(InEdNode: JavascriptGraphEdNode): void;
+	static C(Other: UObject | any): JavascriptGraphEdNodeWidget;
+}
+
+declare class JavascriptTextProperty { 
+	Key: string;
+	Namespace: string;
+	Value: string;
+	TableId: string;
+	clone() : JavascriptTextProperty;
+	static C(Other: UObject | any): JavascriptTextProperty;
+}
+
+declare class JavascriptGraphTextPropertyEditableTextBox extends Widget { 
+	OnGetGraphPin: UnrealEngineDelegate<() => JavascriptEdGraphPin>;
+	OnGetDefaultValue: UnrealEngineDelegate<() => JavascriptTextProperty>;
+	OnTextCommitted: UnrealEngineMulticastDelegate<(TextProperty: JavascriptTextProperty) => void>;
+	WidgetStyle: EditableTextBoxStyle;
+	WrapTextAt: number;
+	AutoWrapText: boolean;
+	static Load(ResourceName: string): JavascriptGraphTextPropertyEditableTextBox;
+	static Find(Outer: UObject, ResourceName: string): JavascriptGraphTextPropertyEditableTextBox;
+	static GetDefaultObject(): JavascriptGraphTextPropertyEditableTextBox;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): JavascriptGraphTextPropertyEditableTextBox;
+	static C(Other: UObject | any): JavascriptGraphTextPropertyEditableTextBox;
+}
+
+declare class OnBuildMenu__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): OnBuildMenu__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): OnBuildMenu__PythonCallable;
+	static GetDefaultObject(): OnBuildMenu__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnBuildMenu__PythonCallable;
+	static C(Other: UObject | any): OnBuildMenu__PythonCallable;
+}
+
+declare class OnCanCreateConnection__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): OnCanCreateConnection__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): OnCanCreateConnection__PythonCallable;
+	static GetDefaultObject(): OnCanCreateConnection__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnCanCreateConnection__PythonCallable;
+	static C(Other: UObject | any): OnCanCreateConnection__PythonCallable;
+}
+
+declare class OnContextActions__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): OnContextActions__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): OnContextActions__PythonCallable;
+	static GetDefaultObject(): OnContextActions__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnContextActions__PythonCallable;
+	static C(Other: UObject | any): OnContextActions__PythonCallable;
+}
+
+declare class OnCreateAutomaticConversionNodeAndConnections__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): OnCreateAutomaticConversionNodeAndConnections__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): OnCreateAutomaticConversionNodeAndConnections__PythonCallable;
+	static GetDefaultObject(): OnCreateAutomaticConversionNodeAndConnections__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnCreateAutomaticConversionNodeAndConnections__PythonCallable;
+	static C(Other: UObject | any): OnCreateAutomaticConversionNodeAndConnections__PythonCallable;
+}
+
+declare class OnCreatePin__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): OnCreatePin__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): OnCreatePin__PythonCallable;
+	static GetDefaultObject(): OnCreatePin__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnCreatePin__PythonCallable;
+	static C(Other: UObject | any): OnCreatePin__PythonCallable;
+}
+
+declare class OnDetermineLinkGeometry__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): OnDetermineLinkGeometry__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): OnDetermineLinkGeometry__PythonCallable;
+	static GetDefaultObject(): OnDetermineLinkGeometry__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnDetermineLinkGeometry__PythonCallable;
+	static C(Other: UObject | any): OnDetermineLinkGeometry__PythonCallable;
+}
+
+declare class OnDetermineWiringStyle__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): OnDetermineWiringStyle__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): OnDetermineWiringStyle__PythonCallable;
+	static GetDefaultObject(): OnDetermineWiringStyle__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnDetermineWiringStyle__PythonCallable;
+	static C(Other: UObject | any): OnDetermineWiringStyle__PythonCallable;
+}
+
+declare class OnDrawPreviewConnector__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): OnDrawPreviewConnector__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): OnDrawPreviewConnector__PythonCallable;
+	static GetDefaultObject(): OnDrawPreviewConnector__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnDrawPreviewConnector__PythonCallable;
+	static C(Other: UObject | any): OnDrawPreviewConnector__PythonCallable;
+}
+
+declare class OnDrawSplineWithArrow__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): OnDrawSplineWithArrow__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): OnDrawSplineWithArrow__PythonCallable;
+	static GetDefaultObject(): OnDrawSplineWithArrow__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnDrawSplineWithArrow__PythonCallable;
+	static C(Other: UObject | any): OnDrawSplineWithArrow__PythonCallable;
+}
+
+declare class OnDrawSplineWithArrow_Geom__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): OnDrawSplineWithArrow_Geom__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): OnDrawSplineWithArrow_Geom__PythonCallable;
+	static GetDefaultObject(): OnDrawSplineWithArrow_Geom__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnDrawSplineWithArrow_Geom__PythonCallable;
+	static C(Other: UObject | any): OnDrawSplineWithArrow_Geom__PythonCallable;
+}
+
+declare class OnEdNodeAction__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): OnEdNodeAction__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): OnEdNodeAction__PythonCallable;
+	static GetDefaultObject(): OnEdNodeAction__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnEdNodeAction__PythonCallable;
+	static C(Other: UObject | any): OnEdNodeAction__PythonCallable;
+}
+
+declare class OnGetBoolean__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): OnGetBoolean__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): OnGetBoolean__PythonCallable;
+	static GetDefaultObject(): OnGetBoolean__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnGetBoolean__PythonCallable;
+	static C(Other: UObject | any): OnGetBoolean__PythonCallable;
+}
+
+declare class OnGetBoolean_GraphPin__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): OnGetBoolean_GraphPin__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): OnGetBoolean_GraphPin__PythonCallable;
+	static GetDefaultObject(): OnGetBoolean_GraphPin__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnGetBoolean_GraphPin__PythonCallable;
+	static C(Other: UObject | any): OnGetBoolean_GraphPin__PythonCallable;
+}
+
+declare class OnGetBooleanMoveTo__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): OnGetBooleanMoveTo__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): OnGetBooleanMoveTo__PythonCallable;
+	static GetDefaultObject(): OnGetBooleanMoveTo__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnGetBooleanMoveTo__PythonCallable;
+	static C(Other: UObject | any): OnGetBooleanMoveTo__PythonCallable;
+}
+
+declare class OnGetBooleanWidget__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): OnGetBooleanWidget__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): OnGetBooleanWidget__PythonCallable;
+	static GetDefaultObject(): OnGetBooleanWidget__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnGetBooleanWidget__PythonCallable;
+	static C(Other: UObject | any): OnGetBooleanWidget__PythonCallable;
+}
+
+declare class OnGetCustomPinBoxWidget__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): OnGetCustomPinBoxWidget__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): OnGetCustomPinBoxWidget__PythonCallable;
+	static GetDefaultObject(): OnGetCustomPinBoxWidget__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnGetCustomPinBoxWidget__PythonCallable;
+	static C(Other: UObject | any): OnGetCustomPinBoxWidget__PythonCallable;
+}
+
+declare class OnGetPinColor__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): OnGetPinColor__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): OnGetPinColor__PythonCallable;
+	static GetDefaultObject(): OnGetPinColor__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnGetPinColor__PythonCallable;
+	static C(Other: UObject | any): OnGetPinColor__PythonCallable;
+}
+
+declare class OnGetPins__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): OnGetPins__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): OnGetPins__PythonCallable;
+	static GetDefaultObject(): OnGetPins__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnGetPins__PythonCallable;
+	static C(Other: UObject | any): OnGetPins__PythonCallable;
+}
+
+declare class OnGetSlateBrushName__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): OnGetSlateBrushName__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): OnGetSlateBrushName__PythonCallable;
+	static GetDefaultObject(): OnGetSlateBrushName__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnGetSlateBrushName__PythonCallable;
+	static C(Other: UObject | any): OnGetSlateBrushName__PythonCallable;
+}
+
+declare class OnGetString__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): OnGetString__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): OnGetString__PythonCallable;
+	static GetDefaultObject(): OnGetString__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnGetString__PythonCallable;
+	static C(Other: UObject | any): OnGetString__PythonCallable;
+}
+
+declare class OnMouseDragEvent__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): OnMouseDragEvent__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): OnMouseDragEvent__PythonCallable;
+	static GetDefaultObject(): OnMouseDragEvent__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnMouseDragEvent__PythonCallable;
+	static C(Other: UObject | any): OnMouseDragEvent__PythonCallable;
+}
+
+declare class OnMouseEvent__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): OnMouseEvent__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): OnMouseEvent__PythonCallable;
+	static GetDefaultObject(): OnMouseEvent__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnMouseEvent__PythonCallable;
+	static C(Other: UObject | any): OnMouseEvent__PythonCallable;
+}
+
+declare class OnMouseEventAdvanced__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): OnMouseEventAdvanced__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): OnMouseEventAdvanced__PythonCallable;
+	static GetDefaultObject(): OnMouseEventAdvanced__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnMouseEventAdvanced__PythonCallable;
+	static C(Other: UObject | any): OnMouseEventAdvanced__PythonCallable;
+}
+
+declare class OnPerformAction__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): OnPerformAction__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): OnPerformAction__PythonCallable;
+	static GetDefaultObject(): OnPerformAction__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnPerformAction__PythonCallable;
+	static C(Other: UObject | any): OnPerformAction__PythonCallable;
+}
+
+declare class OnPerformSecondPassLayout__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): OnPerformSecondPassLayout__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): OnPerformSecondPassLayout__PythonCallable;
+	static GetDefaultObject(): OnPerformSecondPassLayout__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnPerformSecondPassLayout__PythonCallable;
+	static C(Other: UObject | any): OnPerformSecondPassLayout__PythonCallable;
+}
+
+declare class OnPinConnectionListChanged__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): OnPinConnectionListChanged__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): OnPinConnectionListChanged__PythonCallable;
+	static GetDefaultObject(): OnPinConnectionListChanged__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnPinConnectionListChanged__PythonCallable;
+	static C(Other: UObject | any): OnPinConnectionListChanged__PythonCallable;
+}
+
+declare class OnShouldAlwaysPurgeOnModification__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): OnShouldAlwaysPurgeOnModification__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): OnShouldAlwaysPurgeOnModification__PythonCallable;
+	static GetDefaultObject(): OnShouldAlwaysPurgeOnModification__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnShouldAlwaysPurgeOnModification__PythonCallable;
+	static C(Other: UObject | any): OnShouldAlwaysPurgeOnModification__PythonCallable;
+}
+
+declare class OnTakeContentWidget__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): OnTakeContentWidget__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): OnTakeContentWidget__PythonCallable;
+	static GetDefaultObject(): OnTakeContentWidget__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnTakeContentWidget__PythonCallable;
+	static C(Other: UObject | any): OnTakeContentWidget__PythonCallable;
+}
+
+declare class OnTakeWidget__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): OnTakeWidget__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): OnTakeWidget__PythonCallable;
+	static GetDefaultObject(): OnTakeWidget__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnTakeWidget__PythonCallable;
+	static C(Other: UObject | any): OnTakeWidget__PythonCallable;
+}
+
+declare class OnTryCreateConnection__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): OnTryCreateConnection__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): OnTryCreateConnection__PythonCallable;
+	static GetDefaultObject(): OnTryCreateConnection__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnTryCreateConnection__PythonCallable;
+	static C(Other: UObject | any): OnTryCreateConnection__PythonCallable;
+}
+
+declare class OnVectorArith__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): OnVectorArith__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): OnVectorArith__PythonCallable;
+	static GetDefaultObject(): OnVectorArith__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnVectorArith__PythonCallable;
+	static C(Other: UObject | any): OnVectorArith__PythonCallable;
+}
+
+declare class OnDisallowedPinConnection__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): OnDisallowedPinConnection__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): OnDisallowedPinConnection__PythonCallable;
+	static GetDefaultObject(): OnDisallowedPinConnection__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnDisallowedPinConnection__PythonCallable;
+	static C(Other: UObject | any): OnDisallowedPinConnection__PythonCallable;
+}
+
+declare class OnDropActor__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): OnDropActor__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): OnDropActor__PythonCallable;
+	static GetDefaultObject(): OnDropActor__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnDropActor__PythonCallable;
+	static C(Other: UObject | any): OnDropActor__PythonCallable;
+}
+
+declare class SetNodes__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): SetNodes__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): SetNodes__PythonCallable;
+	static GetDefaultObject(): SetNodes__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): SetNodes__PythonCallable;
+	static C(Other: UObject | any): SetNodes__PythonCallable;
+}
+
+declare class SingleNode__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): SingleNode__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): SingleNode__PythonCallable;
+	static GetDefaultObject(): SingleNode__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): SingleNode__PythonCallable;
+	static C(Other: UObject | any): SingleNode__PythonCallable;
+}
+
+declare class OnWidgetFinalized__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): OnWidgetFinalized__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): OnWidgetFinalized__PythonCallable;
+	static GetDefaultObject(): OnWidgetFinalized__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnWidgetFinalized__PythonCallable;
+	static C(Other: UObject | any): OnWidgetFinalized__PythonCallable;
+}
+
+declare class OnGetDefaultValue__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): OnGetDefaultValue__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): OnGetDefaultValue__PythonCallable;
+	static GetDefaultObject(): OnGetDefaultValue__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnGetDefaultValue__PythonCallable;
+	static C(Other: UObject | any): OnGetDefaultValue__PythonCallable;
+}
+
+declare class OnGetGraphPin__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): OnGetGraphPin__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): OnGetGraphPin__PythonCallable;
+	static GetDefaultObject(): OnGetGraphPin__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnGetGraphPin__PythonCallable;
+	static C(Other: UObject | any): OnGetGraphPin__PythonCallable;
 }
 
 declare class DynamicSimpleGetBoolDelegate__PythonCallable extends PythonCallableForDelegate { 
@@ -5238,6 +7489,14 @@ declare class PropertyEditorPropertyChanged__PythonCallable extends PythonCallab
 	static GetDefaultObject(): PropertyEditorPropertyChanged__PythonCallable;
 	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): PropertyEditorPropertyChanged__PythonCallable;
 	static C(Other: UObject | any): PropertyEditorPropertyChanged__PythonCallable;
+}
+
+declare class OnGenerateInvalidCellWidget__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): OnGenerateInvalidCellWidget__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): OnGenerateInvalidCellWidget__PythonCallable;
+	static GetDefaultObject(): OnGenerateInvalidCellWidget__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnGenerateInvalidCellWidget__PythonCallable;
+	static C(Other: UObject | any): OnGenerateInvalidCellWidget__PythonCallable;
 }
 
 declare class OnSetDefaultValue__PythonCallable extends PythonCallableForDelegate { 
@@ -5294,6 +7553,14 @@ declare class JavascriptEditorTickSignature__PythonCallable extends PythonCallab
 	static GetDefaultObject(): JavascriptEditorTickSignature__PythonCallable;
 	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): JavascriptEditorTickSignature__PythonCallable;
 	static C(Other: UObject | any): JavascriptEditorTickSignature__PythonCallable;
+}
+
+declare class OnHook__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): OnHook__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): OnHook__PythonCallable;
+	static GetDefaultObject(): OnHook__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): OnHook__PythonCallable;
+	static C(Other: UObject | any): OnHook__PythonCallable;
 }
 
 declare class OnGetWidgetLocation__PythonCallable extends PythonCallableForDelegate { 
@@ -5640,6 +7907,22 @@ declare class SetPlaybackPosition__PythonCallable extends PythonCallableForDeleg
 	static C(Other: UObject | any): SetPlaybackPosition__PythonCallable;
 }
 
+declare class JavascriptCanExecuteAction__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): JavascriptCanExecuteAction__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): JavascriptCanExecuteAction__PythonCallable;
+	static GetDefaultObject(): JavascriptCanExecuteAction__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): JavascriptCanExecuteAction__PythonCallable;
+	static C(Other: UObject | any): JavascriptCanExecuteAction__PythonCallable;
+}
+
+declare class JavascriptExecuteAction__PythonCallable extends PythonCallableForDelegate { 
+	static Load(ResourceName: string): JavascriptExecuteAction__PythonCallable;
+	static Find(Outer: UObject, ResourceName: string): JavascriptExecuteAction__PythonCallable;
+	static GetDefaultObject(): JavascriptExecuteAction__PythonCallable;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): JavascriptExecuteAction__PythonCallable;
+	static C(Other: UObject | any): JavascriptExecuteAction__PythonCallable;
+}
+
 declare class OnBeforePopup__PythonCallable extends PythonCallableForDelegate { 
 	static Load(ResourceName: string): OnBeforePopup__PythonCallable;
 	static Find(Outer: UObject, ResourceName: string): OnBeforePopup__PythonCallable;
@@ -5889,6 +8172,15 @@ declare class EditorKeyboardShortcutSettings extends DeveloperSettings {
 	static C(Other: UObject | any): EditorKeyboardShortcutSettings;
 }
 
+declare class EdModeInteractiveToolsContext extends InteractiveToolsContext { 
+	StandardVertexColorMaterial: MaterialInterface;
+	static Load(ResourceName: string): EdModeInteractiveToolsContext;
+	static Find(Outer: UObject, ResourceName: string): EdModeInteractiveToolsContext;
+	static GetDefaultObject(): EdModeInteractiveToolsContext;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): EdModeInteractiveToolsContext;
+	static C(Other: UObject | any): EdModeInteractiveToolsContext;
+}
+
 declare type EIOSCloudKitSyncStrategy = 'None' | 'OnlyAtGameStart' | 'Always' | 'EIOSCloudKitSyncStrategy_MAX';
 declare var EIOSCloudKitSyncStrategy : { None:'None',OnlyAtGameStart:'OnlyAtGameStart',Always:'Always',EIOSCloudKitSyncStrategy_MAX:'EIOSCloudKitSyncStrategy_MAX', };
 declare class IOSBuildResourceDirectory { 
@@ -5919,7 +8211,7 @@ declare class IOSRuntimeSettings extends UObject {
 	bSupportsMetalMRT: boolean;
 	bCookPVRTCTextures: boolean;
 	bCookASTCTextures: boolean;
-	bSupportsOpenGLES2: boolean;
+	bBuildAsFramework: boolean;
 	EnableRemoteShaderCompile: boolean;
 	bGeneratedSYMFile: boolean;
 	bGeneratedSYMBundle: boolean;
@@ -5973,6 +8265,7 @@ declare class IOSRuntimeSettings extends UObject {
 	UseFastIntrinsics: boolean;
 	ForceFloats: boolean;
 	EnableMathOptimisations: boolean;
+	IndirectArgumentTier: number;
 	bUseIntegratedKeyboard: boolean;
 	AudioSampleRate: number;
 	AudioCallbackBufferFrameSize: number;
@@ -5983,7 +8276,11 @@ declare class IOSRuntimeSettings extends UObject {
 	ReverbPlugin: string;
 	OcclusionPlugin: string;
 	CompressionOverrides: PlatformRuntimeAudioCompressionOverrides;
+	ChunkSizeKB: number;
+	bUseAudioStreamCaching: boolean;
+	CacheSizeKB: number;
 	bResampleForDevice: boolean;
+	SoundCueCookQualityIndex: number;
 	MaxSampleRate: number;
 	HighSampleRate: number;
 	MedSampleRate: number;
@@ -6000,8 +8297,29 @@ declare class IOSRuntimeSettings extends UObject {
 
 declare type ELuminFrameTimingHint = 'Unspecified' | 'Maximum' | 'FPS_60' | 'FPS_120' | 'ELuminFrameTimingHint_MAX';
 declare var ELuminFrameTimingHint : { Unspecified:'Unspecified',Maximum:'Maximum',FPS_60:'FPS_60',FPS_120:'FPS_120',ELuminFrameTimingHint_MAX:'ELuminFrameTimingHint_MAX', };
-declare type ELuminPrivilege = 'Invalid' | 'AudioRecognizer' | 'BatteryInfo' | 'CameraCapture' | 'WorldReconstruction' | 'InAppPurchase' | 'AudioCaptureMic' | 'DrmCertificates' | 'Occlusion' | 'LowLatencyLightwear' | 'Internet' | 'IdentityRead' | 'BackgroundDownload' | 'BackgroundUpload' | 'MediaDrm' | 'Media' | 'MediaMetadata' | 'PowerInfo' | 'LocalAreaNetwork' | 'VoiceInput' | 'Documents' | 'ConnectBackgroundMusicService' | 'RegisterBackgroundMusicService' | 'PwFoundObjRead' | 'NormalNotificationsUsage' | 'MusicService' | 'ControllerPose' | 'ScreensProvider' | 'GesturesSubscribe' | 'GesturesConfig' | 'ELuminPrivilege_MAX';
-declare var ELuminPrivilege : { Invalid:'Invalid',AudioRecognizer:'AudioRecognizer',BatteryInfo:'BatteryInfo',CameraCapture:'CameraCapture',WorldReconstruction:'WorldReconstruction',InAppPurchase:'InAppPurchase',AudioCaptureMic:'AudioCaptureMic',DrmCertificates:'DrmCertificates',Occlusion:'Occlusion',LowLatencyLightwear:'LowLatencyLightwear',Internet:'Internet',IdentityRead:'IdentityRead',BackgroundDownload:'BackgroundDownload',BackgroundUpload:'BackgroundUpload',MediaDrm:'MediaDrm',Media:'Media',MediaMetadata:'MediaMetadata',PowerInfo:'PowerInfo',LocalAreaNetwork:'LocalAreaNetwork',VoiceInput:'VoiceInput',Documents:'Documents',ConnectBackgroundMusicService:'ConnectBackgroundMusicService',RegisterBackgroundMusicService:'RegisterBackgroundMusicService',PwFoundObjRead:'PwFoundObjRead',NormalNotificationsUsage:'NormalNotificationsUsage',MusicService:'MusicService',ControllerPose:'ControllerPose',ScreensProvider:'ScreensProvider',GesturesSubscribe:'GesturesSubscribe',GesturesConfig:'GesturesConfig',ELuminPrivilege_MAX:'ELuminPrivilege_MAX', };
+declare type ELuminPrivilege = 'Invalid' | 'BatteryInfo' | 'CameraCapture' | 'WorldReconstruction' | 'InAppPurchase' | 'AudioCaptureMic' | 'DrmCertificates' | 'Occlusion' | 'LowLatencyLightwear' | 'Internet' | 'IdentityRead' | 'BackgroundDownload' | 'BackgroundUpload' | 'MediaDrm' | 'Media' | 'MediaMetadata' | 'PowerInfo' | 'LocalAreaNetwork' | 'VoiceInput' | 'Documents' | 'ConnectBackgroundMusicService' | 'RegisterBackgroundMusicService' | 'PwFoundObjRead' | 'NormalNotificationsUsage' | 'MusicService' | 'ControllerPose' | 'ScreensProvider' | 'GesturesSubscribe' | 'GesturesConfig' | 'AddressBookRead' | 'AddressBookWrite' | 'CoarseLocation' | 'HandMesh' | 'WifiStatusRead' | 'ELuminPrivilege_MAX';
+declare var ELuminPrivilege : { Invalid:'Invalid',BatteryInfo:'BatteryInfo',CameraCapture:'CameraCapture',WorldReconstruction:'WorldReconstruction',InAppPurchase:'InAppPurchase',AudioCaptureMic:'AudioCaptureMic',DrmCertificates:'DrmCertificates',Occlusion:'Occlusion',LowLatencyLightwear:'LowLatencyLightwear',Internet:'Internet',IdentityRead:'IdentityRead',BackgroundDownload:'BackgroundDownload',BackgroundUpload:'BackgroundUpload',MediaDrm:'MediaDrm',Media:'Media',MediaMetadata:'MediaMetadata',PowerInfo:'PowerInfo',LocalAreaNetwork:'LocalAreaNetwork',VoiceInput:'VoiceInput',Documents:'Documents',ConnectBackgroundMusicService:'ConnectBackgroundMusicService',RegisterBackgroundMusicService:'RegisterBackgroundMusicService',PwFoundObjRead:'PwFoundObjRead',NormalNotificationsUsage:'NormalNotificationsUsage',MusicService:'MusicService',ControllerPose:'ControllerPose',ScreensProvider:'ScreensProvider',GesturesSubscribe:'GesturesSubscribe',GesturesConfig:'GesturesConfig',AddressBookRead:'AddressBookRead',AddressBookWrite:'AddressBookWrite',CoarseLocation:'CoarseLocation',HandMesh:'HandMesh',WifiStatusRead:'WifiStatusRead',ELuminPrivilege_MAX:'ELuminPrivilege_MAX', };
+declare type ELuminComponentSubElementType = 'FileExtension' | 'MimeType' | 'Mode' | 'MusicAttribute' | 'Schema' | 'ELuminComponentSubElementType_MAX';
+declare var ELuminComponentSubElementType : { FileExtension:'FileExtension',MimeType:'MimeType',Mode:'Mode',MusicAttribute:'MusicAttribute',Schema:'Schema',ELuminComponentSubElementType_MAX:'ELuminComponentSubElementType_MAX', };
+declare class LuminComponentSubElement { 
+	ElementType: ELuminComponentSubElementType;
+	Value: string;
+	clone() : LuminComponentSubElement;
+	static C(Other: UObject | any): LuminComponentSubElement;
+}
+
+declare type ELuminComponentType = 'Universe' | 'Fullscreen' | 'SearchProvider' | 'MusicService' | 'Screens' | 'ScreensImmersive' | 'Console' | 'SystemUI' | 'ELuminComponentType_MAX';
+declare var ELuminComponentType : { Universe:'Universe',Fullscreen:'Fullscreen',SearchProvider:'SearchProvider',MusicService:'MusicService',Screens:'Screens',ScreensImmersive:'ScreensImmersive',Console:'Console',SystemUI:'SystemUI',ELuminComponentType_MAX:'ELuminComponentType_MAX', };
+declare class LuminComponentElement { 
+	Name: string;
+	VisibleName: string;
+	ExecutableName: string;
+	ComponentType: ELuminComponentType;
+	ExtraComponentSubElements: LuminComponentSubElement[];
+	clone() : LuminComponentElement;
+	static C(Other: UObject | any): LuminComponentElement;
+}
+
 declare class LuminRuntimeSettings extends UObject { 
 	PackageName: string;
 	ApplicationDisplayName: string;
@@ -6010,19 +8328,21 @@ declare class LuminRuntimeSettings extends UObject {
 	bProtectedContent: boolean;
 	bUseMobileRendering: boolean;
 	bUseVulkan: boolean;
-	bBuildWithNvTegraGfxDebugger: boolean;
 	Certificate: FilePath;
 	IconModelPath: DirectoryPath;
 	IconPortalPath: DirectoryPath;
 	VersionCode: number;
 	MinimumAPILevel: number;
 	AppPrivileges: ELuminPrivilege[];
-	ExtraApplicationNodes: string[];
-	ExtraComponentNodes: string[];
+	ExtraComponentSubElements: LuminComponentSubElement[];
+	ExtraComponentElements: LuminComponentElement[];
 	SpatializationPlugin: string;
 	ReverbPlugin: string;
 	OcclusionPlugin: string;
+	SoundCueCookQualityIndex: number;
 	bRemoveDebugInfo: boolean;
+	VulkanValidationLayerLibs: DirectoryPath;
+	bFrameVignette: boolean;
 	static Load(ResourceName: string): LuminRuntimeSettings;
 	static Find(Outer: UObject, ResourceName: string): LuminRuntimeSettings;
 	static GetDefaultObject(): LuminRuntimeSettings;
@@ -6033,7 +8353,6 @@ declare class LuminRuntimeSettings extends UObject {
 declare class AndroidSDKSettings extends UObject { 
 	SDKPath: DirectoryPath;
 	NDKPath: DirectoryPath;
-	ANTPath: DirectoryPath;
 	JavaPath: DirectoryPath;
 	SDKAPILevel: string;
 	NDKAPILevel: string;
@@ -6042,41 +8361,6 @@ declare class AndroidSDKSettings extends UObject {
 	static GetDefaultObject(): AndroidSDKSettings;
 	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): AndroidSDKSettings;
 	static C(Other: UObject | any): AndroidSDKSettings;
-}
-
-declare class HTML5SDKSettings extends UObject { 
-	static Load(ResourceName: string): HTML5SDKSettings;
-	static Find(Outer: UObject, ResourceName: string): HTML5SDKSettings;
-	static GetDefaultObject(): HTML5SDKSettings;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): HTML5SDKSettings;
-	static C(Other: UObject | any): HTML5SDKSettings;
-}
-
-declare type ECanvasScalingMode = 'Stretch' | 'Aspect' | 'Fixed' | 'ECanvasScalingMode_MAX';
-declare var ECanvasScalingMode : { Stretch:'Stretch',Aspect:'Aspect',Fixed:'Fixed',ECanvasScalingMode_MAX:'ECanvasScalingMode_MAX', };
-declare class HTML5TargetSettings extends UObject { 
-	EnableIndexedDB: boolean;
-	UseFixedTimeStep: boolean;
-	EnableMultithreading: boolean;
-	OffscreenCanvas: boolean;
-	EnableTracing: boolean;
-	CanvasScalingMode: ECanvasScalingMode;
-	Compressed: boolean;
-	DeployServerPort: number;
-	UploadToS3: boolean;
-	S3Region: string;
-	S3KeyID: string;
-	S3SecretAccessKey: string;
-	S3BucketName: string;
-	S3FolderName: string;
-	SpatializationPlugin: string;
-	ReverbPlugin: string;
-	OcclusionPlugin: string;
-	static Load(ResourceName: string): HTML5TargetSettings;
-	static Find(Outer: UObject, ResourceName: string): HTML5TargetSettings;
-	static GetDefaultObject(): HTML5TargetSettings;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): HTML5TargetSettings;
-	static C(Other: UObject | any): HTML5TargetSettings;
 }
 
 declare class MagicLeapSDKSettings extends UObject { 
@@ -6284,6 +8568,7 @@ declare class LogVisualizerSettings extends UObject {
 	GraphsBackgroundColor: Color;
 	bPresistentFilters: boolean;
 	bDrawExtremesOnGraphs: boolean;
+	bConstrainGraphToLocalMinMax: boolean;
 	bUsePlayersOnlyForPause: boolean;
 	bLogNavOctreeOnStop: boolean;
 	PresistentFilters: VisualLoggerFiltersData;
@@ -6329,7 +8614,7 @@ declare class ClothPainterSettings extends MeshPaintSettings {
 	bAutoViewRange: boolean;
 	AutoCalculatedViewMin: number;
 	AutoCalculatedViewMax: number;
-	ClothingAssets: ClothingAsset[];
+	ClothingAssets: ClothingAssetCommon[];
 	bFlipNormal: boolean;
 	bCullBackface: boolean;
 	Opacity: number;
