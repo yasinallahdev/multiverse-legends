@@ -9,7 +9,7 @@ public class MultiverseLegends : ModuleRules
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 
         PublicDependencyModuleNames.AddRange(new string[] { "GameplayAbilities", "GameplayTasks", "GameplayTags", "Core", "CoreUObject", "Engine", "InputCore",
-		"HeadMountedDisplay", "NavigationSystem", "AIModule", "V8" });
+		"HeadMountedDisplay", "NavigationSystem", "AIModule", "V8", "Json" });
 
 		PrivateDependencyModuleNames.AddRange(new string[] { "UMG", "Slate", "SlateCore" });
     }

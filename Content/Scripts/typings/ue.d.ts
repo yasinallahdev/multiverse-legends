@@ -2567,11 +2567,28 @@ declare class MLBasicAttackCooldownCalculator extends GameplayModMagnitudeCalcul
 	static C(Other: UObject | any): MLBasicAttackCooldownCalculator;
 }
 
+declare class S_ReplayInfo { 
+	ReplayName: string;
+	FriendlyName: string;
+	Timestamp: DateTime;
+	LengthInMS: number;
+	bIsValid: boolean;
+	clone() : S_ReplayInfo;
+	static C(Other: UObject | any): S_ReplayInfo;
+}
+
 declare class MLGameInstance extends GameInstance { 
 	static Load(ResourceName: string): MLGameInstance;
 	static Find(Outer: UObject, ResourceName: string): MLGameInstance;
 	static GetDefaultObject(): MLGameInstance;
 	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MLGameInstance;
+	StopRecordingReplayFromBP(): void;
+	StartRecordingReplayFromBP(ReplayName: string,FriendlyName: string): void;
+	RenameReplay(ReplayName: string,NewFriendlyReplayName: string): void;
+	PlayReplayFromBP(ReplayName: string): void;
+	FindReplays(): void;
+	DeleteReplay(ReplayName: string): void;
+	BP_OnFindReplaysComplete(AllReplays: S_ReplayInfo[]): void;
 	static C(Other: UObject | any): MLGameInstance;
 }
 
