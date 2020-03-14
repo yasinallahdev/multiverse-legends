@@ -2615,6 +2615,17 @@ declare class MLGameStateBase extends GameState {
 	static C(Other: UObject | any): MLGameStateBase;
 }
 
+declare class MLSpectatorController extends PlayerController { 
+	static GetDefaultObject(): MLSpectatorController;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MLSpectatorController;
+	SetCurrentReplayTimeToSeconds(Seconds: number): void;
+	SetCurrentReplayPlayRate(PlayRate: number): void;
+	SetCurrentReplayPausedState(bDoPause: boolean): boolean;
+	GetCurrentReplayTotalTimeInSeconds(): number;
+	GetCurrentReplayCurrentTimeInSeconds(): number;
+	static C(Other: UObject | any): MLSpectatorController;
+}
+
 declare class MovementAttributeSet extends AttributeSet { 
 	BaseMovementSpeed: GameplayAttributeData;
 	BonusMovementSpeed: GameplayAttributeData;

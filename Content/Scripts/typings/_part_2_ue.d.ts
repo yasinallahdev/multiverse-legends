@@ -16653,6 +16653,15 @@ declare class ActionLabel extends InputLabel {
 	KeyLabelWidgetClass: UnrealEngineClass;
 	KeySeparatorWidgetClass: UnrealEngineClass;
 	KeyContainer: PanelWidget;
+	PrimaryKeyLabel: KeyLabel;
+	ShiftLabel: KeyLabel;
+	CtrlLabel: KeyLabel;
+	AltLabel: KeyLabel;
+	CmdLabel: KeyLabel;
+	ShiftSeparator: Widget;
+	CtrlSeparator: Widget;
+	AltSeparator: Widget;
+	CmdSeparator: Widget;
 	static Load(ResourceName: string): ActionLabel;
 	static Find(Outer: UObject, ResourceName: string): ActionLabel;
 	static GetDefaultObject(): ActionLabel;
@@ -16850,6 +16859,14 @@ declare class AutoSettingsPlayer extends Interface {
 	static C(Other: UObject | any): AutoSettingsPlayer;
 }
 
+declare class AutoSettingsValidationSubsystem extends GameInstanceSubsystem { 
+	static Load(ResourceName: string): AutoSettingsValidationSubsystem;
+	static Find(Outer: UObject, ResourceName: string): AutoSettingsValidationSubsystem;
+	static GetDefaultObject(): AutoSettingsValidationSubsystem;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): AutoSettingsValidationSubsystem;
+	static C(Other: UObject | any): AutoSettingsValidationSubsystem;
+}
+
 declare class AxisLabel extends InputLabel { 
 	AxisName: string;
 	Scale: number;
@@ -16989,6 +17006,8 @@ declare class InputMappingManager extends UObject {
 	OnRegisteredPlayerControllerDestroyed(DestroyedActor: Actor): void;
 	static InitializePlayerInputOverridesStatic(Player: PlayerController): boolean;
 	static GetPlayerInputMappingsStatic(Player: PlayerController): PlayerInputMappings;
+	static GetPlayerAxisMappingStatic(Player: PlayerController,AxisName: string,Scale: number,MappingGroup: number): InputAxisKeyMapping;
+	static GetPlayerActionMappingStatic(Player: PlayerController,ActionName: string,MappingGroup: number): InputActionKeyMapping;
 	static GetDefaultInputPresets(): InputMappingPreset[];
 	static AddPlayerAxisOverrideStatic(Player: PlayerController,NewMapping: InputAxisKeyMapping,MappingGroup: number,bAnyKeyGroup: boolean): void;
 	AddPlayerAxisOverride(Player: PlayerController,NewMapping: InputAxisKeyMapping,MappingGroup: number,bAnyKeyGroup: boolean): void;
