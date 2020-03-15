@@ -16,7 +16,7 @@ AUnit::AUnit(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitiali
 	UnitCapsuleComponent = CreateDefaultSubobject<UUnitCapsuleComponent>(TEXT("UnitCapsule"));
 	RootComponent = UnitCapsuleComponent;
 
-	NetUpdateFrequency = 5;
+	NetUpdateFrequency = 5; 
 
 	HealthBarComponent = CreateDefaultSubobject<UWidgetComponent>(TEXT("HealthBar"));
 
