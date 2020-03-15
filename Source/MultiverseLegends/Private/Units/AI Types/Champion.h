@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+	// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
@@ -10,7 +10,8 @@
 class UMLGameplayAbility;
 
 /**
- * 
+ * Most logic for Champions is handled by this class. Control of the champion is further routed through
+ * its child classes, PlayerChampion and BotChampion.
  */
 UCLASS()
 class AChampion : public AUnit {
@@ -28,8 +29,6 @@ public:
 	virtual AMLPlayerState* SetMasterPlayerState(AMLPlayerState* NewMasterPlayerState, bool updateController = false);
 
 	AMLPlayerState* GetMasterPlayerState() { return MasterPlayerState; }
-
-	
 
 protected:
 

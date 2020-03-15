@@ -2,6 +2,8 @@
 
 
 #include "MLAbilitySystemComponent.h"
+#include "AbilitySystemGlobals.h"
+#include "GameplayCueManager.h"
 #include "Attributes/OffensiveAttributeSet.h"
 #include "Attributes/DefenseAttributeSet.h"
 #include "Attributes/MovementAttributeSet.h"
@@ -158,4 +160,16 @@ float UMLAbilitySystemComponent::GetStat(EMLStatType StatType, EStatGroup StatGr
 
 AActor* UMLAbilitySystemComponent::GetOwnerActor() const {
     return OwnerActor;
+}
+
+void UMLAbilitySystemComponent::ExecuteGameplayCueLocal(const FGameplayTag& GameplayCueTag, const FGameplayCueParameters& GameplayCueParameters) {
+    UAbilitySystemGlobals::Get().GetGameplayCueManager()->HandleGameplayCue(GetOwner(), GameplayCueTag, EGameplayCueEvent::Type::Executed, GameplayCueParameters);
+}
+
+void UMLAbilitySystemComponent::AddGameplayCueLocal(const FGameplayTag& GameplayCueTag, const FGameplayCueParameters& GameplayCueParameters) {
+    UAbilitySystemGlobals::Get().GetGameplayCueManager()->HandleGameplayCue(GetOwner(), GameplayCueTag, EGameplayCueEvent::Type::OnActive, GameplayCueParameters);
+}
+
+void UMLAbilitySystemComponent::RemoveGameplayCueLocal(const FGameplayTag& GameplayCueTag, const FGameplayCueParameters& GameplayCueParameters) {
+    UAbilitySystemGlobals::Get().GetGameplayCueManager()->HandleGameplayCue(GetOwner(), GameplayCueTag, EGameplayCueEvent::Type::Removed, GameplayCueParameters);
 }

@@ -5,6 +5,7 @@
 
 AMLPlayerState::AMLPlayerState() {
     AbilitySystem = CreateDefaultSubobject<UMLAbilitySystemComponent>(TEXT("AbilitySystem"));
+    NetUpdateFrequency = 5;
 }
 
 void AMLPlayerState::BeginPlay() {
