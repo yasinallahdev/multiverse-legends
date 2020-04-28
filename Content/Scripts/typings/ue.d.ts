@@ -2305,8 +2305,11 @@ declare class MLAbilitySystemComponent extends AbilitySystemComponent {
 	static GetDefaultObject(): MLAbilitySystemComponent;
 	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MLAbilitySystemComponent;
 	SetLevel(NewLevel: number): number;
+	RemoveGameplayCueLocal(GameplayCueTag: GameplayTag,GameplayCueParameters: GameplayCueParameters): void;
 	GetStat(StatType: EMLStatType,StatGroup: EStatGroup): number;
 	GetLevel(): number;
+	ExecuteGameplayCueLocal(GameplayCueTag: GameplayTag,GameplayCueParameters: GameplayCueParameters): void;
+	AddGameplayCueLocal(GameplayCueTag: GameplayTag,GameplayCueParameters: GameplayCueParameters): void;
 	static C(Other: UObject | any): MLAbilitySystemComponent;
 }
 

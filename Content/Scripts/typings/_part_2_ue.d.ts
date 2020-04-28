@@ -17076,6 +17076,7 @@ declare class RadioSelect extends UserWidget {
 	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): RadioSelect;
 	SetOptions(InOptions: SettingOption[]): void;
 	Select(Value: string): void;
+	GetOptions(): SettingOption[];
 	ButtonSelected(Value: string): void;
 	static C(Other: UObject | any): RadioSelect;
 }

@@ -9,3 +9,4 @@ CrowdControlTag_00007,Debuffs.CrowdControl.Castlock,"Units with this tag are cas
 CrowdControlTag_00008,Debuffs.CrowdControl.Stun,"Units with this tag are stunned, combining the effects of Root, Disarm, and Castlock."
 CrowdControlTag_00009,Debuffs.CrowdControl.Airborne,"Units with this tag are airborne, stunning them and preventing them from cleansing the status. Some champion abilities have special effects when used by or used against airborne units."
 CrowdControlTag_00010,Debuffs.CrowdControl.Suppression,"Units with this tag are suppressed, stunning them and preventing them from cleansing the status. A suppression will end if the source is killed or have their champion abilities disabled."
+CrowdControlTag_00011,Debuffs.CrowdControl.Nearsight,"Units with this tag are nearsighted, reducing their vision range to 800 units."
