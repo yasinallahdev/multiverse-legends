@@ -39,6 +39,8 @@ class UMLAbilitySystemComponent final : public UAbilitySystemComponent {
 	GENERATED_BODY()
 
 public:
+
+	UMLAbilitySystemComponent();
  
 	UFUNCTION(BlueprintCallable)
 	float GetStat(EMLStatType StatType, EStatGroup StatGroup = EStatGroup::Total) const;
@@ -77,6 +79,13 @@ protected:
 
 private:
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Level & Experience", meta = (AllowPrivateAccess = "true"))
+	float CurrentExperience;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Level & Experience", meta = (AllowPrivateAccess = "true"))
 	float AbilitySystemLevel;
 	         
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Level & Experience", meta = (AllowPrivateAccess = "true"))
+	int32 SkillPoints;
+
 };

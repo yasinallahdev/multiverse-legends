@@ -9,6 +9,14 @@
 #include "Attributes/MovementAttributeSet.h"
 #include "Attributes/CasterAttributeSet.h"
 
+UMLAbilitySystemComponent::UMLAbilitySystemComponent() {
+
+    AbilitySystemLevel = 1.0f;
+    SkillPoints = 0;
+    CurrentExperience = 0.0f;
+
+}
+
 bool UMLAbilitySystemComponent::SetGameplayEffectDurationHandle(FActiveGameplayEffectHandle Handle, float NewDuration) {
 
 	if (!Handle.IsValid()) {

@@ -148,7 +148,7 @@ private:
 	FOnUpdateRegisteredChampion OnUpdateRegisteredChampion;
 
 	// This delegate is used to notify the Player State and its Registered Champion & AI Controller that a link has changed.
-	FOnUpdateChampionController OnUpdateChampionController;
+	FOnUpdateChampionController OnUpdateChampionController;	
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Score", meta = (AllowPrivateAccess = "true"))
 	FScoreStruct ScoreStructure;
