@@ -20,9 +20,16 @@ public:
 
 	float GetCameraSpeed() const { return CameraSpeed; }
 
+	float SetCameraScrollSpeed(float NewCameraScrollSpeed) { return CameraScrollSpeed = NewCameraScrollSpeed; }
+
+	float GetCameraScrollSpeed() const { return CameraScrollSpeed; }
+
 private:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Camera Settings", meta = (AllowPrivateAccess = "true"))
 	float CameraSpeed = 50;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Camera Settings", meta = (AllowPrivateAccess = "true"))
+	float CameraScrollSpeed = 25;
 
 };

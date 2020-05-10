@@ -29,6 +29,8 @@ ACameraPawn::ACameraPawn() {
 	CameraComponent->SetupAttachment(SpringArm, USpringArmComponent::SocketName);
 	CameraComponent->bUsePawnControlRotation = false;
 
+	bIsCameraLocked = false;
+
 }
 
 // Called when the game starts or when spawned
@@ -45,8 +47,11 @@ void ACameraPawn::Tick(float DeltaTime) {
 
 	UpdateViewportSize();
 
-	MoveVectorWithPan(GetCameraPanDirection() * CameraComponent->GetCameraSpeed());
+	if(!bIsCameraLocked) {
 
+		MoveVectorWithPan(GetCameraPanDirection() * CameraComponent->GetCameraSpeed());
+
+	}
 }
 
 bool ACameraPawn::IsNetRelevantFor(const AActor* RealViewer, const AActor* ViewTarget, const FVector& SrcLocation) const {
@@ -55,6 +60,14 @@ bool ACameraPawn::IsNetRelevantFor(const AActor* RealViewer, const AActor* ViewT
 
 	return ((PC != nullptr) && (PC == RealViewer));
 
+}
+
+void ACameraPawn::CameraZoomIn() {
+	SpringArm->TargetArmLength = FMath::Max(SpringArm->TargetArmLength - CameraComponent->GetCameraScrollSpeed(), 400.0f);
+}
+
+void ACameraPawn::CameraZoomOut() {
+	SpringArm->TargetArmLength = FMath::Min(SpringArm->TargetArmLength + CameraComponent->GetCameraScrollSpeed(), 1800.0f);
 }
 
 // Called to bind functionality to input

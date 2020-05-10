@@ -40,6 +40,12 @@ public:
 
 	virtual UPawnMovementComponent* GetMovementComponent() const override { return CameraMovement; }
 
+	UFUNCTION(BlueprintCallable)
+	void CameraZoomIn();
+
+	UFUNCTION(BlueprintCallable)
+	void CameraZoomOut();
+
 protected:
 
 	UPROPERTY()
