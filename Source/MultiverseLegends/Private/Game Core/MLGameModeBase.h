@@ -26,9 +26,6 @@ public:
 
 protected:
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Game Mode")
-	class UJavascriptComponent* JavascriptComponent;
-
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Game Mode")
 	float BaseGoldGenerationRate;
 

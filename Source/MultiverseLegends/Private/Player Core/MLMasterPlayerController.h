@@ -43,6 +43,8 @@ public:
 
 private:
 
+    void MouseScroll(float ScrollAmount);
+
     virtual void OnRightClickPressed();
     virtual void OnRightClickReleased();
     virtual void OnRightClickHeld();
@@ -69,6 +71,9 @@ private:
     virtual void OnRep_RegisteredChampion();
 
 protected:
+
+    UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
+    uint8 bInvertMouseScrollDirection : 1;
     
     UFUNCTION(BlueprintImplementableEvent, meta = (DisplayName = "On Champion Registered"))
     void ReceiveChampionRegistered(APlayerChampion* NewRegisteredChampion);

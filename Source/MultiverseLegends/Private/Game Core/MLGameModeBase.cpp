@@ -7,7 +7,6 @@
 #include "MLGameSession.h"
 #include "MLGameStateBase.h"
 #include "Camera/CameraPawn.h"
-#include "JavascriptComponent.h"
 
 AMLGameModeBase::AMLGameModeBase() {
 
@@ -20,7 +19,5 @@ AMLGameModeBase::AMLGameModeBase() {
     GameSessionClass = AMLGameSession::StaticClass();
 
     PlayerStateClass = AMLPlayerState::StaticClass();
-
-    JavascriptComponent = CreateDefaultSubobject<UJavascriptComponent>(TEXT("JavascriptComponent"));	
 
 }

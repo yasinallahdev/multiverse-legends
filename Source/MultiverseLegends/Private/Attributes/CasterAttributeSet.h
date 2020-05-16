@@ -23,8 +23,8 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Caster Stats", ReplicatedUsing = OnRep_BaseAbilityPower)
 	FGameplayAttributeData BaseAbilityPower;
 	UFUNCTION()
-	void OnRep_BaseAbilityPower() {
-		GAMEPLAYATTRIBUTE_REPNOTIFY(UCasterAttributeSet, BaseAbilityPower);
+	void OnRep_BaseAbilityPower(const FGameplayAttributeData& OldBaseAbilityPower) {
+		GAMEPLAYATTRIBUTE_REPNOTIFY(UCasterAttributeSet, BaseAbilityPower, OldBaseAbilityPower);
 	}
 
 	DECLARE_ATTRIBUTE_FUNCTION(BaseAbilityPower);
@@ -32,8 +32,8 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Caster Stats", ReplicatedUsing = OnRep_BonusAbilityPower)
 	FGameplayAttributeData BonusAbilityPower;
 	UFUNCTION()
-	void OnRep_BonusAbilityPower() {
-		GAMEPLAYATTRIBUTE_REPNOTIFY(UCasterAttributeSet, BonusAbilityPower);
+	void OnRep_BonusAbilityPower(const FGameplayAttributeData& OldBonusAbilityPower) {
+		GAMEPLAYATTRIBUTE_REPNOTIFY(UCasterAttributeSet, BonusAbilityPower, OldBonusAbilityPower);
 	}
 
 	DECLARE_ATTRIBUTE_FUNCTION(BonusAbilityPower);
@@ -41,8 +41,8 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Caster Stats", ReplicatedUsing = OnRep_CurrentResource)
 	FGameplayAttributeData CurrentResource;
 	UFUNCTION()
-	void OnRep_CurrentResource() {
-		GAMEPLAYATTRIBUTE_REPNOTIFY(UCasterAttributeSet, CurrentResource);
+	void OnRep_CurrentResource(const FGameplayAttributeData& OldCurrentResource) {
+		GAMEPLAYATTRIBUTE_REPNOTIFY(UCasterAttributeSet, CurrentResource, OldCurrentResource);
 	}
 
 	DECLARE_ATTRIBUTE_FUNCTION(CurrentResource);
@@ -50,8 +50,8 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Caster Stats", ReplicatedUsing = OnRep_BaseResource)
 	FGameplayAttributeData BaseResource;
 	UFUNCTION()
-	void OnRep_BaseResource() {
-		GAMEPLAYATTRIBUTE_REPNOTIFY(UCasterAttributeSet, BaseResource);
+	void OnRep_BaseResource(const FGameplayAttributeData& OldBaseResource) {
+		GAMEPLAYATTRIBUTE_REPNOTIFY(UCasterAttributeSet, BaseResource, OldBaseResource);
 	}
 
 	DECLARE_ATTRIBUTE_FUNCTION(BaseResource);
@@ -59,8 +59,8 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Caster Stats", ReplicatedUsing = OnRep_BonusResource)
 	FGameplayAttributeData BonusResource;
 	UFUNCTION()
-	void OnRep_BonusResource() {
-		GAMEPLAYATTRIBUTE_REPNOTIFY(UCasterAttributeSet, BonusResource);
+	void OnRep_BonusResource(const FGameplayAttributeData& OldBonusResource) {
+		GAMEPLAYATTRIBUTE_REPNOTIFY(UCasterAttributeSet, BonusResource, OldBonusResource);
 	}
 
 	DECLARE_ATTRIBUTE_FUNCTION(BonusResource);
@@ -68,8 +68,8 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Caster Stats", ReplicatedUsing = OnRep_CooldownReduction)
 	FGameplayAttributeData CooldownReduction;
 	UFUNCTION()
-	void OnRep_CooldownReduction() {
-		GAMEPLAYATTRIBUTE_REPNOTIFY(UCasterAttributeSet, CooldownReduction);
+	void OnRep_CooldownReduction(const FGameplayAttributeData& OldCooldownReduction) {
+		GAMEPLAYATTRIBUTE_REPNOTIFY(UCasterAttributeSet, CooldownReduction, OldCooldownReduction);
 	}
 
 	DECLARE_ATTRIBUTE_FUNCTION(CooldownReduction);

@@ -31,7 +31,7 @@ void UMLGameInstance::PlayReplayFromBP(FString ReplayName) {
 void UMLGameInstance::FindReplays() {
 	if (EnumerateStreamsPtr.Get())
 	{
-		EnumerateStreamsPtr.Get()->EnumerateStreams(FNetworkReplayVersion(), FString(), FString(), OnEnumerateStreamsCallback);
+		EnumerateStreamsPtr.Get()->EnumerateStreams(FNetworkReplayVersion(), 0, FString(), TArray<FString>(), OnEnumerateStreamsCallback);
 	}
 }
 

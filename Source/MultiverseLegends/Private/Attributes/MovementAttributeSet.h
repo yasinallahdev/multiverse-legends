@@ -23,8 +23,8 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Movement Attributes", ReplicatedUsing = OnRep_BaseMovementSpeed)
 	FGameplayAttributeData BaseMovementSpeed;
 	UFUNCTION()
-	void OnRep_BaseMovementSpeed() {
-		GAMEPLAYATTRIBUTE_REPNOTIFY(UMovementAttributeSet, BaseMovementSpeed);
+	void OnRep_BaseMovementSpeed(const FGameplayAttributeData& OldBaseMovementSpeed) {
+		GAMEPLAYATTRIBUTE_REPNOTIFY(UMovementAttributeSet, BaseMovementSpeed, OldBaseMovementSpeed);
 	}
 
     DECLARE_ATTRIBUTE_FUNCTION(BaseMovementSpeed);
@@ -32,8 +32,8 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Movement Attributes", ReplicatedUsing = OnRep_BonusMovementSpeed)
 	FGameplayAttributeData BonusMovementSpeed;
 	UFUNCTION()
-	void OnRep_BonusMovementSpeed() {
-		GAMEPLAYATTRIBUTE_REPNOTIFY(UMovementAttributeSet, BonusMovementSpeed);
+	void OnRep_BonusMovementSpeed(const FGameplayAttributeData& OldBonusMovementSpeed) {
+		GAMEPLAYATTRIBUTE_REPNOTIFY(UMovementAttributeSet, BonusMovementSpeed, OldBonusMovementSpeed);
 	}
 
     DECLARE_ATTRIBUTE_FUNCTION(BonusMovementSpeed);

@@ -2,6 +2,7 @@
 
 
 #include "MLMasterPlayerController.h"
+#include "Engine/Engine.h"
 #include "Units/AI Types/PlayerChampion.h"
 #include "PlayerChampionAIController.h"
 #include "Camera/CameraPawn.h"
@@ -59,10 +60,15 @@ void AMLMasterPlayerController::SetupInputComponent() {
 
     Super::SetupInputComponent();
     
-	InputComponent->BindAction("RightClick", IE_Pressed, this, &AMLMasterPlayerController::OnRightClickPressed);
-	InputComponent->BindAction("RightClick", IE_Released, this, &AMLMasterPlayerController::OnRightClickReleased);
-    InputComponent->BindAction("RightClick", IE_Repeat, this, &AMLMasterPlayerController::OnRightClickHeld);
+	InputComponent->BindAction(TEXT("RightClick"), IE_Pressed, this, &AMLMasterPlayerController::OnRightClickPressed);
+	InputComponent->BindAction(TEXT("RightClick"), IE_Released, this, &AMLMasterPlayerController::OnRightClickReleased);
+    InputComponent->BindAction(TEXT("RightClick"), IE_Repeat, this, &AMLMasterPlayerController::OnRightClickHeld);
 
+    InputComponent->BindAxis(TEXT("MouseScroll"), this, &AMLMasterPlayerController::MouseScroll);
+
+}
+
+void AMLMasterPlayerController::MouseScroll(float ScrollAmount) {
 }
 
 void AMLMasterPlayerController::OnRightClickPressed() {
