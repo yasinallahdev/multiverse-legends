@@ -78,9 +78,9 @@ AMLPlayerState* APlayerChampion::SetMasterPlayerState(AMLPlayerState* NewMasterP
 
 class UNetConnection* APlayerChampion::GetNetConnection() const {\
 	// If this Champion has a Master Player Controller, the MPC has the net connection
-	if ( MasterPlayerController )
-	{
+	if ( MasterPlayerController ) {
 		return MasterPlayerController->GetNetConnection();
-	}
-	return Super::GetNetConnection();
+	} else {
+    	return Super::GetNetConnection();
+    }
 }

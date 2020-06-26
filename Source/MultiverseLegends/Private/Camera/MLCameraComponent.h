@@ -27,7 +27,7 @@ public:
 private:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Camera Settings", meta = (AllowPrivateAccess = "true"))
-	float CameraSpeed = 50;
+	float CameraSpeed = 5;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Camera Settings", meta = (AllowPrivateAccess = "true"))
 	float CameraScrollSpeed = 5;

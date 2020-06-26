@@ -25,6 +25,8 @@ class AMLMasterPlayerController : public APlayerController {
     
 public:
 
+    AMLMasterPlayerController(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
 
     // Register a Champion, and in the process establish a link with the AIController and PlayerState.
@@ -43,7 +45,8 @@ public:
 
 private:
 
-    void MouseScroll(float ScrollAmount);
+    void MouseScrollUp();
+    void MouseScrollDown();
 
     virtual void OnRightClickPressed();
     virtual void OnRightClickReleased();

@@ -10,6 +10,12 @@
 
 #define LOCTEXT_NAMESPACE "MasterPlayerController"
 
+AMLMasterPlayerController::AMLMasterPlayerController(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    bShowMouseCursor = true;
+    bEnableClickEvents = true;
+    bEnableTouchEvents = true;
+}
+ 
 void AMLMasterPlayerController::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const {
 
     Super::GetLifetimeReplicatedProps(OutLifetimeProps);
@@ -64,11 +70,25 @@ void AMLMasterPlayerController::SetupInputComponent() {
 	InputComponent->BindAction(TEXT("RightClick"), IE_Released, this, &AMLMasterPlayerController::OnRightClickReleased);
     InputComponent->BindAction(TEXT("RightClick"), IE_Repeat, this, &AMLMasterPlayerController::OnRightClickHeld);
 
-    InputComponent->BindAxis(TEXT("MouseScroll"), this, &AMLMasterPlayerController::MouseScroll);
+    InputComponent->BindAction(TEXT("MouseScrollUp"), IE_Pressed, this, &AMLMasterPlayerController::MouseScrollUp);
+    InputComponent->BindAction(TEXT("MouseScrollDown"), IE_Pressed, this, &AMLMasterPlayerController::MouseScrollDown);
 
 }
 
-void AMLMasterPlayerController::MouseScroll(float ScrollAmount) {
+void AMLMasterPlayerController::MouseScrollUp() {
+    if(!CameraPawn->bInvertAxis) {
+        CameraPawn->CameraZoomIn();
+    } else {
+        CameraPawn->CameraZoomOut();
+    }
+}
+
+void AMLMasterPlayerController::MouseScrollDown() {
+    if(CameraPawn->bInvertAxis) {
+        CameraPawn->CameraZoomIn();
+    } else {
+        CameraPawn->CameraZoomOut();
+    }
 }
 
 void AMLMasterPlayerController::OnRightClickPressed() {

@@ -7,8 +7,8 @@
 #include "MultiverseLegendsGameMode.generated.h"
 
 UCLASS(minimalapi)
-class AMultiverseLegendsGameMode : public AGameModeBase
-{
+class AMultiverseLegendsGameMode : public AGameModeBase {
+	
 	GENERATED_BODY()
 
 public:

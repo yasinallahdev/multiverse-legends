@@ -63,11 +63,15 @@ bool ACameraPawn::IsNetRelevantFor(const AActor* RealViewer, const AActor* ViewT
 }
 
 void ACameraPawn::CameraZoomIn() {
-	SpringArm->TargetArmLength = FMath::Max(SpringArm->TargetArmLength - CameraComponent->GetCameraScrollSpeed(), 400.0f);
+	if(!bIsCameraLocked) {
+		SpringArm->TargetArmLength = FMath::Max(SpringArm->TargetArmLength - CameraComponent->GetCameraScrollSpeed(), 400.0f);
+	}
 }
 
 void ACameraPawn::CameraZoomOut() {
-	SpringArm->TargetArmLength = FMath::Min(SpringArm->TargetArmLength + CameraComponent->GetCameraScrollSpeed(), 1800.0f);
+	if(!bIsCameraLocked) {
+		SpringArm->TargetArmLength = FMath::Min(SpringArm->TargetArmLength + CameraComponent->GetCameraScrollSpeed(), 1800.0f);
+	}
 }
 
 // Called to bind functionality to input

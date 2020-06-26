@@ -70,6 +70,9 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Camera Settings")
 	uint8 bIsCameraLocked : 1;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Invert Axis")
+	uint8 bInvertAxis : 1;
+
 private:
 
 	UFUNCTION(Client, Reliable)
